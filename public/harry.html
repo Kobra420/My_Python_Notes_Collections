@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Coding from Harry</title>
+    <link rel="stylesheet" href="./style_Harry.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Python Coding from Harry</h1><br>
+
+    <h2>Type Casting in Python (Implicit and Explicit) with Examples</h2><br>
+        <p>Type Casting is the method to convert the variable data type into a certain data type
+             in order to the operation required to be performed by users. In this article, 
+             we will see the various technique for typecasting.
+        </p><br>
+
+        <p>There can be two types of Type Casting in Python –<br>
+            <ol><b>
+                <li>Implicit Type Casting</li>
+                <li>Explicit Type Casting</li>
+                </b>
+            </ol>
+
+        </p>
+        <h3><ul>
+            <li>Implicit Type Casting :-</li><br>
+                <p>
+                    Implicit Type Casting is the method to convert the variable data type into a certain data type
+                </p><br>
+                <div id="code">
+                    <p>
+                        # Python program to demonstrate implicit type Casting <br>
+                        # Python automatically converts a to int <br>
+                        a = 7 <br>
+                        print(type(a)) <br><br>
+                        # Python automatically converts b to float <br>
+                        b = 7.5 <br>
+                        print(type(b)) <br><br>
+                        # Python automatically converts c to float as it is a float addition <br>
+                        c = 7 + 7.5 <br>
+                        print(type(c)) <br><br>
+                        # Python automatically converts c to float as it is a float addition <br>
+                        c = a + b <br>
+                        print(c) <br>
+                        print(type(c)) <br><br>
+
+                        # Python automatically converts d to float as it is a float multiplication <br>
+                        d = a * b <br>
+                        print(d) <br>
+                        print(type(d)) <br><br><br>
+
+
+
+                        # print values <br>
+                        print("Hi Harry")  <br> <br> <br>
+
+                        # declaring variables <br>
+                        a,b,c,d=22,"1111",45.6,66 <br> <br> <br>
+
+                        # print variables <br>
+                        print(a,b,c,d) <br> <br> <br>
+                        # assigning type funtion to know the variable types <br>
+                        TypeA,TypeB,TypeC,TypeD=type(a),type(b),type(c),type(d) <br> <br> <br>
+
+                        # test print variable types <br>
+                        print(TypeA) <br>
+                        print(TypeB) <br>
+                        print(TypeC) <br>
+                        print(TypeD) <br> <br> <br>
+
+                        # printing alltogether <br>
+                        print(a,TypeA,"\t",b,TypeB,"\t",c,TypeC,"\t",d,TypeD,"\n","this is alltogether print") <br> <br> <br>
+
+                        # typecasting <br>
+                        a1f,a2s,b1i,b2f,c1s,d1f,d2s=float(a),str(a),int(b),float(b),str(c),float(d),str(d) <br>
+
+                        TypeA1F,TypeA2S,TypeB1I,TypeB2F,TypeC1S,TypeD1F,TypeD2S=type(a1f),type(a2s),type(b1i),type(b2f),type(c1s),type(d1f),type(d2s) <br> <br>
+
+                        print(a,TypeA1F,"\t",a,TypeA2S,"\t",b,TypeB1I,"\t",b,TypeB2F,c,TypeC1S,"\t",d,TypeD1F,"\t",d,TypeD2S,"\n","this is typcasting printing") <br> <br>
+                        strinG='''\n ==== Hi I'm new to Python <br> <br>
+                        and undoubtly it's exciting <br>
+                        I'm hungry for python noodles and  <br>
+                        chilly python dumplings =====''' <br>
+                        print(strinG) <br> <br>
+                        <img src="../assets/output_Implicit_typecasting.bmp" alt="">
+                        <br> <br>
+
+
+                    </p>
+                </div>
+            <li>Explicit Type Casting
+                <p>
+                    In this method, Python need user involvement 
+                    to convert the variable data type into certain data type in order to the operation required. <br>
+                    Mainly in type casting can be done with these data type function: <br>
+                    <ul>
+                        <li>int() : 
+                            <p>Int() function take float or string as an argument and return int type object.</p>
+                        </li>
+                        <li>float() :
+                            <p>
+                                Float() function take int or string as an argument and return float type object.
+                            </p>
+                        </li>
+                        <li>str() :
+                            <p>
+                                Str() function take int or float as an argument and return string type object.
+                            </p>
+                        </li>
+                    </ul><br>
+                    <p>Let's see some examples of type casting <br>
+                        <ul>
+                            <li>int() to float()
+                                <p>
+                                    Here, we are casting integer object to float object with float() function.
+                                </p>
+                                <div id="code1">
+                                    <p>
+                                        # Python program to demonstrate type Casting  <br> <br>
+
+                                        # int variable <br>
+                                        a = 5 <br> <br>
+
+                                        # typecast to float <br>
+                                        n = float(a) <br>
+
+                                        print(n) <br>
+                                        print(type(n)) <br> <br>
+                                        Output: <br>
+                                        5.0 <br>
+                                        class 'float' <br> <br>
+
+                                    </p>
+                                </div>
+                            </li>
+                            <li>float() to int()
+                                <p>Here, we are casting float data type into integer data type with int() function.</p>
+                                <div id="code2">
+                                    <p>
+                                        # Python program to demonstrate type Casting  <br> <br>
+                                        # int variable <br>
+                                        a = 5.9 <br> <br>
+
+                                        # typecast to int <br>
+                                        n = int(a) <br>
+
+                                        print(n) <br>
+                                        print(type(n)) <br> <br>
+                                        Output: <br>
+                                        5 <br>
+                                        class 'int' <br>
+
+                                    </p>
+                                </div>
+                            </li>
+                            <li>str() to int()
+                                <p>Here, we are casting string data type into integer data type with int() function.</p>
+                                <div id="code3">
+                                    <p>
+                                        # Python program to demonstrate type Casting <br>
+
+                                        # string variable <br>
+                                        a = "5" <br> <br>
+
+                                        # typecast to int <br>
+                                        n = int(a) <br>
+
+                                        print(n) <br>
+                                        print(type(n)) <br> <br>
+                                        Output: <br>
+                                        5 <br>
+                                        class 'int' <br> <br>
+
+                                    </p>
+                                </div>
+                            </li>
+                            <li>int() to str()
+                                <p>Here, we are casting int data type into string data type with str() function.</p>
+                                <div id="code4">
+                                    <p>
+                                        # Python program to demonstrate type Casting <br> <br>
+
+                                        # int variable <br>
+                                        a = 5 <br> <br>
+
+                                        # typecast to str <br>
+                                        n = str(a) <br>
+
+                                        print(n) <br>
+                                        print(type(n)) <br> <br>
+                                        Output: <br>
+                                        5 <br>
+                                        class 'str' <br> <br>
+
+                                    </p>
+                                </div>
+                            </li>
+                            <li> str() to float()
+                                <p>Here, we are casting string data type into float data type with float() function.</p>
+                                <div id="code5">
+                                    <p>
+                                        # Python program to demonstrate type Casting <br> <br>
+                                        # string variable <br>
+                                        a = "5.9" <br> <br> 
+
+                                        # typecast to float <br>
+                                        n = float(a) <br> <br> 
+
+                                        print(n) <br>
+                                        print(type(n)) <br> <br> 
+                                        Output: <br>
+                                        5.9 <br>
+                                        class 'float'  <br> <br> <br> <br>
+                                    </p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </p>
+                    
+
+                </p>
+            </li>
+        </ul></h3>
+    <h2>String Slicing in Python</h2>
+    <h2>Python List Slicing</h2>
+    <h2></h2>
+    <h2></h2>
+
+        <hr>
+
+        <h3>
+            References :- <br> <br>
+            <a href="https://www.youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg"> YT link of Harry</a> <br>
+            <a href="https://www.geeksforgeeks.org/type-casting-in-python-implicit-and-explicit-with-examples/?ref=gcse">Geek4Geeks1</a> <br>
+            <a href="https://www.geeksforgeeks.org/python-list-slicing/">Geek4Geeks2</a> <br>
+            <a href="https://www.geeksforgeeks.org/string-slicing-in-python/"> Geek4Geeks3</a> <br>
+            <a href=""></a>
+        </h3>
+</body>
+</html>
