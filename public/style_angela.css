@@ -4,12 +4,21 @@
     padding: 2px;
     margin: 4px;
     box-sizing: border-box;
-    background-color: #FFB000;
+    background-color: #F4EEE0;
+    
     border: 15em;
 }
 
 header{
-    background-color: #FFB000;
+    background-color: #F4EEE0;
+    background-image: url("../assets/Angela/backgroundimage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: content-box;
+    background-position-y: top;
+    padding: 0;
+    border: 0;
+    margin: 0%;
 }
 
 hr{
@@ -20,10 +29,20 @@ hr{
 
 h1{
     font-family: 'Shrikhand', cursive;
-    color: #219C90;
+    color: #321E1E;
     
     font-size: 35px;
     font-weight: 900;
+    background-image: url("../assets/Angela/backgroundimage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    backface-visibility: visible;
+}
+
+#project_name{
+    background-image: url("../assets/Angela/backgroundimage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h2{
@@ -61,3 +80,21 @@ footer{
     color: #15133C;
     font-weight: 700;
 }
+
+#anime{
+    width: 200px;
+  height: 200px;
+  background-image: url("../assets/Angela/backgroundimage.png") ; 
+  enable-background: accumulate;
+  position: relative;
+  animation: mymove 3s infinite cubic-bezier(.395, 0.9, 0.985, 0.22);
+  background-position-x: center;
+  background-position-y: center;
+  image-resolution: 5px;
+  image-rendering: pixelated;
+}
+
+@keyframes mymove {
+    from {left: 1000px;}
+    to {left: 0px;}
+  }
