@@ -1,0 +1,35 @@
+header{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    color: #15133C;
+    font-weight: 700;
+    background-color: #F4EEE0;
+
+}
+footer{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    color: #15133C;
+    font-weight: 700;
+    background-color: #F4EEE0;
+}
+
+#mydiv{
+    width: 900px;
+    height: 200px;
+    background: wheat;
+    animation: mymove 15s infinite;
+}
+
+@keyframes mymove {
+    from {background-color: wheat;}
+    to {background-color: chartreuse;}
+  }
+  
+#shadow{
+    border: 2px solid;
+    padding: 5px;
+    box-shadow: 30px 20px #888888;
+}
