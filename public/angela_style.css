@@ -44,6 +44,11 @@ h1{
     background-repeat: no-repeat;
     background-size: cover;
 }
+#project_nameD2{
+    background-image: url("../assets/Angela/backgroundimage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 h2{
     color: #004225;
@@ -61,6 +66,13 @@ h3{
 }
 
 #code0{
+    font-family: 'Martian Mono', monospace;
+    font-size: 15px;
+    color: #016A70;
+    font-weight: 600;
+}
+
+#code1{
     font-family: 'Martian Mono', monospace;
     font-size: 15px;
     color: #016A70;
