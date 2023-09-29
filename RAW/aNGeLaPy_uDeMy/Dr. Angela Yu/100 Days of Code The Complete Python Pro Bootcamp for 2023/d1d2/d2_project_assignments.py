@@ -10,21 +10,21 @@
 
 
 # 🚨 Don't change the code below 👇
-two_digit_number = input("Type a two digit number: ")
+# two_digit_number = input("Type a two digit number: ")
 # 🚨 Don't change the code above 👆
 
 ####################################
 #Write your code below this line 👇
 
-x=int(two_digit_number)//10
-y=int(two_digit_number)%10
-s=x+y
-print("The summation of the two digits of the number is:\n ",s)
+# x=int(two_digit_number)//10
+# y=int(two_digit_number)%10
+# s=x+y
+# print("The summation of the two digits of the number is:\n ",s)
 ####################################
-first_digit = two_digit_number[0]
-second_digit = two_digit_number[1]
-print(second_digit+first_digit)
-print = (int(second_digit)+int(first_digit))
+# first_digit = two_digit_number[0]
+# second_digit = two_digit_number[1]
+# print(second_digit+first_digit)
+# print = (int(second_digit)+int(first_digit))
 ####################################
 
 
@@ -53,7 +53,7 @@ print = (int(second_digit)+int(first_digit))
 # a=float(weight)
 # bmi=a/(b*b)
 # print(int(bmi))
-#sol in that video
+# sol in that video
 # bmi = int(weight) / float(height) **2
 
 
@@ -95,7 +95,7 @@ print = (int(second_digit)+int(first_digit))
 # days=age_left*365
 # weeks=age_left*52
 # months=age_left*12
-#
+
 # print(f"You have {days} days, {weeks} weeks, and {months} months left.")
 
 

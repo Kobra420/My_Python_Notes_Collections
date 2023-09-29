@@ -135,9 +135,84 @@
                         print = (int(second_digit)+int(first_digit))<br>
                         ####################################<br><br>
                     </p>
-                </div>
+                
                 <img src="../assets/angela/assg5.png" alt="Assignment5_image"> <br>
                 <img src="../assets/angela/assg5a.png" alt="Assignment5_output_image"><br>
+
+                <p>
+                    <b>ASSIGNMENT 6</b><br>
+                    # Write a program that calculates the Body Mass Index (BMI) from a user's weight and height.<br>
+                    # The BMI is a measure of some's weight taking into account their height.<br>
+                    # e.g. If a tall person and a short person both weigh the same amount, the short person is usually more overweight.<br>
+                    # The BMI is calculated by dividing a person's weight (in kg) by the square of their height (in m):<br>
+                    #######################<br>
+                    # Example Input<br>
+                    # weight = 80<br>
+                    # height = 1.75<br>
+                    # Example Output<br>
+                    # 80 ÷ (1.75 x 1.75) = 26.122448979591837<br>
+                    # 26<br>
+                    ########################<br>
+                    # f=15.22<br>
+                    # print(int(f))<br>
+                    <div></div>
+                    # # 🚨 Don't change the code below 👇<br>
+                    height = input("enter your height in m: ")<br>
+                    weight = input("enter your weight in kg: ")<br>
+                    # # 🚨 Don't change the code above 👆<br><br>
+
+                    #Write your code below this line 👇<br>
+                    b=float(height)<br>
+                    a=float(weight)<br>
+                    bmi=a/(b*b)<br>
+                    print(int(bmi))<br>
+                    # sol in that video<br>
+                    bmi = int(weight) / float(height) **2<br>
+                </p>
+                <img src="../assets/angela/assg6.png" alt="Assignment6_image"> <br>
+                <img src="../assets/angela/assg6a.png" alt="Assignment6_output_image"> <br> <br>
+                <p>
+                    <b>ASSIGNMENT 7</b><br>
+                    # Create a program using maths and f-Strings that tells us<br>
+                    # how many days, weeks, months we have left if we live until 90 years old.<br> <br>
+                    
+                    # It will take<br>
+                    # your current age as the input and output a message with our time left in this format:<br>
+                    # You have x days, y weeks, and z months left.<br> <br>
+
+                    # Where x, y and z are replaced with the actual calculated numbers.<br>
+                    # Warning your output should match the Example Output format exactly,<br>
+                    # even the positions of the commas and full stops.<br> <br>
+                    
+                    # Example Input<br>
+                    # 56<br>
+                    # Example Output<br>
+                    # You have 12410 days, 1768 weeks, and 408 months left.<br> <br>
+
+                    #f strings example<br>
+                    # val = 'Geeks'<br>
+                    # print(f"{val}for{val} is a portal for {val}.")<br> <br>
+                    
+                    # name = 'Tushar'<br>
+                    # age = 23<br>
+                    # print(f"Hello, My name is {name} and I'm {age} years old.")<br> <br>
+                    <div></div>
+                    # # 🚨 Don't change the code below 👇<br>
+                    age = input("What is your current age?")<br>
+                    # # 🚨 Don't change the code above 👆<br> <br>
+                    
+                    # #Write your code below this line 👇<br>
+                    a=int(age)<br>
+                    age_left=90-a<br>
+                    days=age_left*365<br>
+                    weeks=age_left*52<br>
+                    months=age_left*12<br> <br>
+
+                    print(f"You have {days} days, {weeks} weeks, and {months} months left.") <br>
+                </p>
+                <img src="../assets/angela/assg7.png" alt="Assignment7_image"> <br>
+                <img src="../assets/angela/assg7a.png" alt="Assignment7_output_image"> <br>
+            </div>
             </main>
         </header>
         
