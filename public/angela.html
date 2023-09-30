@@ -104,6 +104,7 @@
 
         <header>
             <h2 id="project_nameD2">Day 2 - Project Assignments</h2> <br>
+        </header>
             <main>
                 <h3>The Project Details</h3>
                 <div id="code1">
@@ -214,7 +215,96 @@
                 <img src="../assets/angela/assg7a.png" alt="Assignment7_output_image"> <br>
             </div>
             </main>
+        <header>
+            <h2>Day 3 - Project Assignments</h2>
         </header>
+            <main>
+                <h3>Neccesary functions required for Project</h3>
+                <div id="code2">
+                    <p>
+                        <b>ASSIGNMENT 8</b> <br>
+                        # Write a program that works out whether if a given number is an odd or even number. <br>
+                        # Even numbers can be divided by 2 with no remainder. <br>
+                        # e.g. 86 is even because 86 ÷ 2 = 43 <br>
+                        # 43 does not have any decimal places. Therefore, the division is clean. <br>
+                        # e.g. 59 is odd because 59 ÷ 2 = 29.5 <br>
+                        # 29.5 is not a whole number, it has decimal places. Therefore, there is a remainder of 0.5, so the division is not clean. <br>
+                        # The modulo is written as a percentage sign (%) in Python. It gives you the remainder after a division. <br>
+                        # e.g. 6 ÷ 2 = 3 with no remainder. <br>
+                        # therefore: 6 % 2 = 0 <br>
+                        # 5 ÷ 2 = 2 x 2 + 1, remainder is 1. <br>
+                        # therefore: 5 % 2 = 1 <br>
+                        # 14 ÷ 4 = 3 x 4 + 2, remainder is 2. <br>
+                        # therefore: 14 % 4 = 2 <br>
+                        # Warning your output should match the Example Output format exactly, even the positions of the commas and full stops. <br>
+                        # Example Input 1 <br>
+                        # 43 <br>
+                        # Example Output 1 <br>
+                        # This is an odd number. <br>
+                        # Example Input 2 <br>
+                        # 94 <br>
+                        # Example Output 2 <br>
+                        # This is an even number. <br> <br>
+
+                        <div></div>
+                        # # 🚨 Don't change the code below 👇 <br>
+                        # number = int(input("Which number do you want to check? ")) <br>
+                        # # 🚨 Don't change the code above 👆 <br><br>
+                        # #Write your code below this line 👇 <br>
+                        # n=int(number) <br>
+                        # z=n%2 <br>
+                        # if z==0: <br>
+                        #     print("This is an even number.") <br>
+                        # else: <br>
+                        # print("This is an odd number.") <br> <br>
+                    </p>
+                    <img src="../assets/angela/assg8.png" alt="Assignment8_image"> <br> 
+                    <img src="../assets/angela/assg8a.png" alt="Assignment8_output_image"> <br>
+                    <p>
+                        <b>ASSIGNMENT 9</b> <br>
+                        # Write a program that works out whether if a given number is an odd or even number. <br>
+                        # Write a program that interprets the Body Mass Index (BMI) based on a user's weight and height. <br>
+                        # It should tell them the interpretation of their BMI based on the BMI value. <br>
+                        # Under 18.5 they are underweight <br>
+                        # Over 18.5 but below 25 they have a normal weight <br>
+                        # Over 25 but below 30 they are slightly overweight <br>
+                        # Over 30 but below 35 they are obese <br>
+                        # Above 35 they are clinically obese. <br>
+                        # The BMI is calculated by dividing a person's weight (in kg) by the square of their height (in m): <br>
+                        # Warning you should round the result to the nearest whole number. <br>
+                        # The interpretation message needs to include the words in bold from the interpretations above. <br>
+                        # e.g. underweight, normal weight, overweight, obese, clinically obese. <br>
+                        # Example Input <br>
+                        # weight = 85 <br>
+                        # height = 1.75 <br>
+                        # Example Output <br>
+                        # 85 ÷ (1.75 x 1.75) = 27.755102040816325 <br>
+                        # Your BMI is 28, you are slightly overweight. <br> <br>
+                        <div></div>
+                        # 🚨 Don't change the code below 👇
+                    height = float(input("enter your height in m: ")) <br>
+                    weight = float(input("enter your weight in kg: ")) <br>
+                    # 🚨 Don't change the code above 👆 <br>
+                                         <br>
+                    # Write your code below this line 👇 <br>
+                    bmi1 = (weight // (height ** 2)) <br>
+                    print(f"Actual bmi:{bmi1}") <br>
+                    bmi = round(bmi1) <br>
+                    if bmi &lt; 18.5: <br>
+                        print(f"Your BMI is {bmi}, you are underweight") <br>
+                    elif bmi &lt; 25: <br>
+                        print(f"Your BMI is {bmi}, you have a normal weight") <br>
+                    elif bmi &lt; 30: <br>
+                        print(f"Your BMI is {bmi}, you are slightly overweight") <br>
+                    elif bmi &lt; 35: <br>
+                        print(f"Your BMI is {bmi}, you are obese") <br>
+                    else: <br>
+                        print(f"Your BMI is {bmi}, you are clinically obese") <br>
+                    </p>
+                    <img src="../assets/angela/assg9.png" alt="Assignment9_image"> <br>
+                    <img src="../assets/angela/assg9a.png" alt="Assignment9__output_image"> <br>
+                </div>
+            </main>
         
                 <div id="code0">
                     <ul>

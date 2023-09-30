@@ -79,6 +79,13 @@ h3{
     font-weight: 600;
 }
 
+#code2{
+    font-family: 'Martian Mono', monospace;
+    font-size: 15px;
+    color: #016A70;
+    font-weight: 600;
+}
+
 p{
     font-family: 'Chakra Petch', sans-serif;
     font-size: 20px;
