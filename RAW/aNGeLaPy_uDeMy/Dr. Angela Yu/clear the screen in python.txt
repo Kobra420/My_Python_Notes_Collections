@@ -1,1 +1,0 @@
-https://www.codingninjas.com/studio/library/how-to-clear-a-screen-in-python
