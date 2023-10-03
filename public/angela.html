@@ -314,6 +314,56 @@
                     </p>
                     <img src="../assets/angela/D3_leap_year_image.png" alt="D3_leap_year_image"> <br>
                     <img src="../assets/angela/D3_leap_year_output_image.png" alt="D3_leap_year_output_image"><br>
+                    <p>
+                        <b>Game of Choices</b> <br> <br>
+                        <b>game_of_choice_art.py</b><br>
+                        <div></div>
+                        created the art file to simplyfy the process of the game.<br>
+                        used ascii arts from internet to beautify the game. <br>
+                        Here is the link below. <br>
+                        <a href="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/100 Days of Code The Complete Python Pro Bootcamp for 2023/d3/game_of_choice_art.py"> game_of_choice_art.py</a><br> <br>
+                        The Code:- <br><br>
+                        import game_of_choice_art <br>
+                        import time <br>
+
+                        print("\n\n\nWelcome to Treasure Island.\n\n\n") <br>
+                        print(game_of_choice_art.welcome) <br>
+                        print("\n\n\nYour mission is to find the treasure.\n\n\n") <br>
+                        time.sleep(10) <br>
+                        print('You\'re at the cross road, where do you want to go? Type "Left" or "Right". \n\n') <br>
+                        print(game_of_choice_art.cross_road) <br>
+                        time.sleep(3) <br>
+                        selection1 = input("Enter Choice").lower() <br>
+
+                        if selection1 == "left": <br>
+                            print(f'''You\'ve come to a River of Honey.\n There is an island in the middle of the lake.  <br>
+                                \nType "wait" to wait for a boat.\n{game_of_choice_art.wait}\n Type "swim" to swim across.\n{game_of_choice_art.swim}\n''') <br>
+                            selection2 = input().lower() <br>
+                            if selection2 == "wait": <br>
+                                print(game_of_choice_art.wait) <br>
+                                time.sleep(5) <br>
+                                print(game_of_choice_art.boat) <br>
+                                time.sleep(6) <br>
+                                print(f'\n\nYou arrive at the island unharmed.\n\n There is a house with 3 gates.\n\tOne red, one yellow and one blue. \nWhich colour do you choose?') <br>
+                                print(f"{game_of_choice_art.red}\n{game_of_choice_art.Or}\n{game_of_choice_art.yellow}") <br>
+                                print(f"\n{game_of_choice_art.Or}\n{game_of_choice_art.blue}") <br>
+                                selection3 = input().lower() <br>
+                                if selection3 == "yellow": <br>
+                                    time.sleep(5) <br>
+                                    print('You found the treasure! You Win!') <br>
+                                elif selection3 == "red": <br>
+                                    print(f'You\'re being burned by fire..\n {game_of_choice_art.hell}{time.sleep(3)}\nGame Over.\n\n {time.sleep(3)}{game_of_choice_art.dead}') <br>
+                                elif selection3 == "blue": <br>
+                                    print(f'Wrong Turn !! You\'ve become a prey to the beasts!!\n\t\n{game_of_choice_art.beast}{time.sleep(5)}\n Game Over.\n\n {time.sleep(3)}{game_of_choice_art.dead}') <br>
+                                else: <br>
+                                    print('mentioned colour doesn\'t exists.\n  Game Over.\n\n {time.sleep(3)}{game_of_choice_art.dead}')             <br>
+                            else: <br>
+                                print(game_of_choice_art.swim) <br>
+                                time.sleep(5) <br>
+                                print(f'You\'ve got attacked by an angry Shark. Game Over.\n\n {time.sleep(3)}{game_of_choice_art.dead}') <br>
+                    </p>
+                    <img src="../assets/angela/Game_of_choice.png" alt="Game_of_choice_Image"> <br>
+                    <img src="../assets/angela/Game_of_choice_output.png" alt="Game_of_choice_output"> <br>
                 </div>
             </main>
         <header>
