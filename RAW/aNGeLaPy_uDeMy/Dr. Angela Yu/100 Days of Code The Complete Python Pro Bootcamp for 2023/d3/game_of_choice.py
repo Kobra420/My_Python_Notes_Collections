@@ -11,7 +11,8 @@ time.sleep(3)
 selection1 = input("Enter Choice").lower()
 
 if selection1 == "left":
-    print(f'You\'ve come to a River of Honey.\n There is an island in the middle of the lake. \nType "wait" to wait for a boat.\n{game_of_choice_art.wait}\n Type "swim" to swim across.\n{game_of_choice_art.swim}\n')
+    print(f'''You\'ve come to a River of Honey.\n There is an island in the middle of the lake. 
+          \nType "wait" to wait for a boat.\n{game_of_choice_art.wait}\n Type "swim" to swim across.\n{game_of_choice_art.swim}\n''')
     selection2 = input().lower()
     if selection2 == "wait":
         print(game_of_choice_art.wait)
@@ -34,4 +35,4 @@ if selection1 == "left":
     else:
         print(game_of_choice_art.swim)
         time.sleep(5)
-        print('You\'ve got attacked by an angry Shark. Game Over.\n\n {time.sleep(3)}{game_of_choice_art.dead}')
+        print(f'You\'ve got attacked by an angry Shark. Game Over.\n\n {time.sleep(3)}{game_of_choice_art.dead}')
