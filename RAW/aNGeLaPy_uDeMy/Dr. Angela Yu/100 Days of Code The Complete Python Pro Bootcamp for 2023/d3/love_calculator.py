@@ -1,10 +1,10 @@
-# 🚨 Don't change the code below 👇
-print("Welcome to the Love Calculator!")
+# # 🚨 Don't change the code below 👇
+# print("Welcome to the Love Calculator!")
 name1 = input("What is your name? \n")
 name2 = input("What is their name? \n")
-# 🚨 Don't change the code above 👆
+# # 🚨 Don't change the code above 👆
 
-#Write your code below this line 👇
+# #Write your code below this line 👇
 lower_name1 = name1.lower()
 lower_name2 = name2.lower()
 true1 = lower_name1.count("t") + lower_name1.count("r") + lower_name1.count("u") + lower_name1.count("e")
@@ -22,14 +22,14 @@ else:
     print(f"Your score is {love_score}.")
 
 
-#Madam LU's Code
+# Madam LU's Code
 # 🚨 Don't change the code below 👇
 # print("Welcome to the Love Calculator!")
 # name1 = input("What is your name? \n")
 # name2 = input("What is their name? \n")
 # 🚨 Don't change the code above 👆
 
-#Write your code below this line 👇
+# Write your code below this line 👇
 
 # combined_names = name1 + name2
 # lower_names = combined_names.lower()
@@ -38,15 +38,15 @@ else:
 # u = lower_names.count("u")
 # e = lower_names.count("e")
 # first_digit = t + r + u + e
-#
+
 # l = lower_names.count("l")
 # o = lower_names.count("o")
 # v = lower_names.count("v")
 # e = lower_names.count("e")
 # second_digit = l + o + v + e
-#
+
 # score = int(str(first_digit) + str(second_digit))
-#
+
 # if (score < 10) or (score > 90):
 #   print(f"Your score is {score}, you go together like coke and mentos.")
 # elif (score >= 40) and (score <= 50):
