@@ -5,7 +5,6 @@
     margin: 4px;
     box-sizing: border-box;
     background-color: #F4EEE0;
-    
     border: 15em;
 }
 
@@ -30,7 +29,6 @@ hr{
 h1{
     font-family: 'Shrikhand', cursive;
     color: #321E1E;
-    
     font-size: 35px;
     font-weight: 900;
     background-image: url("../assets/Angela/backgroundimage.jpg");
@@ -62,16 +60,21 @@ h3{
 
 #code0{
     font-family: 'Martian Mono', monospace;
-    font-size: 15px;
+    font-size: 1px;
     color: #016A70;
-    font-weight: 600;
+    font-weight: 100;
 }
 
 p{
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 2px;
+    font-size: 0%;
     color: #451952;
     font-weight: 650;
+}
+
+b{
+    font-size: x-large;
+    color: seagreen;
 }
 
 footer{
@@ -83,18 +86,23 @@ footer{
 
 #anime{
     width: 200px;
-  height: 200px;
-  background-image: url("../assets/Angela/backgroundimage.png") ; 
-  enable-background: accumulate;
-  position: relative;
-  animation: mymove 3s infinite cubic-bezier(.395, 0.9, 0.985, 0.22);
-  background-position-x: center;
-  background-position-y: center;
-  image-resolution: 5px;
-  image-rendering: pixelated;
+    height: 200px;
+    background-image: url("../assets/Angela/backgroundimage.png") ; 
+    enable-background: accumulate;
+    position: relative;
+    animation: mymove 3s infinite cubic-bezier(.395, 0.9, 0.985, 0.22);
+    background-position-x: center;
+    background-position-y: center;
+    image-resolution: 5px;
+    image-rendering: pixelated;
 }
 
 @keyframes mymove {
     from {left: 1000px;}
     to {left: 0px;}
-  }
+    }
+
+#bold{
+    font-weight: 900;
+    color :#2F3832;
+    }

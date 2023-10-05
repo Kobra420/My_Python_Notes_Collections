@@ -23,10 +23,11 @@
         <div id="code0">
             <h3>ASSIGNMENT 1</h3>
             <p> After you have written your code, you should run your program 
-                and it should print the following:<br>
-                 Day 1 - Python Print Function<br><br>
+                and it should print the following:
+                <p id="bold">Day 1 - Python Print Function<br></p>
+                
                 <div></div>
-               
+
                 The function is declared like this:<br>
                 print('what to print')<br>
                 print('Day 1 - Python Print Function','The function is declared like this:',"print('what to print')",sep='\n')<br>
@@ -48,7 +49,7 @@
                 <img src="../assets/angela/assg2a.png" alt="assignment2_Output_image"> <br>
             </p>
             <h3>ASSIGNMENT 3</h3>
-            <p><div></div>
+            <p>
                 #Write a program that prints the number of characters in a user's name. <br>
                 # You might need to Google for a function that calculates the length of a string. <br>
                 #Warning. Your program should work for different inputs. e.g. any name that you input. <br>
@@ -212,7 +213,7 @@
                 <div id="code2">
                     <h3>ASSIGNMENT 8</h3>
                     <p>
-                        # Write a program that works out whether if a given number is an odd or even number. <br>
+                        <b># Write a program that works out whether if a given number is an odd or even number. </b><br>
                         # Even numbers can be divided by 2 with no remainder. <br>
                         # e.g. 86 is even because 86 ÷ 2 = 43 <br>
                         # 43 does not have any decimal places. Therefore, the division is clean. <br>
@@ -250,6 +251,7 @@
                     <img src="../assets/angela/assg8.png" alt="Assignment8_image"> <br> 
                     <img src="../assets/angela/assg8a.png" alt="Assignment8_output_image"> <br>
                     <h3>ASSIGNMENT 9</h3>
+                    <h5> ODD EVEN NUMBER:- </h5>
                     <p>
                         # Write a program that works out whether if a given number is an odd or even number. <br>
                         # Write a program that interprets the Body Mass Index (BMI) based on a user's weight and height. <br>
@@ -269,6 +271,8 @@
                         # Example Output <br>
                         # 85 ÷ (1.75 x 1.75) = 27.755102040816325 <br>
                         # Your BMI is 28, you are slightly overweight. <br> <br>
+                        The Flowchart :- <br> <br>
+                        <img src="../assets/angela/bmi2.jpg" height="801" width="801" alt="">
                         <div></div>
                         # 🚨 Don't change the code below 👇
                         height = float(input("enter your height in m: ")) <br>
@@ -293,7 +297,13 @@
                     <img src="../assets/angela/assg9.png" alt="Assignment9_image"> <br>
                     <img src="../assets/angela/assg9a.png" alt="Assignment9__output_image"> <br>
                     <p>
-                        <b>Leap Year</b> <br>
+                        <b>Leap Year</b> <br><br>
+                        # Write a program that uses nested if statements to determine if a year is a leap year. <br>
+                        # A year is a leap year if it is divisible by 4, but not by 100, unless it is also divisible by 400. <br>
+                        # For example, 1997 is not a leap year, but 1996 is. <br> <br>
+                        The Flowchart :- <br><br>
+                        <img src="../assets/angela/leap_flow.png" height="501" width="601" alt="leapYear Flowchart image1"> <br>
+                        <img src="../assets/angela/leapYear.png" alt="leapYear Flowchart image2">
                         <div></div>
                         year = int(input("Enter a year: ")) <br>
                         if year % 4 == 0 and year % 100 != 0 or year % 400 == 0: <br>
@@ -308,12 +318,14 @@
                         <b>About game_of_choice_art.py</b><br>
                         <div></div>
                         created the art file to simplyfy the process of the game.<br>
-                        used ascii arts from internet to beautify the game. <br>
+                        used ascii arts from internet to beautify the game. <br><br>
                         Here is the link below. <br>
                         <a href="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/100 Days of Code The Complete Python Pro Bootcamp for 2023/d3/game_of_choice_art.py"> game_of_choice_art.py</a><br>
                         <a href="https://emojicombos.com/crossroad-text-art">ascii art source1</a><br>
                         <a href="https://ascii.co.uk/">ascii art source2</a><br>
-                        <a href="https://www.asciiart.eu/vehicles/other">ascii art source3</a> <br>
+                        <a href="https://www.asciiart.eu/vehicles/other">ascii art source3</a> <br> <br>
+                        The Flowchart :- <br> <br>
+                        <img src="../assets/angela/choose_game.png" height="501" width="501" alt="image of Flowchart of the game of choices">
                         The Code:- <br><br>
                         import game_of_choice_art <br>
                         import time <br>
@@ -363,6 +375,7 @@
                         by counting the words "True Love" in their names". <br>
                         Here, is the code for the project is given below.
                     </p>
+                    
                     <div></div>
                     # 🚨 Don't change the code below 👇 <br>
                     print("Welcome to the Love Calculator!") <br>
@@ -420,11 +433,95 @@
                       print(f"Your score is {score}, you are alright together.") <br>
                     else: <br>
                       print(f"Your score is {score}.") <br>
-                </div>
+                
                     <img src="../assets/angela/love_calc_me.png" alt="my_code_love_calc"> <br>
                     <img src="../assets/angela/love_calc_lu.png" alt="Love cal code from Dr Angela"> <br>
                     <img src="../assets/angela/love_calc_output.png" alt="love_calc_output"> <br>
+                    
+                    <h2>Pizza Bill Calculator</h2>
+                    <p>Here is a code of Calculationg Pizza Price
+                        <br>
+                        Flowchart :- <br><br>
+                        <img src="../assets/angela/pizza_dia_picture.png" alt="Pizza Flowchart image">
+                    </p>
+                    <div></div>
+                    # 🚨 Don't change the code below 👇  <br>
+                    print("Welcome to Python Pizza Deliveries!")  <br>
+                    size = input("What size pizza do you want? S, M, or L ")  <br>
+                    add_pepperoni = input("Do you want pepperoni? Y or N ")  <br>
+                    extra_cheese = input("Do you want extra cheese? Y or N ")  <br>
+                    # 🚨 Don't change the code above 👆  <br>
+  <br>
+                    # Write your code below this line 👇  <br>
+                    if size == "S":  <br>
+                        bill = 15  <br>
+                        if add_pepperoni == "Y":  <br>
+                            final_bill = bill + 2  <br>
+                        if add_pepperoni == "N":  <br>
+                            final_bill = bill + 0  <br>
+                        if extra_cheese == "Y":  <br>
+                            final_bill += 1  <br>
+                        if extra_cheese == "N":  <br>
+                            final_bill += 0  <br>
+                        print(f"Your final bill is: ${final_bill}.")  <br>
+                    elif size == "M":  <br>
+                        bill = 20  <br>
+                        if add_pepperoni == "Y":  <br>
+                            final_bill = bill + 3  <br>
+                        if add_pepperoni == "N":  <br>
+                            final_bill = bill + 0  <br>
+                        if extra_cheese == "Y":  <br>
+                            final_bill += 1  <br>
+                        if extra_cheese == "N":  <br>
+                            final_bill += 0  <br>
+                        print(f"Your final bill is: ${final_bill}.")  <br>
+                    elif size == "L":  <br>
+                        bill = 25  <br>
+                        if add_pepperoni == "Y":  <br>
+                            final_bill = bill + 3  <br>
+                        if add_pepperoni == "N":  <br>
+                            final_bill = bill + 0  <br>
+                        if extra_cheese == "Y":  <br>
+                            final_bill += 1  <br>
+                        if extra_cheese == "N":  <br>
+                            final_bill += 0  <br>
+                        print(f"Your final bill is: ${final_bill}.")  <br>
+                    else:  <br>
+                        print("Please enter valid inputs as mentioned above.")  <br>
+                <p>Madam Yu's Code</p>
+                <div></div>
+                # 🚨 Don't change the code below 👇 <br>
+                print("Welcome to Python Pizza Deliveries!") <br>
+                size = input("What size pizza do you want? S, M, or L ") <br>
+                add_pepperoni = input("Do you want pepperoni? Y or N ") <br>
+                extra_cheese = input("Do you want extra cheese? Y or N ") <br>
+                # 🚨 Don't change the code above 👆 <br>
+ <br>
+                # Write your code below this line 👇 <br>
+ <br>
+                bill = 0 <br>
+ <br>
+                if size == "S": <br>
+                    bill += 15 <br>
+                elif size == "M": <br>
+                    bill += 20 <br>
+                else: <br>
+                    bill += 25 <br>
+ <br>
+                if add_pepperoni == "Y": <br>
+                    if size == "S": <br>
+                        bill += 2 <br>
+                    else: <br>
+                        bill += 3 <br>
+ <br>
+                if extra_cheese == "Y": <br>
+                    bill += 1 <br>
+ <br>
+                print(f"Your final bill is: ${bill}.") <br>
+                 <br>
+                </div>
             </main>
+        
         <header>
             <h2>Day 4 - Project Assignments</h2>
         </header>
