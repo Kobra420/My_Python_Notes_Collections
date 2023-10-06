@@ -68,6 +68,9 @@ h3{
     font-size: 15px;
     color: #016A70;
     font-weight: 600;
+    padding: 8px;
+    margin: 10px;
+    margin: 10%;
 }
 
 #code1{
@@ -75,6 +78,9 @@ h3{
     font-size: 15px;
     color: #016A70;
     font-weight: 600;
+    padding: 8px;
+    margin: 10px;
+    margin: 10%;
 }
 
 #code2{
@@ -82,8 +88,20 @@ h3{
     font-size: 15px;
     color: #016A70;
     font-weight: 600;
+    padding: 8px;
+    margin: 10px;
+    margin: 10%;
 }
 #code3{
+    font-family: 'Martian Mono', monospace;
+    font-size: 15px;
+    color: #016A70;
+    font-weight: 600;
+    padding: 8px;
+    margin: 10px;
+    margin: 10%;
+}
+.code{
     font-family: 'Martian Mono', monospace;
     font-size: 15px;
     color: #016A70;
@@ -95,6 +113,13 @@ p{
     font-size: 20px;
     color: #451952;
     font-weight: 500;
+}
+
+ol{
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 20px;
+    color: #451952;
+    font-weight: 700;
 }
 
 footer{
