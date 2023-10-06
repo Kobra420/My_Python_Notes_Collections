@@ -564,17 +564,37 @@
                             To use the random module, you need to import it: <br>
                             <div></div>
                             <img src="../assets/angela/import_random_code.png" alt="import_random_code_image"> <br>
-                            
+
                             <h3>Generating Random Numbers:</h3>
                             <ol>
-                                <li>Random Float between 0 and 1:</li> <br>
+                                <li>Random Float between 0 and 1:</li>
                                     <p> <b class="code">random.random():</b>Returns a random float between 0 (inclusive) and 1 (exclusive).</p>
-                                <li>Random Integer in a Range:</li> <br>
-                                    <p> <b class="code"> random.randint(a, b):</b> Returns a random integer between a and b, inclusive. </p>
+                                <li>Random Integer in a Range:</li>
+                                    <p> <b class="code"> random.randint(a, b):</b>Returns a random integer between a and b, inclusive. </p>
                                 <li>Random Floating-Point Number in a Range:</li>
                                     <p> <b class="code">random.uniform(a, b):</b>Returns a random float between a and b, where a and b can be any floating-point numbers.</p>
                             </ol>
+                            <h3>Random Sequences:</h3>
+                            <ol>
+                                <li>Random Element from a Sequence:</li>
+                                    <p> <b class="code">random.choice(sequence):</b>Returns a random element from the given sequence (e.g., list, tuple, string).</p>
+                                <li>Shuffling a Sequence In-Place:</li>
+                                    <p> <b class="code">random.shuffle(sequence):</b>Shuffles the elements of the given sequence in-place.</p>
+                                <li>Random Sample from a Sequence:</li>
+                                    <p> <b class="code">random.sample(sequence, k):</b>Returns a list of k unique random elements from the given sequence.</p>
+                            </ol>
+                            <h3>Randomness Control:</h3>
+                            <ol>
+                                <li>Setting the Random Seed:</li>
+                                    <p><b class="code">random.seed(seed):</b>Initializes the random number generator with a specific seed value.<br>
+                                        Using the same seed value will produce the same sequence of random numbers, which is useful for reproducibility.</p>
+                                <li>Random Integer from a Range with a Step:</li>
+                                    <p><b class="code">random.randrange(start, stop, step):</b>Returns a random integer from the specified range with the given step size.</p>
+                            </ol>
+                            <h3>Random Distributions:</h3>
+
                         </p>
+                        <img src="../assets/angela/random_module code_image.png" alt="">
                     <h3>banking_roulette</h3>
                     <p>
                         This code is a mini project.<br>
