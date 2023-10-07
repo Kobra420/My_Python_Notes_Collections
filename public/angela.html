@@ -592,9 +592,71 @@
                                     <p><b class="code">random.randrange(start, stop, step):</b>Returns a random integer from the specified range with the given step size.</p>
                             </ol>
                             <h3>Random Distributions:</h3>
+                            <p>
+                                Random distributions are mathematical functions or models that describe the likelihood of different outcomes in a random process.
+                                In Python, the <b class="code">random</b> module provides functions to generate random numbers that follow specific probability distributions. <br>
+                                Here are some common random distributions available in the <b class="code">random</b> module: <br>
+                            </p>
+                                <ol>
+                                    <li>Random Gaussian (Normal) Distribution:
+                                        <ul><li>
+                                            <p><b class="code">random.gauss(mu, sigma):</b> Returns a random float from a Gaussian (normal) distribution with the specified mean <b class="code">(mu)</b> and standard deviation <b class="code">(sigma)</b> .</p>
+                                        </li>
+                                        <li><p>The normal distribution, also known as the Gaussian distribution, is a bell-shaped curve. It's characterized by two parameters: mean <b class="code">(mu)</b> and standard deviation <b class="code">(sigma)</b>.</p></li>
+                                        <li><p>Many natural phenomena follow a normal distribution.</p></li>    
+                                        <li><p>Example: <b class="code">random.gauss(0, 1)</b> generates random numbers from a standard normal distribution with mean 0 and standard deviation 1.</p></li>
+                                    </ul>
+                                    </li>
+
+                                    <li><b>Uniform Distribution </b><b class="code">(random.random()):</b>
+                                        <ul>
+                                            <li><p>The uniform distribution generates random numbers that are equally likely to occur within a specified range.</p></li>
+                                            <li><p>It's often used when you want each possible outcome to have the same probability of occurring.</p></li>
+                                            <li><p>Example: <b class="code">random.random()</b> generates random floats between 0 and 1.</p></li>
+                                        </ul>
+                                    </li>
+                                    <li><p><b>Binomial Distribution <b class="code">random.randint(0, 1)</b> or <b class="code">random.getrandbits(1)</b>:</b></p>
+                                        <ul>
+                                            <li><p>The binomial distribution models the number of successful outcomes in a fixed number of trials, where each trial has only two possible outcomes (usually success or failure).</p></li>
+                                            <li><p>It's defined by two parameters: n (the number of trials) and p (the probability of success on each trial).</p></li>
+                                            <li><p>Example: Simulating a coin toss, where p=0.5.<b class="code">n=1</b> and <b class="code">p=0.5</b></p></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p><b>Poisson Distribution:</b><b class="code"> (random.poisson(lam))</b></p>
+                                        <ul>
+                                            <li><p>The Poisson distribution models the number of events occurring in a fixed interval of time or space.</p></li>
+                                            <li><p>It's defined by a single parameter lam (lambda), which represents the average rate of events.</p></li>
+                                            <li><p>Example: Modeling the number of emails received in an hour, where <b class="code">lam</b> is the average rate.</p></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p><b>Exponential Distribution:</b><b class="code"> (random.expovariate(lamd))</b></p>
+                                        <ul>
+                                            <li><p>The exponential distribution models the time between events in a Poisson process, where events occur at a constant average rate.</p></li>
+                                            <li><p>It's defined by a parameter <b class="code">lambd</b>(lambda), which represents the average rate of events.</p></li>
+                                            <li><p>Example: Modeling the time between arrivals of customers at a store.</p></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p><b>Lognormal Distribution:</b><b class="code"> (random.lognormvariate(mu, sigma))</b></p>
+                                        <ul>
+                                            <li><p>The log-normal distribution is used to model data that is skewed and cannot be described by a normal distribution.</p></li>
+                                            <li><p>It's defined by two parameters: mu (the mean of the natural logarithm of the data) and sigma (the standard deviation of the natural logarithm of the data).</p></li>
+                                            <li><p>Example: Modeling the distribution of stock prices.</p></li>
+                                        </ul>
+                                    </li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ol>
 
                         </p>
                         <img src="../assets/angela/random_module code_image.png" alt="">
+                        <img src="../assets/angela/random_module code_output_image.png" alt="">
+                        <p>Keep in mind that while the <b class="code">random</b> module provides pseudo-random numbers,
+                             it's deterministic when initialized with the same seed value. For cryptographic purposes, you should use the <b class="code">secrets</b> module,
+                             which is designed for generating cryptographically secure random numbers.</p>
                     <h3>banking_roulette</h3>
                     <p>
                         This code is a mini project.<br>
@@ -644,6 +706,8 @@
                         <img src="../assets/angela/HeadTail_code.png" alt="The Image of the mini project head tail code"> <br>
                         <img src="../assets/angela/HeadTail_code2.png" alt="The Image of the mini project head tail 2"> <br>
                         <img src="../assets/angela/HeadTail_code_output.png" alt="The Image of the mini project head tail code output"> <br>
+
+
                 </div>
             </main>
         <header>
