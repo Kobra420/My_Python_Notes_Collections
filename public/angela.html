@@ -646,9 +646,14 @@
                                             <li><p>Example: Modeling the distribution of stock prices.</p></li>
                                         </ul>
                                     </li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
+                                    <li>
+                                        <p>Triangular Distribution<b class="code">(random.triangular(low, high, mode))</b>:</p>
+                                    </li>
+                                        <ul>
+                                            <li><p>The triangular distribution is defined by three parameters: low (the minimum value), high (the maximum value), and mode (the peak of the distribution).</p></li>
+                                        <li><p>It's often used when the exact shape of the distribution is unknown but bounded by a range.</p></li>
+                                        <li><p>Example: Modeling uncertainty in project completion time.</p></li>
+                                        </ul>
                                 </ol>
 
                         </p>
@@ -657,7 +662,111 @@
                         <p>Keep in mind that while the <b class="code">random</b> module provides pseudo-random numbers,
                              it's deterministic when initialized with the same seed value. For cryptographic purposes, you should use the <b class="code">secrets</b> module,
                              which is designed for generating cryptographically secure random numbers.</p>
-                    <h3>banking_roulette</h3>
+                    <h3>The import statement in Python</h3>
+                            <p>The import statement in Python is used to bring external modules or packages into your Python script.
+                                <br>
+                                Here are several important facts about the import statement and how it works: <br> <br>
+                            </p>
+                            <ol>
+                                <li>Module Import</li>
+                                <p>
+                                    The primary purpose of the import statement is to import external modules or Python files (also called modules) into your code. These modules contain functions, variables, and classes that can be reused in your program.
+                                </p>
+                                <li>Standard Library Modules</li>
+                                <p>
+                                    Python comes with a rich standard library that includes many pre-built modules for common tasks. These modules can be imported and used without any additional installation.
+                                </p>
+                                <li>Third-Party Modules:</li>
+                                <p>
+                                    In addition to the standard library, there is a vast ecosystem of third-party libraries and modules available in the Python Package Index (PyPI). These can be installed using package managers like pip and then imported into your code.
+                                </p>
+                                <li>import Syntax: </li>
+                                <p>
+                                    The basic syntax for importing a module is import module_name. For example, import math imports the math module.
+                                </p>
+                                <li>Alias with as:</li>
+                                <p>
+                                    You can assign an alias to a module when importing it. This is useful for making module names shorter or avoiding naming conflicts. For example, import math as m assigns the alias m to the math module.
+                                </p>
+                                <li>Importing Specific Items:</li>
+                                <p>
+                                    You can import specific functions, variables, or classes from a module using the from keyword. For example, from math import sqrt imports only the sqrt function from the math module.
+                                </p>
+                                <li>Wildcard Import: </li>
+                                <p>
+                                    While generally discouraged, you can use the * wildcard to import all items from a module. For example, from math import * imports all functions and variables from the math module.
+                                </p>
+                                <li>Module Search Path: </li>
+                                <p>
+                                    Python searches for modules in directories listed in the sys.path variable. This path includes the current directory and standard library locations. You can modify this path if needed.
+                                </p>
+                                <li>Relative Imports:</li>
+                                <p>
+                                    In package structures, you can use relative imports to import modules within the same package without specifying the full path.
+                                </p>
+                                <li>Circular Imports:</li>
+                                <p>
+                                    Circular imports (where modules import each other in a loop) should be avoided as they can lead to unexpected behavior. Proper organization of code can help prevent circular imports.
+                                </p>
+                                <li>__init__.py: </li>
+                                <p>
+                                    To treat a directory as a package and enable importing from it, it must contain an empty __init__.py file. This file can also contain initialization code.
+                                </p>
+                                <li>if __name__ == "__main__":</li>
+                                <p>
+                                    Often, modules are designed to be reusable, and they include code that should not run when imported. To prevent this code from running when the module is imported, it's common to use the if __name__ == "__main__": construct.
+                                </p>
+                                <li>Namespace:</li>
+                                <p>
+                                    Importing a module introduces a new namespace where the names defined in the module are accessible. To access items in the module, use dot notation, e.g., module_name.item_name.
+                                </p>
+                                <li>Dynamic Import</li>
+                                <p>
+                                    In some cases, you might need to import a module dynamically based on user input or other conditions. You can use functions like importlib.import_module() for dynamic imports.
+                                </p>
+                                <li>Performance Considerations</li>
+                                <p>
+                                    Importing large modules or using wildcard imports can have performance implications. It's generally recommended to import only what you need to keep code efficient.
+                                </p>
+                                <li>Error Handling:</li>
+                                <p>
+                                    If a module cannot be found or imported, an ImportError is raised. You can use try and except blocks to handle these errors gracefully.
+                                </p>
+                                <li>sys.modules: </li>
+                                <p>
+                                    Python caches imported modules in the sys.modules dictionary. This cache is used to avoid redundant imports and to ensure that imported modules are singletons.
+                                </p>
+                                <li>Package Structure:</li>
+                                <p>
+                                    In larger projects, organizing modules into packages (directories with __init__.py files) helps manage code and prevent naming conflicts.
+                                </p>
+                                <li>Re-importing: </li>
+                                <p>
+                                    Python only imports a module once per execution. Subsequent import statements for the same module reuse the already imported module.
+                                </p>
+                                <li>Importing from Parent Directories: </li>
+                                <p>
+                                    You can use relative imports to import modules from parent directories by using .. in the import statement.
+                                </p>
+                            </ol>
+                            <p>
+                                In summary, the import statement is a fundamental part of Python that enables code reuse, modularization, 
+                                and simplifies the access to a wide range of libraries and packages.
+                                Understanding how to use it effectively is essential for writing maintainable and efficient Python code
+                            </p>
+                    
+                    <h3>List opetations in Python:</h3>
+                            <p>
+                                Python offers a wide range of operations for working with lists, which are one of the most commonly used data structures in the language. <br>Below, I'll explain various list operations in detail without providing specific code examples: <br>
+                            </p>
+                            <ol>
+
+                            </ol>
+                            <img src="../assets/angela/List operaions 1.png" alt="">
+                            <img src="../assets/angela/List operaions 2.png" alt="">
+                            <img src="../assets/angela/List operaions 3.png" alt="">
+                            <img src="../assets/angela/List operaions 4.png" alt="">
+                    <h3>Banking_roulette</h3>
                     <p>
                         This code is a mini project.<br>
                         Roulette is a banking game, and all bets are placed against the bank—that is, the house, or the proprietor of the game. <br>
