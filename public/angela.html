@@ -912,6 +912,46 @@
                     <h3>Rock_Paper_Scissors :-</h3>
                     <a href="https://realpython.com/python-rock-paper-scissors/">realpython.com/python-rock-paper-scissors/</a>
                     <a href="https://www.geeksforgeeks.org/python-program-implement-rock-paper-scissor-game/">www.geeksforgeeks.org/python-program-implement-rock-paper-scissor-game/</a>
+
+                    example : <a href="https://thehelloworldprogram.com/python/python-game-rock-paper-scissors/">https://thehelloworldprogram.com/python/python-game-rock-paper-scissors/</a> <br>
+
+                    <pre class="language-python"><code class="language-python"><span class="token keyword">from</span> random <span class="token keyword">import</span> randint
+
+                        <span class="token comment">#create a list of play options</span>
+                        t <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Rock"</span><span class="token punctuation">,</span> <span class="token string">"Paper"</span><span class="token punctuation">,</span> <span class="token string">"Scissors"</span><span class="token punctuation">]</span>
+                        
+                        <span class="token comment">#assign a random play to the computer</span>
+                        computer <span class="token operator">=</span> t<span class="token punctuation">[</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+                        
+                        <span class="token comment">#set player to False</span>
+                        player <span class="token operator">=</span> <span class="token boolean">False</span>
+                        
+                        <span class="token keyword">while</span> player <span class="token operator">==</span> <span class="token boolean">False</span><span class="token punctuation">:</span>
+                        <span class="token comment">#set player to True</span>
+                            player <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Rock, Paper, Scissors?"</span><span class="token punctuation">)</span>
+                            <span class="token keyword">if</span> player <span class="token operator">==</span> computer<span class="token punctuation">:</span>
+                                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Tie!"</span><span class="token punctuation">)</span>
+                            <span class="token keyword">elif</span> player <span class="token operator">==</span> <span class="token string">"Rock"</span><span class="token punctuation">:</span>
+                                <span class="token keyword">if</span> computer <span class="token operator">==</span> <span class="token string">"Paper"</span><span class="token punctuation">:</span>
+                                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"You lose!"</span><span class="token punctuation">,</span> computer<span class="token punctuation">,</span> <span class="token string">"covers"</span><span class="token punctuation">,</span> player<span class="token punctuation">)</span>
+                                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"You win!"</span><span class="token punctuation">,</span> player<span class="token punctuation">,</span> <span class="token string">"smashes"</span><span class="token punctuation">,</span> computer<span class="token punctuation">)</span>
+                            <span class="token keyword">elif</span> player <span class="token operator">==</span> <span class="token string">"Paper"</span><span class="token punctuation">:</span>
+                                <span class="token keyword">if</span> computer <span class="token operator">==</span> <span class="token string">"Scissors"</span><span class="token punctuation">:</span>
+                                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"You lose!"</span><span class="token punctuation">,</span> computer<span class="token punctuation">,</span> <span class="token string">"cut"</span><span class="token punctuation">,</span> player<span class="token punctuation">)</span>
+                                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"You win!"</span><span class="token punctuation">,</span> player<span class="token punctuation">,</span> <span class="token string">"covers"</span><span class="token punctuation">,</span> computer<span class="token punctuation">)</span>
+                            <span class="token keyword">elif</span> player <span class="token operator">==</span> <span class="token string">"Scissors"</span><span class="token punctuation">:</span>
+                                <span class="token keyword">if</span> computer <span class="token operator">==</span> <span class="token string">"Rock"</span><span class="token punctuation">:</span>
+                                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"You lose..."</span><span class="token punctuation">,</span> computer<span class="token punctuation">,</span> <span class="token string">"smashes"</span><span class="token punctuation">,</span> player<span class="token punctuation">)</span>
+                                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"You win!"</span><span class="token punctuation">,</span> player<span class="token punctuation">,</span> <span class="token string">"cut"</span><span class="token punctuation">,</span> computer<span class="token punctuation">)</span>
+                            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"That's not a valid play. Check your spelling!"</span><span class="token punctuation">)</span>
+                            <span class="token comment">#player was set to True, but we want it to be False so the loop continues</span>
+                            player <span class="token operator">=</span> <span class="token boolean">False</span>
+                            computer <span class="token operator">=</span> t<span class="token punctuation">[</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span></code></pre>
+
                 </div>
             </main>
         <header>
