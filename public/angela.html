@@ -847,28 +847,60 @@
                                     <li><p>Lists can be concatenated using the + operator.</p></li>
                                     <li><p>You can repeat a list by multiplying it with an integer.</p></li>
                                 </ul>
-                                <li></li>
+                                <li>List Membership Testing:</li>
                                 <ul>
-                                    <li></li>
-                                    <li></li>
+                                    <li><p>The in and not in operators allow you to test if an element is present in a list, returning a Boolean value.</p></li>
                                 </ul>
-                                <li></li>
+                                <li>List Conversion:</li>
                                 <ul>
-                                    <li></li>
-                                    <li></li>
+                                    <li><p>You can convert other iterable objects, such as strings and tuples, into lists using the list() constructor.</p></li>
                                 </ul>
-                                <li></li>
+                                <li>List Operations Efficiency:</li>
                                 <ul>
-                                    <li></li>
-                                    <li></li>
+                                    <li><p>
+                                        Be mindful of the time complexity of list operations. Appending and accessing by index are generally efficient operations, but inserting or removing elements can be slower for large lists.
+                                        Consider using other data structures like sets or dictionaries for specific use cases.
+                                    </p></li>
                                 </ul>
+                                <p class="code">Advance Operations</p> <br>
+                                <ol>
+                                    <li>List Comprehension with Conditionals:<ul><li><p>In addition to basic list comprehensions, you can use conditional expressions to filter and transform elements in a list comprehensively.</p></li></ul></li>
+
+                                    <li>List Iteration Functions:<ul><li><p>Python provides built-in functions like map(), filter(), and reduce() (in Python 2, and available in Python 3 through the functools module) that can be used with lists for more complex operations.</p></li></ul></li>
+
+                                    <li>List Concatenation Efficiency:<ul><li><p>While list concatenation with + is convenient, it can be inefficient when dealing with large lists. Using methods like extend() or list comprehension can be more efficient.</p></li></ul></li>
+
+                                    <li>List to String Conversion:<ul><li><p>You can convert a list of strings into a single string using the join() method, which concatenates the elements with a specified separator.</p></li></ul></li>
+
+                                    <li>Copying Lists Efficiently:
+                                        <ul>
+                                            <li><p>For shallow copies of lists, you can also use slicing with [:] to create a new list with the same elements.</p></li>
+                                            <li><p>To create a shallow copy using the list() constructor, you can pass an existing list as an argument, e.g., new_list = list(old_list).</p></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>List Mutability:<ul><li><p>Lists are mutable, meaning you can change their elements. This mutability can lead to unexpected behavior if you're not careful when modifying lists.</p></li></ul></li>
+
+                                    <li>List vs. Tuple:<ul><li><p>While lists are mutable, tuples are immutable. Tuples can be used in situations where you want to ensure that the data remains unchanged.</p></li></ul></li>
+
+                                    <li>List Concatenation with *:<ul><li><p>You can use the * operator to concatenate multiple copies of a list together. For example, new_list = [1, 2] * 3 creates a list [1, 2, 1, 2, 1, 2].</p></li></ul></li>
+
+                                    <li>List as Stack and Queue:<ul><li><p>Lists can be used as both stacks (Last-In, First-Out) and queues (First-In, First-Out) with the append() and pop() methods for stacks, and append() and pop(0) for queues.</p></li></ul></li>
+
+                                </ol>
                             </ol>
-                            <img src="../assets/angela/List operaions 1.png" alt="">
-                            <img src="../assets/angela/List operaions 2.png" alt="">
-                            <img src="../assets/angela/List operaions 3.png" alt="">
-                            <img src="../assets/angela/List operaions 4.png" alt="">
-                            <img src="../assets/angela/List operaions 5.png" alt="">
-                            <img src="../assets/angela/List operaions 6.png" alt="">
+                            <p>
+                                These additional points provide further context and details about working with Python lists. Depending on your specific use case, some of these points may be particularly relevant and important.
+                            </p>
+                            <p class="code">Code:-</p>
+                            <img src="../assets/angela/List operaions 1.png" alt="List Operation Image1">
+                            <img src="../assets/angela/List operaions 2.png" alt="List Operation Image2">
+                            <img src="../assets/angela/List operaions 2a.png" alt="List Operation Image3">
+                            <img src="../assets/angela/List operaions 2b.png" alt="List Operation Image4">
+                            <img src="../assets/angela/List operaions 3.png" alt="List Operation Image5">
+                            <img src="../assets/angela/List operaions 4.png" alt="List Operation Image6">
+                            <img src="../assets/angela/List operaions 5.png" alt="List Operation Image7">
+                            <img src="../assets/angela/List operaions 6.png" alt="List Operation Image8">
                     <h3>Banking_roulette</h3>
                     <p>
                         This code is a mini project.<br>
@@ -923,10 +955,10 @@
                     <a href="https://realpython.com/python-rock-paper-scissors/">realpython.com/python-rock-paper-scissors/</a>
                     <a href="https://www.geeksforgeeks.org/python-program-implement-rock-paper-scissor-game/">www.geeksforgeeks.org/python-program-implement-rock-paper-scissor-game/</a>
                     <a href="https://thehelloworldprogram.com/python/python-game-rock-paper-scissors/">https://thehelloworldprogram.com/python/python-game-rock-paper-scissors/</a> <br>
+                    <img src="../assets/angela/Rock_Paper_Scissors_Logo1.png" alt="">
 
                     <p class="code">
-                        import random <br>
-                        <br>
+                        import random <br><br><br>
 
                         rock = '''
                             _______
@@ -955,19 +987,19 @@
                             (____)
                         ---.__(___)
                         '''
-                        <br> <br>
-                        # Write your code below this line 👇 <br>
-<br>
+                        <br> <br> <br> <br>
+                        <img src="../assets/angela/Rock_Paper_Scissors_Logo2.png" alt="">
+                        <br> <br> <br> <br>
+                        # Write your code below this line 👇 <br><br>
                         # Rock wins against scissors. <br>
                         # Scissors win against paper. <br>
-                        # Paper wins against rock. <br>
-<br>
+                        # Paper wins against rock. <br><br>
                         pc = [rock, paper, scissors] <br>
                         Players_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n")) <br>
                         # print(len(pc)) <br>
                         # print(random.randint(0, 2)) <br>
                         # pc1 = pc[random.randint(0, (len(pc) - 1))]) <br>
-                        Computers_choice = random.randint(0, (len(pc) - 1)) <br>
+                        Computers_choice = random.randint(0, (len(pc) - 1)) <br> <br>
                         if Players_choice == 0: <br>
                             print("\n", rock) <br>
                             print(f"Computer chose:\n{pc[Computers_choice]}") <br>
@@ -976,7 +1008,7 @@
                             elif Computers_choice == 1: <br>
                                 print("You Lost.Game Over :( ") <br>
                             else: <br>
-                                print("You Win :) ") <br>
+                                print("You Win :) ") <br> <br>
                         elif Players_choice == 1: <br>
                             print("\n", paper) <br>
                             print(f"Computer chose:\n{pc[Computers_choice]}") <br>
@@ -985,7 +1017,7 @@
                             elif Computers_choice == 2: <br>
                                 print("You Lost.Game Over :( ") <br>
                             else: <br>
-                                print("You Win :) ") <br>
+                                print("You Win :) ") <br> <br>
                         elif Players_choice == 2: <br>
                             print("\n", scissors) <br>
                             print(f"Computer chose:\n{pc[Computers_choice]}") <br>
@@ -994,14 +1026,12 @@
                             elif Computers_choice == 0: <br>
                                 print("You Lost.Game Over :( ") <br>
                             else: <br>
-                                print("You Win :) ") <br>
+                                print("You Win :) ") <br> <br>
                         else: <br>
                             print("Invalid Input!! Please Enter values as per instructions.") <br>
                     </p>
-
-                    
-
                 </div>
+                <img src="../assets/angela/Rock_Paper_Scissors_Logo3.png" height="301" width="801" alt="">
             </main>
         <header>
             <h2>Day 7 - Beginner - Hangman Project</h2> <br>
