@@ -101,6 +101,15 @@ h3{
     margin: 10px;
     margin: 10%;
 }
+#code4{
+    font-family: 'Martian Mono', monospace;
+    font-size: 15px;
+    color: #016A70;
+    font-weight: 600;
+    padding: 8px;
+    margin: 10px;
+    margin: 10%;
+}
 .code{
     font-family: 'Martian Mono', monospace;
     font-size: 15px;
