@@ -116,6 +116,9 @@ h3{
     color: #016A70;
     font-weight: 600;
 }
+.unbold {
+    font-weight: normal;
+}
 
 p{
     font-family: 'Chakra Petch', sans-serif;
