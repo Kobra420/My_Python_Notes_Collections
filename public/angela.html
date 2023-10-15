@@ -1032,8 +1032,29 @@
                         <p>
                             <b>Example 2: &nbsp;&nbsp;Skipping Specific Values</b> <br> 
                             <em class="code">
-
+                                nums = [1, 2, 3, 4, 5] <br>
+                                for num in nums: <br>
+                                    if num == 3: <br>
+                                        print("Encountered 3, skipping...") <br>
+                                        continue  # Skip the rest of the loop when num is 3 <br>
+                                    print(f"Current number: {num}") <br> <br>
                             </em>
+                            In this case, the <em class="code">continue</em> statement is employed to skip the rest of the loop when the value of <em class="code">num</em> is 3. When the loop encounters the value 3, it prints a message and continues with the next iteration without executing the remaining code in the loop.
+                        </p>
+                        <p>
+                            <b>Example 3: &nbsp;&nbsp;Skipping Specific Conditions</b> <br><br>
+                            <em class="code">
+                                words = ['apple', 'banana', 'cherry', 'date', 'grape'] <br>
+                                for word in words: <br>
+                                    if 'a' not in word: <br>
+                                        continue  # Skip the words that do not contain the letter 'a' <br>
+                                    print(f"Word containing 'a': {word}") <br>
+                            </em>
+                            In this example, the <em class="code">continue</em> statement is utilized to skip words that do not contain the letter 'a'.
+                             When a word without the letter 'a' is encountered, the <em class="code">continue</em> statement bypasses the 
+                             <em class="code">print</em> statement and moves on to the next iteration. <br><br>The <em class="code">continue</em> 
+                             statement is beneficial when you want to skip certain parts of a loop's iteration based on specific conditions.
+                              It allows for more granular control over the execution flow within loops.
                         </p>
                     </li>
                     <li>Pass Statement:<p></p></li>
