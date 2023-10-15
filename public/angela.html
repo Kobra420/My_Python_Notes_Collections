@@ -1022,13 +1022,42 @@
                                 for i in range(1, 6): <br>
                                     if i % 2 == 1: <br>
                                         continue  # Skip the rest of the loop for odd numbers <br>
-                                    print(f"The number form 1 to 10 \nEven number: {i}") <br>
+                                    print(f"The number form 1 to 10 \nEven number: {i}") <br> <br>
                             </em>
-                            In this example, the <b class="code"></b>continue statement is used to skip the rest of the loop for odd numbers. When the loop encounters an odd number,
-                             the <b class="code"></b>continue statement skips the <b class="code"></b>print statement, and the loop proceeds with the next iteration.
+                            In this example, the <b class="code">continue</b> statement is used to skip the rest of the loop for odd numbers. When the loop encounters an odd number,
+                             the <b class="code">continue</b> statement skips the <b class="code">print</b> statement, and the loop proceeds with the next iteration.
                         </p>
                         <img src="../assets/angela/continue_exmpl1.png" alt="continue_exmpl1_image">
-                        <p><b>Example 2: &nbsp;&nbsp;Skipping Specific Values</b></p>
+                        <img src="../assets/angela/continue_exmpl1a.png" alt="continue_exmpl1a_image">
+                        <p>
+                            <b>Example 2: &nbsp;&nbsp;Skipping Specific Values</b> <br> 
+                            <em class="code">
+                                nums = [1, 2, 3, 4, 5] <br>
+                                for num in nums: <br>
+                                    if num == 3: <br>
+                                        print("Encountered 3, skipping...") <br>
+                                        continue  # Skip the rest of the loop when num is 3 <br>
+                                    print(f"Current number: {num}") <br> <br>
+                            </em>
+                            In this case, the <em class="code">continue</em> statement is employed to skip the rest of the loop when the value of <em class="code">num</em> is 3. When the loop encounters the value 3, it prints a message and continues with the next iteration without executing the remaining code in the loop.
+                        </p>
+                        <p>
+                            <b>Example 3: &nbsp;&nbsp;Skipping Specific Conditions</b> <br><br>
+                            <em class="code">
+                                words = ['apple', 'banana', 'cherry', 'date', 'grape'] <br>
+                                for word in words: <br>
+                                    if 'a' not in word: <br>
+                                        continue  # Skip the words that do not contain the letter 'a' <br>
+                                    print(f"Word containing 'a': {word}") <br>
+                                    <img src="../assets/angela/continue_exmpl3.png" alt="continue_exmpl3_Image"> <br>
+                            </em>
+
+                            In this example, the <em class="code">continue</em> statement is utilized to skip words that do not contain the letter 'a'.
+                             When a word without the letter 'a' is encountered, the <em class="code">continue</em> statement bypasses the 
+                             <em class="code">print</em> statement and moves on to the next iteration. <br><br>The <em class="code">continue</em> 
+                             statement is beneficial when you want to skip certain parts of a loop's iteration based on specific conditions.
+                              It allows for more granular control over the execution flow within loops.
+                        </p>
                     </li>
                     <li>Pass Statement:<p></p></li>
                     <li>Try-Except Block:<p></p></li>
