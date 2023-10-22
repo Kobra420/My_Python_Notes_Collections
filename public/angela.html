@@ -1304,31 +1304,166 @@
                             <p> Implement a while loop to simulate concurrent or parallel processes within a program, enabling the execution of multiple tasks simultaneously.</p>
                             <p><b>Code :-</b> <br>
                                 <em class="code">
-                                    process1_complete = False
-                                    process2_complete = False
-                                    while not (process1_complete and process2_complete):
-                                    &nbsp;&nbsp;&nbsp;&nbsp;    # Simulate process 1
-                                    &nbsp;&nbsp;&nbsp;&nbsp;    process1_complete = True  # Set to True when process 1 is complete
-                                    &nbsp;&nbsp;&nbsp;&nbsp;    # Simulate process 2
-                                    &nbsp;&nbsp;&nbsp;&nbsp;    process2_complete = True  # Set to True when process 2 is complete
-
+                                    process1_complete = False <br>
+                                    process2_complete = False <br>
+                                    while not (process1_complete and process2_complete): <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;    # Simulate process 1 <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;    process1_complete = True  # Set to True when process 1 is complete <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;    # Simulate process 2 <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;    process2_complete = True  # Set to True when process 2 is complete <br><br>
                                 </em>
                             </p> <img src="../assets/angela/while_simulating_simultaneous_processes.png" alt="">
+                            <p><b>Example: <br></b>
+                                <em class="code">
+                                    import threading <br>
+                                    # Simulating two concurrent processes: temperature monitoring and data analysis <br>
+                                    temperature_normal = False <br>
+                                    data_processed = False <br>
+                                    # Function to simulate temperature monitoring process <br>
+                                    def temperature_monitoring(): <br>
+                                    &nbsp;&nbsp;    global temperature_normal <br>
+                                    &nbsp;&nbsp;    while not temperature_normal: <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        current_temperature = read_temperature_sensor()  # Simulating temperature sensor reading <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        if current_temperature > 100: <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            print(f"High temperature alert! Current temperature: {current_temperature}°C") <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            # Trigger cooling system or other actions for temperature control <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            temperature_normal = True  # Simulating the resolution of the issue <br>
+                                    # Function to simulate data analysis process <br>
+                                    def data_analysis(): <br>
+                                    &nbsp;&nbsp;    global data_processed <br>
+                                    &nbsp;&nbsp;    while not data_processed: <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        data = retrieve_data_from_database()  # Simulating data retrieval from a database <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        # Perform complex data analysis operations <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        analyzed_data = perform_analysis(data) <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        print(f"Data analysis complete. Results: {analyzed_data}") <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        data_processed = True  # Simulating the completion of data analysis <br>
+                                    # Simulating sensor reading function <br>
+                                    def read_temperature_sensor(): <br>
+                                    &nbsp;&nbsp;    # Simulating temperature sensor reading <br>
+                                    &nbsp;&nbsp;    return 102  # Simulated value for demonstration purposes <br>
+                                    # Simulating data retrieval function <br>
+                                    def retrieve_data_from_database(): <br>
+                                    &nbsp;&nbsp;    # Simulating data retrieval from a database <br>
+                                    &nbsp;&nbsp;    return [23, 45, 67, 89, 12]  # Simulated data for demonstration purposes <br>
+                                    # Simulating data analysis function <br>
+                                    def perform_analysis(data): <br>
+                                    &nbsp;&nbsp;    # Simulating data analysis operations <br>
+                                    &nbsp;&nbsp;    return sum(data) / len(data)  # Simulated analysis result for demonstration purposes <br>
+                                    # Creating threads for each process <br>
+                                    thread1 = threading.Thread(target=temperature_monitoring) <br>
+                                    thread2 = threading.Thread(target=data_analysis) <br>
+                                    # Starting both threads <br>
+                                    thread1.start() <br>
+                                    thread2.start() <br>
+                                    # Waiting for both threads to complete <br>
+                                    thread1.join() <br>
+                                    thread2.join() <br>
+                                    print("Simulated processes of temperature monitoring and data analysis are complete.") <br>
+                                </em>
+                            </p>
+                            <img src="../assets/angela/while_simulating_simultaneous_processes1.png" alt="">
+                            <img src="../assets/angela/while_simulating_simultaneous_processes2.png" alt="">
                             <li>Network Communication and I/O Operations:</li>
                             <p> Use a while loop to manage network communication or input/output (I/O) operations, ensuring continuous data transmission or reception until the desired data is obtained or sent.</p>
                             <p><b>Code :-</b> <br>
-                                <em class="code"></em>
+                                <em class="code">
+                                    data_received = False <br>
+                                    while not data_received: <br>
+                                &nbsp;&nbsp;        # Check for incoming data <br>
+                                &nbsp;&nbsp;        # Set data_received to True when desired data is received <br>
+                                &nbsp;&nbsp;        pass <br>
+ <br>
+                                </em>
                             </p>
-                            <li></li>
-                            <p></p>
+                            <img src="../assets/angela/while_Network_Comm_IO_Op3.png" alt="">
+                            <img src="../assets/angela/while_Network_Comm_IO_Op1.png" alt="">
+                            <p><b>Example : <br></b>
+                                we create a simple server that listens for incoming connections on a specified host and port. It continuously accepts incoming connections using a while loop and processes data received from the client. The server sends a response back to the client confirming the successful receipt of data. The while loop ensures that the server continually listens for incoming data and responds to client requests, allowing for continuous network communication and I/O operations. <br>
+                                <em class="code">
+                                    import socket <br><br>
+                                    # Server configuration <br>
+                                    HOST = '127.0.0.1'  # Standard loopback interface address <br>
+                                    PORT = 65432        # Port to listen on <br><br>
+                                    # Create a socket object <br>
+                                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: <br>
+                                &nbsp;&nbsp;        # Bind the socket to the host and port <br>
+                                &nbsp;&nbsp;        s.bind((HOST, PORT)) <br>
+                                &nbsp;&nbsp;        # Listen for incoming connections <br>
+                                &nbsp;&nbsp;        s.listen() <br><br>
+                                &nbsp;&nbsp;        print(f"Server is listening on {HOST}:{PORT}") <br><br>
+                                &nbsp;&nbsp;        while True: <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;            # Accept incoming connection <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;            conn, addr = s.accept() <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;            with conn: <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                print('Connected by', addr) <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                while True: <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    # Receive data from the client <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    data = conn.recv(1024) <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    if not data: <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                        break <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    # Process received data <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    print(f"Received data: {data.decode()}") <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    # Send back a response <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    conn.sendall(b'Data received successfully') <br><br>
+                                </em>
+                            </p>
+                            <img src="../assets/angela/while_Network_Comm_IO_Op2.png" alt="">
+                            <li> Algorithm Implementation:</li>
+                            <p>Apply a while loop when implementing iterative algorithms, such as searching, sorting, or numerical computations that require repeated steps until a specific condition or accuracy level is achieved.</p>
                             <p><b>Code :-</b> <br>
-                                <em class="code"></em>
+                                <em class="code">
+                                    number = 24 <br>
+                                    while number &gt; 1: <br>
+                                        if number % 2 == 0: <br>
+                                            number = number // 2 <br>
+                                        else: <br>
+                                            number = 3 * number + 1 <br>
+                                        print(number) <br> <br>
+                                </em> <img src="../assets/angela/while_algo_implementation.png" alt="">
                             </p>
-                            <li></li>
-                            <p></p>
+                            <li>Real-time Data Processing:</li>
+                            <p>Utilize a while loop for real-time data processing tasks, enabling continuous monitoring, analysis, and response to changing data conditions or events.</p>
                             <p><b>Code :-</b> <br>
-                                <em class="code"></em>
+                                <em class="code">
+                                    while True: <br>
+                                &nbsp;&nbsp;&nbsp;    # Monitor real-time data <br>
+                                &nbsp;&nbsp;&nbsp;    # Perform data analysis and processing tasks <br>
+                                &nbsp;&nbsp;&nbsp;    # Respond to changing data conditions <br>
+                                &nbsp;&nbsp;&nbsp;    pass <br> <br>
+                                </em> <img src="../assets/angela/while_Real_time_Data_Processing3.png" alt="">
                             </p>
+                            <p><b>Example: <br></b>
+                                <em class="code">
+                                    import random <br>
+                                    import time <br> <br>
+                                    # Simulating real-time data processing: stock price monitoring <br>
+                                    stock_price_threshold = 500  # Threshold for stock price alert <br>
+                                    stock_price_normal = True <br> <br>
+                                    # Function to simulate real-time data processing for stock prices <br>
+                                    def process_stock_prices(): <br>
+                                &nbsp;&nbsp;        global stock_price_normal <br>
+                                &nbsp;&nbsp;        while stock_price_normal: <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;            current_stock_price = get_stock_price()  # Simulating fetching current stock price <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;            if current_stock_price > stock_price_threshold: <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                print(f"Stock price is above the threshold: {current_stock_price}. Alert triggered!") <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                # Execute actions for handling the high stock price <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;            else: <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                print(f"Stock price is normal: {current_stock_price}.") <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;            time.sleep(2)  # Simulating real-time delay <br> <br>
+                                    # Simulating function to get current stock price <br>
+                                    def get_stock_price(): <br>
+                                &nbsp;&nbsp;        # Simulating fetching current stock price <br>
+                                &nbsp;&nbsp;        return random.randint(400, 600)  # Simulating stock price between 400 and 600 <br> <br>
+                                    # Starting real-time data processing <br>
+                                    process_stock_prices() <br> <br>
+                                </em>
+                            </p>
+                            <img src="../assets/angela/while_Real_time_Data_Processing1.png" alt="">
+                            <img src="../assets/angela/while_Real_time_Data_Processing2.png" alt="">
+                            <p>
+                                When using a while loop, it's essential to ensure that an exit condition is met at some point to prevent infinite looping, which can lead to system freezes or crashes. It's also important to update loop control variables within the loop to ensure progress towards the exit condition.
+                            </p>
+                            
                         </ol>
                     </p>
                     <li>For Loop:<p></p></li>
