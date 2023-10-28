@@ -1653,7 +1653,9 @@
                             <li>Empty function or class:
                                 <p>
                                     When defining a function or a class that you intend to implement later, using the pass statement allows you to create 
-                                    an empty function or class without causing any errors.
+                                    an empty function or class without causing any errors. <br>
+                                    Imagine you are designing a framework where you define the structure of classes that will be implemented by users later. 
+                                    You can use the pass statement to create empty classes that can be extended:
                                 </p>
                                 <em class="code">
                                     def empty_function(): <br>
@@ -1672,6 +1674,17 @@
                                 custom_instance = CustomModel() <br>
                                 custom_instance.process_data() <br> <br>
                                 </em></li><img src="../assets/angela/Pass_statement_empty_function_or_class.png" alt="">
+                                <p>
+                                    the pass statement to create an empty class as a placeholder for future implementation in a Python program:
+                                </p>
+                                <p><em class="code">
+                                    # Creating an empty class as a placeholder for future implementation <br>
+                                    class DataProcessor: <br>
+                                &nbsp;&nbsp;        pass <br> <br>
+                                    # Instantiating the DataProcessor class and planning for future implementation <br>
+                                    processor = DataProcessor() <br> <br>
+                                </em></p>
+                                <img src="../assets/angela/Pass_statement_empty_function_or_class3.png" alt="">
                             <li>Temporary code omission:
                                 <p>
 
