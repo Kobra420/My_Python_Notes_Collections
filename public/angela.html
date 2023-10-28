@@ -1649,17 +1649,29 @@
                                 </em></li>
                                 <img src="../assets/angela/Pass_statement_placeholder1.png" alt="">
                                 <img src="../assets/angela/Pass_statement_placeholder2.png" alt="">
-                                <img src="" alt="">
+                                
                             <li>Empty function or class:
                                 <p>
-
+                                    When defining a function or a class that you intend to implement later, using the pass statement allows you to create 
+                                    an empty function or class without causing any errors.
                                 </p>
                                 <em class="code">
                                     def empty_function(): <br>
                                 &nbsp;&nbsp;        pass  # Placeholder for future implementation <br> <br>
                                     class EmptyClass: <br>
                                 &nbsp;&nbsp;        pass  # Placeholder for future implementation <br> <br>
-                                </em></li><img src="" alt="">
+                                <img src="../assets/angela/Pass_statement_empty_function_or_class2.png" alt="">
+                                class BaseModel: <br>
+                                &nbsp;&nbsp;    def process_data(self): <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;        pass  # Placeholder for future implementation <br> <br>
+                                class CustomModel(BaseModel): <br>
+                                &nbsp;&nbsp;    def process_data(self): <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;        # Implement custom data processing <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;        pass <br> <br>
+                                # CustomModel inherits the structure from BaseModel and overrides the process_data method <br>
+                                custom_instance = CustomModel() <br>
+                                custom_instance.process_data() <br> <br>
+                                </em></li><img src="../assets/angela/Pass_statement_empty_function_or_class.png" alt="">
                             <li>Temporary code omission:
                                 <p>
 
