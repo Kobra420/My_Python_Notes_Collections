@@ -1758,7 +1758,12 @@
                                         except ZeroDivisionError:  <br>
                                         &nbsp;&nbsp;    print("Error: Division by zero is not allowed.")  <br> <br>
                                     </em> <br> <img src="../assets/angela/try_except1.png" alt=""> <br>
-                                    In this example, the try block attempts to convert the user input to an integer using the int() function. 
+                                    
+                                    
+                                </p>
+                            </li>
+                            <li> Handling Input Conversion Errors: <br>
+                                <p>In this example, the try block attempts to convert the user input to an integer using the int() function. 
                                     If the input provided by the user cannot be converted to an integer, it raises a ValueError. 
                                     The except block catches this error and prints a custom error message, guiding the user to enter a valid integer. <br>
                                     <em class="code">
@@ -1767,16 +1772,63 @@
                                         &nbsp;&nbsp;    num = int(input("Enter a number: ")) # entered a string <br>
                                         except ValueError: <br>
                                         &nbsp;&nbsp;    print("Error: Please enter a valid integer.") <br> <br>
-                                    </em> <img src="../assets/angela/try_except2.png" alt=""> <br> <br>
-                                    By using the try-except block, you can ensure that your program continues to execute even when it encounters errors. 
+                                    </em></p><img src="../assets/angela/try_except2.png" alt=""> <br> <br>
+
+                                    <p>By using the try-except block, you can ensure that your program continues to execute even when it encounters errors. 
                                     It provides a way to handle such errors gracefully, allowing you to display helpful error messages or perform 
-                                    alternative actions.
-                                </p>
+                                    alternative actions.</p>
                             </li>
-                            <li></li>
+
                     </ul>
                     </li>
-                    <li>Finally Block:<p></p></li>
+                    <li>Finally Block: <br>
+                        <p> <b>BASIC: <br></b>
+                            In Python, the finally block is used in conjunction with the try and except blocks. 
+                            It is used to define clean-up actions that must be executed, whether an exception occurs 
+                            or not. The code inside the finally block is executed regardless of whether an exception 
+                            is raised or not. Here's an explanation with relevant examples:
+                        </p>
+                        <p><em class="code">
+                            # Using the finally block for cleanup <br>
+                            try: <br>
+                        &nbsp;&nbsp;        f = open("example_file.txt", "r") <br>
+                        &nbsp;&nbsp;        # Perform some file operations <br>
+                            except FileNotFoundError: <br>
+                        &nbsp;&nbsp;        print("Error: File not found.") <br>
+                            finally: <br>
+                        &nbsp;&nbsp;        if f: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;            f.close() <br>
+                        </em></p>
+                        <img src="../assets/angela/finally_block1.png" alt=""><br>
+                        <p> <b>Using Finally for Resource Release <br></b>
+                            In this example, the try block attempts to open a file for reading. 
+                            If the file is not found, it raises a FileNotFoundError. The finally block ensures that 
+                            the file is closed, regardless of whether an exception is raised or not. This is crucial 
+                            for releasing external resources or performing necessary clean-up operations.
+                        </p>
+                        <p><em class="code">
+                            # Using the finally block to release resources <br>
+                            lock = threading.Lock() <br>
+                            try: <br>
+                        &nbsp;&nbsp;        lock.acquire() <br>
+                        &nbsp;&nbsp;        # Perform some critical section operations <br>
+                            except Exception as e: <br>
+                        &nbsp;&nbsp;        print(f"Error: {e}") <br>
+                            finally: <br>
+                        &nbsp;&nbsp;        lock.release() <br>
+                        </em></p>
+                        <img src="../assets/angela/finally_block2.png" alt=""> <br>
+                        <p>
+                            In this example, the finally block ensures that the thread lock is released even if an exception occurs within the critical 
+                            section. Releasing the lock in the finally block guarantees that the shared resource is freed, preventing potential deadlocks 
+                            or resource leaks.
+                        </p>
+                        <p>
+                            By using the finally block, you can ensure that certain actions, such as releasing resources, closing files, or cleaning up 
+                            operations, are always executed, regardless of whether exceptions are raised or not. This helps in maintaining the robustness and 
+                            reliability of your code, particularly when dealing with critical resources or external operations.
+                        </p>
+                    </li>
                 </ol>
                 
                 
