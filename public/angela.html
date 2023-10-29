@@ -1740,7 +1740,42 @@
                             </li>    
                         </ul>
                     </li>
-                    <li>Try-Except Block:<p></p></li>
+                    <li>Try-Except Block: <br>
+                        <p>In Python, the try-except block is used to handle exceptions or errors that may occur during the execution of a program.
+                             It allows you to anticipate and deal with potential errors, preventing your program from crashing unexpectedly. Here's an explanation with relevant examples:</p>
+                        <ul>
+                            <li>Basic Examples: <br>
+                                <p>
+                                    In this example, the try block attempts to perform the division a / b. However, since b is 0, it would result 
+                                    in a ZeroDivisionError. The except block catches this specific error and prints a custom error message, 
+                                    preventing the program from crashing. <br>   
+                                    <em class="code">
+                                        # Handling a potential division by zero error  <br>
+                                        a = 10  <br>
+                                        b = 0  <br> <br>
+                                        try:  <br>
+                                        &nbsp;&nbsp;    result = a / b  <br>
+                                        except ZeroDivisionError:  <br>
+                                        &nbsp;&nbsp;    print("Error: Division by zero is not allowed.")  <br> <br>
+                                    </em> <br> <img src="../assets/angela/try_except1.png" alt=""> <br>
+                                    In this example, the try block attempts to convert the user input to an integer using the int() function. 
+                                    If the input provided by the user cannot be converted to an integer, it raises a ValueError. 
+                                    The except block catches this error and prints a custom error message, guiding the user to enter a valid integer. <br>
+                                    <em class="code">
+                                        # Handling potential value conversion errors
+                                        try: <br>
+                                        &nbsp;&nbsp;    num = int(input("Enter a number: ")) # entered a string <br>
+                                        except ValueError: <br>
+                                        &nbsp;&nbsp;    print("Error: Please enter a valid integer.") <br> <br>
+                                    </em> <img src="../assets/angela/try_except2.png" alt=""> <br> <br>
+                                    By using the try-except block, you can ensure that your program continues to execute even when it encounters errors. 
+                                    It provides a way to handle such errors gracefully, allowing you to display helpful error messages or perform 
+                                    alternative actions.
+                                </p>
+                            </li>
+                            <li></li>
+                    </ul>
+                    </li>
                     <li>Finally Block:<p></p></li>
                 </ol>
                 
