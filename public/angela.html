@@ -1694,16 +1694,50 @@
                                     for item in items: <br>
                                 &nbsp;&nbsp;        # Temporary omission of code for testing <br>
                                 &nbsp;&nbsp;        pass <br> <br>
-                                </em></li><img src="../assets/angela/Pass_statement_temporary_code_ommision1.png" alt="">
+                                </em></li><br><img src="../assets/angela/Pass_statement_temporary_code_ommision1.png" alt=""><br><br>
+                                <em class="code">
+                                    items =[1,2,3,4] <br>
+                                    for item in items: <br>
+                                    &nbsp;&nbsp;    # Temporary omission of code for testing <br>
+                                    &nbsp;&nbsp;    if item == 3: <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        pass <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        print("Item passed") <br>
+                                    &nbsp;&nbsp;    print(item,end='') 
+                                </em><br><br>
+                                <img src="../assets/angela/Pass_statement_temporary_code_ommision2.png" alt=""> <br>
+                                <em class="code">
+                                    # Suppose we're checking if a number is even or odd <br>
+                                    number = 6 <br> <br>
+                                    if number % 2 == 0: <br>
+                                &nbsp;&nbsp;        pass  # Placeholder for future implementation of even number handling <br>
+                                &nbsp;&nbsp;        print("The number is even") <br>
+                                    else: <br>
+                                &nbsp;&nbsp;        pass  # Placeholder for future implementation of odd number handling <br>
+                                </em><br><br>
+                                <img src="../assets/angela/Pass_statement_temporary_code_ommision3.png" alt=""> <br>
                             <li>Minimal class implementation:
                                 <p>
-
+                                    When designing an abstract class meant to be inherited by other classes, you can use the pass statement to provide
+                                     a minimal implementation that can be overridden by the subclasses:
                                 </p>
                                 <em class="code">
                                     class BaseClass: <br>
                                     def some_method(self): <br>
                                     &nbsp;&nbsp;        pass  # To be overridden by subclasses <br> <br>
-                                </em></li><img src="" alt="">
+                                    <img src="../assets/angela/Pass_statement_minimal_class_implementation1.png" alt=""> <br>
+                                    class Animal: <br>
+                                    &nbsp;&nbsp;    def make_sound(self): <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;    pass  # To be overridden by subclasses <br> <br>
+                                    class Dog(Animal): <br>
+                                    &nbsp;&nbsp;    def make_sound(self): <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        print("Woof") <br>
+                                     <br>
+                                    class Cat(Animal): <br>
+                                    &nbsp;&nbsp;    def make_sound(self): <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        print("Meow") <br> <br>
+                                </em>
+                                <img src="../assets/angela/Pass_statement_minimal_class_implementation.png" alt="">
+                            </li>    
                         </ul>
                     </li>
                     <li>Try-Except Block:<p></p></li>
