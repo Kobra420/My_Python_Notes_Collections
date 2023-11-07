@@ -2092,11 +2092,45 @@
                 </p><img src="../assets/angela/Highest_score1.png" alt=""><br><img src="../assets/angela/Highest_score2.png" alt="">
                 <h3>Average Height</h3>
                 <p>This a python code where Average height of the students will be calculated from the give heights of the students in centimeters <br>
+                    # Dr. Lue's codes <br>
                     <em class="code">
-
+                        # 154 123 156 172 182 192 <br>
+                        # 🚨 Don't change the code below 👇 <br>
+                        student_heights = input("Input a list of student heights with single space in between ").split() <br>
+                        for n in range(0, len(student_heights)): <br>
+                    &nbsp;&nbsp;    student_heights[n] = int(student_heights[n]) # type: ignore  <br>
+                        # 🚨 Don't change the code above 👆 <br><br>
+                        ##Write your code below this row 👇 <br>
+                        total_height = 0 <br>
+                        for height in student_heights: <br>
+                    &nbsp;&nbsp;        total_height = total_height + height# type: ignore <br>
+                    &nbsp;&nbsp;        # print(total_height) <br>
+                        number_of_students = 0 <br>
+                        for student in student_heights: <br>
+                    &nbsp;&nbsp;        number_of_students += 1 <br>
+                        # print(number_of_students) <br>
+                        average_height = total_height / number_of_students <br>
+                        print(f"Average Height : {round(average_height, 2)}") <br> <br> <br> <br> </em>
+<p> My Code:</p>
+                    <em class="code">
+                        # 154 123 156 172 182 192 <br>
+                        # 🚨 Don't change the code below 👇 <br>
+                        student_heights = input("Input a list of student heights with single space in between ").split() <br>
+                        for n in range(0, len(student_heights)): <br>
+                        student_heights[n] = int(student_heights[n]) # type: ignore  <br>
+                        # 🚨 Don't change the code above 👆 <br><br>
+                        ##Write your code below this row 👇 <br>
+                        total_height = sum(student_heights) # type: ignore <br>
+                        number_of_students = len(student_heights) <br>
+                        average_height = total_height/number_of_students <br>
+                        print(round(average_height,2)) <br>
                     </em>
                 </p>
-            
+                <img src="../assets/angela/avg_height1.png" alt="">
+                <img src="../assets/angela/avg_height2.png" alt="">
+                <img src="../assets/angela/avg_height3.png" alt="">\
+
+                
             </div>
             </main>
         
