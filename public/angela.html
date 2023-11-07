@@ -2188,16 +2188,47 @@
                 thereby completing the word, before the diagram is completed.
             </p>
             <h3>External Link of Hangman Game Webpage &rAarr; <a href="https://hangmanwordgame.com/?fca=1&success=0#/"> Hangman Webpage</a></h3>
-            <p><b>Our making of Hangman-Project</b><br>
-        
-                <div>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
+            <img src="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/100 Days of Code The Complete Python Pro Bootcamp for 2023/D7/Solution+-+Hangman+Flowchart+1.png" height="601" width="701">
+            <p>
+                <b>Our making of Hangman-Project</b><br>
+                <a href="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/100 Days of Code The Complete Python Pro Bootcamp for 2023/D7/hangman_art.py">hangman_art.py</a>
+                <a href="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/100 Days of Code The Complete Python Pro Bootcamp for 2023/D7/hangman_words.py">hangman_words.py</a> <br> <br>
+                <b>
+                    Steps: <br>
+                    <ol>
+                        <li>#TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word.</li>
+                        <li>#TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.</li>
+                        <li>#TODO-3 - Check if the letter the user guessed (guess) is one of the leters in the chosen_word.</li>
+                    </ol>
+                </b>
+
             </p>
+            <p>
+                <b>Step 1: <br></b>
+                #TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word. <br>
+                <em class="code">
+                    #Type 1 : <br><br>
+                    word_list = ["aardvark", "baboon", "camel"]
+                    import random
+                    chosen_word = random.choice(word_list)
+                    guess = input("Guess a letter: ").lower()
+                    for letter in chosen_word:
+                &nbsp;&nbsp;        if letter == guess:
+                &nbsp;&nbsp;&nbsp;&nbsp;            print("Right")
+                &nbsp;&nbsp;        else:
+                &nbsp;&nbsp;&nbsp;&nbsp;            print("Wrong")
+                    #Type 2 : <br><br>
+                    word_list = ["aardvark", "baboon", "camel"]
+                    import random
+                    chosen_word = random.choice(word_list)
+                    guess = input("Guess a letter: ").lower()
+                    for letter in chosen_word:
+                &nbsp;&nbsp;        print("Right") if letter == guess else print("Wrong")
+                </em>
+            </p>
+            <img src="../assets/angela/Hangman_step1a.png" alt="">
+            <img src="../assets/angela/Hangman_step1c.png" alt="">
+            <img src="../assets/angela/Hangman_step1b.png" alt="">
         <h3>Neccesary functions required for Project</h3>
             <p>
 
