@@ -1,4 +1,4 @@
-#Lul's codes
+# Dr. Lue's codes
 # 154 123 156 172 182 192
 # 🚨 Don't change the code below 👇
 student_heights = input("Input a list of student heights with single space in between ").split()
