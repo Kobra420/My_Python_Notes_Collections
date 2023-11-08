@@ -2167,7 +2167,7 @@
                 <b>Step 2: <br></b>
                 #TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
             </p>
-            <p>
+            <p> Part 1: <br> 
                 <em class="code">
                     #Step 2 <br> <br>
                     import random <br>
@@ -2199,6 +2199,25 @@
             <img src="../assets/angela/Hangman_step2a.png" alt="">
             <img src="../assets/angela/Hangman_step2b.png" alt="">
             <img src="../assets/angela/Hangman_step2c.png" alt="">
+            <p>
+                Part 2 : <br>
+                <em class="code">
+                    list = ["aardvark", "baboon", "camel"]
+                    import random
+                    word = random.choice(list)
+                    blanks = "_  " * len(word)
+                    # blanks = "0123456789"
+                    print("LOL " + word)
+                    guess = input("Guess a letter: ")
+                    for i in range(len(word)):
+                &nbsp;&nbsp;        if word[i] == guess:
+                &nbsp;&nbsp;&nbsp;&nbsp;            blanks = blanks[:i*3] + guess + blanks[i*3+1:]  #  i*3 for "_  " three strings in the blanks
+                    # you can add i*2 for "_ "two strings and [:i] &amp; [i+1]  for no spaces
+                    print(blanks)
+                </em>
+            </p>
+            <img src="../assets/angela/Hangman_step3a.png" alt="">
+            <img src="../assets/angela/Hangman_step3b.png" alt="">
         <h3>Neccesary functions required for Project</h3>
             <p>
                 
