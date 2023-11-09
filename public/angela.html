@@ -2284,6 +2284,42 @@
             </p>
             <img src="../assets/angela/Hangman_step3a.png" alt="">
             <img src="../assets/angela/Hangman_step3b.png" alt="">
+            <p>
+                Step 3: <br>
+                #TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".  <br>
+                Check if the letter the user guessed (guess) is one of the leters in the chosen_word.<br>
+                <em class="code">
+                    #Step 3 <br> <br>
+                    import random <br>
+                    word_list = ["aardvark", "baboon", "camel"] <br>
+                    chosen_word = random.choice(word_list) <br>
+                    word_length = len(chosen_word) <br>
+                    #Testing code
+                    print(f'Pssst, the solution is {chosen_word}.') <br> <br>
+                    #Create blanks <br>
+                    display = [] <br>
+                    for _ in range(word_length): <br>
+                &nbsp;&nbsp;        display += "_" <br> <br>
+                    #TODO-1: - Use a while loop to let the user guess again. The loop should only stop once the user has guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). Then you can tell the user they've won. <br>
+                    end_of_game = False <br> <br>
+                    while not end_of_game: <br>
+                &nbsp;&nbsp;        guess = input("Guess a letter: ").lower() <br> <br>
+                &nbsp;&nbsp;        #Check guessed letter <br>
+                &nbsp;&nbsp;        for position in range(word_length): <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            letter = chosen_word[position] <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}") <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            if letter == guess: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                display[position] = letter <br> <br>
+                &nbsp;&nbsp;        print(display) <br> <br>
+                #Check if there are no more "_" left in 'display'. Then all letters have been guessed.
+                &nbsp;&nbsp;            if "_" not in display:
+                &nbsp;&nbsp;&nbsp;&nbsp;                end_of_game = True
+                &nbsp;&nbsp;&nbsp;&nbsp;                print("You win.")
+                </em>
+            </p>
+            <img src="../assets/angela/Hangman_step4a.png" alt="">
+            <img src="../assets/angela/Hangman_step4b.png" alt="">
+            <img src="../assets/angela/Hangman_step4c.png" alt="">
         <h3>Neccesary functions required for Project</h3>
             <p>
                 
