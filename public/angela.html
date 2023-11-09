@@ -2268,18 +2268,18 @@
             <p>
                 Part 2 : <br>
                 <em class="code">
-                    list = ["aardvark", "baboon", "camel"]
-                    import random
-                    word = random.choice(list)
-                    blanks = "_  " * len(word)
-                    # blanks = "0123456789"
-                    print("LOL " + word)
-                    guess = input("Guess a letter: ")
-                    for i in range(len(word)):
-                &nbsp;&nbsp;        if word[i] == guess:
-                &nbsp;&nbsp;&nbsp;&nbsp;            blanks = blanks[:i*3] + guess + blanks[i*3+1:]  #  i*3 for "_  " three strings in the blanks
-                    # you can add i*2 for "_ "two strings and [:i] &amp; [i+1]  for no spaces
-                    print(blanks)
+                    list = ["aardvark", "baboon", "camel"] <br>
+                    import random <br>
+                    word = random.choice(list) <br>
+                    blanks = "_  " * len(word) <br>
+                    # blanks = "0123456789" <br>
+                    print("LOL " + word) <br>
+                    guess = input("Guess a letter: ") <br>
+                    for i in range(len(word)): <br>
+                &nbsp;&nbsp;        if word[i] == guess: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            blanks = blanks[:i*3] + guess + blanks[i*3+1:]  #  i*3 for "_  " three strings in the blanks <br>
+                    # you can add i*2 for "_ "two strings and [:i] &amp; [i+1]  for no spaces <br>
+                    print(blanks) <br>
                 </em>
             </p>
             <img src="../assets/angela/Hangman_step3a.png" alt="">
@@ -2320,6 +2320,78 @@
             <img src="../assets/angela/Hangman_step4a.png" alt="">
             <img src="../assets/angela/Hangman_step4b.png" alt="">
             <img src="../assets/angela/Hangman_step4c.png" alt="">
+            <p>
+                Step 4 Code 5 <br>
+                <em class="code">
+                import random <br> <br>
+                stages = [''' <br>
+                +---+ <br>
+                |   | <br>
+                O   | <br>
+                /|\  | <br>
+                / \  | <br>
+                    | <br>
+                ========= <br>
+                ''', ''' <br>
+                +---+ <br>
+                |   | <br>
+                O   | <br>
+                /|\  | <br>
+                /    | <br>
+                    | <br>
+                ========= <br>
+                ''', ''' <br>
+                +---+ <br>
+                |   | <br>
+                O   | <br>
+                /|\  | <br>
+                    | <br>
+                    | <br>
+                ========= <br>
+                ''', ''' <br>
+                +---+ <br>
+                |   | <br>
+                O   | <br>
+                /|   | <br>
+                    | <br>
+                    | <br>
+                =========''', ''' <br>
+                +---+ <br>
+                |   | <br>
+                O   | <br>
+                |   | <br>
+                    | <br>
+                    | <br>
+                ========= <br>
+                ''', ''' <br>
+                +---+ <br>
+                |   | <br>
+                O   | <br>
+                    | <br>
+                    | <br>
+                    | <br>
+                ========= <br>
+                ''', ''' <br>
+                +---+ <br>
+                |   | <br>
+                    | <br>
+                    | <br>
+                    | <br>
+                    | <br>
+                ========= <br>
+                '''] <br>
+
+                end_of_game = False <br>
+                word_list = ["ardvark", "baboon", "camel"] <br>
+                chosen_word = random.choice(word_list) <br>
+                word_length = len(chosen_word) <br> <br>
+                #TODO-1: - Create a variable called 'lives' to keep track of the number of lives left.  <br>
+                #Set 'lives' to equal 6. <br>
+                lives = 6 <br> <br>
+                #Testing code <br>
+                print(f'Pssst, the solution is {chosen_word}.') <br> <br>
+                </em>
+            </p>
         <h3>Neccesary functions required for Project</h3>
             <p>
                 
