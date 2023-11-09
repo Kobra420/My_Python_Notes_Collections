@@ -2220,12 +2220,20 @@
             <img src="../assets/angela/Hangman_step3b.png" alt="">
             <p>
                 Step 3: <br>
+                #TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".  <br>
+                Check if the letter the user guessed (guess) is one of the leters in the chosen_word.<br>
                 <em class="code">
                     #Step 3 <br> <br>
                     import random <br>
                     word_list = ["aardvark", "baboon", "camel"] <br>
                     chosen_word = random.choice(word_list) <br>
                     word_length = len(chosen_word) <br>
+                    #Testing code
+                    print(f'Pssst, the solution is {chosen_word}.') <br> <br>
+                    #Create blanks <br>
+                    display = [] <br>
+                    for _ in range(word_length): <br>
+                &nbsp;&nbsp;        display += "_" <br> <br>
                 </em>
             </p>
         <h3>Neccesary functions required for Project</h3>
