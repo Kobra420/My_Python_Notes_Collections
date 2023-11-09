@@ -2234,6 +2234,21 @@
                     display = [] <br>
                     for _ in range(word_length): <br>
                 &nbsp;&nbsp;        display += "_" <br> <br>
+                    #TODO-1: - Use a while loop to let the user guess again. The loop should only stop once the user has guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). Then you can tell the user they've won. <br>
+                    end_of_game = False <br> <br>
+                    while not end_of_game: <br>
+                &nbsp;&nbsp;        guess = input("Guess a letter: ").lower() <br> <br>
+                &nbsp;&nbsp;        #Check guessed letter <br>
+                &nbsp;&nbsp;        for position in range(word_length): <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            letter = chosen_word[position] <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}") <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            if letter == guess: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                display[position] = letter <br> <br>
+                &nbsp;&nbsp;        print(display) <br> <br>
+                #Check if there are no more "_" left in 'display'. Then all letters have been guessed.
+                &nbsp;&nbsp;            if "_" not in display:
+                &nbsp;&nbsp;&nbsp;&nbsp;                end_of_game = True
+                &nbsp;&nbsp;&nbsp;&nbsp;                print("You win.")
                 </em>
             </p>
         <h3>Neccesary functions required for Project</h3>
