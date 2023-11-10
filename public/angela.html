@@ -2324,11 +2324,33 @@
                 lives = 6 <br> <br>
                 #Testing code <br>
                 print(f'Pssst, the solution is {chosen_word}.') <br> <br>
-                #Create blanks
-                display = []
-                for _ in range(word_length):
-            &nbsp;&nbsp;        display += "_"
-            </em>
+                #Create blanks <br>
+                display = [] <br>
+                for _ in range(word_length): <br>
+            &nbsp;&nbsp;        display += "_" <br>
+                while not end_of_game: <br>
+                &nbsp;&nbsp;    guess = input("Guess a letter: ").lower() <br><br>
+                &nbsp;&nbsp;    #Check guessed letter <br>
+                &nbsp;&nbsp;    for position in range(word_length): <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        letter = chosen_word[position] <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    # print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}") <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        if letter == guess: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            display[position] = letter <br><br>
+                &nbsp;&nbsp;    #TODO-2: - If guess is not a letter in the chosen_word, <br>
+                &nbsp;&nbsp;    #Then reduce 'lives' by 1.  <br>
+                &nbsp;&nbsp;    #If lives goes down to 0 then the game should stop and it should print "You lose." <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    if guess not in chosen_word: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        lives -= 1 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        if lives == 0: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            end_of_game = True <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            print("You lose.") <br><br>
+                &nbsp;&nbsp;    #Join all the elements in the list and turn it into a String. <br>
+                &nbsp;&nbsp;    print(f"{' '.join(display)}") <br><br>
+                &nbsp;&nbsp;    #Check if user has got all letters. <br>
+                &nbsp;&nbsp;    if "_" not in display: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        end_of_game = True <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        print("You win.") <br>
+        </em>
             </p>
         <h3>Neccesary functions required for Project</h3>
             <p>
