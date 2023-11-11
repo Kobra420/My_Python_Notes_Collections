@@ -2420,6 +2420,69 @@
                 &nbsp;&nbsp;    print(stages[lives])
         </em>
             </p>
+            <p>
+                <b>Hangman Final :- <br></b>
+                This the end result of final project of Hangman game. <br>
+                <em class="code">
+                    #Step 5
+
+                    import random <br> <br>
+                    #TODO-1: - Update the word list to use the 'word_list' from hangman_words.py <br>
+                    #Delete this line: word_list = ["ardvark", "baboon", "camel"] <br>
+                    from hangman_words import word_list <br> <br>
+                    chosen_word = random.choice(word_list) <br>
+                    word_length = len(chosen_word) <br> <br>
+                    end_of_game = False <br>
+                    lives = 6 <br> <br>
+                    #TODO-3: - Import the logo from hangman_art.py and print it at the start of the game. <br>
+                    from hangman_art import logo <br>
+                    print(logo) <br> <br>
+                    #Testing code <br>
+                    print(f'Pssst, the solution is {chosen_word}.') <br> <br>
+                    #Create blanks <br>
+                    display = [] <br>
+                    for _ in range(word_length): <br>
+                &nbsp;&nbsp;        display += "_" <br> <br>
+                    while not end_of_game: <br>
+                &nbsp;&nbsp;        guess = input("Guess a letter: ").lower() <br> <br>
+                &nbsp;&nbsp;        #TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know. <br>
+                &nbsp;&nbsp;        if guess in display: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            print(f"You've already guessed {guess}") <br> <br>
+                &nbsp;&nbsp;        #Check guessed letter <br>
+                &nbsp;&nbsp;        for position in range(word_length): <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            letter = chosen_word[position] <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}") <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            if letter == guess: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                display[position] = letter <br>
+                &nbsp;&nbsp;#Check if user is wrong. <br>
+                &nbsp;&nbsp;if guess not in chosen_word: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    print(f"You guessed {guess}, that's not in the word. You lose a life.") <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;     <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    lives -= 1 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    if lives == 0: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        end_of_game = True <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        print("You lose.") <br> <br>
+                &nbsp;&nbsp;#Join all the elements in the list and turn it into a String. <br>
+                &nbsp;&nbsp;print(f"{' '.join(display)}") <br> <br>
+                &nbsp;&nbsp;#Check if user has got all letters. <br>
+                &nbsp;&nbsp;if "_" not in display: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    end_of_game = True <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    print("You win.") <br> <br>
+                &nbsp;&nbsp;#TODO-2: - Import the stages from hangman_art.py and make this error go away. <br>
+                &nbsp;&nbsp;from hangman_art import stages <br>
+                &nbsp;&nbsp;print(stages[lives]) <br>
+                </em>
+            </p>
+                    <img src="../assets/angela/Hangman_final1.png" alt="">
+                    <img src="../assets/angela/Hangman_final2.png" alt="">
+                    <img src="../assets/angela/Hangman_final3.png" alt="">
+                    <img src="../assets/angela/Hangman_final4.png" alt="">
+                    <img src="../assets/angela/Hangman_final5.png" alt="">
+                    <img src="../assets/angela/Hangman_final6.png" alt="">
+                    <img src="../assets/angela/Hangman_final7.png" alt="">
+                    <img src="../assets/angela/Hangman_final8.png" alt="">
+                    <img src="../assets/angela/Hangman_final9.png" alt="">
         <h3>Neccesary functions required for Project</h3>
             <p>
                 
@@ -2447,7 +2510,7 @@
     <a href="./UPA Codes Python_WhileLoop_ForLoop (30_10_2023 10_22_13 pm).html"></a>
 
 
-    <div id="anime"></div>
+    <div id=""></div>
         <footer>
             <b>References:-</b> <br>
             <ul>
