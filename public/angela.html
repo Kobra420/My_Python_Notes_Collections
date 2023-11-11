@@ -2388,7 +2388,24 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;            #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}") <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;            if letter == guess: <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                display[position] = letter <br>
-                
+                &nbsp;&nbsp;#Check if user is wrong. <br>
+                &nbsp;&nbsp;if guess not in chosen_word: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    print(f"You guessed {guess}, that's not in the word. You lose a life.") <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;     <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    lives -= 1 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    if lives == 0: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        end_of_game = True <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        print("You lose.") <br> <br>
+                &nbsp;&nbsp;#Join all the elements in the list and turn it into a String. <br>
+                &nbsp;&nbsp;print(f"{' '.join(display)}") <br> <br>
+                &nbsp;&nbsp;#Check if user has got all letters. <br>
+                &nbsp;&nbsp;if "_" not in display: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    end_of_game = True <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    print("You win.") <br> <br>
+                &nbsp;&nbsp;#TODO-2: - Import the stages from hangman_art.py and make this error go away. <br>
+                &nbsp;&nbsp;from hangman_art import stages <br>
+                &nbsp;&nbsp;print(stages[lives]) <br>
                 </em>
             </p>
 
