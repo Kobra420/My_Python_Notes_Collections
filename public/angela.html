@@ -2358,7 +2358,21 @@
                 <b>Hangman Final :- <br></b>
                 This the end result of final project of Hangman game. <br>
                 <em class="code">
-                    
+                    #Step 5
+
+                    import random <br> <br>
+                    #TODO-1: - Update the word list to use the 'word_list' from hangman_words.py <br>
+                    #Delete this line: word_list = ["ardvark", "baboon", "camel"] <br>
+                    from hangman_words import word_list <br> <br>
+                    chosen_word = random.choice(word_list) <br>
+                    word_length = len(chosen_word) <br> <br>
+                    end_of_game = False <br>
+                    lives = 6 <br> <br>
+                    #TODO-3: - Import the logo from hangman_art.py and print it at the start of the game. <br>
+                    from hangman_art import logo <br>
+                    print(logo) <br> <br>
+                    #Testing code <br>
+                    print(f'Pssst, the solution is {chosen_word}.') <br> <br>
                 </em>
             </p>
         <h3>Neccesary functions required for Project</h3>
