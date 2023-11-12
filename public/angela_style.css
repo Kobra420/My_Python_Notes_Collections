@@ -126,6 +126,12 @@ h4{
 .unbold {
     font-weight: normal;
 }
+.bold {
+    font-weight: bold;
+    color:#860A35;
+    font-weight: 600;
+    font-size: 15px;
+}
 
 p{
     font-family: 'Chakra Petch', sans-serif;
