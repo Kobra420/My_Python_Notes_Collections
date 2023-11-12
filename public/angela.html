@@ -2454,9 +2454,22 @@
             </p> <img src="../assets/angela/shorthand_ifelse.png" alt="">
             <p>
                 <b>For Loop</b> <br>
-                You can use a one-liner for loop using list comprehensions. It's concise and often used for simple operations on iterable elements. <br>
-
-            </p>
+                You can use a one-liner for loop using list comprehensions. It's concise and often used for simple operations on iterable elements. <br> <br>
+                <em class="code">
+                    # Regular for loop <br>
+                    numbers = [1, 2, 3, 4, 5] <br>
+                    squared_numbers = [] <br>
+                    print("normal") <br>
+                    for num in numbers: <br>
+                &nbsp;&nbsp;        squared_numbers.append(num**2) <br>
+                &nbsp;&nbsp;        print(squared_numbers) <br><br>
+                    # Shorthand for loop <br>
+                    numbers = [1, 2, 3, 4, 5] <br>
+                    squared_numbers = [num**2 for num in numbers] <br>
+                    print("ShortHand") <br>
+                    print(squared_numbers) <br>
+                </em>
+            </p> <img src="../assets/angela/shorthand__for_loop.png" alt="">
         <h3>Project</h3>
         <p><a href="https://replit.com/@BiswapradipDas/HangmanMine"> Project Link</a></p>
     
