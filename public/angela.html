@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -2483,17 +2484,125 @@
                     <img src="../assets/angela/Hangman_final7.png" alt="">
                     <img src="../assets/angela/Hangman_final8.png" alt="">
                     <img src="../assets/angela/Hangman_final9.png" alt="">
-        <h3>Neccesary functions required for Project</h3>
+        <h3>New technique applied : - </h3>
+        <h4>Python Shorthand Techniques</h4>
             <p>
-                
+                Shortcut of if-else statement and loops.It's very useful to write shortcuts of loops and if-else 
+                statement in codes or projects. <br><br>
+                In Python, you can use shorthand or the ternary conditional operator to write concise if-else statements. The syntax is:
+                <br><br>
+                <em class="code">
+                    # Short syntax <br>
+                    result = value_if_true if condition else value_if_false <br>
+                </em>
+                Here's a breakdown of each part: <br><br>
+                <ul>
+                    <li class="bold">condition:<p> The expression that evaluates to either True or False.</p></li>
+                    <li class="bold">value_if_true:<p>The value to be assigned if the condition is True.</p></li>
+                    <li class="bold">value_if_false:<p>The value to be assigned if the condition is False.</p></li>
+                </ul> <br>
+                <p>Let me provide you with an example:</p> <br>
+                <em class="code">
+                    # Regular if-else statement <br>
+                    x = 10 <br>
+                    if x &gt; 5: <br>
+                &nbsp;&nbsp;        result = "Greater than 5" <br>
+                    else: <br>
+                &nbsp;&nbsp;        result = "Not greater than 5" <br> <br>
+                </em>
+                Shorhand : <br>
+                <em class="code">
+                    # Shorthand using the ternary conditional operator <br>
+                    x = 1 <br>
+                    result = "Greater than 5" if x &gt; 5 else "Not greater than 5" <br>
+                    print(result) <br>
+                </em>
+            </p> <img src="../assets/angela/shorthand_ifelse.png" alt="">
+            <p>
+                <b>For Loop</b> <br>
+                You can use a one-liner for loop using list comprehensions. It's concise and often used for simple operations on iterable elements. <br> <br>
+                <em class="code">
+                    # Regular for loop <br>
+                    numbers = [1, 2, 3, 4, 5] <br>
+                    squared_numbers = [] <br>
+                    print("normal") <br>
+                    for num in numbers: <br>
+                &nbsp;&nbsp;        squared_numbers.append(num**2) <br>
+                &nbsp;&nbsp;        print(squared_numbers) <br><br>
+                    # Shorthand for loop <br>
+                    numbers = [1, 2, 3, 4, 5] <br>
+                    squared_numbers = [num**2 for num in numbers] <br>
+                    print("ShortHand") <br>
+                    print(squared_numbers) <br>
+                </em>
+            </p> <img src="../assets/angela/shorthand__for_loop.png" alt="">
+            <p>
+                <b>While Loop:</b> <br>
+                For the <em class="code">while</em> loop, there isn't a direct shorthand like with list comprehensions, 
+                but you can achieve concise looping using a conditional expression. <br> <br>
+                <em class="code">
+                    # Regular while loop <br>
+                    count = 0 <br>
+                    print("Regular") <br> <br>
+                    while count &lt; 5: <br>
+                        print(count) <br>
+                        count += 1 <br> <br>
+                    print("Shorthand") <br>
+                    # Shorthand while loop <br>
+                    count = 0 <br>
+                    while count &lt; 5: print(count); count += 1 <br> <br>
+                </em>
+            </p> <img src="../assets/angela/shorthand__while_loop.png" alt="">\
+            <p>
+                <b>Def() (Function Definition):</b> <br>
+                Function definitions in Python are typically straightforward, 
+                but you can use lambda functions for short, simple functions. <br> <br>
+                <em class="code">
+                    # Regular function <br>
+                    def add(x, y): <br>
+                &nbsp;&nbsp;        return x + y <br>
+                    print("Regular") <br>
+                    print(add(2,3)) <br> <br>
+                    print("ShortHand") <br>
+                    # Shorthand function with lambda <br>
+                    addi = lambda x, y: x + y <br>
+                    print(addi(2,3)) <br>
+                </em>
+            </p> <img src="../assets/angela/shorthand___FunctionDefiniton_def.png" alt="">
+            <p>
+                <b>shorthand of a nested if-else</b> <br>
+                The shorthand for a nested if-else with elif statements involves using a conditional expression within the expression 
+                of the outer if or else clause. Here's an example: <br>
+                <em class="code">
+                    # Regular nested if-else with elif statements <br>
+                    x = 10 <br>
+                    y = 5 <br>
+                    if x &gt; y: <br>
+                        result = "x is greater than y" <br>
+                    elif x &lt; y: <br>
+                        result = "x is less than y" <br>
+                    else: <br>
+                        result = "x is equal to y" <br>
+                    print("Regular") <br>
+                    print(result) <br> <br>
+                    # Shorthand nested if-else with elif <br>
+                    x = 10 <br>
+                    y = 5 <br>
+                    resulti = "x is greater than y" if x &gt; y else "x is less than y" if x &lt; y else "x is equal to y" <br>
+                    print("ShortHand") <br>
+                    print(resulti) <br> <br>
+                </em>
+                In the shorthand version, the conditional expressions are nested within each other to achieve the same logic 
+                as the regular nested if-else with elif statements. <br>
+            </p> <img src="../assets/angela/shorthand___nested_elif.png" alt="">
+            <p>
+                While this can make the code more concise, it's crucial to consider readability. If the logic becomes too complex, 
+                it's often better to stick with the regular nested if-else structure for clarity.
             </p>
-                <div>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
+            <p>
+                In Python, readability is emphasized, so while some constructs have shorthand options, 
+                it's essential to maintain code clarity. 
+            </p>
         <h3>Project</h3>
         <p><a href="https://replit.com/@BiswapradipDas/HangmanMine"> Project Link</a></p>
     
