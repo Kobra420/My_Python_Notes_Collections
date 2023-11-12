@@ -2506,7 +2506,32 @@
             <p>
                 <b>shorthand of a nested if-else</b> <br>
                 The shorthand for a nested if-else with elif statements involves using a conditional expression within the expression 
-                of the outer if or else clause. Here's an example:
+                of the outer if or else clause. Here's an example: <br>
+                <em class="code">
+                    # Regular nested if-else with elif statements <br>
+                    x = 10 <br>
+                    y = 5 <br>
+                    if x &gt; y: <br>
+                        result = "x is greater than y" <br>
+                    elif x &lt; y: <br>
+                        result = "x is less than y" <br>
+                    else: <br>
+                        result = "x is equal to y" <br>
+                    print("Regular") <br>
+                    print(result) <br> <br>
+                    # Shorthand nested if-else with elif <br>
+                    x = 10 <br>
+                    y = 5 <br>
+                    resulti = "x is greater than y" if x &gt; y else "x is less than y" if x &lt; y else "x is equal to y" <br>
+                    print("ShortHand") <br>
+                    print(resulti) <br> <br>
+                </em>
+                In the shorthand version, the conditional expressions are nested within each other to achieve the same logic 
+                as the regular nested if-else with elif statements. <br>
+            </p> <img src="../assets/angela/shorthand___nested_elif.png" alt="">
+            <p>
+                While this can make the code more concise, it's crucial to consider readability. If the logic becomes too complex, 
+                it's often better to stick with the regular nested if-else structure for clarity.
             </p>
             <p>
                 In Python, readability is emphasized, so while some constructs have shorthand options, 
