@@ -2605,6 +2605,104 @@
             </p>
         <h3>Project</h3>
         <p><a href="https://replit.com/@BiswapradipDas/HangmanMine"> Project Link</a></p>
+
+        <header>
+            <h2>Day 8 - Beginner - Ceaser Cipher Project</h2> <br>
+        </header>
+        <h3>The game Details: -- What is Cease Cipher ?? </h3>
+        <p>The Caesar cipher is a classic example of ancient cryptography and is said to have been used by Julius Caesar. 
+            The Caesar cipher is based on transposition and involves shifting each letter 
+            of the plaintext message by a certain number of letters, historically three, as shown in Figure
+        </p>
+            <img src="../assets/angela/Day8_CeaserCipher_Project1.jpg" alt="">
+        <p>
+            The Caesar cipher, also known as a shift cipher, is credited to Julius Caesar, and thus the name 
+            <em>'Caesar cipher'</em>. The Caesar cipher encryption scheme was used by Julius Caesar and his contemporaries 
+            for sending messages containing military secrets. The military secret messages were protected from Caesar's 
+            enemies if they had no idea about how the encryption scheme worked - the Caesar cipher encryption scheme was 
+            used to transform the military secret messages into something that looked unintelligible to those who had no 
+            idea about the Caesar cipher encryption scheme. The Caesar cipher is a very, very simple encryption scheme that 
+            is used to obscure the meaning of a message by shifting each letter comprising the message a few places in the 
+            alphabet - it is due to this that the Caesar cipher is also known as a shift cipher. The Caesar cipher belongs 
+            to a subset of encryption schemes called substitution ciphers - a <em>substitution cipher</em> is so called because each 
+            letter comprising the message gets substituted, which eventually helps in obscuring the meaning of the entire 
+            message.
+        </p>
+        <h4>Limitation of the Caesar cipher</h4>
+        <p>
+            The English language has 26 alphabets. Therefore, for a plaintext letter, there can be only 25 different 
+            possible ciphertext letters. Obviously, we must not consider that ciphertext letter which is identical to the 
+            plaintext letter. The Caesar cipher, therefore, is evidently quite limited in terms of the encryption 
+            capabilities that it can offer. <br> <br>
+            In today's age and times of extraordinary computing capabilities, the Caesar cipher is not worth implementing 
+            at all as an encryption scheme - it is simply not secure at all. However, the Caesar cipher may still find its 
+            use in some trivial applications, where the Caesar cipher could be employed as a simple means just to obscure 
+            the meaning of messages.
+        </p>
+        <img src="../assets/angela/Caesar_cipher_image2.png" alt="">
+        <h4>FUN FACT</h4>
+        <p>
+            In the 20th century, the Caesar cipher was used many a times by lovers in order to send romantic messages 
+            in the public section of The Times newspaper. Now, that's what I call “Cryptic ROMANCE”!!! 😊 <br> <br>
+            In the Caesar cipher encryption scheme, the sender and receiver of the message should both know how the message 
+            has been encrypted (the Key) and this information, therefore, must be kept strictly secret so that it doesn't 
+            get out into the hands of a rogue person. The Caesar cipher encryption scheme is, therefore, symmetric. In the 
+            Caesar cipher, a randomly chosen number between 1 and 25 constitutes the key. The key is then used by the 
+            Caesar cipher encryption algorithm in order to determine the cipher letter that will be used to substitute 
+            each letter comprising the plaintext. Therefore, if the key used to encrypt a message is kept secret, only 
+            those people who have the knowledge of what the key is should be able to correctly decrypt the message.
+        </p>
+        <a href="https://community.ibm.com/community/user/ibmz-and-linuxone/blogs/subhasish-sarkar1/2020/07/04/caesar-cipher">More about Ceaser Cipher</a>
+        <a href="https://www.sciencedirect.com/topics/computer-science/caesar-cipher#:~:text=The%20Caesar%20cipher%20is%20a,as%20shown%20in%20Figure%205.1.">More Refrences on the topic</a>
+        <h4>Code : -</h4>
+        <a href="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/100 Days of Code The Complete Python Pro Bootcamp for 2023/D8/art.py">Link to art file</a>
+        <p>
+            <em class="code">
+                alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] <br> <br>
+                def caesar(start_text, shift_amount, cipher_direction): <br>
+                end_text = "" <br>
+                if cipher_direction == "decode": <br>
+                    shift_amount *= -1 <br>
+                for char in start_text: <br>
+                &nbsp;&nbsp;    #TODO-3: What happens if the user enters a number/symbol/space? <br>
+                &nbsp;&nbsp;    #Can you fix the code to keep the number/symbol/space when the text is encoded/decoded? <br>
+                &nbsp;&nbsp;    #e.g. start_text = "meet me at 3" <br>
+                &nbsp;&nbsp;    #end_text = "•••• •• •• 3" <br>
+                &nbsp;&nbsp;    if char in alphabet: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        position = alphabet.index(char) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        new_position = position + shift_amount <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        end_text += alphabet[new_position] <br>
+                &nbsp;&nbsp;    else: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        end_text += char <br>
+                print(f"Here's the {cipher_direction}d result: {end_text}") <br> <br>
+                #TODO-1: Import and print the logo from art.py when the program starts. <br>
+                from art import logo <br>
+                print(logo) <br> <br>
+                #TODO-4: Can you figure out a way to ask the user if they want to restart the cipher program? <br>
+                #e.g. Type 'yes' if you want to go again. Otherwise type 'no'. <br>
+                #If they type 'yes' then ask them for the direction/text/shift again and call the caesar() function again? <br>
+                #Hint: Try creating a while loop that continues to execute the program if the user types 'yes'. <br> <br>
+                should_end = False <br>
+                while not should_end: <br> <br>
+                &nbsp;&nbsp;    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n") <br>
+                &nbsp;&nbsp;    text = input("Type your message:\n").lower() <br>
+                &nbsp;&nbsp;    shift = int(input("Type the shift number:\n")) <br>
+                #TODO-2: What if the user enters a shift that is greater than the number of letters in the alphabet? <br>
+                #Try running the program and entering a shift number of 45. <br>
+                # Add some code so that the program continues to work even if the user enters a shift number greater than 26.  <br>
+                #Hint: Think about how you can use the modulus (%). <br>
+                shift = shift % 26 <br> <br>
+                caesar(start_text=text, shift_amount=shift, cipher_direction=direction) <br> <br>
+                restart = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n") <br>
+                if restart == "no": <br>
+                &nbsp;&nbsp;    should_end = True <br>
+                &nbsp;&nbsp;    print("Goodbye") <br>
+            </em>
+        </p>
+        <img src="../assets/angela/Day8_CeaserCipher_Project_image3.jpg" alt="CeaserCipher_Project_image3">
+        <img src="../assets/angela/Day8_CeaserCipher_Project_image4.jpg" alt="CeaserCipher_Project_image4">
+        <img src="../assets/angela/Day8_CeaserCipher_Project_image5.jpg" alt="CeaserCipher_Project_image5">
+
     
 <h2>REFERENCES</h2>
     <p>Reference1</p>
