@@ -2588,7 +2588,50 @@
         </p>
         <a href="https://community.ibm.com/community/user/ibmz-and-linuxone/blogs/subhasish-sarkar1/2020/07/04/caesar-cipher">More about Ceaser Cipher</a>
         <a href="https://www.sciencedirect.com/topics/computer-science/caesar-cipher#:~:text=The%20Caesar%20cipher%20is%20a,as%20shown%20in%20Figure%205.1.">More Refrences on the topic</a>
-        
+        <h4>Code : -</h4>
+        <p>
+            <em class="code">
+                alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] <br> <br>
+                def caesar(start_text, shift_amount, cipher_direction): <br>
+                end_text = "" <br>
+                if cipher_direction == "decode": <br>
+                    shift_amount *= -1 <br>
+                for char in start_text: <br>
+                &nbsp;&nbsp;    #TODO-3: What happens if the user enters a number/symbol/space? <br>
+                &nbsp;&nbsp;    #Can you fix the code to keep the number/symbol/space when the text is encoded/decoded? <br>
+                &nbsp;&nbsp;    #e.g. start_text = "meet me at 3" <br>
+                &nbsp;&nbsp;    #end_text = "•••• •• •• 3" <br>
+                &nbsp;&nbsp;    if char in alphabet: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        position = alphabet.index(char) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        new_position = position + shift_amount <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        end_text += alphabet[new_position] <br>
+                &nbsp;&nbsp;    else: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        end_text += char <br>
+                print(f"Here's the {cipher_direction}d result: {end_text}") <br> <br>
+                #TODO-1: Import and print the logo from art.py when the program starts. <br>
+                from art import logo <br>
+                print(logo) <br> <br>
+                #TODO-4: Can you figure out a way to ask the user if they want to restart the cipher program? <br>
+                #e.g. Type 'yes' if you want to go again. Otherwise type 'no'. <br>
+                #If they type 'yes' then ask them for the direction/text/shift again and call the caesar() function again? <br>
+                #Hint: Try creating a while loop that continues to execute the program if the user types 'yes'. <br> <br>
+                should_end = False <br>
+                while not should_end: <br> <br>
+                &nbsp;&nbsp;    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n") <br>
+                &nbsp;&nbsp;    text = input("Type your message:\n").lower() <br>
+                &nbsp;&nbsp;    shift = int(input("Type the shift number:\n")) <br>
+                #TODO-2: What if the user enters a shift that is greater than the number of letters in the alphabet? <br>
+                #Try running the program and entering a shift number of 45. <br>
+                # Add some code so that the program continues to work even if the user enters a shift number greater than 26.  <br>
+                #Hint: Think about how you can use the modulus (%). <br>
+                shift = shift % 26 <br> <br>
+                caesar(start_text=text, shift_amount=shift, cipher_direction=direction) <br> <br>
+                restart = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n") <br>
+                if restart == "no": <br>
+                &nbsp;&nbsp;    should_end = True <br>
+                &nbsp;&nbsp;    print("Goodbye") <br>
+            </em>
+        </p>
 
     
 <h2>REFERENCES</h2>
