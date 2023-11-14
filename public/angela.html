@@ -2653,6 +2653,7 @@
                     def prime_checker(number):  # number is a parameter of the function prime_checker() <br>
                     &nbsp;&nbsp;    is_prime = True <br>
                     &nbsp;&nbsp;    for i in range(2, number): <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        print(f"remeinder by dividing {i} is {number%i}") <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;        print(number%i) <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;        if number % i == 0: <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            is_prime = False <br>
@@ -2664,6 +2665,7 @@
                     #Do NOT change any of the code below👇 <br>
                     n = int(input("Check this number: ")) <br>
                     prime_checker(number=n)  #input data/value of n is an arguement of the function prime_checker() <br>
+                    print(f" the user has put {n}") <br>
                 </em>
             </p>
 
