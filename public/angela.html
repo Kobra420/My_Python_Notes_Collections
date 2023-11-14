@@ -2702,6 +2702,39 @@
         <img src="../assets/angela/Day8_CeaserCipher_Project_image3.jpg" alt="CeaserCipher_Project_image3">
         <img src="../assets/angela/Day8_CeaserCipher_Project_image4.jpg" alt="CeaserCipher_Project_image4">
         <img src="../assets/angela/Day8_CeaserCipher_Project_image5.jpg" alt="CeaserCipher_Project_image5">
+        <h3>Prime Numbers</h3>
+        <img src="../assets/angela/Day8_PrimeNumber_Project_image.jpg" alt="PrimeNumber_Project_image">
+        <p>A whole number greater than 1 that cannot be exactly divided by any whole number other than itself 
+            and 1 (e.g. 2, 3, 5, 7, 11).Prime numbers are the natural numbers greater than 1 with exactly two factors, 
+            i.e. 1 and the number itself.A prime number is a positive integer having exactly two factors, 
+            i.e. 1 and the number itself. If p is a prime, then its only factors are necessarily 1 and p itself. 
+            Any number that does not follow this is termed a composite number, which can be factored into other positive integers. 
+            Another way of defining it is a positive number or integer, which is not a product of any other two positive integers 
+            except other than 1 and the number itself. </p>
+            <img src="../assets/angela/Day8_PrimeNumber_Project_image2.png" alt="Day8_PrimeNumber_Project_image2">
+            <p>
+                <b>Code :- </b><br>
+                <em class="code">
+                    #Write your code below this line 👇 <br>
+                    def prime_checker(number):  # number is a parameter of the function prime_checker() <br>
+                    &nbsp;&nbsp;    is_prime = True <br>
+                    &nbsp;&nbsp;    for i in range(2, number): <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        print(f"remeinder by dividing {i} is {number%i}") <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        print(number%i) <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        if number % i == 0: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            is_prime = False <br>
+                    &nbsp;&nbsp;    if is_prime: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        print("It's a prime number") <br>
+                    &nbsp;&nbsp;    else: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        print("It's not a prime number") <br> <br>
+                    #Write your code above this line 👆 <br> <br>
+                    #Do NOT change any of the code below👇 <br>
+                    n = int(input("Check this number: ")) <br>
+                    prime_checker(number=n)  #input data/value of n is an arguement of the function prime_checker() <br>
+                    print(f" the user has put {n}") <br>
+                </em>
+            </p>
+            <img src="../assets/angela/Day8_PrimeNumber_Project_image3.png" alt="Day8_PrimeNumber_Project_image3.png">
 
     
 <h2>REFERENCES</h2>
