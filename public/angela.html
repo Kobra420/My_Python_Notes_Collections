@@ -2735,6 +2735,106 @@
                 </em>
             </p>
             <img src="../assets/angela/Day8_PrimeNumber_Project_image3.png" alt="Day8_PrimeNumber_Project_image3.png">
+            <p>
+                Prime number finding code in another way <br>
+                <em class="code">
+                    number = int(input("Check this number: ")) <br> <br>
+                    if number &gt;= 1: <br>
+                &nbsp;&nbsp;        for i in range(2, int(number ** 0.5) + 1): <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            if number % i == 0: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                print("It's not a prime number") <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            else: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                print("It's a prime number") <br>
+                </em>
+            </p>
+            <h3>New Methods applied in the code explained</h3>
+            <p>
+                The <em class="code">index()</em> method in Python is a versatile tool that can be used in various scenarios.
+                The <em class="code">index() </em>method in Python is used to find the index of the first occurrence of a specified value within a sequence, 
+                such as a list, tuple, or string. <br>
+                <b>Syntax:-</b> <br>
+                <em 
+                    class="code">variable.index(variable2) <br>
+                </em>
+                Here, variable is the sequence in which you want to find 
+                the index, and variable2 is the value for which you want to find the index.
+                Let me provide you with an example using a list: <br> <br>
+                <em class="code">
+                    # Example list <br>
+                    fruits = ['apple', 'banana', 'orange', 'banana', 'grape'] <br> <br>
+                    # Find the index of 'orange' in the list <br>
+                    index_of_orange = fruits.index('orange') <br> <br>
+                    index_of_banana = fruits.index('banana') <br> <br>
+                    print(f"The index of 'orange' is: {index_of_orange}") <br> <br>
+                    print(f"The index of 'banana' is: {index_of_banana}") <br> <br>
+                    for fruit_index in fruits: <br>
+                        print(fruits.index(fruit_index),end=' ') <br> <br>
+                </em>
+                <img src="../assets/angela/Day8_Index_method _Image1.png" alt="Day8_Index_method _Image1"> <br>
+                In this example, <em class="code">fruits</em> is a list, and the <em class="code">index()</em> method is 
+                used to find the index of the first occurrence of 'orange' in the list. The result will be the index at 
+                which <em class="code">'orange'</em> is found, which is 2 in this case 
+                (remember that indexing starts from 0). <br>
+                Keep in mind that if the specified value is not found in the sequence, the <em class="code">index() </em>
+                method raises a <em class="code">ValueError</em>. To avoid this, you can use a conditional statement or the 
+                optional parameters of the <em class="code">index() </em>method. <br> <br>
+                <b>Different Usecases of Index() method :-</b> <br>
+                
+                <ol>
+                    <li><b>Finding the Index of an Element in a List:</b></li> <br>
+                    <em class="code">
+                        fruits = ['apple', 'banana', 'orange', 'banana', 'grape'] <br>
+                        index_of_orange = fruits.index('orange') <br>
+                        print(f"The index of 'orange' is: {index_of_orange}") <br> <br>
+                    </em> <br>
+                    <img src="../assets/angela/Day8_Index_method _Image2.png" alt="Index_method _Image2">
+                    <li><b>Handling Duplicate Values:</b></li> <br>
+                    <em class="code">
+                        # Handling Duplicate Values: <br>
+                        fruits = ['apple', 'banana', 'orange', 'banana', 'grape'] <br>
+                        first_banana_index = fruits.index('banana') <br>
+                        print(f"The index of the first 'banana' is: {first_banana_index}") <br>
+                    </em> <br>
+                    <img src="../assets/angela/Day8_Index_method _Image3.png" alt="Index_method _Image3">
+                    <li><b>Finding Index in a Sublist:</b></li> <br>
+                    <em class="code">
+                        nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] <br>
+                        index_of_5 = nested_list.index([4, 5, 6]) <br>
+                        print(f"The index of sublist [4, 5, 6] is: {index_of_5}") <br> <br>
+                    </em> <br>
+                    <img src="../assets/angela/Day8_Index_method _Image4.png" alt="Index_method _Image4">
+                    <li><b>Index of Substring in a String:</b></li> <br>
+                    <em class="code">
+                        sentence = "Python is a powerful language" <br>
+                        index_of_powerful = sentence.index("powerful") <br>
+                        print(f"The index of 'powerful' is: {index_of_powerful}") <br> <br>
+                    </em> <br>
+                    <img src="../assets/angela/Day8_Index_method _Image5.png" alt="Index_method _Image5">
+                    <li><b>Handling Value Not Found: </b></li> <br>
+                    <em class="code">
+                        fruits = ['apple', 'banana', 'orange', 'grape'] <br>
+                        search_value = 'watermelon' <br><br>
+                        try: <br>
+                    &nbsp;&nbsp;        index_of_watermelon = fruits.index(search_value) <br>
+                    &nbsp;&nbsp;        print(f"The index of '{search_value}' is: {index_of_watermelon}") <br>
+                        except ValueError: <br>
+                    &nbsp;&nbsp;        print(f"'{search_value}' not found in the list.") <br><br>
+                    </em> <br>
+                    <img src="../assets/angela/Day8_Index_method _Image6.png" alt="Index_method _Image6">
+                    <li><b>Using Optional Parameters:</b></li> <br>
+                    <em class="code">
+                        # Using Optional Parameters <br>
+                        fruits = ['apple', 'banana', 'orange', 'banana', 'grape'] <br>
+                        start_index = 2 <br>
+                        index_of_banana = fruits.index('banana', start_index) <br>
+                        print(f"The index of 'banana' starting from index {start_index} is: {index_of_banana}") <br> <br>
+                    </em> <br>
+                    <img src="../assets/angela/Day8_Index_method _Image7.png" alt="Index_method _Image 7">
+                </ol>
+                These examples showcase different situations where the  <em class="code">index() </em>method can be applied, from simple lists to 
+                nested structures and strings. Always consider handling the possibility of the specified value not being 
+                present in the sequence to avoid <em class="code">ValueError</em>.
+            </p>
 
     
 <h2>REFERENCES</h2>
