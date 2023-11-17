@@ -2845,121 +2845,264 @@
                             <li><p>To remove a key-value pair from a dictionary, use the <em class="code">pop()</em> method.</p></li>
                         </ul>
                         <br><em class="code">
-                            # Creating a dictionary
-                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'}
-                            print(my_dict)
+                            # Creating a dictionary <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            print(my_dict) <br>
                         </em><br>
-
                     </p>
+                    <img src="../assets/angela/Day9_Dictionary_image1.png" alt="">
                     <li><b>Accessing Values:</b></li>
                     <p>
                         <ul>
-                            <p>
-                                
-                            </p>
+                            <li><p>Values in a dictionary are accessed using their corresponding keys.</p></li>
+                            <li><p>To access the value associated with a specific key, use the <em class="code">key</em> as the index.</p></li>
+                            <li><p>To access all the keys in a dictionary, use the <em class="code">keys()</em> method.</p></li>
+                            <li><p>To access all the values in a dictionary, use the <em class="code">values()</em> method.</p></li>
+                            <li><p>To access all the key-value pairs in a dictionary, use the <em class="code">items()</em> method.</p></li>
                         </ul>
                         <br><em class="code">
-
+                            # Accessing values <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            print(my_dict['name'])  # Output: John <br> <br>
                         </em><br>
 
                     </p>
+                    <img src="../assets/angela/Day9_Dictionary_image2.png" alt="">
                     <li><b>Modifying and Adding Elements:</b></li>
                     <p>
                         <ul>
-                            <p>
-                                
-                            </p>
+                            <li><p>You can modify the value associated with a key or add new key-value pairs.</p></li>
                         </ul>
                         <br><em class="code">
-
+                            # Modifying and adding elements <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            my_dict['age'] = 26 <br>
+                            my_dict['gender'] = 'Male' <br>
+                            print(my_dict) <br>
                         </em><br>
-
                     </p>
+                    <img src="../assets/angela/Day9_Dictionary_image3.png" alt="">
                     <li><b>Removing Elements:</b></li>
                     <p>
                         <ul>
-                            <p>
-                                
-                            </p>
+                            <li><p>You can remove elements from a dictionary using the <em class="code">del</em> statement.</p></li>
+                            <li><p>You can also use the <em class="code">pop()</em> method to remove an element and return its value.</p></li>
+                            <li><p>Elements can be removed using the del keyword or the pop() method.</p></li>
                         </ul>
                         <br><em class="code">
-
+                            # Removing elements <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            my_dict['age'] = 26 <br>
+                            my_dict['gender'] = 'Male' <br>
+                            print(my_dict) <br>
+                            del my_dict['city'] <br>
+                            popped_value = my_dict.pop('gender') <br>
+                            print(my_dict) <br>
                         </em><br>
 
                     </p>
+                    <img src="../assets/angela/Day9_Dictionary_image4.png" alt="">
                     <li><b> Checking for Key Existence:</b></li>
                     <p>
                         <ul>
-                            <p>
-                                
-                            </p>
+                            <li><p>You can check if a key exists in a dictionary using the in keyword.</p></li>
+                            <li><p>You can also use the <em class="code">get()</em> method to check if a key exists and return its value.</p></li>
+                            
                         </ul>
                         <br><em class="code">
+                            # Checking for key existence <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            print('age' in my_dict) <br>
+                            print(my_dict.get('age')) <br> <br>
 
+                            # Checking key existence <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            my_dict['age'] = 26 <br>
+                            my_dict['gender'] = 'Male' <br>
+                            if 'age' in my_dict: <br>
+                        &nbsp;&nbsp;        print("Age is present.") <br>
                         </em><br>
-
                     </p>
+                    <img src="../assets/angela/Day9_Dictionary_image5.png" alt="">
                     <li><b>Dictionary Methods:</b></li>
                     <p>
                         <ul>
-                            <p>
-                                
-                            </p>
+                            <li>
+                                <p>
+                                    Dictionaries come with various built-in methods, 
+                                    including <em class="code">keys()</em>, <em class="code">values()</em>, and 
+                                    <em class="code">items()</em>.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    You can also use the <em class="code">copy()</em> method to create a copy of a dictionary.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    You can also use the <em class="code">clear()</em> method to remove all elements from a dictionary.
+                                </p>
+                            </li>
                         </ul>
                         <br><em class="code">
-
+                            # Using dictionary methods <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            my_dict['age'] = 26 <br>
+                            my_dict['gender'] = 'Male' <br>
+                            keys = my_dict.keys() <br>
+                            values = my_dict.values() <br>
+                            key_value_pairs = my_dict.items() <br>
+                            print(f"{keys}\n {values}\n {key_value_pairs}") <br>
                         </em><br>
-
                     </p>
+                    <img src="../assets/angela/Day9_Dictionary_image6.png" alt="">
                     <li><b>Nested Dictionaries:</b></li>
                     <p>
                         <ul>
-                            <p>
-                                
-                            </p>
+                            <li><p>Dictionaries can be nested, allowing you to represent more complex data structures.</p></li>
+                            <li><p>You can access nested dictionaries using the <em class="code">get()</em> method.</p></li>
                         </ul>
                         <br><em class="code">
-
+                            # Nested dictionaries <br>
+                            nested_dict = {'person': {'name': 'Alice', 'age': 30}} <br>
+                            print(nested_dict) <br>
                         </em><br>
-
                     </p>
+                    <img src="../assets/angela/Day9_Dictionary_image7.png" alt="">
                     <li><b> Use Cases:</b></li>
                     <p>
                         <ul>
-                            <p>
-                                
-                            </p>
+                            <li><p>Configuration Settings:</p></li>
+                            
+                            <em class="code">
+                                #usecase1 <br>
+                                #Configuration Settings: <br>
+                                settings = {'theme': 'dark', 'fontsize': 14, 'language': 'English'} <br>
+ <br>
+                                #User Profile: <br>
+                                profile = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+ <br>
+                                #Combine the two dictionaries: <br>
+ <br>
+                                combined = {**settings, **profile} <br>
+ <br>
+                                #Print the combined dictionary: <br>
+ <br>
+                                print(combined) <br>
+                            </em>
+                            <img src="../assets/angela/Day9_Dictionary_image8.png" alt="">
+                            <li><p>Storing User Information:</p></li>
+                            
+                            <em class="code">
+                                #usecase2 <br>
+                                #Storing User Information: <br>
+                                user = {'username': 'john_doe', 'email': 'john@example.com', 'is_admin': False} <br>
+ <br>
+                                #Printing User Information: <br>
+                                print(user) <br>
+                                print(user['username']) <br>
+                                print(user['email']) <br>
+                                print(user['is_admin']) <br>
+ <br>
+                                #Updating User Information: <br>
+                                user['is_admin'] = True <br>
+                                print(user) <br>
+                            </em>
+                            <img src="../assets/angela/Day9_Dictionary_image9.png" alt="">
+                            <li><p>Counting Occurrences:</p></li>
+                            
+                            <em class="code">
+                                #usecase3 <br>
+                                #Counting Occurrences: <br>
+                                word_count = {'apple': 3, 'orange': 5, 'banana': 2} <br>
+ <br>
+                                # Print the number of apples <br>
+ <br>
+                                print(word_count['apple']) <br>
+ <br>
+                                # Print the number of bananas <br>
+ <br>
+                                print(word_count['banana']) <br>
+ <br>
+                                # Print the number of oranges <br>
+ <br>
+                                print(word_count['orange']) <br>
+                            </em>
+                            <img src="../assets/angela/Day9_Dictionary_image10.png" alt="">
+                            <li><p>Data Transformation:</p></li>
+                            
+                            <em class="code">
+                                #usecase4 <br>
+                                #Data Transformation: <br>
+                                data = {'name': 'John', 'age': 25, 'scores': [90, 85, 92]} <br>
+ <br>
+                                #convert to JSON: <br>
+ <br>
+                                import json <br>
+                                json_data = json.dumps(data) <br>
+                                print(json_data) <br>
+ <br>
+                                #convert to Python object: <br>
+ <br>
+                                python_data = json.loads(json_data) <br>
+                                print(python_data) <br>
+                            </em>
+                            <img src="../assets/angela/Day9_Dictionary_image11.png" alt="">
                         </ul>
-                        <br><em class="code">
-
-                        </em><br>
-
                     </p>
                     <li><b> Dictionary Comprehension:</b></li>
                     <p>
                         <ul>
-                            <p>
-                                
-                            </p>
+                            <li><p>Similar to list comprehensions, you can create dictionaries in a concise manner.</p></li>
                         </ul>
                         <br><em class="code">
-
+                            #  Dictionary Comprehension: <br>
+                            squares = {x: x**2 for x in range(8)} <br>
+                            print(squares) <br>
+ <br>
+                            #  Dictionary Comprehension: <br>
+ <br>
+                            cubes = {x: x**3 for x in range(9)} <br>
+                            print(cubes) <br>
                         </em><br>
-
+                        <img src="../assets/angela/Day9_Dictionary_image12.png" alt="">
                     </p>
                     <li><b>Handling Missing Keys:</b></li>
                     <p>
                         <ul>
-                            <p>
-                                
-                            </p>
+                            <li><p>You can use the get() method to handle cases where a key might not exist.</p></li>
                         </ul>
                         <br><em class="code">
-
+                            #Handling Missing Keys: <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            my_dict['age'] = 26 <br>
+                            my_dict['gender'] = 'Male' <br>
+                            value = my_dict.get('city', 'Default City') <br>
+                            print(value) <br>
+ <br>
+                            #Handling Missing Keys: <br>
+ <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+ <br>
+                            try: <br>
+                                value = my_dict['gender'] <br>
+                                print(value) <br>
+                                 <br>
+                            except KeyError: <br>
+                                print('Key not found')  <br>
+                                 <br>
                         </em><br>
 
                     </p>
+                    <img src="../assets/angela/Day9_Dictionary_image13.png" alt=""> <br>
+                    <img src="../assets/angela/Day9_Dictionary_image14.png" alt="">
                 </ol>
+                <p>
+                    Dictionaries are highly flexible and widely used in Python for their efficiency in data retrieval 
+                    and manipulation. They are suitable for scenarios where you need to associate data with unique 
+                    identifiers (keys).
+                </p>
 
 
     
