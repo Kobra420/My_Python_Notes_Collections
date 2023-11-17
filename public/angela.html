@@ -3006,7 +3006,24 @@
                             <li><p>You can use the get() method to handle cases where a key might not exist.</p></li>
                         </ul>
                         <br><em class="code">
-
+                            #Handling Missing Keys: <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            my_dict['age'] = 26 <br>
+                            my_dict['gender'] = 'Male' <br>
+                            value = my_dict.get('city', 'Default City') <br>
+                            print(value) <br>
+ <br>
+                            #Handling Missing Keys: <br>
+ <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+ <br>
+                            try: <br>
+                                value = my_dict['gender'] <br>
+                                print(value) <br>
+                                 <br>
+                            except KeyError: <br>
+                                print('Key not found')  <br>
+                                 <br>
                         </em><br>
 
                     </p>
