@@ -2817,12 +2817,19 @@
                     <li><b>Removing Elements:</b></li>
                     <p>
                         <ul>
-                            <p>
-                                
-                            </p>
+                            <li><p>You can remove elements from a dictionary using the <em class="code">del</em> statement.</p></li>
+                            <li><p>You can also use the <em class="code">pop()</em> method to remove an element and return its value.</p></li>
+                            <li><p>Elements can be removed using the del keyword or the pop() method.</p></li>
                         </ul>
                         <br><em class="code">
-
+                            # Removing elements <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            my_dict['age'] = 26 <br>
+                            my_dict['gender'] = 'Male' <br>
+                            print(my_dict) <br>
+                            del my_dict['city'] <br>
+                            popped_value = my_dict.pop('gender') <br>
+                            print(my_dict) <br>
                         </em><br>
 
                     </p>
