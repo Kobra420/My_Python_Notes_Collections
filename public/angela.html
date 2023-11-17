@@ -2836,12 +2836,22 @@
                     <li><b> Checking for Key Existence:</b></li>
                     <p>
                         <ul>
-                            <p>
-                                
-                            </p>
+                            <li><p>You can check if a key exists in a dictionary using the in keyword.</p></li>
+                            <li><p>You can also use the <em class="code">get()</em> method to check if a key exists and return its value.</p></li>
+                            
                         </ul>
                         <br><em class="code">
+                            # Checking for key existence <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            print('age' in my_dict) <br>
+                            print(my_dict.get('age')) <br> <br>
 
+                            # Checking key existence <br>
+                            my_dict = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+                            my_dict['age'] = 26 <br>
+                            my_dict['gender'] = 'Male' <br>
+                            if 'age' in my_dict: <br>
+                        &nbsp;&nbsp;        print("Age is present.") <br>
                         </em><br>
 
                     </p>
