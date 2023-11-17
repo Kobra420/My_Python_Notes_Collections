@@ -2964,13 +2964,23 @@
                             <li><p>Data Transformation:</p></li>
                             
                             <em class="code">
-
+                                #usecase4 <br>
+                                #Data Transformation: <br>
+                                data = {'name': 'John', 'age': 25, 'scores': [90, 85, 92]} <br>
+ <br>
+                                #convert to JSON: <br>
+ <br>
+                                import json <br>
+                                json_data = json.dumps(data) <br>
+                                print(json_data) <br>
+ <br>
+                                #convert to Python object: <br>
+ <br>
+                                python_data = json.loads(json_data) <br>
+                                print(python_data) <br>
                             </em>
 
                         </ul>
-                        <br><em class="code">
-
-                        </em><br>
 
                     </p>
                     <li><b> Dictionary Comprehension:</b></li>
@@ -2979,7 +2989,14 @@
                             <li><p>Similar to list comprehensions, you can create dictionaries in a concise manner.</p></li>
                         </ul>
                         <br><em class="code">
-
+                            #  Dictionary Comprehension: <br>
+                            squares = {x: x**2 for x in range(8)} <br>
+                            print(squares) <br>
+ <br>
+                            #  Dictionary Comprehension: <br>
+ <br>
+                            cubes = {x: x**3 for x in range(9)} <br>
+                            print(cubes) <br>
                         </em><br>
 
                     </p>
