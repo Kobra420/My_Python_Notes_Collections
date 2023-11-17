@@ -2907,19 +2907,58 @@
                             <li><p>Configuration Settings:</p></li>
                             
                             <em class="code">
-
+                                #usecase1 <br>
+                                #Configuration Settings: <br>
+                                settings = {'theme': 'dark', 'fontsize': 14, 'language': 'English'} <br>
+ <br>
+                                #User Profile: <br>
+                                profile = {'name': 'John', 'age': 25, 'city': 'New York'} <br>
+ <br>
+                                #Combine the two dictionaries: <br>
+ <br>
+                                combined = {**settings, **profile} <br>
+ <br>
+                                #Print the combined dictionary: <br>
+ <br>
+                                print(combined) <br>
                             </em>
 
                             <li><p>Storing User Information:</p></li>
                             
                             <em class="code">
-
+                                #usecase2 <br>
+                                #Storing User Information: <br>
+                                user = {'username': 'john_doe', 'email': 'john@example.com', 'is_admin': False} <br>
+ <br>
+                                #Printing User Information: <br>
+                                print(user) <br>
+                                print(user['username']) <br>
+                                print(user['email']) <br>
+                                print(user['is_admin']) <br>
+ <br>
+                                #Updating User Information: <br>
+                                user['is_admin'] = True <br>
+                                print(user) <br>
                             </em>
 
                             <li><p>Counting Occurrences:</p></li>
                             
                             <em class="code">
-
+                                #usecase3 <br>
+                                #Counting Occurrences: <br>
+                                word_count = {'apple': 3, 'orange': 5, 'banana': 2} <br>
+ <br>
+                                # Print the number of apples <br>
+ <br>
+                                print(word_count['apple']) <br>
+ <br>
+                                # Print the number of bananas <br>
+ <br>
+                                print(word_count['banana']) <br>
+ <br>
+                                # Print the number of oranges <br>
+ <br>
+                                print(word_count['orange']) <br>
                             </em>
 
                             <li><p>Data Transformation:</p></li>
@@ -2950,7 +2989,7 @@
                             <li><p>You can use the get() method to handle cases where a key might not exist.</p></li>
                         </ul>
                         <br><em class="code">
-                            
+
                         </em><br>
 
                     </p>
