@@ -3041,7 +3041,64 @@
         <h4>Making travel log</h4>
         <p>
             <em class="code">
-                
+                travel_log = [ <br>
+                { <br>
+                "country": "France", <br>
+                "visits": 12, <br>
+                "cities": ["Paris", "Lille", "Dijon"] <br>
+                }, <br>
+                { <br>
+                "country": "Germany", <br>
+                "visits": 5, <br>
+                "cities": ["Berlin", "Hamburg", "Stuttgart"] <br>
+                }, <br>
+                ] <br>
+                #🚨 Do NOT change the code above <br>
+ <br>
+                #TODO: Write the function that will allow new countries <br>
+                #to be added to the travel_log. 👇 <br>
+                def add_new_country(country_name,num_visit,cities): <br>
+            &nbsp;&nbsp;        new_country = {} <br>
+            &nbsp;&nbsp;        new_country["country"] = country_name <br>
+            &nbsp;&nbsp;        new_country["visits"] = num_visit <br>
+            &nbsp;&nbsp;        new_country["cities"] = cities <br>
+            &nbsp;&nbsp;        travel_log.append(new_country) <br>
+ <br>
+                #🚨 Do not change the code below <br>
+                add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"]) <br>
+ <br>
+                add_new_country("China", 3, ["Bejing","Hongkong","Shanghai"]) <br>
+ <br>
+                # Assuming travel_log is already defined as mentioned in the previous conversation <br>
+ <br>
+                def find_visits_in_country(country_name): <br>
+            &nbsp;&nbsp;        for entry in travel_log: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;            if entry["country"] == country_name: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                return entry["visits"] <br>
+            &nbsp;&nbsp;        return f"{country_name} not found in travel_log" <br>
+ <br>
+                # Example: Find visits to China <br>
+                visits_to_china = find_visits_in_country("China") <br>
+                print(visits_to_china) <br>
+ <br>
+                # Example: Find visits to Russia <br>
+                visits_to_russia = find_visits_in_country("Russia") <br>
+                print(visits_to_russia) <br>
+ <br>
+                # Example: Find cities of China that was visited <br>
+                def find_cities_visited_in_country(country_name): <br>
+            &nbsp;&nbsp;        for entry in travel_log: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;            if entry["country"] == country_name: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                return entry["cities"] <br>
+            &nbsp;&nbsp;        return f"{country_name} not found in travel_log" <br>
+ <br>
+                cities_visited_China = find_cities_visited_in_country("China") <br>
+                print(cities_visited_China) <br>
+                try: <br>
+            &nbsp;&nbsp;        cities_visited_China = find_cities_visited_in_country("China") <br>
+            &nbsp;&nbsp;        print(cities_visited_China[1]) <br>
+                except: <br>
+            &nbsp;&nbsp;        print("Not found") <br>
             </em>
         </p>
 
