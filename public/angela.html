@@ -3171,6 +3171,100 @@
         <img src="../assets/angela/Day9_Play_Dictionaries_image2.png" alt="">
         <img src="../assets/angela/Day9_Play_Dictionaries_image3.png" alt="">
         <img src="../assets/angela/Day9_Play_Dictionaries_image4.png" alt="">
+        <br>
+        <h3>Grading Program</h3>
+        <h4>To Dos and Objectives</h4>
+        <p>
+            You have access to a database of student_scores in the format of a dictionary. 
+            The keys in student_scores are the names of the students and the values are their exam scores. <br><br>
+            Write a program that converts their scores to grades. By the end of your program, you should have a new 
+            dictionary called student_grades that should contain student names for keys and their grades for values. 
+            The final version of the student_grades dictionary will be checked. <br>
+            <b>Objectives</b><br>
+            <ol>
+                <li>DO NOT modify lines 1-7 to change the existing student_scores dictionary.</li>
+                <li>DO NOT write any print statements.</li>
+                <li>
+                    scoring criteria
+                        <ul>
+                            <li>Scores 91 - 100: Grade = "Outstanding"</li>
+                            <li>Scores 81 - 90: Grade = "Exceeds Expectations"</li>
+                            <li>Scores 71 - 80: Grade = "Acceptable"</li>
+                            <li>Scores 70 or lower: Grade = "Fail"</li>
+                        </ul>
+                </li>
+                <li>Expected Output</li>
+                            <em class="bold">
+                                '{ <br>
+                                     'Harry': 'Exceeds Expectations',  <br>
+                                     'Ron': 'Acceptable',  <br>
+                                     'Hermione': 'Outstanding',  <br>
+                                     'Draco': 'Acceptable',  <br>
+                                     'Neville': 'Fail' <br>
+                                }' <br>
+                            </em>
+                <li>Hint</li>
+                            <p>
+                                Remember that looping through a Dictionary will only give you the keys and not the values.
+                                If in doubt as to why your code is not doing what you expected, 
+                                you can always print out the intermediate values.
+                            </p>
+                <li>Code</li>
+                            <p>
+                                <em class="code" >
+                                    student_scores = { <br>
+                                        "Harry": 81, <br>
+                                        "Ron": 78, <br>
+                                        "Hermione": 99,  <br>
+                                        "Draco": 74, <br>
+                                        "Neville": 62, <br>
+                                        "Fred": 95, <br>
+                                        "George": 88, <br>
+                                        "Susan": 72, <br>
+                                        "Luna": 93, <br>
+                                        "Lily": 97, <br>
+                                        "Charlie": 98, <br>
+                                        "Peter": 76, <br>
+                                        "Anna": 52, <br>
+                                        "Beth": 98, <br>
+                                        "Caroline": 94, <br>
+                                        "Dennis": 69, <br>
+                                        "Molly": 75, <br>
+                                        "Ella": 88, <br>
+                                        "Toby": 97, <br>
+                                        "Maggie": 95, <br>
+                                      } <br>
+                                      # 🚨 Don't change the code above 👆 <br><br>
+                                      #TODO-1: Create an empty dictionary called student_grades. <br>
+                                        student_grades = {} <br><br>
+                                        #TODO-2: Write your code below to add the grades to student_grades.👇 <br> <br>
+                                        for key in student_scores: <br>
+                                    &nbsp;&nbsp;        if student_scores[key] &gt;= 90: <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;            student_grades[key] = "Outstanding" <br>
+                                    &nbsp;&nbsp;        elif student_scores[key]  &gt;= 80: <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;           student_grades[key] = "Exceeds Expectations" <br>
+                                    &nbsp;&nbsp;        elif student_scores[key]  &gt;= 70: <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;           student_grades[key] = "Acceptable" <br>
+                                    &nbsp;&nbsp;        else: <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;           student_grades[key] = "Fail" <br><br>
+                                        # 🚨 Don't change the code below 👇 <br>
+                                        print(student_grades) <br>
+                                        <br>
+                                </em>
+                            </p>
+                <li>Actual Output</li>
+                            <img src="../assets/angela/Day9_Grading_prgrm_image1.png" alt="">
+                            <img src="../assets/angela/Day9_Grading_prgrm_image2.png" alt="">
+                            <img src="../assets/angela/Day9_Grading_prgrm_image3.png" alt="">
+                <li>Test Your Code</li>
+                            <p>
+                                Check your code is doing what it is supposed to. When you're happy with your code, 
+                                click submit to check your solution.
+                            </p>
+                <li>Solution</li>
+                <p><a href="https://repl.it/@appbrewery/day-9-1-solution">Grading Program Solution</a></p>
+            </ol>
+        </p>
 
 
     
