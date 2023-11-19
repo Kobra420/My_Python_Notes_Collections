@@ -4,6 +4,21 @@ student_scores = {
   "Hermione": 99, 
   "Draco": 74,
   "Neville": 62,
+  "Fred": 95,
+  "George": 88,
+  "Susan": 72,
+  "Luna": 93,
+  "Lily": 97,
+  "Charlie": 98,
+  "Peter": 76,
+  "Anna": 52,
+  "Beth": 98,
+  "Caroline": 94,
+  "Dennis": 69,
+  "Molly": 75,
+  "Ella": 88,
+  "Toby": 97,
+  "Maggie": 95,
 }
 # 🚨 Don't change the code above 👆
 
