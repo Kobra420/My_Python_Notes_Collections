@@ -3,6 +3,10 @@ programming_dictionary = {"Bug": "An error in a program that prevents the progra
                           "Loop": "The action of doing something over and over again.",
                           "Class": "A blueprint for creating objects.",
                           "Object": "An instance of a class."}
-#deleting items from dictionary
-del programming_dictionary["Bug"] #deleting an item
-print(programming_dictionary)
+copy_dictionary = programming_dictionary.copy()#creating a copy
+print(copy_dictionary)
+#empty dictionary
+empty_dictionary = programming_dictionary
+print(empty_dictionary)
+empty_dictionary = {}
+print(empty_dictionary)
