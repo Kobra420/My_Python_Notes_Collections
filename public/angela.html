@@ -3511,36 +3511,39 @@
         <h4>Code</h4>
             <p>
                 <em class="code">
-                    # from replit import clear <br>
-                    #HINT: You can call clear() to clear the output in the console. <br>
                     import os <br>
                     from Art import logo <br>
+ <br>
                     print(logo) <br>
-                    # os.system('cls') <br>
-                    bidder =input("What is your Name?:  ") <br>
-                    bid_amount = input("What is your bid?:$  ") <br>
-                    bidding_record={} <br>
-                    # check_other_bidders = input("Type 'yes' or 'no'.") <br> <br> <br>
-
+ <br>
+ <br>
                     def check(check_other_bidders): <br>
-                &nbsp;&nbsp;        if check_other_bidders == 'yes': <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;            return True <br>
-                &nbsp;&nbsp;        else: <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;            return False <br> <br> <br>
-
-                def bid_record(bidder,bid_amount):
-                &nbsp;&nbsp;    while check(check_other_bidders): <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;        bidder =input("What is your Name?:  ") <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;        bid_amount = input("What is your bid?:$  ") <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;        check_other_bidders = input("Type 'yes' or 'no'.") <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;        bidding_record[bidder]=bid_amount <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;        # os.system('cls') <br>
-                &nbsp;&nbsp;    print("Highest bid is :---") <br> <br> <br>
-
-                print(bidding_record) <br>
+                        if check_other_bidders == 'yes': <br>
+                            return True <br>
+                        else: <br>
+                            return False <br>
  <br>
  <br>
-                bid_record(bidder,bid_amount) <br>
+                    def bid_record(): <br>
+                        bidder = input("What is your Name?: ") <br>
+                        bid_amount = float(input("What is your bid?: $")) <br>
+                        bidding_record = {bidder: bid_amount} <br>
+                        check_other_bidders = input("Type 'yes' or 'no': ") <br>
+                        while check(check_other_bidders): <br>
+                            bidder = input("What is your Name?: ") <br>
+                            bid_amount = float(input("What is your bid?: $")) <br>
+                            bidding_record[bidder] = bid_amount <br>
+                            check_other_bidders = input("Type 'yes' or 'no': ") <br>
+                        print("Bidding record:", bidding_record) <br>
+                        highest_bidder = max(bidding_record, key=lambda x: bidding_record[x]) <br>
+                        highest_bid = bidding_record[highest_bidder] <br>
+                        print("Highest bidder:", highest_bidder) <br>
+                        print("Highest bid:", highest_bid) <br>
+ <br>
+
+                    bid_record()<br> <br> <br>
+
+                <br>
                 </em>
             </p> <img src="../assets/angela/Day9_Dict_Silent Auction_image3.png" alt="">
 
