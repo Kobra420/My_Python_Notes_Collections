@@ -3548,6 +3548,8 @@
             <img src="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/screenshot_notes/D9/auction_intro4.jpg" alt="">
             <img src="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/screenshot_notes/D9/auction_intro5.jpg" alt="">
             <img src="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/screenshot_notes/D9/auction_intro6.jpg" alt="">
+        <h4>Flowchart</h4>
+            <img src="../assets/angela/Day9_Dict_Silent Auction_image2.png" alt="">
         <h4>Objectives</h4>
             <p>
                 The objective is to write a program that will collect the names and bids of different people. 
@@ -3584,9 +3586,29 @@
                     bidder =input("What is your Name?:  ") <br>
                     bid_amount = input("What is your bid?:$  ") <br>
                     bidding_record={} <br>
-                    # check_other_bidders = input("Type 'yes' or 'no'.") <br>
+                    # check_other_bidders = input("Type 'yes' or 'no'.") <br> <br> <br>
+
+                    def check(check_other_bidders): <br>
+                &nbsp;&nbsp;        if check_other_bidders == 'yes': <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            return True <br>
+                &nbsp;&nbsp;        else: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            return False <br> <br> <br>
+
+                def bid_record(bidder,bid_amount):
+                &nbsp;&nbsp;    while check(check_other_bidders): <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        bidder =input("What is your Name?:  ") <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        bid_amount = input("What is your bid?:$  ") <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        check_other_bidders = input("Type 'yes' or 'no'.") <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        bidding_record[bidder]=bid_amount <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;        # os.system('cls') <br>
+                &nbsp;&nbsp;    print("Highest bid is :---") <br> <br> <br>
+
+                print(bidding_record) <br>
+ <br>
+ <br>
+                bid_record(bidder,bid_amount) <br>
                 </em>
-            </p>
+            </p> <img src="../assets/angela/Day9_Dict_Silent Auction_image3.png" alt="">
 
     
 <h2>REFERENCES</h2>
