@@ -3518,27 +3518,27 @@
  <br>
  <br>
                     def check(check_other_bidders): <br>
-                        if check_other_bidders == 'yes': <br>
-                            return True <br>
-                        else: <br>
-                            return False <br>
+                    &nbsp;&nbsp;    if check_other_bidders == 'yes': <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        return True <br>
+                    &nbsp;&nbsp;    else: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        return False <br>
  <br>
  <br>
                     def bid_record(): <br>
-                        bidder = input("What is your Name?: ") <br>
-                        bid_amount = float(input("What is your bid?: $")) <br>
-                        bidding_record = {bidder: bid_amount} <br>
-                        check_other_bidders = input("Type 'yes' or 'no': ") <br>
-                        while check(check_other_bidders): <br>
-                            bidder = input("What is your Name?: ") <br>
-                            bid_amount = float(input("What is your bid?: $")) <br>
-                            bidding_record[bidder] = bid_amount <br>
-                            check_other_bidders = input("Type 'yes' or 'no': ") <br>
-                        print("Bidding record:", bidding_record) <br>
-                        highest_bidder = max(bidding_record, key=lambda x: bidding_record[x]) <br>
-                        highest_bid = bidding_record[highest_bidder] <br>
-                        print("Highest bidder:", highest_bidder) <br>
-                        print("Highest bid:", highest_bid) <br>
+                    &nbsp;&nbsp;    bidder = input("What is your Name?: ") <br>
+                    &nbsp;&nbsp;    bid_amount = float(input("What is your bid?: $")) <br>
+                    &nbsp;&nbsp;    bidding_record = {bidder: bid_amount} <br>
+                    &nbsp;&nbsp;    check_other_bidders = input("Type 'yes' or 'no': ") <br>
+                    &nbsp;&nbsp;    while check(check_other_bidders): <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        bidder = input("What is your Name?: ") <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        bid_amount = float(input("What is your bid?: $")) <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        bidding_record[bidder] = bid_amount <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        check_other_bidders = input("Type 'yes' or 'no': ") <br>
+                    &nbsp;&nbsp;    print("Bidding record:", bidding_record) <br>
+                    &nbsp;&nbsp;    highest_bidder = max(bidding_record, key=lambda x: bidding_record[x]) <br>
+                    &nbsp;&nbsp;    highest_bid = bidding_record[highest_bidder] <br>
+                    &nbsp;&nbsp;    print("Highest bidder:", highest_bidder) <br>
+                    &nbsp;&nbsp;    print("Highest bid:", highest_bid) <br>
  <br>
 
                     bid_record()<br> <br> <br>
