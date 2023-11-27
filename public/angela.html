@@ -3003,7 +3003,7 @@
                             print(programming_dictionary["Key"]) <br>
                 </em>
             </p><img src="../assets/angela/Day9_Dictionaries_Images2.png" alt="">
-            <b>retrieving items from dictionary</b>  <br> <br>
+            <b>Retrieving items from dictionary</b>  <br> <br>
             <p> <br> <br>
                 <em class="code">
                     programming_dictionary =
@@ -3018,9 +3018,8 @@
                             print(programming_dictionary["Function"]) <br>
                             print(programming_dictionary["Class"]) <br>
                 </em>
-            </p><img src="../assets/angela/Day9_Dictionaries_Images1.png" alt="">
-            <li>deleting items from dictionary</li>
-            <p>
+            </p><img src="../assets/angela/Day9_Dictionaries_Images1.png" alt=""> 
+            <p><br><b>Deleting items from dictionary</b> <br>
                 <em class="code">
                     #deleting items from dictionary
                     programming_dictionary =
@@ -3055,8 +3054,7 @@
                     # print(programming_dictionary) <br>
                 </em>
             </p>
-            <li>copying and emptying in dictionary</li>
-            <p>
+            <p><br><b>Copying and emptying in dictionary</b><br>
                 <em class="code">
                     programming_dictionary =
                         { <br>
@@ -3076,8 +3074,8 @@
                 </em>
             </p><img src="../assets/angela/Day9_copy_empty_dictionay_Images.png" alt="">
             <img src="../assets/angela/Day9_copy_empty_dictionay_Images2.png" alt="">
-            <li>Looping of Dictionaries</li>
-            <p>
+            <p><br>
+                <b>Looping of Dictionaries</b> <br>
                 <em class="code">
                     programming_dictionary =
                         { <br>
@@ -3098,8 +3096,77 @@
                         print(programming_dictionary) <br> <br>
                 </em>
             </p><img src="../assets/angela/Day9_Looping_of_dictionary_Images1.png" alt="">
-            <img src="../assets/angela/Day9_Looping_of_dictionary_Images2.png" alt="">
-            
+            <img src="../assets/angela/Day9_Looping_of_dictionary_Images2.png" alt=""> <br>
+            <p>
+                <b>Nesting of Dictionaries</b> <br>
+                Screenshots of the class has been given here . <br>
+                <img src="../assets/angela/nested_dict7.png" alt=""> <br>
+            <img src="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/screenshot_notes/D9/Dict_nesting1.jpg" alt="">
+            <img src="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/screenshot_notes/D9/Dict_nesting2.jpg" alt="">
+            <img src="../assets/angela/nested_dict3.png" alt="">
+            Here below I have explained a simple nested dictionary named as travel_log1. <br>
+            <b>Nesting Dictionary in a Dictionary</b> <br>
+            <b>SYNTAX</b> <br>
+                <img src="../assets/angela/nested_dict6.png" alt="">
+            <br><b>The code</b> <br>
+            <em class="code">
+                # Nested dictionary structure <br>
+                travel_log1 = { <br>
+                    "uttar_pradesh": {"cities_visited": ["lakhnau", "ayodhya", "mirat"], "total_visits": 6}, <br>
+                    "gujrat": {"cities_visited": ["ahmedabad", "gandhinagar", "surat"], "total_visits": 3}, <br>
+                    "karnataka": {"cities_visited": ["bengaluru", "maysuru", "mangaluru"], "total_visits": 4} <br>
+                } <br>
+ <br>
+                # Accessing information from the nested dictionary <br>
+                print(travel_log1["karnataka"]["total_visits"]) <br>
+                print(travel_log1["karnataka"]["cities_visited"]) <br>
+ <br>
+            </em><br>
+            <b>Explainations of the above code</b> <br>
+            In the provided code, a nested dictionary structure named travel_log1. This dictionary contains information 
+            about visits to different states in India, and each state has a sub-dictionary with details about cities 
+            visited and total visits. <br> <br>
+            <ol>
+                <li>Nested Dictionary Structure:
+                    <ul>
+                        <li class="unbold">The travel_log1 dictionary has three keys: "uttar_pradesh", "gujrat", and "karnataka".</li>
+                        <li class="unbold">Each of these keys maps to a sub-dictionary containing information about cities visited 
+                            and total visits.</li>
+                    </ul>
+                </li>
+                <li>Accessing Nested Values:
+                    <ul>
+                        <li class="unbold">To access information about Karnataka, you use the key "karnataka" to access the 
+                            sub-dictionary.</li>
+                        <li class="unbold">Then, you can further access specific values within the sub-dictionary using additional 
+                            keys.</li>
+                    </ul>
+                </li>
+                <li>Output:
+                    <ul>
+                        <li class="unbold">print(travel_log1["karnataka"]["total_visits"]) prints the total visits to Karnataka, 
+                            which is 4.</li>
+                        <li class="unbold">print(travel_log1["karnataka"]["cities_visited"]) prints the list of cities visited in 
+                            Karnataka.</li>
+                    </ul>
+                </li>
+            </ol> </p>
+            <p> This nested dictionary structure allows for a more organized representation of hierarchical data, where 
+            states have detailed information about cities visited and total visits. It's a powerful way to model 
+            complex relationships in your data.</p>
+             <img src="../assets/angela/nested_dict4.png" alt=""> <br> <br>
+            <b>Nesting a list in Dictionary</b> <br>
+            <br><b>The Code</b> <br>
+            <em class="code">
+                #nesting a list in dictionry <br>
+            travel_log = { <br>
+                "uttar_pradesh":["lakhnau","ayodhya","mirat"], <br>
+                "gujrat":["ahmedabad","gandhinagar","surat"], <br>
+                "karnataka":["bengaluru","maysuru","mangaluru"] <br>
+            } <br>
+            print(travel_log["uttar_pradesh"][1]) <br>
+            </em>
+            <img src="../assets/angela/nested_dict5.png" alt="">
             
             <h3>Dictionaries &amp; Stuffs</h3>
                 <ol>
@@ -3577,36 +3644,39 @@
         <h4>Code</h4>
             <p>
                 <em class="code">
-                    # from replit import clear <br>
-                    #HINT: You can call clear() to clear the output in the console. <br>
                     import os <br>
                     from Art import logo <br>
+ <br>
                     print(logo) <br>
-                    # os.system('cls') <br>
-                    bidder =input("What is your Name?:  ") <br>
-                    bid_amount = input("What is your bid?:$  ") <br>
-                    bidding_record={} <br>
-                    # check_other_bidders = input("Type 'yes' or 'no'.") <br> <br> <br>
-
+ <br>
+ <br>
                     def check(check_other_bidders): <br>
-                &nbsp;&nbsp;        if check_other_bidders == 'yes': <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;            return True <br>
-                &nbsp;&nbsp;        else: <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;            return False <br> <br> <br>
-
-                def bid_record(bidder,bid_amount):
-                &nbsp;&nbsp;    while check(check_other_bidders): <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;        bidder =input("What is your Name?:  ") <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;        bid_amount = input("What is your bid?:$  ") <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;        check_other_bidders = input("Type 'yes' or 'no'.") <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;        bidding_record[bidder]=bid_amount <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;        # os.system('cls') <br>
-                &nbsp;&nbsp;    print("Highest bid is :---") <br> <br> <br>
-
-                print(bidding_record) <br>
+                    &nbsp;&nbsp;    if check_other_bidders == 'yes': <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        return True <br>
+                    &nbsp;&nbsp;    else: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        return False <br>
  <br>
  <br>
-                bid_record(bidder,bid_amount) <br>
+                    def bid_record(): <br>
+                    &nbsp;&nbsp;    bidder = input("What is your Name?: ") <br>
+                    &nbsp;&nbsp;    bid_amount = float(input("What is your bid?: $")) <br>
+                    &nbsp;&nbsp;    bidding_record = {bidder: bid_amount} <br>
+                    &nbsp;&nbsp;    check_other_bidders = input("Type 'yes' or 'no': ") <br>
+                    &nbsp;&nbsp;    while check(check_other_bidders): <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        bidder = input("What is your Name?: ") <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        bid_amount = float(input("What is your bid?: $")) <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        bidding_record[bidder] = bid_amount <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        check_other_bidders = input("Type 'yes' or 'no': ") <br>
+                    &nbsp;&nbsp;    print("Bidding record:", bidding_record) <br>
+                    &nbsp;&nbsp;    highest_bidder = max(bidding_record, key=lambda x: bidding_record[x]) <br>
+                    &nbsp;&nbsp;    highest_bid = bidding_record[highest_bidder] <br>
+                    &nbsp;&nbsp;    print("Highest bidder:", highest_bidder) <br>
+                    &nbsp;&nbsp;    print("Highest bid:", highest_bid) <br>
+ <br>
+
+                    bid_record()<br> <br> <br>
+
+                <br>
                 </em>
             </p> <img src="../assets/angela/Day9_Dict_Silent Auction_image3.png" alt="">
 
