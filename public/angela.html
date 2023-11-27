@@ -3033,10 +3033,58 @@
             <img src="../assets/angela/Day9_Looping_of_dictionary_Images2.png" alt=""> <br>
             <p>
                 <b>Nesting of Dictionaries</b> <br>
-            </p>
+                Screenshots of the class has been given here . <br>
             <img src="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/screenshot_notes/D9/Dict_nesting1.jpg" alt="">
             <img src="../RAW/aNGeLaPy_uDeMy/Dr. Angela Yu/screenshot_notes/D9/Dict_nesting2.jpg" alt="">
             <img src="../assets/angela/nested_dict3.png" alt="">
+            Here below I have explained a simple nested dictionary named as travel_log1. <br>
+            <br><b>The code</b> <br>
+            <em class="code">
+                # Nested dictionary structure <br>
+                travel_log1 = { <br>
+                    "uttar_pradesh": {"cities_visited": ["lakhnau", "ayodhya", "mirat"], "total_visits": 6}, <br>
+                    "gujrat": {"cities_visited": ["ahmedabad", "gandhinagar", "surat"], "total_visits": 3}, <br>
+                    "karnataka": {"cities_visited": ["bengaluru", "maysuru", "mangaluru"], "total_visits": 4} <br>
+                } <br>
+ <br>
+                # Accessing information from the nested dictionary <br>
+                print(travel_log1["karnataka"]["total_visits"]) <br>
+                print(travel_log1["karnataka"]["cities_visited"]) <br>
+ <br>
+            </em><br>
+            <b>Explainations of the above code</b> <br>
+            In the provided code, a nested dictionary structure named travel_log1. This dictionary contains information 
+            about visits to different states in India, and each state has a sub-dictionary with details about cities 
+            visited and total visits. <br> <br>
+            <ol>
+                <li>Nested Dictionary Structure:
+                    <ul>
+                        <li>The travel_log1 dictionary has three keys: "uttar_pradesh", "gujrat", and "karnataka".</li>
+                        <li>Each of these keys maps to a sub-dictionary containing information about cities visited 
+                            and total visits.</li>
+                    </ul>
+                </li>
+                <li>Accessing Nested Values:
+                    <ul>
+                        <li>To access information about Karnataka, you use the key "karnataka" to access the 
+                            sub-dictionary.</li>
+                        <li>Then, you can further access specific values within the sub-dictionary using additional 
+                            keys.</li>
+                    </ul>
+                </li>
+                <li>Output:
+                    <ul>
+                        <li>print(travel_log1["karnataka"]["total_visits"]) prints the total visits to Karnataka, 
+                            which is 4.</li>
+                        <li>print(travel_log1["karnataka"]["cities_visited"]) prints the list of cities visited in 
+                            Karnataka.</li>
+                    </ul>
+                </li>
+            </ol> <br>
+            This nested dictionary structure allows for a more organized representation of hierarchical data, where 
+            states have detailed information about cities visited and total visits. It's a powerful way to model 
+            complex relationships in your data.
+            </p>
             
             <h3>Dictionaries &amp; Stuffs</h3>
                 <ol>
