@@ -3469,6 +3469,21 @@
                     # 2 <br>
                     # ["Sao Paulo", "Rio de Janeiro"] <br>
                 # Do NOT change the code above 👆 <br>
+             <br>
+                # TODO: Write the function that will allow new countries <br>
+                # to be added to the travel_log.  <br>
+                def add_new_country(country_name, num_visits, city_name): <br>
+                  add_new_country = {} <br>
+                  add_new_country["country"] = country_name <br>
+                  add_new_country["visits"] = num_visits <br>
+                  add_new_country["cities"] = city_name <br>
+                  travel_log.append(add_new_country) <br>
+                 <br>
+                # Do not change the code below 👇 <br>
+                add_new_country(country, visits, list_of_cities) <br>
+                print(f"I've been to {travel_log[2]['country']} {travel_log[2]['visits']} times.") <br>
+                print(f"My favourite city was {travel_log[2]['cities'][0]}.") <br>
+ <br>
             </em>
         </p>
         <h3>Grading Program</h3>
