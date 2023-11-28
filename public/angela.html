@@ -3510,7 +3510,70 @@
         <img src="../assets/angela/Day9_Play_Dictionaries_image2.png" alt="">
         <img src="../assets/angela/Day9_Play_Dictionaries_image3.png" alt="">
         <img src="../assets/angela/Day9_Play_Dictionaries_image4.png" alt="">
-        <br>
+        <br> <br>
+        <p> <b>travel_log1 [Auditorium new approach]</b>
+            <br>
+                <img src="../assets/angela/Day9_Dictionary_travel_log_auditorium_image0.png" alt=""> <br>
+                <a href="https://app.auditorium.ai/lesson/eelyNMYJKXeNJAbjssSEQz0m88XvnhX6/58076521-a623-49e9-8d55-7a0c76c60464?sl=ee33719e-7ebe-4e83-aafa-fabf7184a81b&st=eaddaad3-4d91-4dcc-a6a1-d559022fe042">Auditorium Link</a> <br>
+            <em class="code">
+                country = input() # Add country name <br>
+                visits = int(input()) # Number of visits <br>
+                list_of_cities = eval(input()) # create list from formatted string <br>
+ <br>
+                travel_log = [ <br>
+                    { <br>
+                    "country": "France", <br>
+                    "visits": 12, <br>
+                    "cities": ["Paris", "Lille", "Dijon"] <br>
+                    }, <br>
+                    { <br>
+                    "country": "Germany", <br>
+                    "visits": 5, <br>
+                    "cities": ["Berlin", "Hamburg", "Stuttgart"] <br>
+                    }, <br>
+                ] <br>
+ <br>
+                # Do NOT change the code above 👆 <br>
+             <br>
+                # TODO: Write the function that will allow new countries <br>
+                # to be added to the travel_log.  <br>
+                def add_new_country(country_name, num_visits, city_name): <br>
+                  add_new_country = {} <br>
+                  add_new_country["country"] = country_name <br>
+                  add_new_country["visits"] = num_visits <br>
+                  add_new_country["cities"] = city_name <br>
+                  travel_log.append(add_new_country) <br>
+                 <br>
+                # Do not change the code below 👇 <br>
+                add_new_country(country, visits, list_of_cities) <br>
+                print(f"I've been to {travel_log[2]['country']} {travel_log[2]['visits']} times.") <br>
+                print(f"My favourite city was {travel_log[2]['cities'][0]}.") <br> <br>
+            </em> <br>
+            <p>
+                <b>Inputs</b><br>
+                <em>
+                # input 
+                # Brazil
+                # 2
+                # ["Sao Paulo", "Rio de Janeiro"]
+                # India
+                # 3
+                # ["Kolchi", "Hyderabad", "Bangalore"]
+                # Iceland
+                # 2
+                # ["Reykjavik"]
+                # Japan
+                # 4
+                # ["Kyoto", "Kagoshima", "Tokyo"]
+                # Italy
+                # 7
+                # ["Venice", "Rome", "Florence"]
+                </em>
+            </p>
+            <img src="../assets/angela/Day9_Dictionary_travel_log_auditorium5_image1.png" alt="">
+            <img src="../assets/angela/Day9_Dictionary_travel_log_auditorium5_img2.png" alt="">
+            <img src="../assets/angela/Day9_Dictionary_travel_log_auditorium5_img3.png" alt="">
+        </p>
         <h3>Grading Program</h3>
         <h4>To Dos and Objectives</h4>
         <p>
