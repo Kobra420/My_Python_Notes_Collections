@@ -3606,12 +3606,22 @@
         <h4><b>Dictionary Comprehension</b></h4>
                 <p>
                     <em class="code">
+                        <br>
                         # Dictionary Comprehension <br>
-                        square_dict ={} <br>
+                        # Dictionary comprehension is a concise way to create a dictionary in Python. <br>
+                        # Syntax: <br>
+                        # new_dict = {key: value for (key, value) in iterable} <br>
+                        # Example: <br>
+                        # Create a dictionary with numbers as keys and their squares as value <br>
+                         <br>
+                        new_dict ={} <br>
                         for i in range(2,16): <br>
-                    &nbsp;&nbsp;        square_dict[i] = i**2 <br>
- <br>
-                        print(square_dict) <br>
+                        &nbsp;&nbsp;    new_dict[i] = i**2 <br>
+                         <br>
+                        squares = new_dict <br>
+                        for i in squares: <br>
+                        &nbsp;&nbsp;    print(f"Number - > {i} : -- Square - > {squares[i]}") <br>
+                        &nbsp;&nbsp;    # print(squares) <br>
                     </em>
                 </p>
                 <img src="../assets/angela/Day9_Dictionary_Own_Probelms 4 bsicSkill_honIMG.png" alt="">
