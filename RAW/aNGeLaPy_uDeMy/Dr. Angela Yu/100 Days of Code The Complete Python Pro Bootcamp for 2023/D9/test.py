@@ -1,14 +1,21 @@
-programming_dictionary = {"Bug": "An error in a program that prevents the program from running as expected.",
-                          "Function": "A piece of code that you can easily call over and over again.",
-                          "Loop": "The action of doing something over and over again.",
-                          "Class": "A blueprint for creating objects.",
-                          "Object": "An instance of a class."}
-#looping through dictionary
-for key in programming_dictionary:
-    print(key)
-    print(programming_dictionary[key])
-for value in programming_dictionary.values():
-    print(value)
-for key, value in programming_dictionary.items():
-    print(f"{key}:{value}")
-print(programming_dictionary)
+# Create a nested dictionary that stores information about students. 
+# Each student has a name, age, and a dictionary of subjects they are taking, with corresponding grades.
+
+students = {}
+
+def add_student(name, age):
+    """Adds a student to the dictionary"""
+    students[name] = {'age': age, 'subjects': {}}
+    
+def add_subject(name, subject, grade):
+    """Adds a subject to a student"""
+    students[name]['subjects'][subject] = grade
+    
+# Example usage:
+
+add_student('Alice', 20)
+
+add_subject('Alice', 'Math', 85)
+add_subject('Alice', 'Science', 90)
+
+print(students)
