@@ -19,3 +19,13 @@ add_subject('Alice', 'Math', 85)
 add_subject('Alice', 'Science', 90)
 
 print(students)
+print(students["Alice"]["subjects"]["Science"])
+
+# Output:
+{'Alice': 
+    {'age': 20, 
+     'subjects': 
+         {'Math': 85, 'Science': 90}
+         }
+    }
+
