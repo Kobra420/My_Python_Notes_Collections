@@ -3699,16 +3699,69 @@
         <p>
 
             <em class="code">
-                # Desired Output: <br>
-                {'Alice':  <br>
-                    {'age': 20,  <br>
-                    'subjects':  <br>
-                        {'Math': 85, 'Science': 90} <br>
-                        } <br>
-                    } <br>
+                # # Create a nested dictionary that stores information about students.  <br>
+                # # Each student has a name, age, and a dictionary of subjects they are taking, with corresponding grades. <br>
+                # # Output: <br>
+                # student = { <br>
+                #     'Alice':  <br>
+                #     {'age': 20,  <br>
+                #      'subjects':  <br>
+                #         { <br>
+                #              'Math': 85, <br>
+                #              'Science': 90, <br>
+                #              'English': 95, <br>
+                #              'History': 90, <br>
+                #              'Geography': 95, <br>
+                #              'Art': 95, <br>
+                #              'Music': 90 <br>
+                #         } <br>
+                #     } <br>
+                #     , <br>
+                #     'Bob':  <br>
+                #     {'age': 21,  <br>
+                #      'subjects':  <br>
+                #         { <br>
+                #              'Math': 75, <br>
+                #              'Science': 80, <br>
+                #              'English': 90, <br>
+                #              'History': 80, <br>
+                #              'Geography': 85, <br>
+                #              'Art': 80, <br>
+                #              'Music': 85, <br>
+                #         } <br>
+                #     } <br>
+                #     , <br>
+                #     'Charlie':  <br>
+                #     {'age': 22,  <br>
+                #      'subjects':  <br>
+                #         { <br>
+                #              'Math': 65, <br>
+                #              'Science': 70, <br>
+                #              'English': 75, <br>
+                #              'History': 70, <br>
+                #              'Geography': 75, <br>
+                #              'Art': 70, <br>
+                #              'Music': 75 <br>
+                #         } <br>
+                #     } <br>
+                #     , <br>
+                #     'David':  <br>
+                #     {'age': 23,  <br>
+                #      'subjects':  <br>
+                #         { <br>
+                #              'Math': 55, <br>
+                #              'Science': 60, <br>
+                #              'English': 65, <br>
+                #              'History': 60, <br>
+                #              'Geography': 65, <br>
+                #              'Art': 60, <br>
+                #              'Music': 65 <br>
+                #         } <br>
+                #     } <br>
+                #     ,} <br>
             </em>
 
-            <b>Code</b>
+            <b>Code</b> <br> <br>
             <em class="code">
                 # Create a nested dictionary that stores information about students.  <br>
                 # Each student has a name, age, and a dictionary of subjects they are taking, with corresponding grades. <br>
@@ -3724,14 +3777,43 @@
                     students[name]['subjects'][subject] = grade <br>
                      <br>
                 # Example usage: <br>
- <br>
+                 <br>
                 add_student('Alice', 20) <br>
- <br>
                 add_subject('Alice', 'Math', 85) <br>
                 add_subject('Alice', 'Science', 90) <br>
- <br>
-                print(students) <br>
-                print(students["Alice"]["subjects"]["Science"]) <br>
+                add_subject('Alice', 'English', 95) <br>
+                add_subject('Alice', 'History', 90) <br>
+                add_subject('Alice', 'Geography', 95) <br>
+                add_subject('Alice', 'Art', 95) <br>
+                add_subject('Alice', 'Music', 90) <br>
+                 <br>
+                add_student('Bob', 21) <br>
+                add_subject('Bob', 'Math', 75) <br>
+                add_subject('Bob', 'Science', 80) <br>
+                add_subject('Bob', 'English', 90) <br>
+                add_subject('Bob', 'History', 80) <br>
+                add_subject('Bob', 'Geography', 85) <br>
+                add_subject('Bob', 'Art', 80) <br>
+                add_subject('Bob', 'Music', 85) <br>
+                 <br>
+                add_student('Charlie', 22) <br>
+                add_subject('Charlie', 'Math', 65) <br>
+                add_subject('Charlie', 'Science', 70) <br>
+                add_subject('Charlie', 'English', 75) <br>
+                add_subject('Charlie', 'History', 70) <br>
+                add_subject('Charlie', 'Geography', 75) <br>
+                add_subject('Charlie', 'Art', 70) <br>
+                add_subject('Charlie', 'Music', 75) <br>
+                 <br>
+                add_student('David', 23) <br>
+                add_subject('David', 'Math', 55) <br>
+                add_subject('David', 'Science', 60) <br>
+                add_subject('David', 'English', 65) <br>
+                add_subject('David', 'History', 60) <br>
+                add_subject('David', 'Geography', 65) <br>
+                add_subject('David', 'Art', 60) <br>
+                add_subject('David', 'Music', 65) <br> <br>
+                print(students['David']['subjects']) <br>
             </em>
         </p>
 
