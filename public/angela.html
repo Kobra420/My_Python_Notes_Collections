@@ -3628,6 +3628,46 @@
                 <img src="../assets/angela/Day9_Dictionary_Own_Probelms 4 bsicSkill_honIMG2.png" alt="">
                 <img src="../assets/angela/Day9_Dictionary_Own_Probelms 4 bsicSkill_honIMG3.png" alt="">
                 <img src="../assets/angela/Day9_Dictionary_Own_Probelms 4 bsicSkill_honIMG4.png" alt="">
+        
+        <h4>nested dictionary</h4>
+        <p>
+
+            <em class="code">
+                # Desired Output: <br>
+                {'Alice':  <br>
+                    {'age': 20,  <br>
+                    'subjects':  <br>
+                        {'Math': 85, 'Science': 90} <br>
+                        } <br>
+                    } <br>
+            </em>
+
+            <b>Code</b>
+            <em class="code">
+                # Create a nested dictionary that stores information about students.  <br>
+                # Each student has a name, age, and a dictionary of subjects they are taking, with corresponding grades. <br>
+ <br>
+                students = {} <br>
+ <br>
+                def add_student(name, age): <br>
+                    """Adds a student to the dictionary""" <br>
+                    students[name] = {'age': age, 'subjects': {}} <br>
+                     <br>
+                def add_subject(name, subject, grade): <br>
+                    """Adds a subject to a student""" <br>
+                    students[name]['subjects'][subject] = grade <br>
+                     <br>
+                # Example usage: <br>
+ <br>
+                add_student('Alice', 20) <br>
+ <br>
+                add_subject('Alice', 'Math', 85) <br>
+                add_subject('Alice', 'Science', 90) <br>
+ <br>
+                print(students) <br>
+                print(students["Alice"]["subjects"]["Science"]) <br>
+            </em>
+        </p>
 
 
         <h3>Silent Auction Project</h3>
