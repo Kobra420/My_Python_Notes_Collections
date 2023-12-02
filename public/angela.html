@@ -3816,7 +3816,34 @@
                 print(students['David']['subjects']) <br>
             </em>
         </p>
-
+        <h3>Problem 5: Key with Maximum Value</h3>
+        <p>
+            <em class="code">
+            officers ={} <br>
+            def retired_officers_RankName_add(name,rank): <br>
+        &nbsp;&nbsp;        """Adds a officer to the dictionary""" <br>
+        &nbsp;&nbsp;        officers[name] = {'rank':rank,'basic_details' :{}} <br>
+ <br>
+            def age_payBand_add(name,age,pay_band): <br>
+        &nbsp;&nbsp;        officers[name]['basic_details'][age] = pay_band <br>
+ <br>
+            retired_officers_RankName_add('John','Captain') <br>
+            retired_officers_RankName_add('Jane','Lieutinent') <br>
+            retired_officers_RankName_add('Vivek','Major') <br>
+ <br>
+            age_payBand_add('John',30,'III') <br>
+            age_payBand_add('Jane',20,'II') <br>
+            age_payBand_add('Vivek',24,'IV') <br>
+ <br>
+            # print payband of max_age among officers{} <br>
+ <br>
+            # print(max(officers['John']['basic_details'].keys())) <br>
+ <br>
+            print(officers['John']['basic_details'][max(officers['John']['basic_details'].keys())]) <br>
+        </em>
+        </p>
+        <img src="../assets/angela/Day9_Dictionary_Own_Probelms 4 bsicSkill_honIMG5.png" alt="">
+        
 
         <h3>Silent Auction Project</h3>
         <h4>Introduction</h4>
