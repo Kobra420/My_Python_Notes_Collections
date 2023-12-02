@@ -3750,7 +3750,30 @@
                 print(students['David']['subjects']) <br>
             </em>
         </p>
+        <h3>Problem 5: Key with Maximum Value</h3>
+        <em class="code">
+            officers ={}
+            def retired_officers_RankName_add(name,rank):
+        &nbsp;&nbsp;        """Adds a officer to the dictionary"""
+        &nbsp;&nbsp;        officers[name] = {'rank':rank,'basic_details' :{}}
 
+            def age_payBand_add(name,age,pay_band):
+        &nbsp;&nbsp;        officers[name]['basic_details'][age] = pay_band
+
+            retired_officers_RankName_add('John','Captain')
+            retired_officers_RankName_add('Jane','Lieutinent')
+            retired_officers_RankName_add('Vivek','Major')
+
+            age_payBand_add('John',30,'III')
+            age_payBand_add('Jane',20,'II')
+            age_payBand_add('Vivek',24,'IV')
+
+            # print payband of max_age among officers{}
+
+            # print(max(officers['John']['basic_details'].keys()))
+
+            print(officers['John']['basic_details'][max(officers['John']['basic_details'].keys())])
+        </em>
 
         <h3>Silent Auction Project</h3>
         <h4>Introduction</h4>
