@@ -3442,6 +3442,190 @@
                     and manipulation. They are suitable for scenarios where you need to associate data with unique 
                     identifiers (keys).
                 </p>
+        <h3> <em class="code"> " .keys() " </em>functionalities and usages with real-time examples</h3>
+                <p>
+                    The <em class="code">'.keys()' </em>method in Python is used to retrieve a view of all the keys in a dictionary. 
+                    It returns a view object that displays a list of all the keys in the dictionary. 
+                    Here are some functionalities and real-time examples of using the<em class="code"> '.keys()' </em>method: <br>
+                </p>
+                <ol>
+                    <li>Iterating Through Dictionary Keys:
+                    <p>
+                        <em class="code">
+                            #  Iterating Through Dictionary Keys: <br>
+                            student = {'name': 'Alice', 'age': 20, 'grade': 'A'} <br>
+                            for key in student.keys(): <br>
+                        &nbsp;&nbsp;        print(key) <br>
+                        </em> <br> <br>
+
+                        This example prints each key in the <em class="code">'student' </em>dictionary. 
+                        It is equivalent to using<em class="code"> 'for key in student:' </em>because iterating over a 
+                        dictionary iterates over its keys by default.
+
+                        <b>.keys() method with real time example Iterating Through Nested-Dictionary Keys</b> <br> <br>
+
+                        Let's consider a nested dictionary and use the <em class="code">'.keys()' </em>method to iterate through its keys. 
+                        In this example, I'll use a nested dictionary representing information about students and 
+                        their subjects: <br> <br>
+
+                        <em class="code">
+                            # .keys() method with real time example Iterating Through Nested-Dictionary Keys <br>
+                            students = { <br>
+                                'Alice': {'age': 20, 'subjects': {'Math': 85, 'Science': 90}}, <br>
+                                'Bob': {'age': 22, 'subjects': {'History': 75, 'English': 88}}, <br>
+                                'Charlie': {'age': 21, 'subjects': {'Physics': 92, 'Chemistry': 87}} <br>
+                            } <br>
+ <br>
+                            # Iterate through outer dictionary keys <br>
+                            for student_name in students.keys(): <br>
+                                print(f"Student: {student_name}") <br>
+ <br>
+                                # Iterate through inner dictionary keys (subjects) <br>
+                                for subject in students[student_name]['subjects'].keys(): <br>
+                                    print(f"  Subject: {subject}") <br>
+ <br>
+                            # Output: <br>
+                            # Student: Alice <br>
+                            #   Subject: Math <br>
+                            #   Subject: Science <br>
+                            # Student: Bob <br>
+                            #   Subject: History <br>
+                            #   Subject: English <br>
+                            # Student: Charlie <br>
+                            #   Subject: Physics <br>
+                            #   Subject: Chemistry <br>
+                        </em>
+                        <img src="../assets/angela/Day9_Dictionary_DotKeys_method_img1.png" alt="Day9_Dictionary_DotKeys_method_img1">
+                        <img src="../assets/angela/Day9_Dictionary_DotKeys_method_img2.png" alt="Day9_Dictionary_DotKeys_method_img2">
+                        <p>
+                            In this example: <br>
+                            <ul>
+                                <li>
+                                    <p>The outer loop iterates through the keys of the <em class="code">'students' </em>
+                                        dictionary, which represent student names.</p>
+                                </li>
+                                <li>
+                                    <p>For each student, there's an inner loop that iterates through the keys of 
+                                        the <em class="code"> 'subjects' </em>dictionary, which represent subjects for 
+                                        that student.</p>
+                                </li>
+                            </ul>
+                            The <em class="code"></em>'.keys()' method is used to obtain views of the keys at each level, making it a convenient 
+                            way to iterate through dictionary keys. Note that in Python, you can often iterate directly 
+                            over the dictionary without explicitly using <em class="code"></em>'.keys()', but using it can make the intention 
+                            clearer, especially in nested structures.
+                        </p>
+                        <h4>in above example why  student_name variable wasn't declared before for-loop ?</h4>
+                        <p>
+                            In Python, variable names can be defined in the scope where they are used. 
+                            The variable <em class="code"></em>'student_name' in the for-loop is being used to iterate over the keys of 
+                            the <em class="code"></em>'students dictionary', and it gets defined implicitly in the process of the loop. <br>
+                            In a for-loop, the variable used as the iterator is introduced implicitly in the loop header. 
+                            It takes on each successive value in the iterable (in this case, the keys of the dictionary) 
+                            during each iteration. In this specific example: <br> <br>
+                            <em class="code">
+                                for student_name in students.keys(): <br>
+                            &nbsp;&nbsp;        # ... <br> <br>
+                            </em>
+                            The variable <em class="code"></em>student_name is created and assigned the value of each key in the 
+                            <em class="code"></em>students dictionary during each iteration of the loop. 
+                            It's a common and convenient way to iterate over the keys of a dictionary in Python. 
+                            <br> <br>If you prefer, you can declare the variable explicitly before the loop: <br>
+                            <em class="code">
+                                students = { <br>
+                            &nbsp;&nbsp;        'Alice': {'age': 20, 'subjects': {'Math': 85, 'Science': 90}}, <br>
+                            &nbsp;&nbsp;        'Bob': {'age': 22, 'subjects': {'History': 75, 'English': 88}}, <br>
+                            &nbsp;&nbsp;        'Charlie': {'age': 21, 'subjects': {'Physics': 92, 'Chemistry': 87}} <br>
+                                } <br>
+                                 <br>
+                                # Declare variable explicitly <br>
+                                student_name = None <br>
+                                 <br>
+                                # Iterate through outer dictionary keys <br>
+                                for student_name in students.keys(): <br>
+                                &nbsp;&nbsp;    print(f"Student: {student_name}") <br>
+                                &nbsp;&nbsp; <br>
+                                &nbsp;&nbsp;    # Iterate through inner dictionary keys (subjects) <br>
+                                &nbsp;&nbsp;    for subject in students[student_name]['subjects'].keys(): <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;        print(f"  Subject: {subject}") <br>
+                                 <br>
+                                # Now you can use student_name outside the loop if needed <br>
+                                print(f"Last student: {student_name}") <br>
+                                 <br>
+                            </em>
+                            <img src="../assets/angela/Day9_Dictionary_DotKeys_method_img3.png" alt="Day9_Dictionary_DotKeys_method_img3">
+                            <img src="../assets/angela/Day9_Dictionary_DotKeys_method_img4.png" alt="Day9_Dictionary_DotKeys_method_img4">
+                            In this case, the variable <em class="code"> 'student_name' </em>is declared before the loop, 
+                            but it is still updated within the loop, and its value is accessible outside the loop.
+                        </p>
+                    </p>
+                    </li>
+                    <li>
+                        Converting Keys to a List:
+                        <p>
+                            <em class="code">
+                                # Converting Keys to a List: <br>
+                                student = {'name': 'Alice', 'age': 20, 'grade': 'A'} <br>
+                                key_list = list(student.keys()) <br>
+                                print(key_list) <br> <br>
+                            </em>
+                            <img src="../assets/angela/Day9_Dictionary_DotKeys_method_img5.png" alt="Day9_Dictionary_DotKeys_method_img5.png">
+                            This example converts the keys of the <em class="code"> 'student' </em>dictionary into 
+                            a list, which can be useful if you need to perform list operations or pass 
+                            the keys as an argument to a function.
+                        </p>
+                    </li>
+                    <li>Checking if a Key Exists:
+                    <p>
+                        <em class="code">
+
+                        </em>
+                    </p>
+                    </li>
+                    <li>Combining with Other Dictionary Methods:
+                    <p>
+                        <em class="code">
+
+                        </em>
+                    </p>
+                    </li>
+                    <li>Checking if -- &gt; Checking if Two Dictionaries Have the Same Keys:
+                    <p>
+                        <em class="code">
+
+                        </em>
+                    </p>
+                    </li>
+                    <li>Dynamic Key Retrieval in Functions:
+                    <p>
+                        <em class="code">
+
+                        </em>
+                    </p>
+                    </li>
+                    <li>Using in Conditionals:
+
+                    <p>
+                        <em class="code">
+
+                        </em>
+                    </p>
+                    </li>
+                    <li>Checking for an Empty Dictionary:
+                    <p>
+                        <em class="code">
+
+                        </em>
+                    </p>
+                    </li>
+                    <li>
+                    <p>
+                        <em class="code">
+
+                        </em>
+                    </p>
+                    </li>
+                </ol>
         <h3>Play with Dictionaries</h3>
         <h4>Making travel log</h4>
         <p>
