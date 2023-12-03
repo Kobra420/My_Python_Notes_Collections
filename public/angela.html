@@ -3421,7 +3421,21 @@
                             #   Subject: Physics <br>
                             #   Subject: Chemistry <br>
                         </em>
-
+                        <p>
+                            In this example: <br>
+                            <ul>
+                                <li>
+                                    <p>The outer loop iterates through the keys of the students dictionary, which represent student names.</p>
+                                </li>
+                                <li>
+                                    <p>For each student, there's an inner loop that iterates through the keys of the 'subjects' dictionary, which represent subjects for that student.</p>
+                                </li>
+                            </ul>
+                            The .keys() method is used to obtain views of the keys at each level, making it a convenient 
+                            way to iterate through dictionary keys. Note that in Python, you can often iterate directly 
+                            over the dictionary without explicitly using .keys(), but using it can make the intention 
+                            clearer, especially in nested structures.
+                        </p>
                         <h4>in above example why  student_name variable wasn't declared before for-loop ?</h4>
                         <p>
                             In Python, variable names can be defined in the scope where they are used. 
