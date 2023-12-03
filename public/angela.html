@@ -3386,8 +3386,83 @@
                     <li>Iterating Through Dictionary Keys:
                     <p>
                         <em class="code">
-                            
+
+                        </em> <br> <br>
+                        <b>.keys() method with real time example Iterating Through Nested-Dictionary Keys</b> <br> <br>
+
+                        Let's consider a nested dictionary and use the .keys() method to iterate through its keys. 
+                        In this example, I'll use a nested dictionary representing information about students and 
+                        their subjects: <br> <br>
+
+                        <em class="code">
+                            # .keys() method with real time example Iterating Through Nested-Dictionary Keys <br>
+                            students = { <br>
+                                'Alice': {'age': 20, 'subjects': {'Math': 85, 'Science': 90}}, <br>
+                                'Bob': {'age': 22, 'subjects': {'History': 75, 'English': 88}}, <br>
+                                'Charlie': {'age': 21, 'subjects': {'Physics': 92, 'Chemistry': 87}} <br>
+                            } <br>
+ <br>
+                            # Iterate through outer dictionary keys <br>
+                            for student_name in students.keys(): <br>
+                                print(f"Student: {student_name}") <br>
+ <br>
+                                # Iterate through inner dictionary keys (subjects) <br>
+                                for subject in students[student_name]['subjects'].keys(): <br>
+                                    print(f"  Subject: {subject}") <br>
+ <br>
+                            # Output: <br>
+                            # Student: Alice <br>
+                            #   Subject: Math <br>
+                            #   Subject: Science <br>
+                            # Student: Bob <br>
+                            #   Subject: History <br>
+                            #   Subject: English <br>
+                            # Student: Charlie <br>
+                            #   Subject: Physics <br>
+                            #   Subject: Chemistry <br>
                         </em>
+
+                        <h4>in above example why  student_name variable wasn't declared before for-loop ?</h4>
+                        <p>
+                            In Python, variable names can be defined in the scope where they are used. 
+                            The variable student_name in the for-loop is being used to iterate over the keys of 
+                            the students dictionary, and it gets defined implicitly in the process of the loop. <br>
+                            In a for-loop, the variable used as the iterator is introduced implicitly in the loop header. 
+                            It takes on each successive value in the iterable (in this case, the keys of the dictionary) 
+                            during each iteration. In this specific example: <br> <br>
+                            <em class="code">
+                                for student_name in students.keys(): <br>
+                            &nbsp;&nbsp;        # ... <br> <br>
+                            </em>
+                            The variable student_name is created and assigned the value of each key in the students 
+                            dictionary during each iteration of the loop. It's a common and convenient way to iterate 
+                            over the keys of a dictionary in Python. <br> <br>
+                            If you prefer, you can declare the variable explicitly before the loop: <br>
+                            <em class="code">
+                                students = { <br>
+                            &nbsp;&nbsp;        'Alice': {'age': 20, 'subjects': {'Math': 85, 'Science': 90}}, <br>
+                            &nbsp;&nbsp;        'Bob': {'age': 22, 'subjects': {'History': 75, 'English': 88}}, <br>
+                            &nbsp;&nbsp;        'Charlie': {'age': 21, 'subjects': {'Physics': 92, 'Chemistry': 87}} <br>
+                                } <br>
+                                 <br>
+                                # Declare variable explicitly <br>
+                                student_name = None <br>
+                                 <br>
+                                # Iterate through outer dictionary keys <br>
+                                for student_name in students.keys(): <br>
+                                &nbsp;&nbsp;    print(f"Student: {student_name}") <br>
+                                &nbsp;&nbsp; <br>
+                                &nbsp;&nbsp;    # Iterate through inner dictionary keys (subjects) <br>
+                                &nbsp;&nbsp;    for subject in students[student_name]['subjects'].keys(): <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;        print(f"  Subject: {subject}") <br>
+                                 <br>
+                                # Now you can use student_name outside the loop if needed <br>
+                                print(f"Last student: {student_name}") <br>
+                                 <br>
+                            </em>
+                            In this case, the variable student_name is declared before the loop, 
+                            but it is still updated within the loop, and its value is accessible outside the loop.
+                        </p>
                     </p>
                     </li>
                     <li>Checking if a Key Exists:
