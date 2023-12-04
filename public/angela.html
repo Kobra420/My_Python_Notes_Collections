@@ -3510,7 +3510,24 @@
                             <b><h4>Converting Keys of a nested-dictionary to a List </h4></b>
                             Converting keys of a nested dictionary to a list can be useful for various operations or if you want to extract specific 
                             information. Here's an example with a nested dictionary representing students and their subjects: <br>
-                            
+                            <b>Code</b> <br>
+                            <em class="code">
+                                # Converting Keys of a nested-dictionary to a List  <br>
+                                students = { <br>
+                                    'Alice': {'age': 20, 'subjects': {'Math': 85, 'Science': 90}}, <br>
+                                    'Bob': {'age': 22, 'subjects': {'History': 75, 'English': 88}}, <br>
+                                    'Charlie': {'age': 21, 'subjects': {'Physics': 92, 'Chemistry': 87}} <br>
+                                } <br>
+ <br>
+                                # Convert outer dictionary keys to a list <br>
+                                student_names = list(students.keys()) <br>
+                                print("List of student names:", student_names) <br>
+ <br>
+                                # Convert inner dictionary keys (subjects) for a specific student to a list <br>
+                                alice_subjects = list(students['Alice']['subjects'].keys()) <br>
+                                print("List of subjects for Alice:", alice_subjects) <br>
+ <br>
+                            </em>
                         </p>
                     </li>
                     <li>Checking if a Key Exists:
