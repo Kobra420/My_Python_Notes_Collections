@@ -3573,28 +3573,79 @@
                             This example converts the keys of the <em class="code"> 'student' </em>dictionary into 
                             a list, which can be useful if you need to perform list operations or pass 
                             the keys as an argument to a function.
-                        </p>
+                            <b><h4>Converting Keys of a nested-dictionary to a List </h4></b>
+                            Converting keys of a nested dictionary to a list can be useful for various operations or 
+                            if you want to extract specific 
+                            information. Here's an example with a nested dictionary representing students and their 
+                            subjects: <br>
+                            <b>Code</b> <br>
+                            <em class="code">
+                                # Converting Keys of a nested-dictionary to a List  <br>
+                                students = { <br>
+                                    'Alice': {'age': 20, 'subjects': {'Math': 85, 'Science': 90}}, <br>
+                                    'Bob': {'age': 22, 'subjects': {'History': 75, 'English': 88}}, <br>
+                                    'Charlie': {'age': 21, 'subjects': {'Physics': 92, 'Chemistry': 87}} <br>
+                                } <br>
+ <br>
+                                # Convert outer dictionary keys to a list <br>
+                                student_names = list(students.keys()) <br>
+                                print("List of student names:", student_names) <br>
+ <br>
+                                # Convert inner dictionary keys (subjects) for a specific student to a list <br>
+                                alice_subjects = list(students['Alice']['subjects'].keys()) <br>
+                                print("List of subjects for Alice:", alice_subjects) <br>
+ <br>
+                            </em> <br> <br>
+                            In this example: <br>
+                            <ul>
+                                <li>list(students.keys()) is used to convert the outer 
+                                    dictionary keys (student names) to a list.</li>
+                                <li>list(students['Alice']['subjects'].keys()) is used to convert the 
+                                    inner dictionary keys (subjects for Alice) to a list.</li>
+                            </ul>
+                            You can use these lists for further processing, such as iteration, filtering, or passing them 
+                            as arguments to functions that expect lists. Converting keys to a list provides flexibility 
+                            in handling and manipulating the keys of a dictionary.
+                        </p><img src="../assets/angela/Day9_Dictionary_DotKeys_method_img6.png" alt="">
                     </li>
                     <li>Checking if a Key Exists:
                     <p>
-                        <em class="code">
-
-                        </em>
-                    </p>
+                        <em class="code"> <br>
+                            student = {'name': 'Alice', 'age': 20, 'grade': 'A'} <br>
+                            if 'grade' in student.keys(): <br>
+                        &nbsp;&nbsp;        print("The 'grade' key exists in the dictionary.") <br>
+ <br>
+                        </em> <br>
+                         <br>
+                         You can use .keys() to check if a specific key exists in the dictionary. 
+                    </p><img src="../assets/angela/Day9_Dictionary_DotKeys_method_img7.png" alt="">
                     </li>
                     <li>Combining with Other Dictionary Methods:
-                    <p>
+                    <p><h4>.item() Method :</h4>
                         <em class="code">
-
+                            # Combining with Other Dictionary Methods: <br>
+                            student = {'name': 'Alice', 'age': 20, 'grade': 'A'} <br>
+                            for key, value in student.items(): <br>
+                        &nbsp;&nbsp;        print(f"{key}: {value}") <br>
                         </em>
-                    </p>
+                        While .keys() is useful on its own, it's often used in combination with other dictionary methods like .items() 
+                        for a complete view of keys and values.
+                    </p> <img src="../assets/angela/Day9_Dictionary_DotKeys_method_img8.png" alt="">
                     </li>
-                    <li>Checking if -- &gt; Checking if Two Dictionaries Have the Same Keys:
+                    <li>Checking if -- &gt; ; Checking if Two Dictionaries Have the Same Keys:
                     <p>
                         <em class="code">
-
+                            student1 = {'name': 'Alice', 'age': 20, 'grade': 'A'} <br>
+                            student2 = {'name': 'Bob', 'age': 22, 'grade': 'B'} <br>
+ <br>
+                            if student1.keys() == student2.keys(): <br>
+                                print("Both dictionaries have the same keys.") <br>
+                            else: <br>
+                                print("The dictionaries have different keys.") <br>
+ <br>
                         </em>
-                    </p>
+                        Here, .keys() is used to compare whether two dictionaries have the same set of keys.
+                    </p> <img src="../assets/angela/Day9_Dictionary_DotKeys_method_img9.png" alt="">
                     </li>
                     <li>Dynamic Key Retrieval in Functions:
                     <p>
