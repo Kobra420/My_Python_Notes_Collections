@@ -3650,17 +3650,36 @@
                     <li>Dynamic Key Retrieval in Functions:
                     <p>
                         <em class="code">
-
+                            def get_student_info(student_dict, key): <br>
+                            &nbsp;&nbsp;    if key in student_dict.keys(): <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;        return student_dict[key] <br>
+                            &nbsp;&nbsp;    else: <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;        return f"{key} not found in the dictionary." <br>
+ <br>
+                            student = {'name': 'Alice', 'age': 20, 'grade': 'A'} <br>
+                            requested_key = 'age' <br>
+                            result = get_student_info(student, requested_key) <br>
+                            print(result) <br>
+ <br>
                         </em>
-                    </p>
+                        This example shows how .keys() can be used dynamically to check if a 
+                        requested key exists in a dictionary before retrieving its value.
+                    </p> <img src="../assets/angela/Day9_Dictionary_DotKeys_method_img 9a.png" alt="">
                     </li>
                     <li>Using in Conditionals:
 
                     <p>
                         <em class="code">
-
+                            student = {'name': 'Alice', 'age': 20, 'grade': 'A'} <br>
+ <br>
+                            if 'grade' in student.keys(): <br>
+                        &nbsp;&nbsp;        print("The student has a grade.") <br>
+                            else: <br>
+                        &nbsp;&nbsp;        print("No grade information available.") <br>
+ <br>
                         </em>
-                    </p>
+                        You can use .keys() in conditionals to check if a specific key exists in the dictionary.
+                    </p><img src="../assets/angela/Day9_Dictionary_DotKeys_method_img9b.png" alt="">
                     </li>
                     <li>Checking for an Empty Dictionary:
                     <p>
