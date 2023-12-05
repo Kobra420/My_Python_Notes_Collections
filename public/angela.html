@@ -3584,7 +3584,17 @@
                     <li>Dynamic Key Retrieval in Functions:
                     <p>
                         <em class="code">
-
+                            def get_student_info(student_dict, key): <br>
+                            &nbsp;&nbsp;    if key in student_dict.keys(): <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;        return student_dict[key] <br>
+                            &nbsp;&nbsp;    else: <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;        return f"{key} not found in the dictionary." <br>
+ <br>
+                            student = {'name': 'Alice', 'age': 20, 'grade': 'A'} <br>
+                            requested_key = 'age' <br>
+                            result = get_student_info(student, requested_key) <br>
+                            print(result) <br>
+ <br>
                         </em>
                     </p>
                     </li>
