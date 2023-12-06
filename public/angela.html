@@ -3976,6 +3976,78 @@
                 <img src="../assets/angela/Day9_Dictionary_Own_Probelms 4 bsicSkill_honIMG2.png" alt="">
                 <img src="../assets/angela/Day9_Dictionary_Own_Probelms 4 bsicSkill_honIMG3.png" alt="">
                 <img src="../assets/angela/Day9_Dictionary_Own_Probelms 4 bsicSkill_honIMG4.png" alt="">
+            
+            <h4>DIctionary Comprehention explained from Datacamp</h4>
+            <a href="https://www.datacamp.com/tutorial/python-dictionary-comprehension#:~:text=Dictionary%20comprehension%20is%20a%20method,can%20be%20transformed%20as%20needed.">source</a> <br>
+            <p>
+                Dictionary comprehension is a method for transforming one dictionary into another dictionary. 
+                During this transformation, items within the original dictionary can be conditionally included 
+                in the new dictionary, and each item can be transformed as needed. <br>
+                A good list comprehension can make your code more expressive and, thus, easier to read. The key 
+                to creating comprehensions is to not let them get so complex that your head spins when you try 
+                to decipher what they are actually doing. Keeping the idea of "easy to read" alive. <br>
+                The way to do dictionary comprehension in Python is to be able to access the key 
+                objects and the value objects of a dictionary. <br>
+                <em>
+                    How can this be done? <br> <br>
+                    Python has you covered! You can simply use the built-in methods for the same: <br>
+                </em>
+                <b>examples</b> <br> <br>
+                <em class="code">
+                    dict1 = {'a': 1, 'b': 2, 'c': 3, 'd': 4} <br>
+                    # Put all keys of `dict1` in a list and returns the list <br>
+                    dict1.keys() <br><br>
+                </em>
+                <b> Code Explaination </b> <br>
+                <ul>
+                    <li><p>This code creates a dictionary called dict1 with four key-value pairs.</p></li>
+                    <li><p>The keys are strings 'a', 'b', 'c', and 'd', and the values are integers 1, 2, 3, and 4 respectively.</p></li>
+                    <li><p>The second line of code uses the keys() method to extract all the keys of dict1 and returns them as a list.</p></li>
+                    <li><p>The output of this code will be a list containing the keys of dict1: ['a', 'b', 'c', 'd'].</p></li>
+                    <li><p>The keys() method is a built-in Python function that returns a view object that contains the keys of the dictionary.</p></li>
+                    <li><p>This view object can be converted to a list using the list() function.</p></li>
+                </ul>
+                <em class="code">
+                    dict_keys(['c', 'd', 'a', 'b']) <br> <br>
+                </em>
+                <b> Code Explaination </b> <br>
+                <ul>
+                    <li><p>This code is a Python output that shows a list of keys in a dictionary.</p></li>
+                    <li><p>The dict_keys() function returns a view object that contains the keys of the dictionary.</p></li>
+                    <li><p>In this case, the keys are 'c', 'd', 'a', and 'b'.</p></li>
+                    <li><p>This view object can be used to access the keys of the dictionary or to perform operations on them.</p></li>
+                </ul>    
+                <em class="code">
+                    # Put all values saved in `dict1` in a list and returns the list <br>
+                    dict1.values() <br> <br>
+                </em>
+                <b> Code Explaination </b> <br>
+                <ul>
+                    <li><p></p></li>
+                    <li><p></p></li>
+                    <li><p></p></li>
+                    <li><p></p></li>
+                    <li><p>This code snippet is written in Python.</p></li>
+                    <li><p>The dict1.values() method returns a view object that contains the values of the dictionary dict1.</p></li>
+                    <li><p>This view object can be converted to a list using the list() function.</p></li>
+                    <li><p>So, the code is putting all the values saved in dict1 into a list and returning that list.</p></li>
+                </ul>
+                <em class="code">
+                    dict_values([3, 4, 1, 2]) <br> <br>
+                </em>
+                <b> Code Explaination </b> <br>
+                <ul><li><p>This code is written in Python.</p></li>
+                    <li><p>The dict_values() function is used to return a view object that contains the values of a dictionary.</p></li>
+                    <li><p>In this case, the function is called with the argument [3, 4, 1, 2], which is not a dictionary.</p></li>
+                    <li><p>This means that the code will raise a TypeError since dict_values() can only be used with dictionaries.</p></li>
+                    <li><p>If the argument was a dictionary, the dict_values() function would return a view object containing the values of the dictionary.</p></li>
+                    <li><p>This view object can be used to access the values of the dictionary without having to access the dictionary itself.</p></li>
+                </ul>
+                The code above creates a Python dictionary called dict1 with four key-value pairs. The keys() method is called on the dictionary, which returns a view object containing all the keys in the dictionary. <br> <br>
+                The values() method is also called on the dictionary, which returns a view object containing all the values in the dictionary.<br> <br>
+                Both view objects behave like sets and can be used to perform set operations on the keys and values, respectively.<br> <br>
+                Note that the order of the keys and values in the view objects is not guaranteed to be the same as the order in which they were added to the dictionary.<br> <br>
+            </p>
         
         <h4>nested dictionary</h4>
         <p>
@@ -4219,6 +4291,8 @@
 
     <div id=""></div>
         <footer>
+            <b>Extra / Misc Notes:</b><br>
+            <a href="https://www.datacamp.com/blog/essential-python-skills-all-data-scientists-should-master">essential-python-skills</a>
             <b>References:-</b> <br>
             <ul>
                 <li>HTML</li>
