@@ -4130,8 +4130,51 @@
         
         <h3>Dictonary inversion</h3>
         <h4>key become values and values become keys</h4>
-        <p>Objective of the code is to write a function that inverts the keys of the
-             dictionaries into values and vice a versa</p>
+        <p>
+            The Objective of the code is to write a function that inverts the keys of the 
+            dictionaries into values and vice a versa.
+            <b>Code</b> <br>
+            <em class="code">
+                def invert_dictionary(input_dict):
+                &nbsp;&nbsp;    """
+                &nbsp;&nbsp;    Inverts the keys and values of a dictionary.
+&nbsp;&nbsp;
+                &nbsp;&nbsp;    Parameters:
+                &nbsp;&nbsp;    input_dict (dict): The input dictionary to be inverted.
+&nbsp;&nbsp;
+                &nbsp;&nbsp;    Returns:
+                &nbsp;&nbsp;    dict: The inverted dictionary.
+                &nbsp;&nbsp;    """
+                &nbsp;&nbsp;    inverted_dict = {}
+                &nbsp;&nbsp;    for key, value in input_dict.items():
+                &nbsp;&nbsp;&nbsp;&nbsp;        inverted_dict[value] = key
+                &nbsp;&nbsp;    return inverted_dict
+&nbsp;&nbsp;
+                # Original dictionary
+                my_dict = {
+                    'name': 'Alice',
+                    'age': 28,
+                    'city': 'Wonderland',
+                    'occupation': 'Explorer',
+                    'hobby': 'Photography',
+                    'favorite_color': 'Sky Blue',
+                    'pets': 'Rover',
+                    'is_student': True,
+                    'birth_year': 1995,
+                    'height': 1.75  # in meters
+                }
+
+                # Print the original value associated with the key 'city'
+                print(my_dict['city'])
+
+                # Use the function to invert the dictionary
+                inverted_dict = invert_dictionary(my_dict)
+
+                # Print the original key associated with the value 'Wonderland'
+                print(inverted_dict['Wonderland'])
+
+            </em>
+        </p>
 
         <h3>Silent Auction Project</h3>
         <h4>Introduction</h4>
