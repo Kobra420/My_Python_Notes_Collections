@@ -4246,8 +4246,101 @@
 
         <h3>Menu-Driven Dictionary Operations via functions</h3>
         <p>
-            a simple menu-driven program in Python that allows users to perform operations on dictionaries:
+            Implement a menu-driven program that allows users to perform various operations on dictionaries, like adding, deleting, or updating key-value pairs.
+            <br>It's a simple menu-driven program in Python that allows users to perform operations on dictionaries:
         </p>
+        <p>
+        <em class="code">
+            <b>Code</b> <br> <br>
+            # Menu-Driven Dictionary Operations <br> <br>
+ <br> <br>
+            def display_menu(): <br> <br>
+        &nbsp;&nbsp;        print("\nMenu:") <br> <br>
+        &nbsp;&nbsp;        print("1. Display Dictionary") <br> <br>
+        &nbsp;&nbsp;        print("2. Add Key-Value Pair") <br> <br>
+        &nbsp;&nbsp;        print("3. Update Value for a Key") <br> <br>
+        &nbsp;&nbsp;        print("4. Delete Key-Value Pair") <br> <br>
+        &nbsp;&nbsp;        print("5. Exit") <br> <br>
+ <br> <br>
+            def display_dictionary(dictionary): <br> <br>
+        &nbsp;&nbsp;        print("\nCurrent Dictionary:") <br> <br>
+        &nbsp;&nbsp;        for key, value in dictionary.items(): <br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            print(f"keys {key}: --> value -  {value}") <br> <br>
+ <br> <br>
+            def add_key_value(dictionary): <br> <br>
+        &nbsp;&nbsp;        key = input("Enter the key: ") <br> <br>
+        &nbsp;&nbsp;        value = input("Enter the value: ") <br> <br>
+        &nbsp;&nbsp;        dictionary[key] = value <br> <br>
+        &nbsp;&nbsp;        print(f"Key-Value Pair ({key}: {value}) added successfully.") <br> <br>
+ <br> <br>
+            def update_value(dictionary): <br> <br>
+        &nbsp;&nbsp;        key = input("Enter the key to update: ") <br> <br>
+        &nbsp;&nbsp;        if key in dictionary: <br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            new_value = input(f"Enter the new value for {key}: ") <br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            dictionary[key] = new_value <br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            print(f"Value for {key} updated successfully.") <br> <br>
+        &nbsp;&nbsp;        else: <br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            print(f"Key {key} not found in the dictionary.") <br> <br>
+ <br> <br>
+            def delete_key_value(dictionary): <br> <br>
+        &nbsp;&nbsp;        key = input("Enter the key to delete: ") <br> <br>
+        &nbsp;&nbsp;        if key in dictionary: <br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            del dictionary[key] <br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            print(f"Key-Value Pair with key {key} deleted successfully.") <br> <br>
+        &nbsp;&nbsp;        else: <br> <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            print(f"Key {key} not found in the dictionary.") <br> <br>
+ <br> <br>
+            # Main Program <br> <br>
+            user_dictionary = {} <br> <br>
+            # Real-life data samples in a dictionary <br> <br>
+            real_life_data = { <br> <br>
+        &nbsp;&nbsp;        101: 25, <br> <br>
+        &nbsp;&nbsp;        205: 45, <br> <br>
+        &nbsp;&nbsp;        307: 12, <br> <br>
+        &nbsp;&nbsp;        412: 30, <br> <br>
+        &nbsp;&nbsp;        523: 18, <br> <br>
+        &nbsp;&nbsp;        608: 50, <br> <br>
+        &nbsp;&nbsp;        719: 22, <br> <br>
+        &nbsp;&nbsp;        821: 36 <br> <br>
+            } <br> <br>
+ <br> <br>
+            # Feel free to replace the values with whatever makes sense for your data! <br> <br>
+            user_dictionary = real_life_data <br> <br>
+ <br> <br>
+            # #experimental <br> <br>
+            # for keys in user_dictionary: <br> <br>
+        &nbsp;&nbsp;    #     print(f"key:-{keys} --&gt; value - {user_dictionary[keys]}") <br> <br>
+ <br> <br>
+            while True: <br> <br>
+        &nbsp;&nbsp;        display_menu() <br> <br>
+ <br> <br>
+                choice = input("Enter your choice (1-5): ") <br> <br>
+ <br> <br>
+                if choice == '1': <br> <br>
+        &nbsp;&nbsp;            display_dictionary(user_dictionary) <br> <br>
+                elif choice == '2': <br> <br>
+        &nbsp;&nbsp;            add_key_value(user_dictionary) <br> <br>
+                elif choice == '3': <br> <br>
+        &nbsp;&nbsp;            update_value(user_dictionary) <br> <br>
+                elif choice == '4': <br> <br>
+        &nbsp;&nbsp;            delete_key_value(user_dictionary) <br> <br>
+                elif choice == '5': <br> <br>
+        &nbsp;&nbsp;            print("Exiting the program. Goodbye!") <br> <br>
+        &nbsp;&nbsp;            break <br> <br>
+                else: <br> <br>
+        &nbsp;&nbsp;            print("Invalid choice. Please enter a number between 1 and 5.") <br> <br>
+
+        </em>
+        </p>
+        <img src="../assets/angela/Day9_Dict_edit_function_img1.png" alt="Day9_Dict_edit_function_img1"> <br>
+        <img src="../assets/angela/Day9_Dict_edit_function_img2.png" alt="Day9_Dict_edit_function_img2"> <br>
+        <img src="../assets/angela/Day9_Dict_edit_function_img3.png" alt="Day9_Dict_edit_function_img3"> <br>
+        <img src="../assets/angela/Day9_Dict_edit_function_img4.png" alt="Day9_Dict_edit_function_img4"> <br>
+        <img src="../assets/angela/Day9_Dict_edit_function_img5.png" alt="Day9_Dict_edit_function_img5"> <br>
+        <img src="../assets/angela/Day9_Dict_edit_function_img6.png" alt="Day9_Dict_edit_function_img6"> <br>
+        <img src="../assets/angela/Day9_Dict_edit_function_img7.png" alt="Day9_Dict_edit_function_img7"> <br>
+
+        <h3></h3>
 
         <h3>Silent Auction Project</h3>
         <h4>Introduction</h4>
