@@ -4274,7 +4274,36 @@
         <img src="../assets/angela/Day9_Dict_edit_function_img6.png" alt="Day9_Dict_edit_function_img6"> <br>
         <img src="../assets/angela/Day9_Dict_edit_function_img7.png" alt="Day9_Dict_edit_function_img7"> <br>
 
-        <h3></h3>
+        <h3> Find the Key with Maximum Value in the dictionary</h3>
+            <p><em class="code">
+                # key_of_maxValue_in_dict <br> <br>
+ <br> <br>
+                # Find the key with the maximum value in a dictionary of numbers. <br> <br>
+ <br> <br>
+                data = { <br> <br>
+            &nbsp;&nbsp;        101: 25, <br> <br>
+            &nbsp;&nbsp;        205: 45, <br> <br>
+            &nbsp;&nbsp;        307: 12, <br> <br>
+            &nbsp;&nbsp;        412: 30, <br> <br>
+            &nbsp;&nbsp;        523: 18, <br> <br>
+            &nbsp;&nbsp;        608: 50, <br> <br>
+            &nbsp;&nbsp;        719: 22, <br> <br>
+            &nbsp;&nbsp;        821: 36 <br> <br>
+                } <br> <br>
+ <br> <br>
+                def find_max_key(data): <br> <br>
+            &nbsp;&nbsp;        """ <br> <br>
+            &nbsp;&nbsp;        Finds and returns the key with the maximum value in the given dictionary. <br> <br>
+            &nbsp;&nbsp;        """ <br> <br>
+            &nbsp;&nbsp;        max_value = max(data.values()) <br> <br>
+            &nbsp;&nbsp;        for key, value in data.items(): <br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;            if value == max_value: <br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                return key <br> <br>
+            &nbsp;&nbsp;             <br> <br>
+            &nbsp;&nbsp;        return None <br> <br>
+ <br> <br>
+                print(find_max_key(data)) <br> <br>
+            </em></p>
 
         <h3>Silent Auction Project</h3>
         <h4>Introduction</h4>
