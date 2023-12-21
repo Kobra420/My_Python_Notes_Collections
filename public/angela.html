@@ -4366,6 +4366,37 @@
                 The sorted function returns a list of tuples, where each tuple contains a key-value pair from the 
                 original dictionary. The items() method is used to get a view of dictionary items as a list of tuples.
             </p>
+        <h3>Dictionary for frequency of words</h3>
+        <h4>Objective</h4>
+            <p>
+                Given a list of words, create a dictionary with each word as a key and its frequency as the value.
+            </p>
+        <h4>Code</h4>
+            <p>
+                <em class="code">
+                    # Dictionary Words as keys and frequencies of the words as values <br> <br>
+                    word_list = ["adventure", "exploration", "curiosity", "knowledge", "serendipity", "wanderlust", "discovery", "perception", "insight", "inquisitive", "exploration", "curiosity", "knowledge","exploration", "curiosity", "knowledge","adventure","serendipity", "wanderlust", "discovery","adventure","serendipity", "wanderlust", "discovery","adventure","wanderlust", "discovery", "perception", "insight", "inquisitive","wanderlust", "discovery", "perception", "insight", "inquisitive","perception","serendipity", "wanderlust", "discovery", "insight", "inquisitive","perception", "insight", "inquisitive"] <br> <br>
+ <br> <br>
+                    # Using a dictionary to count word frequencies <br> <br>
+                    word_frequencies = {} <br> <br>
+                    for word in word_list: <br> <br>
+                &nbsp;&nbsp;        if word in word_frequencies: <br> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            word_frequencies[word] += 1 <br> <br>
+                &nbsp;&nbsp;        else: <br> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            word_frequencies[word] = 1 <br> <br>
+ <br> <br>
+                    # Displaying word frequencies <br> <br>
+                    print("Word Frequencies:") <br> <br>
+                    for word, frequency in word_frequencies.items(): <br> <br>
+                &nbsp;&nbsp;        print(f"word - {word}: Frquencie - {frequency}") <br> <br>
+ <br> <br> <br>
+                </em>
+            </p>
+        <h4>Explaination</h4>
+            <p>
+                This code iterates through the word_list, and for each word, it updates the count in the word_frequencies dictionary. Finally, it prints the frequencies of each word.
+                The output will be a list of words along with their respective frequencies in the provided word_list.
+            </p>
         <h3>Silent Auction Project</h3>
         <h4>Introduction</h4>
             <p>
