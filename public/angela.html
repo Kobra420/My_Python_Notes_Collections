@@ -4391,7 +4391,81 @@
                 <b>Printing Result &lpar;`print(find_max_key(data)):</b> <br>
                 Finally, it prints the result of the function. <br>
             </p>
-
+        <h3>Sorting of Dictionaries</h3>
+        <h4>Objective</h4>
+            <p>
+                Write a function to sort a dictionary by its values.
+            </p>
+        <h4>Code</h4>
+            <p>
+                <em class="code">
+                    data = { <br> <br>
+                &nbsp;&nbsp;        101: 25, <br> <br>
+                &nbsp;&nbsp;        205: 45, <br> <br>
+                &nbsp;&nbsp;        523: 18, <br> <br>
+                &nbsp;&nbsp;        307: 12, <br> <br>
+                &nbsp;&nbsp;        412: 30, <br> <br>
+                &nbsp;&nbsp;        608: 50, <br> <br>
+                &nbsp;&nbsp;        719: 22, <br> <br>
+                &nbsp;&nbsp;        821: 36 <br> <br>
+                    } <br> <br>
+                     <br> <br>
+                    # sorting dictionary in ascending order of values <br> <br>
+                    ascnd_dict = sorted(data.items()) <br> <br>
+                    # sorting dictionary in descending order of values <br> <br>
+                    dscnd_dict = sorted(data.items(), reverse = True) <br> <br>
+                    print(f"ascending values --&gt; {ascnd_dict}") <br> <br>
+                    print(f"descending values --&gt; {dscnd_dict}") <br> <br>
+                     <br> <br> <br>
+                </em>
+            </p>
+            <img src="../assets/angela/Day9_Dict_sorting_img1.png" alt="Day9_Dict_sorting_img1"> <br>
+            <img src="../assets/angela/Day9_Dict_sorting_img2.png" alt="Day9_Dict_sorting_img2"> <br>
+        <h4>Explaination</h4>
+            <ol><em class="code"></em>
+                <li><p>The <em class="code">data</em> dictionary contains numeric keys and corresponding values.</p></li>
+                <li><p><em class="code">sorted(data.items())</em> sorts the dictionary items in ascending order based on keys, resulting in <em class="code">ascnd_dict</em>.</p></li>
+                <li><p><em class="code">sorted(data.items(), reverse=True)</em> sorts the dictionary items in descending order based on keys, resulting in <em class="code">dscnd_dict</em>.</p></li>
+                <li><p>The final two lines print the sorted dictionaries.</p></li>
+            </ol>
+            <p>
+                The sorted function returns a list of tuples, where each tuple contains a key-value pair from the 
+                original dictionary. The items() method is used to get a view of dictionary items as a list of tuples.
+            </p>
+        <h3>Dictionary for frequency of words</h3>
+        <h4>Objective</h4>
+            <p>
+                Given a list of words, create a dictionary with each word as a key and its frequency as the value.
+            </p>
+        <h4>Code</h4>
+            <p>
+                <em class="code">
+                    # Dictionary Words as keys and frequencies of the words as values <br> <br>
+                    word_list = ["adventure", "exploration", "curiosity", "knowledge", "serendipity", "wanderlust", "discovery", "perception", "insight", "inquisitive", "exploration", "curiosity", "knowledge","exploration", "curiosity", "knowledge","adventure","serendipity", "wanderlust", "discovery","adventure","serendipity", "wanderlust", "discovery","adventure","wanderlust", "discovery", "perception", "insight", "inquisitive","wanderlust", "discovery", "perception", "insight", "inquisitive","perception","serendipity", "wanderlust", "discovery", "insight", "inquisitive","perception", "insight", "inquisitive"] <br> <br>
+ <br> <br>
+                    # Using a dictionary to count word frequencies <br> <br>
+                    word_frequencies = {} <br> <br>
+                    for word in word_list: <br> <br>
+                &nbsp;&nbsp;        if word in word_frequencies: <br> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            word_frequencies[word] += 1 <br> <br>
+                &nbsp;&nbsp;        else: <br> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;            word_frequencies[word] = 1 <br> <br>
+ <br> <br>
+                    # Displaying word frequencies <br> <br>
+                    print("Word Frequencies:") <br> <br>
+                    for word, frequency in word_frequencies.items(): <br> <br>
+                &nbsp;&nbsp;        print(f"word - {word}: Frquencie - {frequency}") <br> <br>
+ <br> <br> <br>
+                </em>
+            </p>
+            <img src="../assets/angela/Day9_Dict_frequency_of_words_img.png" alt=""> <br>
+            <img src="../assets/angela/Day9_Dict_frequency_of_words_img2.png" alt=""> <br>
+            
+        <h4>Explaination</h4>
+            <p>
+                This code iterates through the word_list, and for each word, it updates the count in the word_frequencies dictionary. Finally, it prints the frequencies of each word.
+                The output will be a list of words along with their respective frequencies in the provided word_list.
+            </p>
         <h3>Silent Auction Project</h3>
         <h4>Introduction</h4>
             <p>
