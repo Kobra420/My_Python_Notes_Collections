@@ -143,12 +143,13 @@ p{
 
 table {
     border-collapse: collapse;
-    width: 50%;
+    width: 90%;
+    border-color: #860A35;
 }
 
 td {
-    border: 1px solid #dddddd;
-    text-align: center;
+    border: 1px solid #860A35;
+    text-align: left;
     padding: 8px;
 }
 

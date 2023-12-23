@@ -584,21 +584,41 @@
                                         Using the same seed value will produce the same sequence of random numbers, which is useful for reproducibility.\
                                         The<b class="code"> seed()</b> method is used to initialize the random number generator. <br>
                                         The random number generator needs a number to start with (a seed value), to be able to generate a random number.<br>
-                                        <b>By default the random number generator uses the current system time.</b> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;    <b>By default the random number generator uses the current system time.</b> <br>
                                         Use the seed() method to customize the start number of the random number generator.
                                     
                                     </p>
-
-                                    <h4>Two Rows, Two Columns Table</h4>
+                                    <h4>Syntax :</h4>
+                                    <p>
+                                        <em class="code">
+                                            random.seed(a, version)
+                                        </em>
+                                    </p>
+                                    <h4>Parameter Values</h4>
     
                                     <table>
                                         <tr>
-                                            <td>Row 1, Column 1</td>
-                                            <td>Row 1, Column 2</td>
+                                            <td><b>Parameter</b></td>
+                                            <td><b>Description</b></td>
                                         </tr>
                                         <tr>
-                                            <td>Row 2, Column 1</td>
-                                            <td>Row 2, Column 2</td>
+                                            <td><p>a</p></td>
+                                            <td>
+                                                <p>
+                                                    Optional. The seed value needed to generate a random number.
+                                                    If it is an integer it is used directly, if not it has to be converted into an integer.
+                                                    Default value is None, and if None, the generator uses the current system time.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><p>version</p></td>
+                                            <td>
+                                                <p>
+                                                    An integer specifying how to convert the a parameter into a integer.
+                                                    Default value is 2
+                                                </p>
+                                            </td>
                                         </tr>
                                     </table>
 
