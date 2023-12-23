@@ -141,6 +141,17 @@ p{
     font-weight: 500;
 }
 
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
 ol{
     font-family: 'Chakra Petch', sans-serif;
     font-size: 20px;
