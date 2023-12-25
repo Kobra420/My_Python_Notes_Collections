@@ -548,6 +548,7 @@
         </header>
             <main>
                 <div id="code3">
+                    <h3>Module Details : </h3>
                     <h3>THE RANDOM MODULE :-</h3>
                         <p>
                             The <b class="code">random</b> module in Python provides functions for generating random numbers. <br>
@@ -621,9 +622,48 @@
                                             </td>
                                         </tr>
                                     </table>
+                                    <p>
+                                        <b>Usage</b> <br>
+                                        <em class="code">
+                                            import random <br>
+ <br>
+                                            # Setting a seed for reproducibility <br>
+                                            seed_value = 42 <br>
+                                            random.seed(seed_value) <br>
+                                             <br>
+                                            # Generating random numbers <br>
+                                            random_number1 = random.random() <br>
+                                            random_number2 = random.random() <br>
+                                             <br>
+                                            print("Random Number 1:", random_number1) <br>
+                                            print("Random Number 2:", random_number2) <br>
+                                             <br>
+                                        </em>
+                                    </p>
+                                    <img src="../assets/angela/D9_random_seed_img1.png" alt="">
+                                    <img src="../assets/angela/D9_random_seed_img2.png" alt="">
 
                                 <li>Random Integer from a Range with a Step:</li>
                                     <p><b class="code">random.randrange(start, stop, step):</b>Returns a random integer from the specified range with the given step size.</p>
+                                    <p><b>Examples :</b>
+                                        <b class="code">
+                                            import random <br> <br>
+ <br> <br>
+                                            def roll_dice(): <br> <br>
+                                        &nbsp;&nbsp;        """ <br> <br>
+                                        &nbsp;&nbsp;        Simulate a six-sided dice roll. <br> <br>
+                                        &nbsp;&nbsp;        """ <br> <br>
+                                        &nbsp;&nbsp;        return random.randrange(1, 7) <br> <br>
+ <br> <br>
+                                            # Simulate rolling the dice 5 times <br> <br>
+                                            for _ in range(5): <br> <br>
+                                        &nbsp;&nbsp;        result = roll_dice() <br> <br>
+                                        &nbsp;&nbsp;        print("Dice Roll Result:", result) <br> <br>
+ <br> <br>
+                                        </b>
+                                    </p>
+                                    <img src="../assets/angela/D9_rand_range_img1.png" alt="D9_rand_range_img1">
+                                    <img src="../assets/angela/D9_rand_range_img2.png" alt="D9_rand_range_img2">
                             </ol>
                             <h3>Random Distributions:</h3>
                             <p>
