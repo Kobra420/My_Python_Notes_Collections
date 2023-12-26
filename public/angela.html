@@ -4614,6 +4614,89 @@
                 <br>
                 </em>
             </p> <img src="../assets/angela/Day9_Dict_Silent Auction_image3.png" alt="">
+            <h3>Merging Dictionries :</h3>
+                <p>
+                    In Python, the terms "merging dictionaries" and "combining dictionaries" are often 
+                    used interchangeably, and they typically refer to the process of creating a new dictionary 
+                    by combining the key-value pairs of two or more existing dictionaries. The combined dictionary 
+                    can then be used in place of the original dictionaries. The final dictionary in your examples 
+                    is the result of merging or combining the settings and profile dictionaries.
+                </p>
+            <h4>Objective :</h4>
+                <p>
+                    Merge two dictionaries into one. Different possibilities of dictionary merging in Python.
+
+                </p>
+            <h4>Code : <br> <br> Examples :</h4>
+
+            <p>
+                <b>Case1 - </b> <br>
+                            <b class="code">
+                                #usecase1 <br> <br>
+                                #Configuration Settings: <br> <br>
+                                settings = {'theme': 'dark', 'fontsize': 14, 'language': 'English'} <br> <br>
+                                #User Profile: <br> <br>
+                                profile = {'name': 'John', 'age': 25, 'city': 'New York'} <br> <br>
+                                #Combine the two dictionaries: <br> <br>
+                                combined = {**settings, **profile} <br> <br>
+                                #Print the combined dictionary: <br> <br>
+                            </b>
+                            <img src="../assets/angela/D9_Merging_Dict_img1.png" alt="D9_Merging_Dict_img1">
+                            <p>
+                                In your code: <br>
+                                <em class="code">
+                                    combined = {**settings, **profile}
+                                </em> <br>
+                                The {**settings, **profile} syntax is a concise way to merge the two dictionaries. 
+                                It's often referred to as "dictionary unpacking" or "dictionary merging." 
+                                This approach creates a new dictionary containing all the key-value pairs 
+                                from both settings and profile.
+                            </p> <br>
+                            <p>Now, let's address the terms:</p><br>
+                            <ul>
+                                <li>Merging Dictionaries:</li>
+                                        <p>
+                                            Merging dictionaries generally implies the act of combining two or more 
+                                            dictionaries into a single dictionary, typically resulting in a new dictionary. 
+                                            The operation can involve various methods, and the term is broad.
+                                        </p>
+                                <li>Combining Dictionaries:</li>
+                                        <p>
+                                            Combining dictionaries is essentially the same as merging them. 
+                                            It's the process of bringing together the key-value pairs of multiple 
+                                            dictionaries to form a unified dictionary.
+                                        </p>
+                            </ul>
+                            <p>  In your use case, the terms can be used interchangeably. The resulting combined dictionary contains the 
+                                settings and profile information in a single dictionary.<br>
+                                If you have specific requirements for handling conflicts 
+                                (e.g., what happens when there are overlapping keys in the dictionaries being combined), 
+                                you might need to consider other approaches or functions like update() or use third-party 
+                                libraries like collections.ChainMap or dict().<br>
+                                for practical purposes, when people talk about merging or combining dictionaries in 
+                                Python, they often mean the same thing: creating a new dictionary that includes the 
+                                key-value pairs from multiple source dictionaries.<br>
+                            </p>
+                <b>Case2 - Configuration and Overrides</b> <br>
+                            
+                            <b>Code</b> <br>
+                            <br><b class="code">
+                                # Configuration and Overrides <br>
+                                # Configuration Settings: <br>
+                                default_settings = {'theme': 'light', 'fontsize': 12, 'language': 'English'} <br>
+
+                                # User-Specific Overrides: <br>
+                                user_settings = {'fontsize': 16, 'language': 'Spanish', 'show_notifications': True} <br>
+
+                                # Combine for User-Specific Configuration: <br>
+                                user_config = {**default_settings, **user_settings} <br>
+                                print(user_config) <br>
+
+                            </b>
+                            <img src="../assets/angela/D9_Merging_Dict_img2.png" alt="D9_Merging_Dict_img2">
+                <b>Case3 - </b> <br>
+                <b>Case4 - </b> <br>
+            </p>
 
     
 <h2>REFERENCES</h2>
