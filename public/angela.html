@@ -4615,7 +4615,16 @@
                             
                             <b>Code</b> <br>
                             <br><b class="code">
-                                
+                                # Configuration and Overrides
+                                # Configuration Settings:
+                                default_settings = {'theme': 'light', 'fontsize': 12, 'language': 'English'}
+
+                                # User-Specific Overrides:
+                                user_settings = {'fontsize': 16, 'language': 'Spanish', 'show_notifications': True}
+
+                                # Combine for User-Specific Configuration:
+                                user_config = {**default_settings, **user_settings}
+                                print(user_config)
 
                             </b>
                 <b>Case3 - </b> <br>
