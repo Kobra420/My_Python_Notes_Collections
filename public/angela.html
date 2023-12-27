@@ -4678,6 +4678,10 @@
                                 key-value pairs from multiple source dictionaries.<br>
                             </p>
                 <b>Case2 - Configuration and Overrides</b> <br>
+                            <p>
+                                In this scenario, you have default configuration settings, and users can provide overrides. 
+                                The combined dictionary represents the final configuration for a specific user.
+                            </p>
                             
                             <b>Code</b> <br>
                             <br><b class="code">
@@ -4692,9 +4696,109 @@
                                 user_config = {**default_settings, **user_settings} <br>
                                 print(user_config) <br>
 
-                            </b>
-                            <img src="../assets/angela/D9_Merging_Dict_img2.png" alt="D9_Merging_Dict_img2">
-                <b>Case3 - </b> <br>
+                            </b> <br>
+                            <img src="../assets/angela/D9_Merging_Dict_img2.png" alt="D9_Merging_Dict_img2"> <br>
+                            <b>Explaination :</b> <br>
+                            <ol>
+                                <li>Default Configuration Settings: </li>
+                                <p>
+                                    default_settings is a dictionary containing default configuration settings for a 
+                                    system or application. It includes values for the theme, fontsize, and language, 
+                                    with default values set to 'light', 12, and 'English', respectively.
+                                </p>
+                                <li>User-Specific Overrides: </li>
+                                <p>
+                                    user_settings is another dictionary representing user-specific configuration overrides. 
+                                    Users can customize certain settings, such as fontsize, language, and the option to show 
+                                    notifications. In this example, the fontsize is set to 16, the language to 'Spanish', 
+                                    and show_notifications to True.
+                                </p>
+                                <li>Combining Default and User-Specific Settings: </li>
+                                <p>
+                                    he {**default_settings, **user_settings} syntax is used to combine or merge the two 
+                                    dictionaries. This results in a new dictionary named user_config that includes all 
+                                    key-value pairs from both default_settings and user_settings. 
+                                    If there are overlapping keys, the values from user_settings override those 
+                                    from default_settings.
+                                </p>
+                                <li>Printing the User-Specific Configuration: </li>
+                                <p>
+                                    The print(user_config) statement outputs the merged dictionary representing 
+                                    the user-specific configuration to the console.
+                                </p>
+                            </ol>
+                            <p> In this example, the user-specific configuration (user_config) includes the 
+                                default theme ('light') and language ('English') but overrides the fontsize with the 
+                                user-specified value of 16. Additionally, the user has 
+                                opted to show notifications (show_notifications is True).<br>
+                                This approach allows for a flexible configuration system where default settings are 
+                                provided, and users can customize their experience by overriding specific parameters.<br>
+
+                            </p>
+                <b>Case3 -  Request Parameters in a Web Framework</b> <br>
+                            <p>
+                                In a web framework, you might have default parameters for a request, and users can 
+                                provide additional parameters. The combined dictionary represents the complete set 
+                                of parameters for processing a request.
+                            </p>
+                            <b>code</b><br>
+                            <em class="code">
+                                # Request Parameters in a Web Framework <br>
+ <br>
+                                # In this tutorial, you'll learn how to extract request parameters from a web framework. <br>
+ <br>
+                                # Here are the steps: <br>
+                                # Default Request Parameters: <br>
+                                default_params = {'page': 1, 'limit': 10, 'sort': 'date'} <br>
+ <br>
+                                # User-Specified Request Parameters: <br>
+                                user_params = {'limit': 20, 'filter': 'category'} <br>
+ <br>
+                                # Combine for Final Request Parameters: <br>
+                                final_params = {**default_params, **user_params} <br>
+                                print(final_params) <br>
+ <br>
+                            </em>
+                            <img src="../assets/angela/D9_Merging_Dict_img3.png" alt="D9_Merging_Dict_img3"> <br>
+                            <b>Explaination </b> <br>
+                            <ol>
+                                <li>Default Request Parameters :</li>
+                                <p>
+                                    default_params is a dictionary containing default parameters for a request. 
+                                    In this example, it includes default values for the page number ('page'), the 
+                                    number of items per page ('limit'), and the sorting criteria ('sort'). 
+                                    Default values are set to 1, 10, and 'date', respectively.
+                                </p>
+                                <li>User-Specified Request Parameters: </li>
+                                <p>
+                                    user_params is another dictionary representing parameters specified by the 
+                                    user for a particular request. Users can customize certain parameters, such 
+                                    as changing the limit of items per page ('limit') and 
+                                    specifying a filter category ('filter').
+                                </p>
+                                <li>Combining Default and User-Specific Parameters: </li>
+                                <p>
+                                    The {**default_params, **user_params} syntax is used to combine or merge the 
+                                    two dictionaries. This results in a new dictionary named final_params that 
+                                    includes all key-value pairs from both default_params and user_params. 
+                                    If there are overlapping keys, the values 
+                                    from user_params override those from default_params.
+                                </p>
+                                <li>Printing the Final Request Parameters:</li>
+                                <p>
+                                    The print(final_params) statement outputs the merged dictionary representing 
+                                    the final set of request parameters to the console.
+                                </p>
+                            </ol>
+                            <p>
+                                In this example, the final request parameters (final_params) include the 
+                                default page number ('page': 1), the user-specified limit of items per page 
+                                ('limit': 20), the default sorting criteria ('sort': 'date'), and the 
+                                user-specified filter category ('filter': 'category'). <br>
+                                This approach allows for a flexible system where default request 
+                                parameters are provided, and users can customize their requests by 
+                                overriding specific parameters.
+                            </p>
                 <b>Case4 - </b> <br>
             </p>
 
