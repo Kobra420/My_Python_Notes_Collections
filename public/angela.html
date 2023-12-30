@@ -1929,6 +1929,70 @@
                                 quadratic(3,1) <br>
                             </em>
                 </p> <img src="../assets/angela/D5_function_img1.png" alt="D5_function_img1">
+                <p>
+                    <b>Problem 2: Recursive Factorial Function</b> <br>
+                    <b>Objective :</b> <br>
+                    The recursive approach breaks down the problem into smaller subproblems, 
+                    solving each subproblem and combining the results to get the final solution. 
+                    In this case, it reflects the mathematical definition of factorial: 
+                    <em>n! = n * (n-1)!. </em><br>
+                    Keep in mind that while recursion is a powerful concept, it's important to handle 
+                    it with care to avoid stack overflow errors for large inputs. The iterative 
+                    approach can be more efficient for calculating factorials in practice.
+                </p>
+                <p>
+                    <b>Code :</b> <br>
+                    <em class="code">
+                        def factorial(n): <br>
+                     &nbsp;&nbsp;    """ <br>
+                     &nbsp;&nbsp;    Recursive function to calculate the factorial of a number. <br>
+ <br> &nbsp;&nbsp;
+                     &nbsp;&nbsp;    Parameters: <br>
+                     &nbsp;&nbsp;    - n: An integer for which the factorial is calculated. <br>
+ <br> &nbsp;&nbsp;
+                     &nbsp;&nbsp;    Returns: <br>
+                     &nbsp;&nbsp;    - The factorial of n. <br>
+                     &nbsp;&nbsp;    """ <br>
+                     &nbsp;&nbsp;    # Base case: factorial of 0 or 1 is 1 <br>
+                     &nbsp;&nbsp;    if n == 0 or n == 1: <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;        return 1 <br>
+                     &nbsp;&nbsp;    else: <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;        # Recursive case: n! = n * (n-1)! <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;        return n * factorial(n - 1) <br>
+ <br>
+                    # Example Usage: <br>
+                    number = 5 <br>
+                    result = factorial(number) <br>
+                    print(f"The factorial of {number} is: {result}") <br>
+ <br>
+                    </em>
+                    <img src="../assets/angela/D5_function_img3.png" alt="D5_function_img 3">
+                </p>
+                <p>
+                    <b>Explainations :</b> <br>
+                    <ol>
+                        <li>Base Case :</li>
+                        <p>
+                            The base case is defined for when n is 0 or 1. In these cases, the factorial is 1. This serves as the termination condition for the recursion.
+                        </p>
+                        <li>Recursive Case :</li>
+                        <p>
+                            If n is greater than 1, the function enters the recursive case. The factorial of n is calculated as n * factorial(n - 1). This means the function calls itself with the argument n - 1.
+                        </p>
+                        <li>Termination :</li>
+                        <p>
+                            The recursion continues until it reaches the base case, at which point the function returns 1.
+                        </p>
+                        <li>Example Usage :</li>
+                        <p>
+                            In the example, the function is called with number = 5. The result is the factorial of 5, which is calculated as 5 * 4 * 3 * 2 * 1.
+                        </p>
+                        <li>Output :</li>
+                        <p>
+                            The final result is printed, showing the factorial of the given number.
+                        </p>
+                    </ol>
+                </p>
 
 
                 <h3>Banking_roulette</h3>
