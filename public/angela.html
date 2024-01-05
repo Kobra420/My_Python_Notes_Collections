@@ -2034,7 +2034,22 @@
                             <p>
                                 In Python, a function can be assigned to a variable. This assignment does not call the function, instead a reference to that function is created. Consider the below example, for better understanding.
                             </p>
-                        
+                        <h4>Example:</h4>
+                            <h5>Code :</h5>
+                            <em class="code">
+                                # Python program to illustrate functions 
+                                # can be treated as objects 
+                                def shout(text): 
+                                    return text.upper() 
+                                    
+                                print(shout('Hello')) 
+                                    
+                                # Assigning function to a variable 
+                                yell = shout 
+                                    
+                                print(yell('Hello')) 
+
+                            </em>
 
                 <h3>Banking_roulette</h3>
                     <p>
