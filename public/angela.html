@@ -2014,8 +2014,43 @@
                         print(f"The sum of the numbers is: {result}") <br>
                         <br>
                     </em>
-                    <img src="../assets/angela/D5_function_img4.png" alt="D5_function_img 4">
+                    <img src="../assets/angela/D5_function_img 4.png" alt="D5_function_img 4">
 
+
+                    <h3>Higher Order Functions in Python</h3>
+                            <p>
+                                A function is called Higher Order Function if it contains other functions as a parameter or returns a function as an output i.e, the functions that operate with another function are known as Higher order Functions. It is worth knowing that this higher order function is applicable for functions and methods as well that takes functions as a parameter or returns a function as a result. Python too supports the concepts of higher order functions.
+
+                            </p>
+                            <ul>
+                                Properties of higher-order functions: <br>
+                                <li>A function is an instance of the Object type.</li>
+                                <li>You can store the function in a variable.</li>
+                                <li>You can pass the function as a parameter to another function.</li>
+                                <li>You can return the function from a function.</li>
+                                <li>You can store them in data structures such as hash tables, lists, …</li>
+                            </ul>
+                        <h4>Functions as objects</h4>
+                            <p>
+                                In Python, a function can be assigned to a variable. This assignment does not call the function, instead a reference to that function is created. Consider the below example, for better understanding.
+                            </p>
+                        <h4>Example:</h4>
+                            <h5>Code :</h5>
+                            <em class="code">
+                                # Python program to illustrate functions 
+                                # can be treated as objects 
+                                def shout(text): 
+                                    return text.upper() 
+                                    
+                                print(shout('Hello')) 
+                                    
+                                # Assigning function to a variable 
+                                yell = shout 
+                                    
+                                print(yell('Hello')) 
+
+                            </em> <br>
+                            <img src="../assets/angela/D5_function_img5.png" alt="">
 
                 <h3>Banking_roulette</h3>
                     <p>
