@@ -149,7 +149,7 @@
             </em>
         </p>
         <p>
-            <ul>Notes : <br>
+            <ul class="bold">Notes : <br>
                 <li>Don't forget to return the result.</li>
                 <li>If you get stuck on a challenge, find help in the Resources tab.</li>
                 <li>If you're really stuck, unlock solutions in the Solutions tab.</li>
@@ -180,21 +180,40 @@
         </p><img src="../assets/edabit_assets/edabit_image6.png" alt="edabit_image6">
 
 
-        <h2></h2>
-        <h3></h3>
+        <h2>Sum of Polygon Angles</h2>
+        <h3>Given an n-sided regular polygon n, return the total sum of internal angles (in degrees).</h3>
 
         <p>
             <b>Examples :</b> <br>
-            <em class="code"></em>
+            <em class="code">
+                sum_polygon(3) ➞ 180 <br>
+                sum_polygon(4) ➞ 360 <br>
+                sum_polygon(6) ➞ 720 <br>
+            </em>
         </p>
         <p>
-            <ul>Notes : <br>
-
+            <ul class="bold">Notes : <br>
+                <li>n will always be greater than 2.</li>
+                <li>The formula (n - 2) x 180 gives the sum of all the measures of the angles of an n-sided polygon.</li>
             </ul>
         </p>
         <p>
             <b>Code :</b> <br> <br>
-            <em class="code"></em>
+            <em class="code">
+                #Sum of Polygon Angles <br>
+                def sum_polygon(n): <br>
+            &nbsp;&nbsp;            sum_internal_angles = (n - 2) * 180 <br>
+            &nbsp;&nbsp;            return sum_internal_angles <br>
+
+                from random import randint <br>
+                for i in range(3, randint(10, 20)): <br>
+            &nbsp;&nbsp;        sum_polygon(i) <br>
+            &nbsp;&nbsp;        print(f"n:-&gt;&gt; {i} sum of angles :-&gt;&gt; {sum_polygon(i)}") <br>
+            &nbsp;&nbsp;        try: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;            assert sum_polygon(i), (i-2)*180 <br>
+            &nbsp;&nbsp;        except SyntaxWarning: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;            print("remove parentheses? ") <br>
+            </em>
         </p><img src="" alt="">
 
 
