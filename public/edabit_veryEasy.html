@@ -128,8 +128,8 @@
             &nbsp;&nbsp;        assert tri_area(0, 60) == 0 <br>
             &nbsp;&nbsp;        assert tri_area(12, 11), 66 <br> <br>
                 except SyntaxWarning and 0: <br>
-            &nbsp;&nbsp;        print("remove parentheses? ") <br> <br> 
-            *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*<br> <br>
+            &nbsp;&nbsp;        print("remove parentheses? ")  
+            <br> <br>*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*<br> <br>
                 def tri_area(base, height): <br>
                 &nbsp;&nbsp;        return (base * height) / 2 <br> <br>
                 print(f"base - (3),height -(2), Triangle area - {tri_area(3,2)}") <br>
@@ -137,21 +137,46 @@
         </p><img src="../assets/edabit_assets/edabit_image5.png" alt="">
 
 
-        <h2></h2>
-        <h3></h3>
+        <h2>Return the Next Number from the Integer Passed</h2>
+        <h3>Create a function that takes a number as an argument, increments the number by +1 and returns the result.</h3>
 
         <p>
             <b>Examples :</b> <br>
-            <em class="code"></em>
+            <em class="code">
+                    addition(0) ➞ 1 <br><br>
+                    addition(9) ➞ 10 <br><br>
+                    addition(-3) ➞ -2 <br>
+            </em>
         </p>
         <p>
             <ul>Notes : <br>
-
+                <li>Don't forget to return the result.</li>
+                <li>If you get stuck on a challenge, find help in the Resources tab.</li>
+                <li>If you're really stuck, unlock solutions in the Solutions tab.</li>
             </ul>
         </p>
         <p>
             <b>Code :</b> <br> <br>
-            <em class="code"></em>
+            <em class="code">
+                def addition(num): <br>
+            &nbsp;&nbsp;        num+=1 <br>
+            &nbsp;&nbsp;        return num <br>
+                num = 73 <br>
+                addition(num) <br>
+                print(f"Number{num}, increamented value :{addition(num)}") <br>
+                num = -9 <br>
+                addition(-num) <br>
+                print(f"Number{num}, increamented value :{addition(num)}") <br>
+                num = 2 <br>
+                addition(num) <br>
+                print(f"Number{num}, increamented value :{addition(num)}") <br>
+                num = 0 <br>
+                addition(num)  <br>
+                print(f"Number{num}, increamented value :{addition(num)}") <br>
+                num = 999 <br>
+                addition(num) <br>
+                print(f"Number{num}, increamented value :{addition(num)}") <br>
+            </em>
         </p><img src="" alt="">
 
 
