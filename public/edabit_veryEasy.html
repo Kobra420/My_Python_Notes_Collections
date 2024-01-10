@@ -230,7 +230,7 @@
             </em>
         </p>
         <p>
-            <ul>Notes : <br>
+            <ul class="bold">Notes : <br>
                 <li>Use 365 days as the length of a year for this challenge.</li>
                 <li>Ignore leap years and days between last birthday and now.</li>
                 <li>Expect only positive integer inputs.</li>
@@ -238,8 +238,29 @@
         </p>
         <p>
             <b>Code :</b> <br> <br>
-            <em class="code"></em>
-        </p><img src="" alt="">
+            <em class="code">
+                #Convert Age to Days <br>
+                #Create a function that takes the age in years and returns the age in days. <br>
+                def calc_age(age): <br>
+            &nbsp;&nbsp;        return age*365 <br>
+                try: <br>
+            &nbsp;&nbsp;        assert calc_age(10), 3650 <br>
+            &nbsp;&nbsp;        assert calc_age(0) == 0 <br>
+            &nbsp;&nbsp;        assert calc_age(73), 26645 <br><br><br>
+                except SyntaxWarning: <br>
+            &nbsp;&nbsp;        print("remove parentheses? ") <br>
+                age = 10 <br>
+                calc_age(age) <br>
+                print(f"UserAge:{age}, converted into Days are {calc_age(age)}") <br>
+                age = 0 <br>
+                calc_age(age) <br>
+                print(f"UserAge:{age}, converted into Days are {calc_age(age)}") <br>
+                age = 73 <br>
+                calc_age(age) <br>
+                print(f"UserAge:{age}, converted into Days are {calc_age(age)}") <br><br>
+
+            </em>
+        </p><img src="../assets/edabit_assets/edabit_image8.png" alt="edabit_image8.png">
 
 
         <h2></h2>
