@@ -218,40 +218,93 @@
             <img src="../assets/edabit_assets/edabit_image7b.png" alt="edabit_image7b">
 
 
-        <h2></h2>
-        <h3></h3>
+        <h2>Convert Age to Days</h2>
+        <h3>Create a function that takes the age in years and returns the age in days</h3>
 
         <p>
             <b>Examples :</b> <br>
-            <em class="code"></em>
+            <em class="code">
+                calc_age(65) ➞ 23725 <br>
+                calc_age(0) ➞ 0 <br>
+                calc_age(20) ➞ 7300 <br>
+            </em>
         </p>
         <p>
-            <ul>Notes : <br>
-
+            <ul class="bold">Notes : <br>
+                <li>Use 365 days as the length of a year for this challenge.</li>
+                <li>Ignore leap years and days between last birthday and now.</li>
+                <li>Expect only positive integer inputs.</li>
             </ul>
         </p>
         <p>
             <b>Code :</b> <br> <br>
-            <em class="code"></em>
-        </p><img src="" alt="">
+            <em class="code">
+                #Convert Age to Days <br>
+                #Create a function that takes the age in years and returns the age in days. <br>
+                def calc_age(age): <br>
+            &nbsp;&nbsp;        return age*365 <br>
+                try: <br>
+            &nbsp;&nbsp;        assert calc_age(10), 3650 <br>
+            &nbsp;&nbsp;        assert calc_age(0) == 0 <br>
+            &nbsp;&nbsp;        assert calc_age(73), 26645 <br><br><br>
+                except SyntaxWarning: <br>
+            &nbsp;&nbsp;        print("remove parentheses? ") <br>
+                age = 10 <br>
+                calc_age(age) <br>
+                print(f"UserAge:{age}, converted into Days are {calc_age(age)}") <br>
+                age = 0 <br>
+                calc_age(age) <br>
+                print(f"UserAge:{age}, converted into Days are {calc_age(age)}") <br>
+                age = 73 <br>
+                calc_age(age) <br>
+                print(f"UserAge:{age}, converted into Days are {calc_age(age)}") <br><br>
+            </em>
+        </p><img src="../assets/edabit_assets/edabit_image8.png" alt="edabit_image8.png">
 
 
-        <h2></h2>
-        <h3></h3>
+        <h2>Find the Perimeter of a Rectangle</h2>
+        <h3>Create a function that takes length and width and finds the perimeter of a rectangle.</h3>
 
         <p>
             <b>Examples :</b> <br>
-            <em class="code"></em>
+            <em class="code">
+                find_perimeter(6, 7) ➞ 26 <br>
+                find_perimeter(20, 10) ➞ 60 <br>
+                find_perimeter(2, 9) ➞ 22 <br>
+            </em>
         </p>
         <p>
-            <ul>Notes : <br>
-
+            <ul class="bold">Notes : <br>
+                <li>Don't forget to return the result.</li>
+                <li>If you're stuck, find help in the Resources tab.</li>
+                <li>If you're really stuck, find solutions in the Solutions tab.</li>
             </ul>
         </p>
         <p>
             <b>Code :</b> <br> <br>
-            <em class="code"></em>
-        </p><img src="" alt="">
+            <em class="code">
+                #Find the Perimeter of a Rectangle <br>
+                #Create a function that takes length and width and finds the perimeter of a rectangle. <br>
+                def find_perimeter(length, width): <br>
+            &nbsp;&nbsp;        perimeter = 2 *(length+width) <br>
+                    return perimeter <br>
+                try: <br>
+            &nbsp;&nbsp;        assert find_perimeter(6, 7), 26 <br>
+            &nbsp;&nbsp;        assert find_perimeter(20, 10), 60 <br>
+            &nbsp;&nbsp;        assert find_perimeter(2, 9), 22 <br>
+                except SyntaxWarning: <br>
+            &nbsp;&nbsp;        print("remove parentheses? ")  <br><br>
+                length = 6 <br>
+                width = 7 <br>
+                print(f"Length:{length}-Width:{width}-Perimeter:{find_perimeter(length, width)}") <br>
+                length = 20 <br>
+                width = 10 <br>
+                print(f"Length:{length}-Width:{width}-Perimeter:{find_perimeter(length, width)}") <br>
+                length = 2 <br>
+                width = 9 <br>
+                print(f"Length:{length}-Width:{width}-Perimeter:{find_perimeter(length, width)}") <br><br>
+            </em>
+        </p><img src="../assets/edabit_assets/edabit_image9.png" alt="edabit_image9">
 
 
         <h2></h2>
