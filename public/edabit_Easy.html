@@ -60,22 +60,49 @@
         print(f"Price: {price}  Dicount: {discount} Dicounted Price: {dis(price,discount)}") <br>
          <br>
 
-    </p><img src="../assets/edabit_assets/edabit_image10a.png" alt="edabit_image10a">
-    </p><img src="../assets/edabit_assets/edabit_image10b.png" alt="edabit_image10b">
+    </p><img src="../assets/edabit_assets/edabit_image10a.png" alt="edabit_image10a"> <br>  
+    <img src="../assets/edabit_assets/edabit_image10b.png" alt="edabit_image10b">
 
 
-    <h2></h2>
-    <h3></h3>
+    <h2>Stuttering Function</h2>
+    <h3>Write a function that stutters a word</h3>
 
-    <p>
+    <p> Write a function that stutters a word as if someone is struggling to read it. 
+        The first two letters are repeated twice with an ellipsis ... 
+        and space after each, and then the word is pronounced with a question mark ?. <br> <br>
         <b>Examples :</b> <br>
-        <em class="code"></em>
+        <em class="code">
+            stutter("incredible") ➞ "in... in... incredible?" <br>
+            stutter("enthusiastic") ➞ "en... en... enthusiastic?" <br>
+            stutter("outstanding") ➞ "ou... ou... outstanding?" <br>
+        </em>
     </p>
-    <p>
+    <p class="bold">
         <b>Notes :</b> <br> <br>
+        Assume all input is in lower case and at least two characters long.
     </p>
     <p>
         <b>Code :</b> <br> <br>
+        <em class="code">
+            word = "incredible" <br>
+            def stutter(word): <br>
+        &nbsp;&nbsp;        return word[0:2] + "... " + word[0:2] + "... " + word + "?" <br>
+            print(stutter(word)) <br>
+            # print(f"{word[1]}") <br> <br>
+            # actual_param, expected_param = [ <br>
+        &nbsp;&nbsp;    # 	"increasing", "adventures", "enticing", "unacceptable", "accountable", "incredible", "exquisite", <br>
+        &nbsp;&nbsp;    # 	"am", "enduring", "outstanding", "astonishing", "astounding", "impressive", "revolutionize", <br>
+        &nbsp;&nbsp;    # 	"recurring", "recollection", "so", "gorgeous", "captivating" <br>
+            # ], [ <br>
+            # 	"in... in... increasing?", "ad... ad... adventures?", "en... en... enticing?", "un... un... unacceptable?", <br>
+        &nbsp;&nbsp;    #     "ac... ac... accountable?", "in... in... incredible?", "ex... ex... exquisite?", "am... am... am?", <br>
+        &nbsp;&nbsp;    #     "en... en... enduring?", "ou... ou... outstanding?", "as... as... astonishing?", "as... as... astounding?", <br>
+        &nbsp;&nbsp;    #     "im... im... impressive?", "re... re... revolutionize?", "re... re... recurring?", "re... re... recollection?", <br>
+        &nbsp;&nbsp;    #     "so... so... so?", "go... go... gorgeous?", "ca... ca... captivating?", <br>
+            # ] <br>
+            # for i, w in enumerate(actual_param): <br>
+        &nbsp;&nbsp;    # 	Test.assert_equals(stutter(w), expected_param[i]) <br>
+        </em>
     </p><img src="" alt="">
 
 
