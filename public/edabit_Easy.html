@@ -13,49 +13,148 @@
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h2></h2>
-    <h3></h3>
+    <h2>Find the Discount</h2>
+    <h3>Create a function that takes two arguments: 
+        the original price and the discount percentage 
+        as integers and returns the final price after the discount.</h3>
 
     <p>
         <b>Examples :</b> <br>
-        <em class="code"></em>
+        <em class="code">
+            dis(1500, 50) ➞ 750 <br>
+            dis(89, 20) ➞ 71.2 <br>
+            dis(100, 75) ➞ 25 <br>
+        </em>
     </p>
-    <p>
+    <p class="bold">
         <b>Notes :</b> <br> <br>
+        Your answer should be rounded to two decimal places.
     </p>
-    <p>
+    <p class="code">
         <b>Code :</b> <br> <br>
-    </p><img src="" alt="">
+        # Find the Discount Final Price <br> <br>
+        def dis(price, discount): <br> <br>
+    &nbsp;&nbsp;        return round((price * (1 - discount / 100)),2) <br> <br>
+        try: <br> <br>
+    &nbsp;&nbsp;        assert dis(100, 75), 25 <br> <br>
+    &nbsp;&nbsp;        assert dis(211, 50), 105.5 <br> <br>
+    &nbsp;&nbsp;        assert dis(593, 61), 231.27 <br> <br>
+    &nbsp;&nbsp;        assert dis(1693, 80), 338.6 <br> <br>
+    &nbsp;&nbsp;        assert dis(700, 10), 630 <br> <br>
+        except SyntaxWarning: <br> <br>
+    &nbsp;&nbsp;        print("remove parentheses? ")     <br> <br>
+        price = 100 <br> <br>
+        discount = 75 <br> <br>
+        print(f"Price: {price}  Dicount: {discount} Dicounted Price: {dis(price,discount)}") <br> <br>
+        price = 211 <br> <br>
+        discount = 50 <br> <br>
+        print(f"Price: {price}  Dicount: {discount} Dicounted Price: {dis(price,discount)}") <br> <br>
+        price = 593 <br> <br>
+        discount = 61 <br> <br>
+        print(f"Price: {price}  Dicount: {discount} Dicounted Price: {dis(price,discount)}") <br> <br>
+        price = 1693 <br> <br>
+        discount = 80 <br> <br>
+        print(f"Price: {price}  Dicount: {discount} Dicounted Price: {dis(price,discount)}") <br> <br>
+        price = 700 <br> <br>
+        discount = 10 <br> <br>
+        print(f"Price: {price}  Dicount: {discount} Dicounted Price: {dis(price,discount)}") <br> <br> <br>
+
+    </p><img src="../assets/edabit_assets/edabit_image10a.png" alt="edabit_image10a"> <br>  
+    <img src="../assets/edabit_assets/edabit_image10b.png" alt="edabit_image10b">
 
 
-    <h2></h2>
-    <h3></h3>
+    <h2>Stuttering Function</h2>
+    <h3>Write a function that stutters a word</h3>
 
-    <p>
+    <p> Write a function that stutters a word as if someone is struggling to read it. 
+        The first two letters are repeated twice with an ellipsis ... 
+        and space after each, and then the word is pronounced with a question mark ?. <br> <br>
         <b>Examples :</b> <br>
-        <em class="code"></em>
+        <em class="code">
+            stutter("incredible") ➞ "in... in... incredible?" <br>
+            stutter("enthusiastic") ➞ "en... en... enthusiastic?" <br>
+            stutter("outstanding") ➞ "ou... ou... outstanding?" <br>
+        </em>
     </p>
-    <p>
+    <p class="bold">
         <b>Notes :</b> <br> <br>
+        Assume all input is in lower case and at least two characters long.
     </p>
     <p>
         <b>Code :</b> <br> <br>
-    </p><img src="" alt="">
+        <em class="code">
+            # Stuttering Function <br> <br> <br>
+            word = "incredible" <br> <br>
+            def stutter(word): <br> <br>
+        &nbsp;&nbsp;        return word[0:2] + "... " + word[0:2] + "... " + word + "?" <br> <br>
+            print(stutter(word)) <br> <br>
+            # print(f"{word[1]}") <br> <br> <br>
+            # actual_param, expected_param = [ <br> <br>
+        &nbsp;&nbsp;    # 	"increasing", "adventures", "enticing", "unacceptable", "accountable", "incredible", "exquisite", <br> <br>
+        &nbsp;&nbsp;    # 	"am", "enduring", "outstanding", "astonishing", "astounding", "impressive", "revolutionize", <br> <br>
+        &nbsp;&nbsp;    # 	"recurring", "recollection", "so", "gorgeous", "captivating" <br> <br>
+            # ], [ <br> <br>
+            # 	"in... in... increasing?", "ad... ad... adventures?", "en... en... enticing?", "un... un... unacceptable?", <br> <br>
+        &nbsp;&nbsp;    #     "ac... ac... accountable?", "in... in... incredible?", "ex... ex... exquisite?", "am... am... am?", <br> <br>
+        &nbsp;&nbsp;    #     "en... en... enduring?", "ou... ou... outstanding?", "as... as... astonishing?", "as... as... astounding?", <br> <br>
+        &nbsp;&nbsp;    #     "im... im... impressive?", "re... re... revolutionize?", "re... re... recurring?", "re... re... recollection?", <br> <br>
+        &nbsp;&nbsp;    #     "so... so... so?", "go... go... gorgeous?", "ca... ca... captivating?", <br> <br>
+            # ] <br> <br>
+            # for i, w in enumerate(actual_param): <br> <br>
+        &nbsp;&nbsp;    # 	Test.assert_equals(stutter(w), expected_param[i]) <br> <br>
+        </em>
+    </p><img src="../assets/edabit_assets/edabit_image11.png" alt="edabit_image11.png">
 
 
-    <h2></h2>
-    <h3></h3>
+    <h2>Radians to Degrees</h2>
+    <h3>A function that takes an angle in radians and returns the corresponding angle in degrees</h3>
 
-    <p>
+    <p> Create a function that takes an angle in radians and 
+        returns the corresponding angle in degrees rounded to one decimal place.<br> <br>
         <b>Examples :</b> <br>
-        <em class="code"></em>
+        <em class="code">
+            radians_to_degrees(1) ➞ 57.3<br> <br>
+            radians_to_degrees(20) ➞ 1145.9<br> <br>
+            radians_to_degrees(50) ➞ 2864.8<br>
+
+        </em>
     </p>
-    <p>
+    <p class="bold">
         <b>Notes :</b> <br> <br>
+        The number π can be loaded from the math module with from math import pi.
     </p>
-    <p>
+    <p class="code">
         <b>Code :</b> <br> <br>
-    </p><img src="" alt="">
+        # radians_to_degrees <br> <br>
+        import math <br> <br>
+        global rad <br> <br>
+        def radians_to_degrees(rad): <br> <br>
+    &nbsp;&nbsp;&nbsp;        global degree <br> <br>
+    &nbsp;&nbsp;&nbsp;        degree = round((rad * (180/math.pi)),1) <br> <br>
+    &nbsp;&nbsp;&nbsp;        return degree <br> <br>
+        try: <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(1), 57.3 <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(5), 286.5 <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(7), 401.1 <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(6), 3437.7 <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(100), 5729.6 <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(180), 10313.2 <br><br> <br>
+        except SyntaxWarning: <br> <br>
+    &nbsp;&nbsp;&nbsp;        print("remove parentheses? ") <br><br> <br>
+        rad = 1 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+        rad = 5 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+        rad = 7 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+        rad = 60 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+        rad = 100 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+        rad = 180 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+    </p><img src="../assets/edabit_assets/edabit_image12.png" alt="image12.png"> <br>
+    <img src="../assets/edabit_assets/edabit_image12b.png" alt="image12b.png">
 
 
     <h2></h2>
