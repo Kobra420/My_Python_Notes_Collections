@@ -184,11 +184,34 @@
     <p>
         <b>Code :</b> <br> <br>
         <b class="code">
-            
+            # Maximum Edge of a Triangle <br> <br>
+            def next_edge(side1, side2): <br> <br>
+        &nbsp;&nbsp;        third_edgeMax = (side1 + side2) - 1 <br> <br>
+        &nbsp;&nbsp;        return third_edgeMax <br> <br>
+            try: <br> <br>
+        &nbsp;&nbsp;        assert next_edge(5, 4), 8 <br> <br>
+        &nbsp;&nbsp;        assert next_edge(8, 3), 10 <br> <br>
+        &nbsp;&nbsp;        assert next_edge(7, 9), 15 <br> <br>
+        &nbsp;&nbsp;        assert next_edge(10, 4), 13 <br> <br>
+        &nbsp;&nbsp;        assert next_edge(7, 2), 8 <br> <br>
+                     <br> <br>
+            except SyntaxWarning: <br> <br>
+        &nbsp;&nbsp;        print("remove parentheses? ") <br> <br>
+                     <br> <br>
+            side1,side2 = 5, 4 <br> <br>
+            print(f"side1:{side1}--side2{side2}--{next_edge(side1, side2)}") <br> <br>
+            side1,side2 = 8, 3 <br> <br>
+            print(f"side1:{side1}--side2{side2}--{next_edge(side1, side2)}") <br> <br>
+            side1,side2 = 7, 9 <br> <br>
+            print(f"side1:{side1}--side2{side2}--{next_edge(side1, side2)}") <br> <br>
+            side1,side2 = 10, 4 <br> <br>
+            print(f"side1:{side1}--side2{side2}--{next_edge(side1, side2)}") <br> <br>
+            side1,side2 = 7, 2 <br> <br>
+            print(f"side1:{side1}--side2{side2}--{next_edge(side1, side2)}") <br> <br>
         </b>
-    </p><img src="" alt="">
-
-
+    </p><img src="../assets/edabit_assets/edabit_image13.png" alt="edabit_image13a"> <br>
+    <img src="../assets/edabit_assets/edabit_image13a.png" alt="edabit_image13a">
+        
     <h2></h2>
     <h3></h3>
 
