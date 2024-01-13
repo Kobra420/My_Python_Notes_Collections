@@ -193,11 +193,9 @@
         &nbsp;&nbsp;        assert next_edge(8, 3), 10 <br> <br>
         &nbsp;&nbsp;        assert next_edge(7, 9), 15 <br> <br>
         &nbsp;&nbsp;        assert next_edge(10, 4), 13 <br> <br>
-        &nbsp;&nbsp;        assert next_edge(7, 2), 8 <br> <br>
-                     <br> <br>
+        &nbsp;&nbsp;        assert next_edge(7, 2), 8 <br> <br> <br>
             except SyntaxWarning: <br> <br>
-        &nbsp;&nbsp;        print("remove parentheses? ") <br> <br>
-                     <br> <br>
+        &nbsp;&nbsp;        print("remove parentheses? ") <br> <br> <br>
             side1,side2 = 5, 4 <br> <br>
             print(f"side1:{side1}--side2{side2}--{next_edge(side1, side2)}") <br> <br>
             side1,side2 = 8, 3 <br> <br>
@@ -212,18 +210,55 @@
     </p><img src="../assets/edabit_assets/edabit_image13.png" alt="edabit_image13a"> <br>
     <img src="../assets/edabit_assets/edabit_image13a.png" alt="edabit_image13a">
         
-    <h2></h2>
-    <h3></h3>
+    <h2>Return the First Element in a List</h2>
+    <h3>Create a function that takes a list containing only numbers and return the first element.</h3>
 
     <p>
         <b>Examples :</b> <br>
-        <em class="code"></em>
+        <em class="code">
+            get_first_value([1, 2, 3]) ➞ 1 <br> <br>
+            get_first_value([80, 5, 100]) ➞ 80 <br> <br>
+            get_first_value([-500, 0, 50]) ➞ -500 <br> <br>
+        </em>
     </p>
-    <p>
+    <p class="bold">
         <b>Notes :</b> <br> <br>
+        The first element in a list always has an index of 0.
     </p>
     <p>
         <b>Code :</b> <br> <br>
+        <em class="code">
+            # Return the First Element in a List  <br> <br>
+            def get_first_value(number_list): <br> <br>
+        &nbsp;&nbsp;&nbsp;        return number_list[0] <br> <br>
+            try: <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([1, 2, 3]), 1 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([80, 5, 100]), 80 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([-500, 0, 50]), -500 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([5, 2, 3]), 5 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([75675, 5, 100]), 75675 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([-52320, 0, 50]), -52320 <br> <br>
+            except SyntaxWarning: <br> <br>
+        &nbsp;&nbsp;&nbsp;        print("remove parentheses? ") <br> <br>
+            number_list = [1, 2, 3] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+            number_list = [80, 5, 100] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+            number_list = [-500, 0, 50] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+            number_list = [5, 2, 3] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+            number_list = [75675, 5, 100] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+            number_list = [-52320, 0, 50] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+        </em>
     </p><img src="" alt="">
 
 
