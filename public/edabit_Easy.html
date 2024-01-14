@@ -359,18 +359,46 @@
     </p><img src="../assets/edabit_assets/edabit_image16.png" alt="edabit_image16.png"> <br>
 
 
-    <h2></h2>
-    <h3></h3>
+    <h2>Basic Variable Assignment</h2>
+    <h3>concatenate a passed string name with string "Edabit" and store it in a variable called result</h3>
 
-    <p>
+    <p> A student learning Python was trying to make a function. His code should concatenate a 
+        passed string name with string "Edabit" and store it in a variable called result. 
+        He needs your help to fix this code. <br>
         <b>Examples :</b> <br>
-        <em class="code"></em>
+        <em class="code">
+            name_string("Mubashir") ➞ "MubashirEdabit"
+            name_string("Matt") ➞ "MattEdabit"
+            name_string("python") ➞ "pythonEdabit"
+        </em>
     </p>
-    <p>
+    <p class="bold">
         <b>Notes :</b> <br> <br>
+        <ul class="bold">
+            <li>Don't forget to return the result.</li>
+            <li>If you get stuck on a challenge, find help in the Resources tab.</li>
+            <li>If you're really stuck, unlock solutions in the Solutions tab.</li>
+        </ul>
     </p>
     <p>
         <b>Code :</b> <br> <br>
+        <b class="code">
+
+        # Basic Variable Assignment <br> <br>
+        # name, b = str() <br> <br>
+        def name_string(name): <br> <br>
+    &nbsp;&nbsp;&nbsp;        b = "Edabit" <br> <br>
+    &nbsp;&nbsp;&nbsp;        result = name + b <br> <br>
+    &nbsp;&nbsp;&nbsp;        return result <br> <br>
+        try: <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert name_string("Mubashir"), "MubashirEdabit" <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert name_string("Matt"), "MattEdabit" <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert name_string("python"), "pythonEdabit" <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert name_string("Airforce"), "AirforceEdabit" <br> <br>
+ <br> <br>
+        except SyntaxWarning: <br> <br>
+    &nbsp;&nbsp;&nbsp;        print("remove parentheses? ") <br> <br>
+        </b>
     </p><img src="" alt=""> <br>
 
 
