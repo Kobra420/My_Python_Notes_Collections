@@ -1,5 +1,7 @@
+"""Iterate through each command in order and perform the corresponding operation on your list.."""
 N = int(input())
 L = []
+
 for i in range(N):
     command = input().split()
     if command[0] == 'print':
