@@ -1,5 +1,0 @@
-https://docs.python.org/3.11/c-api/intro.html#c.Py_ssize_t
-https://docs.python.org/3.11/library/sys.html#sys.maxsize
-https://docs.python.org/3.11/library/exceptions.html#OverflowError
-https://docs.python.org/3.11/library/stdtypes.html#range
-https://docs.python.org/3.11/library/functions.html#len
