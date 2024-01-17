@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edabit Easy</title>
+    <link rel="stylesheet" href="./angela_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h2>Find the Discount</h2>
+    <h3>Create a function that takes two arguments: 
+        the original price and the discount percentage 
+        as integers and returns the final price after the discount.</h3>
+
+    <p>
+        <b>Examples :</b> <br>
+        <em class="code">
+            dis(1500, 50) ➞ 750 <br>
+            dis(89, 20) ➞ 71.2 <br>
+            dis(100, 75) ➞ 25 <br>
+            dis(100, 0) ➞ 100 <br>
+        </em>
+    </p>
+    <p class="bold">
+        <b>Notes :</b> <br> <br>
+        Your answer should be rounded to two decimal places.
+    </p>
+    <p class="code">
+        <b>Code :</b> <br> <br>
+        # Find the Discount Final Price <br> <br>
+        def dis(price, discount): <br> <br>
+    &nbsp;&nbsp;        return round((price * (1 - discount / 100)),2) <br> <br>
+        try: <br> <br>
+    &nbsp;&nbsp;        assert dis(100, 75), 25 <br> <br>
+    &nbsp;&nbsp;        assert dis(211, 50), 105.5 <br> <br>
+    &nbsp;&nbsp;        assert dis(593, 61), 231.27 <br> <br>
+    &nbsp;&nbsp;        assert dis(1693, 80), 338.6 <br> <br>
+    &nbsp;&nbsp;        assert dis(700, 10), 630 <br> <br>
+        except SyntaxWarning: <br> <br>
+    &nbsp;&nbsp;        print("remove parentheses? ")     <br> <br>
+        price = 100 <br> <br>
+        discount = 75 <br> <br>
+        print(f"Price: {price}  Dicount: {discount} Dicounted Price: {dis(price,discount)}") <br> <br>
+        price = 211 <br> <br>
+        discount = 50 <br> <br>
+        print(f"Price: {price}  Dicount: {discount} Dicounted Price: {dis(price,discount)}") <br> <br>
+        price = 593 <br> <br>
+        discount = 61 <br> <br>
+        print(f"Price: {price}  Dicount: {discount} Dicounted Price: {dis(price,discount)}") <br> <br>
+        price = 1693 <br> <br>
+        discount = 80 <br> <br>
+        print(f"Price: {price}  Dicount: {discount} Dicounted Price: {dis(price,discount)}") <br> <br>
+        price = 700 <br> <br>
+        discount = 10 <br> <br>
+        print(f"Price: {price}  Dicount: {discount} Dicounted Price: {dis(price,discount)}") <br> <br> <br>
+
+    </p><img src="../assets/edabit_assets/edabit_image10a.png" alt="edabit_image10a"> <br>  
+    <img src="../assets/edabit_assets/edabit_image10b.png" alt="edabit_image10b">
+
+
+    <h2>Stuttering Function</h2>
+    <h3>Write a function that stutters a word</h3>
+
+    <p> Write a function that stutters a word as if someone is struggling to read it. 
+        The first two letters are repeated twice with an ellipsis ... 
+        and space after each, and then the word is pronounced with a question mark ?. <br> <br>
+        <b>Examples :</b> <br>
+        <em class="code">
+            stutter("incredible") ➞ "in... in... incredible?" <br>
+            stutter("enthusiastic") ➞ "en... en... enthusiastic?" <br>
+            stutter("outstanding") ➞ "ou... ou... outstanding?" <br>
+        </em>
+    </p>
+    <p class="bold">
+        <b>Notes :</b> <br> <br>
+        Assume all input is in lower case and at least two characters long.
+    </p>
+    <p>
+        <b>Code :</b> <br> <br>
+        <em class="code">
+            # Stuttering Function <br> <br> <br>
+            word = "incredible" <br> <br>
+            def stutter(word): <br> <br>
+        &nbsp;&nbsp;        return word[0:2] + "... " + word[0:2] + "... " + word + "?" <br> <br>
+            print(stutter(word)) <br> <br>
+            # print(f"{word[1]}") <br> <br> <br>
+            # actual_param, expected_param = [ <br> <br>
+        &nbsp;&nbsp;    # 	"increasing", "adventures", "enticing", "unacceptable", "accountable", "incredible", "exquisite", <br> <br>
+        &nbsp;&nbsp;    # 	"am", "enduring", "outstanding", "astonishing", "astounding", "impressive", "revolutionize", <br> <br>
+        &nbsp;&nbsp;    # 	"recurring", "recollection", "so", "gorgeous", "captivating" <br> <br>
+            # ], [ <br> <br>
+            # 	"in... in... increasing?", "ad... ad... adventures?", "en... en... enticing?", "un... un... unacceptable?", <br> <br>
+        &nbsp;&nbsp;    #     "ac... ac... accountable?", "in... in... incredible?", "ex... ex... exquisite?", "am... am... am?", <br> <br>
+        &nbsp;&nbsp;    #     "en... en... enduring?", "ou... ou... outstanding?", "as... as... astonishing?", "as... as... astounding?", <br> <br>
+        &nbsp;&nbsp;    #     "im... im... impressive?", "re... re... revolutionize?", "re... re... recurring?", "re... re... recollection?", <br> <br>
+        &nbsp;&nbsp;    #     "so... so... so?", "go... go... gorgeous?", "ca... ca... captivating?", <br> <br>
+            # ] <br> <br>
+            # for i, w in enumerate(actual_param): <br> <br>
+        &nbsp;&nbsp;    # 	Test.assert_equals(stutter(w), expected_param[i]) <br> <br>
+        </em>
+    </p><img src="../assets/edabit_assets/edabit_image11.png" alt="edabit_image11.png">
+
+
+    <h2>Radians to Degrees</h2>
+    <h3>A function that takes an angle in radians and returns the corresponding angle in degrees</h3>
+
+    <p> Create a function that takes an angle in radians and 
+        returns the corresponding angle in degrees rounded to one decimal place.<br> <br>
+        <b>Examples :</b> <br>
+        <em class="code">
+            radians_to_degrees(1) ➞ 57.3<br> <br>
+            radians_to_degrees(20) ➞ 1145.9<br> <br>
+            radians_to_degrees(50) ➞ 2864.8<br>
+
+        </em>
+    </p>
+    <p class="bold">
+        <b>Notes :</b> <br> <br>
+        The number π can be loaded from the math module with from math import pi.
+    </p>
+    <p class="code">
+        <b>Code :</b> <br> <br>
+        # radians_to_degrees <br> <br>
+        import math <br> <br>
+        global rad <br> <br>
+        def radians_to_degrees(rad): <br> <br>
+    &nbsp;&nbsp;&nbsp;        global degree <br> <br>
+    &nbsp;&nbsp;&nbsp;        degree = round((rad * (180/math.pi)),1) <br> <br>
+    &nbsp;&nbsp;&nbsp;        return degree <br> <br>
+        try: <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(1), 57.3 <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(5), 286.5 <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(7), 401.1 <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(6), 3437.7 <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(100), 5729.6 <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert radians_to_degrees(180), 10313.2 <br><br> <br>
+        except SyntaxWarning: <br> <br>
+    &nbsp;&nbsp;&nbsp;        print("remove parentheses? ") <br><br> <br>
+        rad = 1 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+        rad = 5 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+        rad = 7 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+        rad = 60 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+        rad = 100 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+        rad = 180 <br> <br>
+        print(f"radian: {rad} degree: {radians_to_degrees(rad)}") <br> <br>
+    </p><img src="../assets/edabit_assets/edabit_image12.png" alt="image12.png"> <br>
+    <img src="../assets/edabit_assets/edabit_image12b.png" alt="image12b.png">
+
+
+    <h2>Maximum Edge of a Triangle</h2>
+    <h3>Create a function that finds the maximum range of a triangle</h3>
+
+    <p>Create a function that finds the maximum range of a triangle's third edge, 
+        where the side lengths are all integers. <br> <br>
+        <b>Examples :</b> <br>
+        <em class="code">
+            next_edge(8, 10) ➞ 17 <br>
+            next_edge(5, 7) ➞ 11 <br>
+            next_edge(9, 2) ➞ 10 <br>
+        </em>
+    </p>
+    <p class="bold"> <b>Notes :</b> <br> 
+        there's a neat rule known as the Triangle Inequality Theorem. 
+        It states that the sum of the lengths of any two sides of a triangle must be greater 
+        than the length of the third side.
+        <br>
+        <ul class="bold">
+            <li>(side1 + side2) - 1 = maximum range of third edge.</li>
+            <li>The side lengths of the triangle are positive integers.</li>
+            <li>Don't forget to return the result.</li>
+        </ul>
+    </p>
+    <p>
+        <b>Code :</b> <br> <br>
+        <b class="code">
+            # Maximum Edge of a Triangle <br> <br>
+            def next_edge(side1, side2): <br> <br>
+        &nbsp;&nbsp;        third_edgeMax = (side1 + side2) - 1 <br> <br>
+        &nbsp;&nbsp;        return third_edgeMax <br> <br>
+            try: <br> <br>
+        &nbsp;&nbsp;        assert next_edge(5, 4), 8 <br> <br>
+        &nbsp;&nbsp;        assert next_edge(8, 3), 10 <br> <br>
+        &nbsp;&nbsp;        assert next_edge(7, 9), 15 <br> <br>
+        &nbsp;&nbsp;        assert next_edge(10, 4), 13 <br> <br>
+        &nbsp;&nbsp;        assert next_edge(7, 2), 8 <br> <br> <br>
+            except SyntaxWarning: <br> <br>
+        &nbsp;&nbsp;        print("remove parentheses? ") <br> <br> <br>
+            side1,side2 = 5, 4 <br> <br>
+            print(f"side1:{side1}--side2{side2}--{next_edge(side1, side2)}") <br> <br>
+            side1,side2 = 8, 3 <br> <br>
+            print(f"side1:{side1}--side2{side2}--{next_edge(side1, side2)}") <br> <br>
+            side1,side2 = 7, 9 <br> <br>
+            print(f"side1:{side1}--side2{side2}--{next_edge(side1, side2)}") <br> <br>
+            side1,side2 = 10, 4 <br> <br>
+            print(f"side1:{side1}--side2{side2}--{next_edge(side1, side2)}") <br> <br>
+            side1,side2 = 7, 2 <br> <br>
+            print(f"side1:{side1}--side2{side2}--{next_edge(side1, side2)}") <br> <br>
+        </b>
+    </p><img src="../assets/edabit_assets/edabit_image13.png" alt="edabit_image13a"> <br>
+    <img src="../assets/edabit_assets/edabit_image13a.png" alt="edabit_image13a">
+        
+    <h2>Return the First Element in a List</h2>
+    <h3>Create a function that takes a list containing only numbers and return the first element.</h3>
+
+    <p>
+        <b>Examples :</b> <br>
+        <em class="code">
+            get_first_value([1, 2, 3]) ➞ 1 <br> <br>
+            get_first_value([80, 5, 100]) ➞ 80 <br> <br>
+            get_first_value([-500, 0, 50]) ➞ -500 <br> <br>
+        </em>
+    </p>
+    <p class="bold">
+        <b>Notes :</b> <br> <br>
+        The first element in a list always has an index of 0.
+    </p>
+    <p>
+        <b>Code :</b> <br> <br>
+        <em class="code">
+            # Return the First Element in a List  <br> <br>
+            def get_first_value(number_list): <br> <br>
+        &nbsp;&nbsp;&nbsp;        return number_list[0] <br> <br>
+            try: <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([1, 2, 3]), 1 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([80, 5, 100]), 80 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([-500, 0, 50]), -500 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([5, 2, 3]), 5 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([75675, 5, 100]), 75675 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert get_first_value([-52320, 0, 50]), -52320 <br> <br>
+            except SyntaxWarning: <br> <br>
+        &nbsp;&nbsp;&nbsp;        print("remove parentheses? ") <br> <br>
+            number_list = [1, 2, 3] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+            number_list = [80, 5, 100] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+            number_list = [-500, 0, 50] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+            number_list = [5, 2, 3] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+            number_list = [75675, 5, 100] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+            number_list = [-52320, 0, 50] <br> <br>
+            get_first_value(number_list) <br> <br>
+            print(f"List :{number_list} First value of the list : {get_first_value(number_list)}") <br> <br>
+        </em>
+    </p>
+    <img src="../assets/edabit_assets/edabit_image14a.png" alt="image14a.png"> <br>
+    <img src="../assets/edabit_assets/edabit_image14b.png" alt="image14b.png"> <br>
+
+
+    <h2>Return the Remainder from Two Numbers</h2>
+    <h3>Function to return the Remainder value from the division of two positive integer </h3>
+    <img src="../assets/edabit_assets/edabit_image15a.png" alt="edabit_image15a"> <br>
+    <p> There is a single operator in Python, capable of providing 
+        the remainder of a division operation. Two numbers are passed as parameters. 
+        The first parameter divided by the 
+        second parameter will have a remainder, possibly zero. Return that value. <br>
+        <b>Examples :</b> <br>
+        <em class="code">
+            remainder(1, 3) ➞ 1 <br> <br>
+            remainder(3, 4) ➞ 3 <br> <br>
+            remainder(5, 5) ➞ 0 <br> <br>
+            remainder(7, 2) ➞ 1 <br> <br>
+        </em>
+    </p>
+    <p class="bold">
+        <b>Notes :</b> <br> <br>
+        <ul class="bold">
+            <li>The tests only use positive integers.</li>
+            <li>Don't forget to return the result.</li>
+            <li>If you get stuck on a challenge, find help in the Resources tab.</li>
+        </ul>
+    </p>
+    <p>
+        <b>Code :</b> <br> <br>
+        <em class="code">
+            # Remainder-Finding Concept <br> <br>
+            # Dividend x = 1 <br> <br>
+            # Divisor  y = 3 <br> <br>
+            # Remainder z = x % y , Modular operator (%) always returns remainder <br> <br> <br>
+            def remainder(x, y): <br> <br>
+        &nbsp;&nbsp;&nbsp;        z = x % y <br> <br>
+        &nbsp;&nbsp;&nbsp;        return z <br> <br>
+            # Testing the function with different values of 'x' and 'y'. <br> <br>
+            try: <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert remainder(1, 3),1 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert remainder(3, 4),3 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert remainder(5, 5) == 0 <br> <br>
+        &nbsp;&nbsp;&nbsp;        assert remainder(7, 2),1 <br> <br>
+            except SyntaxWarning: <br> <br>
+        &nbsp;&nbsp;&nbsp;        print("remove parentheses? ") <br> <br>
+            x,y = 1,3 <br> <br>
+            remainder(x,y) <br> <br>
+            print(f"Dividend:{x} Divisor:{y} remainder:{remainder(x,y)}") <br> <br>
+            x,y = 3,4 <br> <br>
+            remainder(x,y) <br> <br>
+            print(f"Dividend:{x} Divisor:{y} remainder:{remainder(x,y)}") <br> <br>
+            x,y = 5, 5 <br> <br>
+            remainder(x,y) <br> <br>
+            print(f"Dividend:{x} Divisor:{y} remainder:{remainder(x,y)}") <br> <br>
+            x,y = 7, 2 <br> <br>
+            remainder(x,y) <br> <br>
+            print(f"Dividend:{x} Divisor:{y} remainder:{remainder(x,y)}") <br> <br>
+        </em>
+    </p><img src="../assets/edabit_assets/edabit_image15b.png" alt="edabit_image15b.png"> <br>
+        <img src="../assets/edabit_assets/edabit_image15c.png" alt="edabit_image15c.png"> <br>
+
+
+    <h2>Boolean to String Conversion</h2>
+    <h3>Create a function that takes a boolean variable flag and returns it as a string.</h3>
+
+    <p>
+        <b>Examples :</b> <br>
+        <em class="code">
+            bool_to_string(True) ➞ "True" <br> <br>
+            bool_to_string(False) ➞ "False" <br> <br>
+        </em>
+    </p>
+    <p class="bold">
+        <b>Notes :</b> <br> <br>
+        <ul class="bold">
+            <li>Don't forget to return the result.</li>
+            <li>If you get stuck on a challenge, find help in the Resources tab.</li>
+            <li>If you're really stuck, unlock solutions in the Solutions tab.</li>
+        </ul>
+    </p>
+    <p>
+        <b>Code :</b> <br> <br>
+        <em class="code">
+            # Boolean to String Conversion <br> <br>
+            flag = bool() <br> <br>
+            x =4 <br> <br>
+            y=5 <br> <br>
+            if x == y: <br> <br>
+        &nbsp;&nbsp;&nbsp;        flag = False <br> <br>
+            else: <br> <br>
+        &nbsp;&nbsp;&nbsp;        flag = True <br> <br><br>
+            def bool_to_string(flag): <br> <br>
+        &nbsp;&nbsp;&nbsp;        return str(flag) <br> <br><br>
+            assert bool_to_string(flag), "False" <br> <br>
+            assert bool_to_string(not flag), "True" <br> <br>
+        </em>
+    </p><img src="../assets/edabit_assets/edabit_image16.png" alt="edabit_image16.png"> <br>
+
+
+    <h2>Basic Variable Assignment</h2>
+    <h3>concatenate a passed string name with string "Edabit" and store it in a variable called result</h3>
+
+    <p> A student learning Python was trying to make a function. His code should concatenate a 
+        passed string name with string "Edabit" and store it in a variable called result. 
+        He needs your help to fix this code. <br>
+        <b>Examples :</b> <br>
+        <em class="code">
+            name_string("Mubashir") ➞ "MubashirEdabit"
+            name_string("Matt") ➞ "MattEdabit"
+            name_string("python") ➞ "pythonEdabit"
+        </em>
+    </p>
+    <p class="bold">
+        <b>Notes :</b> <br> <br>
+        <ul class="bold">
+            <li>Don't forget to return the result.</li>
+            <li>If you get stuck on a challenge, find help in the Resources tab.</li>
+            <li>If you're really stuck, unlock solutions in the Solutions tab.</li>
+        </ul>
+    </p>
+    <p>
+        <b>Code :</b> <br> <br>
+        <b class="code">
+
+        # Basic Variable Assignment <br> <br>
+        # name, b = str() <br> <br>
+        def name_string(name): <br> <br>
+    &nbsp;&nbsp;&nbsp;        b = "Edabit" <br> <br>
+    &nbsp;&nbsp;&nbsp;        result = name + b <br> <br>
+    &nbsp;&nbsp;&nbsp;        return result <br> <br>
+        try: <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert name_string("Mubashir"), "MubashirEdabit" <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert name_string("Matt"), "MattEdabit" <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert name_string("python"), "pythonEdabit" <br> <br>
+    &nbsp;&nbsp;&nbsp;        assert name_string("Airforce"), "AirforceEdabit" <br> <br>
+ <br> <br>
+        except SyntaxWarning: <br> <br>
+    &nbsp;&nbsp;&nbsp;        print("remove parentheses? ") <br> <br>
+        </b>
+    </p><img src="../assets/edabit_assets/edabit_image17.png" alt="edabit_image17.png"> <br>
+
+
+    <h2></h2>
+    <h3></h3>
+
+    <p>
+        <b>Examples :</b> <br>
+        <em class="code"></em>
+    </p>
+    <p>
+        <b>Notes :</b> <br> <br>
+    </p>
+    <p>
+        <b>Code :</b> <br> <br>
+    </p><img src="" alt=""> <br>
+
+
+    <h2></h2>
+    <h3></h3>
+
+    <p>
+        <b>Examples :</b> <br>
+        <em class="code"></em>
+    </p>
+    <p>
+        <b>Notes :</b> <br> <br>
+    </p>
+    <p>
+        <b>Code :</b> <br> <br>
+    </p><img src="" alt=""> <br>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edabit_very_easy _Python</title>
+    <link rel="stylesheet" href="./angela_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <h2>Return the Sum of Two Numbers</h2>
+    <h3>Create a function that takes two numbers as arguments and returns their sum.</h3>
+    
+    <p>
+        <b>Examples</b> <br> <br>
+        <em class="code">
+            addition(3, 2) ➞ 5 <br> <br>
+        addition(-3, -6) ➞ -9 <br> <br>
+        addition(7, 3) ➞ 10 <br>
+        </em>
+    </p>
+    <p class="bold">
+        <b>Notes <br></b>
+        Don't forget to return the result. <br>
+        If you get stuck on a challenge, find help in the Resources tab. <br>
+        If you're really stuck, unlock solutions in the Solutions tab. <br> <br> <b>Code</b>  <br>
+    </p>
+    <p class="code">
+
+        <a href="./edabit_veryEasy_pythonCodes.ipynb">resource</a><br> <br>
+ 
+            def addition(a, b): <br>
+        &nbsp;&nbsp;        return a + b <br>
+            assert(addition(2,3), 5) <br>
+            assert(addition(-3,-6), -9) <br>
+            assert(addition(7,3), 10) <br>
+    </p> <img src="../assets/edabit_assets/edabit_img2.png" alt="">
+
+        <h2>Convert Minutes into Seconds</h2>
+        <h3>Write a function that takes an integer minutes and converts it to seconds.</h3>
+        <p><b>Examples : <br></b></p>
+        <p class="code">
+        convert(5) ➞ 300 <br><br>
+        convert(3) ➞ 180 <br><br>
+        convert(2) ➞ 120 <br>
+        </p>
+        <p>
+            <b>Code</b> <br>
+            <a href="./edabit_veryEasy_pythonCodes.ipynb">resource</a><br> <br>
+                     def convert(minutes): <br>
+	                    return minutes * 60  <br>
+        </p> <img src="../assets/edabit_assets/edabit_image3.png" alt="">
+
+        <h2>Convert Hours into Seconds</h2>
+        <h3>Write a function that converts hours into seconds. </h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code">
+                how_many_seconds(2) ➞ 7200 <br>
+                how_many_seconds(10) ➞ 36000 <br>
+                how_many_seconds(24) ➞ 86400 <br>
+            </em>
+        </p>
+        <p>
+            <ul class="bold">Notes : <br>
+                <li>60 seconds in a minute, 60 minutes in an hour</li>
+                <li>Don't forget to return your answer.</li>   
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code">
+                # Convert Hours into Seconds <br><br>
+                def how_many_seconds(hours): <br>
+                    return hours * 3600 <br>
+                try: <br>
+                    assert how_many_seconds(2), 7200 <br>
+                    assert how_many_seconds(10), 36000 <br>
+                    assert how_many_seconds(24), 86400 <br>
+                    assert how_many_seconds(36), 129600 <br>
+                    assert how_many_seconds(48), 172800 <br> <br>
+                except SyntaxWarning: <br>
+                    print("remove parentheses? ") <br>
+            </em>
+
+        </p><img src="../assets/edabit_assets/edabit_image4.png" alt="edabit_image4">
+
+
+        <h2>Area of a Triangle </h2>
+        <h3>Write a function that takes the base and height of a triangle and return its area. </h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            
+            <em class="code">
+                tri_area(3, 2) ➞ 3 <br><br>
+                tri_area(7, 4) ➞ 14 <br><br>
+                tri_area(10, 10) ➞ 50 <br>
+            </em>
+        </p>
+        <p>
+            <ul class="bold">Notes : <br>
+                <li>The area of a triangle is: (base * height) / 2</li>
+                <li>Don't forget to return the result.</li>
+                <li>If you get stuck on a challenge, find help in the Resources tab.</li>
+                <li>If you're really stuck, unlock solutions in the Solutions tab.</li>
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code">
+                #Area of a Triangle <br>
+                def tri_area(base, height): <br>
+                    return (base * height) / 2 <br> <br>
+                try: <br>
+            &nbsp;&nbsp;        assert tri_area(3, 2), 3 <br>
+            &nbsp;&nbsp;        assert tri_area(5, 4), 10 <br>
+            &nbsp;&nbsp;        assert tri_area(10, 10), 50 <br>
+            &nbsp;&nbsp;        assert tri_area(0, 60) == 0 <br>
+            &nbsp;&nbsp;        assert tri_area(12, 11), 66 <br> <br>
+                except SyntaxWarning and 0: <br>
+            &nbsp;&nbsp;        print("remove parentheses? ")  
+            <br> <br>*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*<br> <br>
+                def tri_area(base, height): <br>
+                &nbsp;&nbsp;        return (base * height) / 2 <br> <br>
+                print(f"base - (3),height -(2), Triangle area - {tri_area(3,2)}") <br>
+            </em>
+        </p><img src="../assets/edabit_assets/edabit_image5.png" alt="edabit_image 5">
+
+
+        <h2>Return the Next Number from the Integer Passed</h2>
+        <h3>Create a function that takes a number as an argument, increments the number by +1 and returns the result.</h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code">
+                    addition(0) ➞ 1 <br><br>
+                    addition(9) ➞ 10 <br><br>
+                    addition(-3) ➞ -2 <br>
+            </em>
+        </p>
+        <p>
+            <ul class="bold">Notes : <br>
+                <li>Don't forget to return the result.</li>
+                <li>If you get stuck on a challenge, find help in the Resources tab.</li>
+                <li>If you're really stuck, unlock solutions in the Solutions tab.</li>
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code">
+                def addition(num): <br>
+            &nbsp;&nbsp;        num+=1 <br>
+            &nbsp;&nbsp;        return num <br>
+                num = 73 <br>
+                addition(num) <br>
+                print(f"Number{num}, increamented value :{addition(num)}") <br>
+                num = -9 <br>
+                addition(-num) <br>
+                print(f"Number{num}, increamented value :{addition(num)}") <br>
+                num = 2 <br>
+                addition(num) <br>
+                print(f"Number{num}, increamented value :{addition(num)}") <br>
+                num = 0 <br>
+                addition(num)  <br>
+                print(f"Number{num}, increamented value :{addition(num)}") <br>
+                num = 999 <br>
+                addition(num) <br>
+                print(f"Number{num}, increamented value :{addition(num)}") <br>
+            </em>
+        </p><img src="../assets/edabit_assets/edabit_image6.png" alt="edabit_image6">
+
+
+        <h2>Sum of Polygon Angles</h2>
+        <h3>Given an n-sided regular polygon n, return the total sum of internal angles (in degrees).</h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code">
+                sum_polygon(3) ➞ 180 <br>
+                sum_polygon(4) ➞ 360 <br>
+                sum_polygon(6) ➞ 720 <br>
+            </em>
+        </p>
+        <p>
+            <ul class="bold">Notes : <br>
+                <li>n will always be greater than 2.</li>
+                <li>The formula (n - 2) x 180 gives the sum of all the measures of the angles of an n-sided polygon.</li>
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code">
+                #Sum of Polygon Angles <br>
+                def sum_polygon(n): <br>
+            &nbsp;&nbsp;            sum_internal_angles = (n - 2) * 180 <br>
+            &nbsp;&nbsp;            return sum_internal_angles <br>
+
+                from random import randint <br>
+                for i in range(3, randint(10, 20)): <br>
+            &nbsp;&nbsp;        sum_polygon(i) <br>
+            &nbsp;&nbsp;        print(f"n:-&gt;&gt; {i} sum of angles :-&gt;&gt; {sum_polygon(i)}") <br>
+            &nbsp;&nbsp;        try: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;            assert sum_polygon(i), (i-2)*180 <br>
+            &nbsp;&nbsp;        except SyntaxWarning: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;            print("remove parentheses? ") <br>
+            </em>
+        </p><img src="../assets/edabit_assets/edabit_image7a.png" alt="edabit_image7a"> <br>
+            <img src="../assets/edabit_assets/edabit_image7b.png" alt="edabit_image7b">
+
+
+        <h2>Convert Age to Days</h2>
+        <h3>Create a function that takes the age in years and returns the age in days</h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code">
+                calc_age(65) ➞ 23725 <br>
+                calc_age(0) ➞ 0 <br>
+                calc_age(20) ➞ 7300 <br>
+            </em>
+        </p>
+        <p>
+            <ul class="bold">Notes : <br>
+                <li>Use 365 days as the length of a year for this challenge.</li>
+                <li>Ignore leap years and days between last birthday and now.</li>
+                <li>Expect only positive integer inputs.</li>
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code">
+                #Convert Age to Days <br>
+                #Create a function that takes the age in years and returns the age in days. <br>
+                def calc_age(age): <br>
+            &nbsp;&nbsp;        return age*365 <br>
+                try: <br>
+            &nbsp;&nbsp;        assert calc_age(10), 3650 <br>
+            &nbsp;&nbsp;        assert calc_age(0) == 0 <br>
+            &nbsp;&nbsp;        assert calc_age(73), 26645 <br><br><br>
+                except SyntaxWarning: <br>
+            &nbsp;&nbsp;        print("remove parentheses? ") <br>
+                age = 10 <br>
+                calc_age(age) <br>
+                print(f"UserAge:{age}, converted into Days are {calc_age(age)}") <br>
+                age = 0 <br>
+                calc_age(age) <br>
+                print(f"UserAge:{age}, converted into Days are {calc_age(age)}") <br>
+                age = 73 <br>
+                calc_age(age) <br>
+                print(f"UserAge:{age}, converted into Days are {calc_age(age)}") <br><br>
+            </em>
+        </p><img src="../assets/edabit_assets/edabit_image8.png" alt="edabit_image8.png">
+
+
+        <h2>Find the Perimeter of a Rectangle</h2>
+        <h3>Create a function that takes length and width and finds the perimeter of a rectangle.</h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code">
+                find_perimeter(6, 7) ➞ 26 <br>
+                find_perimeter(20, 10) ➞ 60 <br>
+                find_perimeter(2, 9) ➞ 22 <br>
+            </em>
+        </p>
+        <p>
+            <ul class="bold">Notes : <br>
+                <li>Don't forget to return the result.</li>
+                <li>If you're stuck, find help in the Resources tab.</li>
+                <li>If you're really stuck, find solutions in the Solutions tab.</li>
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code">
+                #Find the Perimeter of a Rectangle <br>
+                #Create a function that takes length and width and finds the perimeter of a rectangle. <br>
+                def find_perimeter(length, width): <br>
+            &nbsp;&nbsp;        perimeter = 2 *(length+width) <br>
+                    return perimeter <br>
+                try: <br>
+            &nbsp;&nbsp;        assert find_perimeter(6, 7), 26 <br>
+            &nbsp;&nbsp;        assert find_perimeter(20, 10), 60 <br>
+            &nbsp;&nbsp;        assert find_perimeter(2, 9), 22 <br>
+                except SyntaxWarning: <br>
+            &nbsp;&nbsp;        print("remove parentheses? ")  <br><br>
+                length = 6 <br>
+                width = 7 <br>
+                print(f"Length:{length}-Width:{width}-Perimeter:{find_perimeter(length, width)}") <br>
+                length = 20 <br>
+                width = 10 <br>
+                print(f"Length:{length}-Width:{width}-Perimeter:{find_perimeter(length, width)}") <br>
+                length = 2 <br>
+                width = 9 <br>
+                print(f"Length:{length}-Width:{width}-Perimeter:{find_perimeter(length, width)}") <br><br>
+            </em>
+        </p><img src="../assets/edabit_assets/edabit_image9.png" alt="edabit_image9">
+
+
+        <h2></h2>
+        <h3></h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code"></em>
+        </p>
+        <p>
+            <ul>Notes : <br>
+
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code"></em>
+        </p><img src="" alt="">
+
+
+        <h2></h2>
+        <h3></h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code"></em>
+        </p>
+        <p>
+            <ul>Notes : <br>
+
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code"></em>
+        </p><img src="" alt="">
+
+
+        <h2></h2>
+        <h3></h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code"></em>
+        </p>
+        <p>
+            <ul>Notes : <br>
+
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code"></em>
+        </p><img src="" alt="">
+
+
+        <h2></h2>
+        <h3></h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code"></em>
+        </p>
+        <p>
+            <ul>Notes : <br>
+
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code"></em>
+        </p><img src="" alt="">
+
+
+        <h2></h2>
+        <h3></h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code"></em>
+        </p>
+        <p>
+            <ul>Notes : <br>
+
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code"></em>
+        </p><img src="" alt="">
+
+
+        <h2></h2>
+        <h3></h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code"></em>
+        </p>
+        <p>
+            <ul>Notes : <br>
+
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code"></em>
+        </p><img src="" alt="">
+
+
+        <h2></h2>
+        <h3></h3>
+
+        <p>
+            <b>Examples :</b> <br>
+            <em class="code"></em>
+        </p>
+        <p>
+            <ul>Notes : <br>
+
+            </ul>
+        </p>
+        <p>
+            <b>Code :</b> <br> <br>
+            <em class="code"></em>
+        </p><img src="" alt="">
+</body>
+</html>

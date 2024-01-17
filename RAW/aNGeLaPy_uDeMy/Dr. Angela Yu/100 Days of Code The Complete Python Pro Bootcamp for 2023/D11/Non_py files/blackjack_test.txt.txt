@@ -1,0 +1,298 @@
+# # import random
+# #
+# # user_val_check = int()
+# # computer_val_check = int()
+# # z = 1
+# # start_blackJack = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+# #
+# #
+# # def add_card_values(x, y):
+# #     return x+y
+# #
+# #
+# # def start_blackjack():
+# #     if start_blackJack == "n":
+# #         return False
+# #     elif start_blackJack == "y":
+# #         return True
+# #
+# #
+# # while start_blackjack():
+# #     string_of_cards = "11,2,3,4,5,6,7,8,9,10,10,10,10".split(',')
+# #     print(string_of_cards)
+# #     cards = []
+# #     for strings in string_of_cards:
+# #         integer = int(strings)
+# #         cards.append(integer)
+# #     print(cards)
+# #     user_cards = random.sample(cards, 2)
+# #     user_val_check = add_card_values(user_cards[0], user_cards[0 + z])
+# #     print(f"Your cards: {user_cards}, current score: {user_val_check}")
+# #
+# #     while user_val_check < 21:
+# #         user_choice = input("Type 'y' to get another card, type 'n' to pass: ")
+# #         if user_choice == 'y':
+# #             user_cards.append(random.choice(cards))
+# #             user_val_check = user_val_check + user_cards[len(user_cards) - z]
+# #             print(f"user hand {user_cards}")
+# #         elif user_choice == 'n':
+# #             print("You Lose😤")
+# #             print(f"Your cards: {user_cards}, current score: {user_val_check}")
+# #             user_val_check = 22
+# #     start_blackJack = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+# #
+# #     if user_val_check == 21:
+# #         print(f"Your cards: {user_cards}, current score: {user_val_check}")
+# #         print("Opponent went over. You win 😁")
+# #         start_blackJack = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+# #     else:
+# #         print(f"Your cards: {user_cards}, current score: {user_val_check}")
+# #         print("You lose 😤")
+# #         start_blackJack = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+# #
+# #
+# import random
+#
+# cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+#
+# def start_blackjack():
+#     while True:
+#         user_start_blackjack = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+#         if user_start_blackjack == "n":
+#             return False
+#         elif user_start_blackjack == "y":
+#             return True
+#
+# def user_choice():
+#     while True:
+#         user_input = input("Type 'y' to get another card, type 'n' to pass: ")
+#         if user_input == 'y':
+#             return True
+#         elif user_input == 'n':
+#             return False
+#
+# def sum_of_cards(lst):
+#     return sum(lst)
+#
+# def calculation(usr, pc):
+#     if pc == 21:
+#         print("You Lose😤")
+#     elif usr == 21:
+#         print("Opponent went over. You win 😁")
+#     elif pc < 21 and usr < 21:
+#         if pc > usr:
+#             print("You Lose😤")
+#         if pc < usr:
+#             print("Opponent went over. You win 😁")
+#     elif pc > 21:
+#         print("Opponent went over. You win 😁")
+#     elif usr > 21:
+#         print("You Lose😤")
+#
+# def first_time_card_selection():
+#     return random.sample(cards, 2)
+#
+# def second_time_card_selection(lst):
+#     lst.append(random.choice(cards))
+#
+# while start_blackjack():
+#     user_card = first_time_card_selection()
+#     computer_card = first_time_card_selection()
+#     sum_of_user_cards = sum_of_cards(user_card)
+#     sum_of_computer_cards = sum_of_cards(computer_card)
+#     print(f"{user_card} sum {sum_of_user_cards} and \n {computer_card} sum {sum_of_computer_cards}")
+#     if sum_of_user_cards < 21 and sum_of_computer_cards < 21:
+#         while user_choice():
+#             second_time_card_selection(user_card)
+#             second_time_card_selection(computer_card)
+#             calculation(sum_of_user_cards, sum_of_computer_cards)
+#             print(f"{user_card} sum {sum_of_user_cards} and \n {computer_card} sum {sum_of_computer_cards}")
+#     calculation(sum_of_user_cards, sum_of_computer_cards)
+
+
+import random
+
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+
+def start_blackjack():
+    while True:
+        user_start_blackjack = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+        if user_start_blackjack == "n":
+            return False
+        elif user_start_blackjack == "y":
+            return True
+
+
+def user_choice():
+    user_input = input("Type 'y' to get another card, type 'n' to pass: ")
+    if user_input == 'y':
+        return True
+    elif user_input == 'n':
+        return False
+
+
+def sum_of_cards(lst):
+    return sum(lst)
+
+
+def calculation(usr, pc):
+    if pc == 21:
+        print("You Lose😤")
+    elif usr == 21:
+        print("Opponent went over. You win 😁")
+    elif pc < 21 and usr < 21:
+        if pc > usr:
+            print("You Lose😤")
+        if pc < usr:
+            print("Opponent went over. You win 😁")
+    elif pc > 21:
+        print("Opponent went over. You win 😁")
+    elif usr > 21:
+        print("You Lose😤")
+
+
+def first_time_card_selection():
+    return random.sample(cards, 2)
+
+
+def second_time_card_selection(lst):
+    lst.append(random.choice(cards))
+
+
+while start_blackjack():
+    user_card = first_time_card_selection()
+    computer_card = first_time_card_selection()
+    sum_of_user_cards = sum_of_cards(user_card)
+    sum_of_computer_cards = sum_of_cards(computer_card)
+    print(f"{user_card} sum {sum_of_user_cards} and \n {computer_card} sum {sum_of_computer_cards}")
+
+    # Prompt for user's choice
+    while sum_of_user_cards < 21 and sum_of_computer_cards < 21 and user_choice():
+        second_time_card_selection(user_card)
+        second_time_card_selection(computer_card)
+        sum_of_user_cards = sum_of_cards(user_card)
+        sum_of_computer_cards = sum_of_cards(computer_card)
+        calculation(sum_of_user_cards, sum_of_computer_cards)
+        print(f"{user_card} sum {sum_of_user_cards} and \n {computer_card} sum {sum_of_computer_cards}")
+
+    calculation(sum_of_user_cards, sum_of_computer_cards)
+
+
+###########################################################################################
+
+
+# ############## Our Blackjack House Rules #####################
+
+import random
+
+# # The deck is unlimited in size.
+# # There are no jokers.
+# # The Jack/Queen/King all count as 10.
+# # The Ace can count as 11 or 1.
+# # Use the following list as the deck of cards:
+# # cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+# # The cards in the list have equal probability of being drawn.
+# # Cards are not removed from the deck as they are drawn.
+# # The computer is the dealer.
+
+# #################### Hints #####################
+
+# Hint 1: Go to this website and try out the Blackjack game:
+#   https://games.washingtonpost.com/games/blackjack/
+# Then try out the completed Blackjack project here:
+#   http://blackjack-final.appbrewery.repl.run
+
+
+# play_game = input("Do you want to play the game BlackJack? type 'yes' or 'no'")
+
+# print(user_val_check)
+# print(f"Your cards: {user_cards}, current score: {user_val_check}")
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+
+def start_blackjack():
+    user_start_blackjack = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+    if user_start_blackjack == "n":
+        return False
+    elif user_start_blackjack == "y":
+        return True
+    else:
+        return "Enter proper value (y/n)"
+
+
+def user_choice():
+    user_input = input("Type 'y' to get another card, type 'n' to pass: ")
+    if user_input == 'y':
+        return True
+    elif user_input == 'n':
+        return False
+
+
+def sum_of_cards(lst):
+    total = 0
+    for i in range(len(lst)):
+        total += lst[i]
+    return total
+
+
+def calculation(usr, pc):
+    if pc == 21:
+        print("You Lose😤")
+    elif usr == 21:
+        print("Opponent went over. You win 😁")
+    elif pc < 21 and usr < 21:
+        if pc > usr:
+            print("You Lose😤")
+        if pc < usr:
+            print("Opponent went over. You win 😁")
+    elif pc > 21:
+        print("Opponent went over. You win 😁")
+    elif usr > 21:
+        print("You Lose😤")
+
+
+def first_time_card_selection():
+    lst1 = random.sample(cards, 2)
+    return lst1
+
+
+def second_time_card_selection(lst2):
+    return appending(lst2)
+
+
+def appending(lst3):
+    lst3.append(random.choice(cards))
+
+
+while start_blackjack():
+    user_card = first_time_card_selection()
+    computer_card = first_time_card_selection()
+    sum_of_user_cards = sum_of_cards(user_card)
+    sum_of_computer_cards = sum_of_cards(computer_card)
+    print(f"{user_card} sum {sum_of_user_cards} and \n {computer_card} sum {sum_of_computer_cards}")
+
+    # Prompt for user's choice
+    while sum_of_user_cards < 21 and sum_of_computer_cards < 21 and user_choice():
+        second_time_card_selection(user_card)
+        second_time_card_selection(computer_card)
+        sum_of_user_cards = sum_of_cards(user_card)
+        sum_of_computer_cards = sum_of_cards(computer_card)
+        calculation(sum_of_user_cards, sum_of_computer_cards)
+        print(f"{user_card} sum {sum_of_user_cards} and \n {computer_card} sum {sum_of_computer_cards}")
+
+    calculation(sum_of_user_cards, sum_of_computer_cards)
+
+
+
+
+
+# user_card = first_time_card_selection()
+# computer_card = first_time_card_selection()
+# print(f"{user_card} sum {sum_of_user_cards} and '\n' {computer_card} sum {sum_of_computer_cards}")
+
+
+# print(user_cards)
+# computer_cards = random.sample(cards, 2)
+# print(computer_cards)
+# print("You lose 😤")
