@@ -1,3 +1,4 @@
+# linux
 import os
 
 def organize_files(directory_path):
@@ -5,4 +6,5 @@ def organize_files(directory_path):
     files = os.listdir(directory_path)
     print(files)
 
-organize_files(r'E:\YT2024\BHARAT')
+
+organize_files(r'/media/cyborg23/experiments')
