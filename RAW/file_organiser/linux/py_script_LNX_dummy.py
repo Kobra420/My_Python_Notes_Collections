@@ -46,8 +46,9 @@ def print_file_sizes(directory_path, output_file_path):
         for dirpath, dirnames, filenames in os.walk(directory_path):
             for filename in filenames:
                 file_path = os.path.join(dirpath, filename)
+                
                 size = (get_file_size(file_path))/ 2048
-                output_file.write(f"File: {file_path}, Size: {size} MB\n")
+                output_file.write(f"File: {filename}, Size: {size} MB\n\n")
 
 
 # organize_files(directory_path)
