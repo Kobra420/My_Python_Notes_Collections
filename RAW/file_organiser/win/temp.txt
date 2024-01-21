@@ -49,8 +49,9 @@ organize_files_by_size(directory_path, output_file_path)
 
 
 Need improvements for the above code :-
-# Create sub-folders based on file size ranges from 0 MB to 15MB, 15 MB to 200 MB and 200 MB to 4000 MB
+# Create sub-folders based on file size ranges like these (from 0 MB to 15MB), (from 15 MB to 200 MB) and (from 200 MB to 4000 MB)
 # make subfolder path based on specified target folder path
 # write file names only and file sizes only and in Mega Bytes (MB) only in the output file
 # write directory path first in the output file then write total directory size in Giga Bytes (GB)
+# then write sub-folder paths in the output file along with each subfolder sizes
 # write the output file in excel data sheet xlsx format
