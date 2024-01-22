@@ -1,0 +1,1 @@
+These files here in public contains documentation of progress in the forms of html/css only.
