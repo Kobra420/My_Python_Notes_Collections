@@ -175,56 +175,50 @@
                     <li><p>Windows uses backslashes (\) as path separators (e.g.,</p> 'C:\\Users\\Username\\file.txt').</li>
                     <li><p>Linux uses forward slashes (/) as path separators (e.g.,</p> '/home/username/file.txt').</li>
                 </ul>
-                os.path.join() <p>Thefunction is used to construct paths in a way that is appropriate for the operating system.</p>
+                os.path.join() <p>The function is used to construct paths in a way that is appropriate for the operating system.</p>
             </li>
             <li>Current Working Directory:
                 <ul class="bold">
-                    <li><p></p></li>
+                    <li>os.getcwd(): <p>Returns the current working directory in the respective path format.</p></li>
                 </ul>
             </li>
-            os.getcwd(): Returns the current working directory in the respective path format.
+            
             <li>Environment Variables:
                 <ul class="bold">
-                    <li><p></p></li>
+                    <li><p>Accessing environment variables using os.environ is consistent, but the actual variables may differ. For example, the home directory variable is  <b class="bold"> %USERPROFILE% </b> on Windows and  <b class="bold"> $HOME </b> on Linux.</p></li>
                 </ul>
             </li>
-            Accessing environment variables using os.environ is consistent, but the actual variables may differ. For example, the home directory variable is %USERPROFILE% on Windows and $HOME on Linux.
+            
             <li>File and Directory Operations:
                 <ul class="bold">
-                    <li><p></p></li>
+                    <li><p>Functions like <b class="bold"> os.listdir()</b><b class="bold"> , os.mkdir()</b>, and<b class="bold">  os.remove()</b> are consistent across platforms for basic file and directory operations.</p></li>
                 </ul>
             </li>
-            Functions like os.listdir(), os.mkdir(), and os.remove() are consistent across platforms for basic file and directory operations.
             <li>Permissions and Ownership:
                 <ul class="bold">
-                    <li><p></p></li>
+                    <li><p>Functions like <b class="bold">os.chmod() </b>and <b class="bold">os.chown() </b>may behave differently or have limited functionality on Windows compared to Linux.</p></li>
                 </ul>
             </li>
-            Functions like os.chmod() and os.chown() may behave differently or have limited functionality on Windows compared to Linux.
             <li>Process and System Information:
                 <ul class="bold">
-                    <li><p></p></li>
+                    <li><p>Functions like <b class="bold">os.system(), os.getpid(), and os.cpu_count() </b>behave consistently across platforms.</p></li>
                 </ul>
             </li>
-            Functions like os.system(), os.getpid(), and os.cpu_count() behave consistently across platforms.
             <li>Path Manipulation:
                 <ul class="bold">
-                    <li><p></p></li>
+                    <li>os.path.join() <p>and related functions handle path manipulation in a platform-independent way.</p></li>
                 </ul>
             </li>
-            os.path.join() and related functions handle path manipulation in a platform-independent way.
             <li>Symbolic Links:
                 <ul class="bold">
-                    <li><p></p></li>
+                    <li>Handling of symbolic links (e.g., os.symlink())<p> may differ between Windows and Linux due to differences in how each system manages symbolic links.</p></li>
                 </ul>
             </li>
-            Handling of symbolic links (e.g., os.symlink()) may differ between Windows and Linux due to differences in how each system manages symbolic links.
             <li>Terminal Size:
                 <ul class="bold">
-                    <li><p></p></li>
+                    <li>os.get_terminal_size() <p>may behave differently or not be available on certain platforms.</p></li>
                 </ul>
             </li>
-            os.get_terminal_size() may behave differently or not be available on certain platforms.
             <li>File and Directory Iterator:
                 <ul class="bold">
                     <li>os.scandir() <p>provides a platform-independent way to iterate over directory entries.</p></li>
