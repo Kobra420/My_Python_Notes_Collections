@@ -100,47 +100,34 @@
         </li>
         <li>File and Directory Permissions:
             <ul class="bold">
-                <li><p></p></li>
-                <li><p></p></li>
-                <li><p></p></li>
-                <li><p></p></li>
+                <li>os.access(path, mode): <p>Checks if the specified path is accessible with the given mode (e.g., os.F_OK, os.R_OK).</p></li>
             </ul>
         </li>
         <li>File System Encoding:
             <ul class="bold">
-                <li><p></p></li>
-                <li><p></p></li>
-                <li><p></p></li>
-                <li><p></p></li>
+                <li>os.fsencode(filename): <p>Converts the filename to the file system encoding.</p></li>
+                <li>os.fsdecode(filename): <p>Decodes the filename from the file system encoding.</p></li>
             </ul>
         </li>
         <li>Creating Temporary Files and Directories:
             <ul class="bold">
-                <li><p></p></li>
-                <li><p></p></li>
-                <li><p></p></li>
-                <li><p></p></li>
+                <li>os.mkstemp(suffix='', prefix='', dir=None, text=False): <p>Creates a temporary file and returns its file descriptor.</p></li>
+                <li>os.makedirs(path, mode=0o777, exist_ok=False): <p>Creates a temporary directory.</p></li>
             </ul>
         </li>
         <li>Working with File Times:
             <ul class="bold">
-                <li><p></p></li>
-                <li><p></p></li>
-                <li><p></p></li>
-                <li><p></p></li>
+                <li>os.utime(path, times=None, *, ns=None, follow_symlinks=True): <p>Set the access and modified times of a file.</p></li>
             </ul>
         </li>
         <li>Terminal Size:
             <ul class="bold">
-                <li><p></p></li>
-                <li><p></p></li>
-                <li><p></p></li>
-                <li><p></p></li>
+                <li>os.get_terminal_size(fallback=(columns, lines)): <p>Returns the size of the terminal window.</p></li>
             </ul>
         </li>
         <li>Creating Symbolic Links:
             <ul class="bold">
-                <li><p></p></li>
+                <li>os.symlink(target, link_name): <p>Creates a symbolic link pointing to target named link_name.</p></li>
                 <li><p></p></li>
                 <li><p></p></li>
                 <li><p></p></li>
