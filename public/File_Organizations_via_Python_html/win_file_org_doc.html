@@ -226,7 +226,25 @@
             </li>
             <h2>File Descriptor Operations and File and Directory Permissions in the os Module </h2>
             <ol>File Descriptor Operations: <br> os.open(file, flags[, mode]):
-                <p>Opens a file and returns a file descriptor.</p>
+                <p>
+                    Opens a file and returns a file descriptor. <br>
+                    <b>Example : Checking Readability</b> <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Code</b> <br>
+                    <b class="code">
+                        # 1. File Descriptor Operations: <br> <br>
+                        # os.open(file, flags[, mode]): <br> <br>
+                        import os <br> <br>
+                        file_path = "E:\chrom_links.txt" <br><br>
+                        # Check if the file is readable <br><br>
+                        if os.access(file_path, os.R_OK): <br> <br>
+                    &nbsp;&nbsp;        with open(file_path, 'r', encoding='utf-8', errors='ignore') as file: <br> <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;            content = file.read() <br> <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;            print(content) <br> <br>
+                        else: <br> <br>
+                    &nbsp;&nbsp;        print("File is not readable.") <br> <br>
+                    </b>
+                    
+                </p>
             </ol>
         </ol>
 </body>
