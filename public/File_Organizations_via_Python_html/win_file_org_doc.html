@@ -226,25 +226,52 @@
             </li>
             <h2>File Descriptor Operations and File and Directory Permissions in the os Module </h2>
             <ol>File Descriptor Operations: <br> os.open(file, flags[, mode]):
-                <p>
-                    Opens a file and returns a file descriptor. <br>
-                    <b>Example : Checking Readability</b> <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Code</b> <br>
-                    <b class="code">
-                        # 1. File Descriptor Operations: <br> <br>
-                        # os.open(file, flags[, mode]): <br> <br>
-                        import os <br> <br>
-                        file_path = "E:\chrom_links.txt" <br><br>
-                        # Check if the file is readable <br><br>
-                        if os.access(file_path, os.R_OK): <br> <br>
-                    &nbsp;&nbsp;        with open(file_path, 'r', encoding='utf-8', errors='ignore') as file: <br> <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;            content = file.read() <br> <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;            print(content) <br> <br>
-                        else: <br> <br>
-                    &nbsp;&nbsp;        print("File is not readable.") <br> <br>
-                    </b>
-                    
-                </p>
+                <li>
+                    Opens / Closes a file and returns a file descriptor. <br>
+                            <ul>
+                                <li> Opening files <b class="bold"># os.open(file, flags[, mode]): <br> <br></b>
+                                    <b>Example 1 :</b> <b class="unbold">Checking Readability </b><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Code</b> <br>
+                                    <b class="code">
+                                        import os <br> <br>
+                                        file_path = "E:\chrom_links.txt" <br><br>
+                                        # Check if the file is readable <br><br>
+                                        if os.access(file_path, os.R_OK): <br> <br>
+                                    &nbsp;&nbsp;        with open(file_path, 'r', encoding='utf-8', errors='ignore') as file: <br> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;            content = file.read() <br> <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;            print(content) <br> <br>
+                                        else: <br> <br>
+                                    &nbsp;&nbsp;        print("File is not readable.") <br> <br>
+                                    </b>
+                                    <img src="../../assets/Python_file_org_ops/os_mod_img1.png" alt="os_mod_img1">
+                                    <img src="../../assets/Python_file_org_ops/os_mod_img2.png" alt="os_mod_img2">
+                                </li>
+                                <li>
+                                    File closing <b class="bold"> os.close(fd) </b><br>
+                                        <b>Example 2 :</b> <b class="unbold">Closes a file descriptor.</b><br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<b>Code</b> <br>
+                                        <b class="code">
+                                            import os <br> <br>
+                                            # Open a file and get a file descriptor <br> <br>
+                                            fd = os.open("E:\chrom_links.txt", os.O_RDONLY) <br> <br>
+                                            # Do some operations with the file descriptor <br> <br>
+                                            print(fd) <br> <br>
+                                            # Close the file descriptor <br> <br>
+                                            os.close(fd) <br> <br>
+                                        </b>
+                                        <img src="../../assets/Python_file_org_ops/os_mod_img3.png" alt="os_mod_img3">
+                                </li>
+                                <h5>Notes : <br>
+                                    Parameters: <br>
+                                    <p><ol>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ol></p>
+                                </h5>
+                                
+                            </ul>
+                </li>
             </ol>
         </ol>
 </body>
