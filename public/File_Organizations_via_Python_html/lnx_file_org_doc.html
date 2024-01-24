@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Operations via Python Codes in  Linux / Unix  Operating Systems</title>
-    <link rel="stylesheet" href="../Angela/angela_style.css">
+    <link rel="stylesheet" href="./file_org_docs_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 </head>
 <body>
     <h1>File Operations in Linux / Unix Operating Systems</h1> <br> <br>
-    <h2>OS Module</h2>
+    <b><h2>OS Module</h2></b>
 
     <p>
         The <b class="bold">os </b>module in Python provides a way of interacting with the operating system. 
@@ -224,7 +224,17 @@
                     <li>os.scandir() <p>provides a platform-independent way to iterate over directory entries.</p></li>
                 </ul>
             </li>
-            
+            <p>
+                While the os module provides a consistent interface, it's important to 
+                be aware of platform-specific nuances, especially when dealing with 
+                file paths, permissions, and certain system-related functionalities. 
+                For more specialized tasks, it might be 
+                necessary to use platform-specific modules or libraries.
+            </p>
+        </ol>
+        <h2>File Descriptor Operations and File and Directory Permissions in the os Module </h2>
+        <ol>File Descriptor Operations: <br> os.open(file, flags[, mode]):
+            <p>Opens a file and returns a file descriptor.</p>
         </ol>
 </body>
 </html>
