@@ -228,7 +228,8 @@
             <ol>File Descriptor Operations: <br> os.open(file, flags[, mode]):
                 <li>
                     Opens / Closes a file and returns a file descriptor. <br>
-                            <ul>
+                            <ul> 
+                                <!-- works on both WIndows OS and Linux -->
                                 <li> Opening files <b class="bold"># os.open(file, flags[, mode]): <br> <br></b>
                                     <b>Example 1 :</b> <b class="unbold">Checking Readability </b><br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<b>Code</b> <br>
@@ -261,15 +262,29 @@
                                         </b>
                                         <img src="../../assets/Python_file_org_ops/os_mod_img3.png" alt="os_mod_img3">
                                 </li>
-                                <h5>Notes : <br>
+                                <h5 class="bold">Notes : <br>
                                     Parameters: <br>
-                                    <p><ol>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ol></p>
+                                    <ol class="bold">
+                                        <li>file (str)</li>
+                                                <p>The path to the file that you want to open.</p>
+                                        <li>flag (int)</li>
+                                                <p>
+                                                    A combination of flags that control the behavior of the file descriptor. 
+                                                    Flags are expressed as bitwise OR (|) of the constants 
+                                                    defined in the <b class="bold">os </b>module.
+                                                </p>
+                                        <li>mode(int,optional)</li>
+                                        <p>
+                                            <b class="bold">Other Possible attributes :<br></b>
+                                            <ul>
+                                                <li>os.O_BINARY and os.O_TEXT (Windows-specific):</li>
+                                                <li>File Descriptor (fd):</li>
+                                            </ul>
+                                        </p>
+                                    </ol>
+
                                 </h5>
-                                
+                            <!-- works on both WIndows OS and Linux -->
                             </ul>
                 </li>
             </ol>
