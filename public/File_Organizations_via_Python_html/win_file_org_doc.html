@@ -228,7 +228,8 @@
             <ol>File Descriptor Operations: <br> os.open(file, flags[, mode]):
                 <li>
                     Opens / Closes a file and returns a file descriptor. <br>
-                            <ul>
+                            <ul> 
+                                <!-- works on both WIndows OS and Linux -->
                                 <li> Opening files <b class="bold"># os.open(file, flags[, mode]): <br> <br></b>
                                     <b>Example 1 :</b> <b class="unbold">Checking Readability </b><br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;<b>Code</b> <br>
@@ -261,15 +262,51 @@
                                         </b>
                                         <img src="../../assets/Python_file_org_ops/os_mod_img3.png" alt="os_mod_img3">
                                 </li>
-                                <h5>Notes : <br>
+                                <h5 class="bold">Notes : <br>
                                     Parameters: <br>
-                                    <p><ol>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ol></p>
+                                    <ol class="bold">
+                                        <li>file (str)</li>
+                                                <p>The path to the file that you want to open.</p>
+                                        <li>flag (int)
+                                            <ul>
+                                                <li>
+                                                    <b class="unbold"> A combination of flags that control the behavior of the file descriptor. 
+                                                        Flags are expressed as bitwise OR (|) of the constants 
+                                                        defined in the </b>  os  <b class="unbold"> module.</b>
+                                                </li>
+                                                <li>os.O_RDONLY: Open for reading only.</li>
+                                                <li>os.O_WRONLY: Open for writing only.</li>
+                                                <li>os.O_RDWR: Open for both reading and writing.</li>
+                                                <li>os.O_APPEND: Set the file pointer to the end of the file before each write.</li>
+                                                <li>os.O_CREAT: Create the file if it does not exist.</li>
+                                                <li>os.O_EXCL: Ensure that this call creates the file exclusively (fails if the file already exists).</li>
+                                                <li>os.O_TRUNC: Truncate the file to zero length if it exists.</li>
+                                            </ul>
+                                        </li>
+                                        <li>mode(int,optional)
+                                            <ul>
+                                                <li>The permissions to set if the file is created (used in conjunction with the os.O_CREAT flag).</li>
+                                                <li>The mode parameter is an octal value representing the permissions (e.g., 0o777).</li>
+                                                <li>This parameter is typically not used on Windows.</li>
+                                            </ul>
+                                        </li>
+                                        <p>
+                                            <b class="bold">Other Possible attributes :<br></b>
+                                            <ul>
+                                                <li>os.O_BINARY and os.O_TEXT (Windows-specific):
+                                                        <li>On Windows, you can use these flags to control how the file is opened with respect to line endings.</li>
+                                                        <li>os.O_BINARY: Open the file in binary mode.</li>
+                                                        <li>os.O_TEXT: Open the file in text mode.</li>
+                                                </li>
+                                                <li>File Descriptor (fd):
+                                                    <li>The returned file descriptor is an integer that represents the opened file. This descriptor is used in subsequent file-related operations.</li>
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </ol>
+
                                 </h5>
-                                
+                            <!-- works on both WIndows OS and Linux -->
                             </ul>
                 </li>
             </ol>
