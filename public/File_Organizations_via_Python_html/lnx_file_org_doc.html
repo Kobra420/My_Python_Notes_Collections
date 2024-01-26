@@ -232,6 +232,88 @@
                 necessary to use platform-specific modules or libraries.
             </p>
         </ol>
+        <h2>File Descriptor Operations and File and Directory Permissions in the os Module </h2>
+        <ol>File Descriptor Operations: <br> os.open(file, flags[, mode]):
+            <li>
+                Opens / Closes a file and returns a file descriptor. <br>
+                        <ul> 
+                            <!-- works on both WIndows OS and Linux -->
+                            <li> Opening files <b class="bold"># os.open(file, flags[, mode]): <br> <br></b>
+                                <b>Example 1 :</b> <b class="unbold">Checking Readability </b><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<b>Code</b> <br>
+                                <b class="code">
+                                    import os <br> <br>
+                                    file_path = "E:\chrom_links.txt" <br><br>
+                                    # Check if the file is readable <br><br>
+                                    if os.access(file_path, os.R_OK): <br> <br>
+                                &nbsp;&nbsp;        with open(file_path, 'r', encoding='utf-8', errors='ignore') as file: <br> <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;            content = file.read() <br> <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;            print(content) <br> <br>
+                                    else: <br> <br>
+                                &nbsp;&nbsp;        print("File is not readable.") <br> <br>
+                                </b>
+                                <img src="../../assets/Python_file_org_ops/os_mod_img1.png" alt="os_mod_img1">
+                                <img src="../../assets/Python_file_org_ops/os_mod_img2.png" alt="os_mod_img2">
+                            </li>
+                            <li>
+                                File closing <b class="bold"> os.close(fd) </b><br>
+                                    <b>Example 2 :</b> <b class="unbold">Closes a file descriptor.</b><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Code</b> <br>
+                                    <b class="code">
+                                        import os <br> <br>
+                                        # Open a file and get a file descriptor <br> <br>
+                                        fd = os.open("E:\chrom_links.txt", os.O_RDONLY) <br> <br>
+                                        # Do some operations with the file descriptor <br> <br>
+                                        print(fd) <br> <br>
+                                        # Close the file descriptor <br> <br>
+                                        os.close(fd) <br> <br>
+                                    </b>
+                                    <img src="../../assets/Python_file_org_ops/os_mod_img3.png" alt="os_mod_img3">
+                            </li>
+                            <h5 class="bold">Notes : <br>
+                                Parameters: <br>
+                                <ol class="bold">
+                                    <li>file (str)</li>
+                                            <p>The path to the file that you want to open.</p>
+                                    <li>flag (int)
+                                        <ul>
+                                            <li>
+                                                <b class="unbold"> A combination of flags that control the behavior of the file descriptor. 
+                                                    Flags are expressed as bitwise OR (|) of the constants 
+                                                    defined in the </b>  os  <b class="unbold"> module.</b>
+                                            </li>
+                                            <li>os.O_RDONLY: Open for reading only.</li>
+                                            <li>os.O_WRONLY: Open for writing only.</li>
+                                            <li>os.O_RDWR: Open for both reading and writing.</li>
+                                            <li>os.O_APPEND: Set the file pointer to the end of the file before each write.</li>
+                                            <li>os.O_CREAT: Create the file if it does not exist.</li>
+                                            <li>os.O_EXCL: Ensure that this call creates the file exclusively (fails if the file already exists).</li>
+                                            <li>os.O_TRUNC: Truncate the file to zero length if it exists.</li>
+                                        </ul>
+                                    </li>
+                                    <li>mode(int,optional)
+                                        <ul>
+                                            <li>The permissions to set if the file is created (used in conjunction with the os.O_CREAT flag).</li>
+                                            <li>The mode parameter is an octal value representing the permissions (e.g., 0o777).</li>
+                                            <li>This parameter is typically not used on Windows.</li>
+                                        </ul>
+                                    </li>
+                                    <p>
+                                        <b class="bold">Other Possible attributes :<br></b>
+                                        <ul>
+                                            <li>os.O_BINARY and os.O_TEXT (Windows-specific):
+                                                    <li>On Windows, you can use these flags to control how the file is opened with respect to line endings.</li>
+                                                    <li>os.O_BINARY: Open the file in binary mode.</li>
+                                                    <li>os.O_TEXT: Open the file in text mode.</li>
+                                            </li>
+                                            <li>File Descriptor (fd):
+                                                <li>The returned file descriptor is an integer that represents the opened file. This descriptor is used in subsequent file-related operations.</li>
+                                            </li>
+                                        </ul>
+                                    </p> <img src="../../assets/Python_file_org_ops/os_mod_img4.png" alt="os_mod_img4">
+                                </ol>
 
+                            </h5>
+                        <!-- works on both WIndows OS and Linux -->
 </body>
 </html>
