@@ -226,7 +226,7 @@
             </li>
             <h2>File Descriptor Operations and File and Directory Permissions in the os Module </h2>
             <ol>File Descriptor Operations: <br> os.open(file, flags[, mode]):
-                <li>
+                <>
                     Opens / Closes a file and returns a file descriptor. <br>
                             <ul> 
                                 <!-- works on both WIndows OS and Linux -->
@@ -303,11 +303,42 @@
                                                 </li>
                                             </ul>
                                         </p> <img src="../../assets/Python_file_org_ops/os_mod_img4.png" alt="os_mod_img4"> <br>
-                                        <p>file read and access</p>
+                                        <p>In this example:
+                                            <ul>
+                                                <li>The file is opened for writing (os.O_WRONLY).</li>
+                                                <li>The os.O_CREAT flag ensures that the file is created if it doesn't exist.</li>
+                                                <li>The os.O_TRUNC flag truncates the file to zero length.</li>
+                                                <li>The 0o644 permission is set if the file is created.</li>
+                                            </ul>
+                                        </p>
                                     </ol>
-
                                 </h5>
                             <!-- works on both WIndows OS and Linux -->
+                            <li>
+                                code: <br>
+                                <ul><b class="code">
+                                    <li class="code">with open("example.txt", 'r') as file: </li>
+                                    <li>content = file.read() </li>
+                                    <li># Perform operations on the file content <br> <br></li>
+                                </b></ul>
+                            </li>
+                            <ul class="unbold">
+                                Explanation:
+                                <li>with Statement:</li>
+                                The with statement is used to wrap the execution of a block of code with methods defined by a context manager.
+                                For file handling, it ensures that the file is properly opened and closed.
+                                <li>open("example.txt", 'r'):</li>
+                                The open function is used to open a file. In this case, it opens "example.txt" in read-only mode ('r').
+                                The file is opened within the context of the with statement.
+                                <li>as file:</li>
+                                The as keyword is used to create a variable (file in this case) that references the opened file object.
+                                The variable file is only accessible within the indented block under the with statement.
+                                <li>File Operations:</li>
+                                Inside the with block, you can perform operations on the file using the file variable.
+                                In this example, file.read() reads the content of the file into the content variable.
+                                <li>Automatic File Closure:</li>
+                                Once the code block under the with statement is executed, the file is automatically closed. This ensures proper resource management.
+                            </ul>
                             </ul>
                 </li>
             </ol>
