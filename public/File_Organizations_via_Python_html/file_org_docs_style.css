@@ -165,7 +165,14 @@ h5{
     font-size: 20px;
     color: #451952;
     font-weight: 500;
+    background-color: #F8DE22;
     }
+.innernotes .code {
+    padding-left: 0.1em;
+    font-family: 'Martian Mono', monospace;
+    font-size: 11px;
+    color: #016A70;
+}
 .innernotes ul,
 .innernotes ol,
 .innernotes li {
