@@ -1,5 +1,5 @@
 *{
-    padding: 2px;
+    padding: 4px;
     margin: 4px;
     box-sizing: border-box;
     background-color: #f8e7c0;
@@ -145,6 +145,37 @@ h5{
     font-size: 15px;
     font-family: 'Lilita One', sans-serif;
 }
+.outernotes{
+    padding: 1em;
+    margin: 4px;
+    box-sizing: border-box;
+    background-color: #F94C10;
+    border: 10em;
+}
+.innernotes{
+    padding: 1em;
+    margin: 2px;
+    box-sizing: border-box;
+    background-color: #F8DE22;
+    border: 10em;
+}
+.innernotes p {
+    padding-left: 1em;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 20px;
+    color: #451952;
+    font-weight: 500;
+    }
+.innernotes ul,
+.innernotes ol,
+.innernotes li {
+    padding-left: 1em;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 20px;
+    color: #451952;
+    font-weight: 700;
+    background-color: #F8DE22;
+    }
 
 p{
     font-family: 'Chakra Petch', sans-serif;
