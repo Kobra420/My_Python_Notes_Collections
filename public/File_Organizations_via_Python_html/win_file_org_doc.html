@@ -27,6 +27,7 @@
         <li>File and Directory Operations:
             <ul class="bold">
                 <li>os.open(file, flags[, mode]):<p> Opens a file and returns a file descriptor.</p></li>
+                <li>os.close(fd): <p>Closes a file descriptor.</p></li>
                 <li>os.chdir(path):<p> Changes the current working directory to the specified path.</p></li>
                 <li>os.listdir(path='.'):<p> Returns a list of files and directories in the given directory.</p></li>
             </ul>
@@ -303,13 +304,102 @@
                                                 </li>
                                             </ul>
                                         </p> <img src="../../assets/Python_file_org_ops/os_mod_img4.png" alt="os_mod_img4"> <br>
-                                        <p>file read and access</p>
+                                        <p>In this example:
+                                            <ul>
+                                                <li>The file is opened for writing (os.O_WRONLY).</li>
+                                                <li>The os.O_CREAT flag ensures that the file is created if it doesn't exist.</li>
+                                                <li>The os.O_TRUNC flag truncates the file to zero length.</li>
+                                                <li>The 0o644 permission is set if the file is created.</li>
+                                            </ul>
+                                        </p>
                                     </ol>
-
                                 </h5>
                             <!-- works on both WIndows OS and Linux -->
+                            <h4>Explain with open() as file :</h4>
+                            <li>
+                                code: <br>
+                                <ul><b class="code">
+                                    with open("example.txt", 'r') as file:  <br>
+                                &nbsp;&nbsp;    content = file.read()  <br>
+                                &nbsp;&nbsp;    # Perform operations on the file content <br> <br> <br>
+                                </b></ul>
+                            </li>
+                            <ul class="unbold">
+                                <h4>Explanation:</h4>
+                                <li>with Statement:</li>
+                                The with statement is used to wrap the execution of a block of code with methods defined by a context manager.
+                                For file handling, it ensures that the file is properly opened and closed.
+                                <li>open("example.txt", 'r'):</li>
+                                The open function is used to open a file. In this case, it opens "example.txt" in read-only mode ('r').
+                                The file is opened within the context of the with statement.
+                                <li>as file:</li>
+                                The as keyword is used to create a variable (file in this case) that references the opened file object.
+                                The variable file is only accessible within the indented block under the with statement.
+                                <li>File Operations:</li>
+                                Inside the with block, you can perform operations on the file using the file variable.
+                                In this example, file.read() reads the content of the file into the content variable.
+                                <li>Automatic File Closure:</li>
+                                Once the code block under the with statement is executed, the file is automatically closed. This ensures proper resource management.
                             </ul>
+                            </ul>
+                    <div class="outernotes">
+                        <h4>Alternative Ways or Possibilities:</h4>
+                        <div class="innernotes">
+                            <ol>
+                                <li>Using a Different Mode:</li>
+                                    <p>
+                                        You can open the file in different modes based on your 
+                                        requirements (e.g., 'w' for write, 'a' for append). <br>Example: <br>
+                                        <b class="code">
+                                            with open("example.txt", 'w') as file: <br> <br>
+                                        &nbsp;&nbsp;&nbsp;        file.write("New content") <br> <br>
+                                        </b>
+                                    </p>
+    
+                                <li>Using readlines() for Line-by-Line Reading:</li>
+                                    <p>
+                                        If you want to read the file line by line, you can use the readlines() method. <br>
+                                        Example: <br>
+                                        <b class="code">
+                                            with open("example.txt", 'r') as file: <br>
+                                        &nbsp;&nbsp;        lines = file.readlines() <br>
+                                        &nbsp;&nbsp;        # Process each line <br>
+                                        </b>
+                                    </p>
+                                
+                                    <li>Handling Exceptions:</li>
+                                    <p>
+                                        You can add exception handling to deal with potential issues, 
+                                        such as file not found or permission errors. <br>
+                                        Example: <br>
+                                        <b class="code">
+                                            try: <br>
+                                        &nbsp;&nbsp;&nbsp;        with open("example.txt", 'r') as file: <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            content = file.read() <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            # Perform operations on the file content <br>
+                                            except FileNotFoundError: <br>
+                                        &nbsp;&nbsp;&nbsp;        print("File not found.") <br>
+                                            except IOError: <br>
+                                        &nbsp;&nbsp;&nbsp;        print("Error reading the file.") <br>
+                                        </b>
+                                    </p>
+    
+                                <li>Using with for Multiple Files:</li>
+                                <p>
+                                    You can use multiple with statements for managing multiple 
+                                    files simultaneously. <br>Example: <br>
+                                    <b class="code">
+                                        with open("file1.txt", 'r') as file1, open("file2.txt", 'w') as file2: <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;        # Perform operations on both files <br>
+                                    </b>
+                                </p>
+                            </ol>
+                        </div>
+
+                    </div>
                 </li>
+                <li>os.listdir(path='.')</li>
+                <li>os.chdir(path)</li>
             </ol>
         </ol>
 </body>
