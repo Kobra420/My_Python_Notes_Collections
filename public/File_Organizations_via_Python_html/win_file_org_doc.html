@@ -405,7 +405,7 @@
                         It returns a list containing the names of the entries (files and directories) 
                         in the specified directory.
                     </p>
-                    <ul><li>
+                <ul><li>
                         Parameters:
                         <p>path (str, optional): The path of the directory for which you want to list the entries. 
                             Defaults to the current working directory if not provided.</p>
@@ -413,13 +413,26 @@
                     <ul>
                         <li>
                             Compatibility: <br>
-                        <li>Windows <p>This function is compatible with Windows. It retrieves the list of entries in the specified directory on Windows file systems.
-                        </p></li>
-                        <li>Linux <p>Similarly, it works on Linux systems to get the list of entries in the specified directory.</p></li>
+                            <ul>
+                                <li>Windows <p>This function is compatible with Windows. It retrieves the list of entries in the specified directory on Windows file systems.</p></li>
+                                <li>Linux <p>Similarly, it works on Linux systems to get the list of entries in the specified directory.</p></li>
+                            </ul>
                     </li>
                     </ul>
-                    </ul>
+                </ul>
                 <li>os.chdir(path)</li>
+                    <p>
+                        The os.chdir() function is used to change the current working directory to the specified path.
+                    </p>
+                <ul>
+                    <li>Parameters <p>path (str): The path to the directory to which you want to change the current working directory.</p></li>
+                    <li>Compatibility
+                        <ul>
+                            <li>Windows <p>This function is compatible with Windows. It allows changing the current working directory on Windows systems.</p></li>
+                            <li>Linux <p>Similarly, it works on Linux systems to change the current working directory.</p></li>
+                        </ul>
+                    </li>
+                </ul>
             </ol>
         </ol>
 </body>
