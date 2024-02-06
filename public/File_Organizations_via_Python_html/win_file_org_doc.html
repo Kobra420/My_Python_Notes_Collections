@@ -275,6 +275,7 @@
                                                         Flags are expressed as bitwise OR (|) of the constants 
                                                         defined in the </b>  os  <b class="unbold"> module.</b>
                                                 </li>
+                                                <li>'|' (bitwise OR) operator</li>
                                                 <li>os.O_RDONLY: Open for reading only.</li>
                                                 <li>os.O_WRONLY: Open for writing only.</li>
                                                 <li>os.O_RDWR: Open for both reading and writing.</li>
@@ -593,7 +594,8 @@
                         # create directories recursively <br>
                         # make folder-tree along with subfolders in it <br>
                         import os <br>
-                        new_directory = r"P:\PROJECT_python\GIT\File_organizations"  # Remove "example1.txt" from the path <br>
+                        new_directory = r"P:\PROJECT_python\GIT\File_organizations" <br>
+                        # Remove "example1.txt" from the path <br>
                         os.chdir(new_directory) <br>
                         updated_directory = os.getcwd() <br>
                         print("Updated Working Directory:", updated_directory) <br>
