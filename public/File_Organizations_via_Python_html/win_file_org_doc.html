@@ -585,10 +585,21 @@
                     Compatibility :
                     <ul>
                         <li class="bold">Windows <p>Compatible with Windows.</p></li>
-                        <li>Linux </li>
+                        <li class="bold">Linux <p>Compatible with Linux.</p></li>
                     </ul>
                 </li>
                 <li>Example :</li>
+                    <p class="code">
+                        # create directories recursively <br>
+                        # make folder-tree along with subfolders in it <br>
+                        import os <br>
+                        new_directory = r"P:\PROJECT_python\GIT\File_organizations"  # Remove "example1.txt" from the path <br>
+                        os.chdir(new_directory) <br>
+                        updated_directory = os.getcwd() <br>
+                        print("Updated Working Directory:", updated_directory) <br>
+                        # Create directories recursively <br>
+                        os.makedirs("d1/b2/a3") <br>
+                    </p> <img src="../../assets/Python_file_org_ops/os_mod_win_os.makedirs(path) _image.png" alt="os_mod_win_os.makedirs(path) _image">
             </ul>
         </li>
         <li>
