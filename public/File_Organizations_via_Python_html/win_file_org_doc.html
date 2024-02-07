@@ -594,8 +594,7 @@
                         # create directories recursively <br>
                         # make folder-tree along with subfolders in it <br>
                         import os <br>
-                        new_directory = r"P:\PROJECT_python\GIT\File_organizations" <br>
-                        # Remove "example1.txt" from the path <br>
+                        new_directory = r"P:\PROJECT_python\GIT\File_organizations"  &nbsp;&nbsp;  # Remove "example1.txt" from the path <br>
                         os.chdir(new_directory) <br>
                         updated_directory = os.getcwd() <br>
                         print("Updated Working Directory:", updated_directory) <br>
@@ -604,25 +603,34 @@
                     </p> <img src="../../assets/Python_file_org_ops/os_mod_win_os.makedirs(path) _image.png" alt="os_mod_win_os.makedirs(path) _image">
             </ul>
         </li>
-        <li>
-            
-
+        <li><b class="bold"> os.remove(path) </b><p>The <b class="bold">os.remove() </b>function removes a file.</p>
             <ul>
                 <li>
                     Parameters :
                     <ul>
-                        <li><p></p></li>
-                        <li><p></p></li>
+                        <li>path (str): <p>The path of the file to be removed.</p></li>
                     </ul>
                 </li>
                 <li>
                     Compatibility :
                     <ul>
-                        <li>Windows </li>
-                        <li>Linux </li>
+                        <li class="bold">Windows <p>Compatible with Windows.</p></li>
+                        <li class="bold">Linux <p>Compatible with Linux.</p></li>
                     </ul>
                 </li>
-                <li>Example :</li>
+                <li>Example :</li> <br> <br> checking the current path and set it to desired path to create and remove the file
+                <p class="code">
+                    import os <br>
+                    current_directory = os.getcwd() <br>
+                    print("Current Working Directory:", current_directory) <br>
+                    new_directory = r"P:\PROJECT_python\GIT\File_organizations" &nbsp;&nbsp;  # Remove "example1.txt" from the path <br>
+                    os.chdir(new_directory) <br>
+                    updated_directory = os.getcwd() <br>
+                    print("Updated Working Directory:", updated_directory) <br> <br>
+                </p><img src="../../assets/Python_file_org_ops/OS_mod_win_os_os.remove(path)_img10a.png" alt="OS_mod_win_os_os.remove(path)_img_10a"> <br> <br>
+                output folder result : <br> <br>
+                    <img src="../../assets/Python_file_org_ops/OS_mod_win_os_os.remove(path)_img10b.png" alt="OS_mod_win_os_os.remove(path)_img10b">
+                now creating the file exmaple.txt
             </ul>
         </li>
         <li>
