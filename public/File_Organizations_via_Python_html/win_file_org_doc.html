@@ -622,8 +622,12 @@
                 <li>Example :</li> checking the current path and set it to desired path to create and remove the file
                 <p class="code">
                     import os <br>
-                    # Remove a file <br>
-                    os.remove("file.txt")<br>
+                    current_directory = os.getcwd() <br>
+                    print("Current Working Directory:", current_directory) <br>
+                    new_directory = r"P:\PROJECT_python\GIT\File_organizations" &nbsp;&nbsp;  # Remove "example1.txt" from the path <br>
+                    os.chdir(new_directory) <br>
+                    updated_directory = os.getcwd() <br>
+                    print("Updated Working Directory:", updated_directory) <br>
                 </p>
             </ul>
         </li>
