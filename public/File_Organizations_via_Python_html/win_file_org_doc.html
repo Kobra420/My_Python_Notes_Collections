@@ -618,19 +618,48 @@
                         <li class="bold">Linux <p>Compatible with Linux.</p></li>
                     </ul>
                 </li>
-                <li>Example :</li> <br> <br> checking the current path and set it to desired path to create and remove the file
+                <li>Example :</li> <br> <br> checking the current path and set it to desired path to create and remove the file <br> <br>
+                Creating folder add_remove first <br>
+                then adding add_remove.txt file to it <br>
                 <p class="code">
                     import os <br>
-                    current_directory = os.getcwd() <br>
-                    print("Current Working Directory:", current_directory) <br>
-                    new_directory = r"P:\PROJECT_python\GIT\File_organizations" &nbsp;&nbsp;  # Remove "example1.txt" from the path <br>
-                    os.chdir(new_directory) <br>
-                    updated_directory = os.getcwd() <br>
-                    print("Updated Working Directory:", updated_directory) <br> <br>
+                    directory_whoami = os.getcwd() <br>
+                    print("Current Working Directory:", directory_whoami) <br>
+                    directory_operations = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations"  # Remove "example1.txt" from the path <br>
+                    os.chdir(directory_operations) <br>
+                    directory_whoami = os.getcwd() <br>
+                    print("Updated Working Directory:", directory_whoami) <br>
+                    # Create a directory <br>
+                    os.mkdir("recursive") <br>
+                    # Create directories recursively <br>
+                    os.makedirs("recursive/a1/b3/d1/b2/a3") <br>
+                    # Create another directory <br>
+                    os.mkdir("add_remove") <br>
+                    add_remove_path = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations\add_remove" <br>
+                    os.chdir(add_remove_path) <br>
+                    directory_whoami = os.getcwd() <br>
+                    print("Updated Working Directory after creating directories recursively and\nadd remove directory :", directory_whoami) <br>
+                    <br>
                 </p><img src="../../assets/Python_file_org_ops/OS_mod_win_os_os.remove(path)_img10a.png" alt="OS_mod_win_os_os.remove(path)_img_10a"> <br> <br>
                 output folder result : <br> <br>
                     <img src="../../assets/Python_file_org_ops/OS_mod_win_os_os.remove(path)_img10b.png" alt="OS_mod_win_os_os.remove(path)_img10b">
-                now creating the file exmaple.txt
+                now creating the file add_remove.txt
+                    <p class="code">
+                        file_path = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations\add_remove\add_remove.txt" <br>
+                        fd1 =os.open(file_path,os.O_WRONLY | os.O_CREAT | os.O_TRUNC,0o777) <br>
+                        os.write(fd1, b"Please remove this file asap") <br>
+                    </p><img src="../../assets/Python_file_org_ops/OS_mod_win_os_os.remove(path)_img10c.png" alt="OS_mod_win_os_os.remove(path)_img10c.png">
+                    output folder status <br> <br>
+                    <img src="../../assets/Python_file_org_ops/OS_mod_win_os_os.remove(path)_img10d.png" alt="OS_mod_win_os_os.remove(path)_img10d.png">
+                now deleting the file add_remove.txt
+                    <p class="code">
+                        os.close(fd1) <br>
+                        print(f"current working directory, {os.getcwd()}") <br>
+                        # Remove a file <br>
+                        os.remove("add_remove.txt") <br>
+                    </p><img src="../../assets/Python_file_org_ops/OS_mod_win_os_os.remove(path)_img10e.png" alt="OS_mod_win_os_os.remove(path)_img10e.png">
+                    output folder status <br> <br>
+                    <img src="../../assets/Python_file_org_ops/OS_mod_win_os_os.remove(path)_img10f.png" alt="OS_mod_win_os_os.remove(path)_img10f.png">
             </ul>
         </li>
         <li><b class="bold">os.removedirs(path)</b>
