@@ -1,0 +1,1 @@
+In the first iteration, items is 'Geeks', and the line writes 'Geeks\n' to the file. In the second iteration, items is 'for', and the line writes 'for\n' to the file. In the third iteration, items is 'Geeks!', and the line writes 'Geeks!\n' to the file.
