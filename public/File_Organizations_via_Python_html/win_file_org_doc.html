@@ -677,28 +677,29 @@
                         <li class="bold">Linux <p>Compatible with Linux.</p></li>
                     </ul>
                 </li>
-                <li>Example : <br> before removing the folder "New Folder" </li>
-                <img src="../../assets/Python_file_org_ops/OS_mod_win_os.rmdir(path)2.png" alt=""> <br>
-                <p class="code">
-                    # code to delete directories in a desired path <br>
-                    import os <br>
-                    # check path <br>
-                    directory_whoami = os.getcwd() <br>
-                    print("Current Working Directory:", directory_whoami) <br>
-                    directory_operations = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations\add_remove"  # Remove "example1.txt" from the path <br>
-                    os.chdir(directory_operations) <br>
-                    directory_whoami = os.getcwd() <br>
-                    print("Updated Working Directory:", directory_whoami) <br>
+                <li>Example : <br> before removing the directories :</li>
+                    <img src="../../assets/Python_file_org_ops/OS_mod_win_os.removedirs(path)_image1.png" alt=""> <br>
+                    after removal: <br>
+                    <img src="../../assets/Python_file_org_ops/OS_mod_win_os.removedirs(path)_image2.png" alt=""> <br>
+                    <p class="code">
+                        # code to delete directories in a desired path <br>
  <br>
-                    # Remove a directory <br>
-                    try: <br>
-                &nbsp;&nbsp;        os.rmdir("New folder") <br>
-                &nbsp;&nbsp;        print("Directory removed successfully") <br>
-                    except OSError as e: <br>
-                &nbsp;&nbsp;        print(f"Error: {e}") <br>
-                </p>
-                <img src="../../assets/Python_file_org_ops/OS_mod_win_os.rmdir(path)2a.png" alt="OS_mod_win_os.rmdir(path)2a"><br>
-                <img src="../../assets/Python_file_org_ops/OS_mod_win_os.rmdir(path)2b.png" alt="OS_mod_win_os.rmdir(path)2b.png">
+                        import os <br>
+                        # check path <br>
+                        directory_whoami = os.getcwd() <br>
+                        print("Current Working Directory:", directory_whoami) <br>
+                        directory_operations = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations\add_remove"  # Remove "example1.txt" from the path <br>
+                        os.chdir(directory_operations) <br>
+                        directory_whoami = os.getcwd() <br>
+                        print("Updated Working Directory:", directory_whoami) <br>
+ <br>
+                        # Remove directories recursively <br>
+                        try: <br>
+                    &nbsp;&nbsp;        os.removedirs(r"New folder_2\New folder_3\New folder_3_2\New folder_3_3") <br>
+                    &nbsp;&nbsp;        print("Directories removed successfully") <br>
+                        except OSError as error: <br>
+                    &nbsp;&nbsp;        print("Error removing directories:", error) <br>
+                    </p>
             </ul>
         </li>
         <li>
@@ -715,10 +716,30 @@
                     Compatibility :
                     <ul>
                         <li class="bold">Windows <p>Compatible with Windows.</p></li>
-                        <li>Linux </li>
+                        <li class="bold">Linux <p>Compatible with Linux.</p></li>
                     </ul>
                 </li>
-                <li>Example :</li>
+                <li>Example : <br> before removing the folder "New Folder" </li>
+                <img src="../../assets/Python_file_org_ops/OS_mod_win_os.rmdir(path)2.png" alt=""> <br>
+                <p class="code">
+                    # code to delete directories in a desired path <br>
+                    import os <br>
+                    # check path <br>
+                    directory_whoami = os.getcwd() <br>
+                    print("Current Working Directory:", directory_whoami) <br>
+                    directory_operations = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations\add_remove"  # Remove "example1.txt" from the path <br>
+                    os.chdir(directory_operations) <br>
+                    directory_whoami = os.getcwd() <br>
+                    print("Updated Working Directory:", directory_whoami) <br> <br>
+                    # Remove a directory <br>
+                    try: <br>
+            &nbsp;&nbsp;        os.rmdir("New folder") <br>
+            &nbsp;&nbsp;        print("Directory removed successfully") <br>
+                    except OSError as e: <br>
+            &nbsp;&nbsp;        print(f"Error: {e}") <br>
+                </p> After removing the fe "New Folder" <br>
+                <img src="../../assets/Python_file_org_ops/OS_mod_win_os.rmdir(path)2a.png" alt="OS_mod_win_os.rmdir(path)2a"><br>
+                <img src="../../assets/Python_file_org_ops/OS_mod_win_os.rmdir(path)2b.png" alt="OS_mod_win_os.rmdir(path)2b.png">
             </ul>
         </li>
         <li>
