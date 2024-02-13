@@ -756,13 +756,12 @@
                 <li>
                     Compatibility :
                     <ul>
-                        <li>Windows </li>
-                        <li>Linux </li>
+                        <li class="bold">Windows <p>Compatible with Windows.</p></li>
+                        <li class="bold">Linux <p>Compatible with Linux.</p></li>
                     </ul>
                 </li>
                 <li>Example :</li> <br>
-                for files <br>
-                for folders <br>
+                Renaming files <br>
                 before <br>
                 <img src="../../assets/Python_file_org_ops/OS_mod_win_os.rename(src, dst)_IMG1.png" alt="OS_mod_win_os.rename(src, dst)_IMG1.png"> <br>
                 after <br>
@@ -772,10 +771,11 @@
                 Example 2: Rename a Directory <br>
                 <img src="../../assets/Python_file_org_ops/OS_mod_win_os.rename(src, dst)_IMG4.png" alt="OS_mod_win_os.rename(src, dst)_IMG4"> <br>
                 <img src="../../assets/Python_file_org_ops/OS_mod_win_os.rename(src, dst)_IMG5.png" alt="OS_mod_win_os.rename(src, dst)_IMG5.png "> <br>
-
+                Example 3 <br>
+                <img src="../../assets/Python_file_org_ops/OS_mod_win_os.rename(src, dst)_IMG6.png" alt="OS_mod_win_os.rename(src, dst)_IMG6.png"> <br>
             </ul>
         </li>
-        <li>
+        <!-- <li>
             
 
             <ul>
@@ -795,7 +795,65 @@
                 </li>
                 <li>Example :</li>
             </ul>
-        </li>
+        </li> -->
+        <div class="outernotes">
+            SIDE NOTE -- "file mode" or "permission mode
+            <div class="innernotes">
+                <p>
+                    The "file mode" or "permission mode" is a way to specify the access permissions for a file in Unix-like operating systems, 
+                    including Linux and macOS. The 0o644 is a numeric representation of file permissions in octal (base-8) format. <br>
+                    In the context of os.open in Python, the file mode is used to set the permissions for the file being opened. 
+                    The 0o644 can be broken down into two parts:
+                </p>
+                <ul>
+                    <li>0o: Indicates that the following digits are in octal (base-8) format.</li>
+                    <li>644: Represents the permission bits.</li>
+                </ul>
+                <p>Each digit in the 644 corresponds to a set of permissions:</p>
+                <ul>
+                    <li>6: Read and write permission for the owner of the file.</li>
+                    <li>4: Read-only permission for the group that owns the file.</li>
+                    <li>4: Read-only permission for others (users not in the group).</li>
+                </ul>
+                <p>
+                    The permission bits are often represented using three octal digits, where each digit corresponds 
+                    to the permissions for the owner, group, and others, respectively. In this case, 644 means read 
+                    and write for the owner, and read-only for the group and others. <br>
+                    So, in summary, 0o644 is specifying that the file being opened should have read and write 
+                    permissions for the owner and read-only permissions for the group and others. <br>
+                </p>
+            </div>
+            SIDE NOTE -- explaining other permissions <br>
+            <div class="innernotes">
+                <p>
+                    In Unix-like operating systems, file permissions are represented by a three-digit octal number, 
+                    where each digit corresponds to a set of permissions for the owner, group, and others, respectively. 
+                    Each digit is a combination of three permission bits: read (r), write (w), and execute (x). 
+                </p>
+                <ol>Here's an overview of the different permission bits: <br>
+                    <li>Read (r): <p>If this bit is set (1), it allows reading the file or viewing the contents of a directory. </p></li>
+                    <li>Write (w):<p> If this bit is set (1), it allows modifying the file (writing to it) or adding/removing files from a directory. </p></li>
+                    <li>Execute (x):<p> For files, if this bit is set (1), it allows the file to be executed as a program. For directories, if this bit is set, it allows accessing files and subdirectories within the directory. </p></li>
+                </ol>
+                <ul>Now, let's break down common permission values: <br>
+                    <li>0o400: Read permission only for the owner.</li>
+                    <li>0o200: Write permission only for the owner.</li>
+                    <li>0o100: Execute permission only for the owner.</li>
+                    <li>0o040: Read permission only for the group.</li>
+                    <li>0o020: Write permission only for the group.</li>
+                    <li>0o010: Execute permission only for the group.</li>
+                    <li>0o004: Read permission only for others.</li>
+                    <li>0o002: Write permission only for others.</li>
+                    <li>0o001: Execute permission only for others.</li>
+                </ul>
+                <ul>
+                    When combined, you can create various permission combinations. For example: <br>
+                    <li>0o755: Read, write, and execute for the owner; read and execute for the group and others. Common for executabl <br>e files.</li>
+                    <li>0o644: Read and write for the owner; read-only for the group and others. Common for non-executable files.</li>
+                    These permission values are a way to control who can do what with a file or directory in a Unix-like file system. The octal representation simplifies the expression of these permissions using a compact three-digit number.
+                </ul>
+            </div>
+        </div>
     </ol>
 </body>
 </html>
