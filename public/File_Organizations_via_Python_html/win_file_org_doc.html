@@ -805,7 +805,22 @@
                     In the context of os.open in Python, the file mode is used to set the permissions for the file being opened. 
                     The 0o644 can be broken down into two parts:
                 </p>
-                
+                <ul>
+                    <li>0o: Indicates that the following digits are in octal (base-8) format.</li>
+                    <li>644: Represents the permission bits.</li>
+                </ul>
+                <p>Each digit in the 644 corresponds to a set of permissions:</p>
+                <ul>
+                    <li>6: Read and write permission for the owner of the file.</li>
+                    <li>4: Read-only permission for the group that owns the file.</li>
+                    <li>4: Read-only permission for others (users not in the group).</li>
+                </ul>
+                <p>
+                    The permission bits are often represented using three octal digits, where each digit corresponds 
+                    to the permissions for the owner, group, and others, respectively. In this case, 644 means read 
+                    and write for the owner, and read-only for the group and others. <br>
+                    So, in summary, 0o644 is specifying that the file being opened should have read and write permissions for the owner and read-only permissions for the group and others.
+                </p>
             </div>
         </div>
     </ol>
