@@ -819,8 +819,33 @@
                     The permission bits are often represented using three octal digits, where each digit corresponds 
                     to the permissions for the owner, group, and others, respectively. In this case, 644 means read 
                     and write for the owner, and read-only for the group and others. <br>
-                    So, in summary, 0o644 is specifying that the file being opened should have read and write permissions for the owner and read-only permissions for the group and others.
+                    So, in summary, 0o644 is specifying that the file being opened should have read and write 
+                    permissions for the owner and read-only permissions for the group and others. <br>
                 </p>
+            </div>
+            SIDE NOTE -- explaining other permissions <br>
+            <div class="innernotes">
+                <p>
+                    In Unix-like operating systems, file permissions are represented by a three-digit octal number, 
+                    where each digit corresponds to a set of permissions for the owner, group, and others, respectively. 
+                    Each digit is a combination of three permission bits: read (r), write (w), and execute (x). 
+                </p>
+                <ol>Here's an overview of the different permission bits: <br>
+                    <li>Read (r): <p>If this bit is set (1), it allows reading the file or viewing the contents of a directory. </p></li>
+                    <li>Write (w):<p> If this bit is set (1), it allows modifying the file (writing to it) or adding/removing files from a directory. </p></li>
+                    <li>Execute (x):<p> For files, if this bit is set (1), it allows the file to be executed as a program. For directories, if this bit is set, it allows accessing files and subdirectories within the directory. </p></li>
+                </ol>
+                <ul>Now, let's break down common permission values: <br>
+                    <li>0o400: Read permission only for the owner.</li>
+                    <li>0o200: Write permission only for the owner.</li>
+                    <li>0o100: Execute permission only for the owner.</li>
+                    <li>0o040: Read permission only for the group.</li>
+                    <li>0o020: Write permission only for the group.</li>
+                    <li>0o010: Execute permission only for the group.</li>
+                    <li>0o004: Read permission only for others.</li>
+                    <li>0o002: Write permission only for others.</li>
+                    <li>0o001: Execute permission only for others.</li>
+                </ul>
             </div>
         </div>
     </ol>
