@@ -859,5 +859,206 @@
             </div>
         </div>
     </ol>
+    <ol>Environment Variables: <br>
+        <li><b class="bold">os.environ -</b>- <b class="unbold">The os.environ attribute provides a dictionary-like interface to the environment variables of the current process.</b>
+            <ul>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p>This attribute does not take parameters.</p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li class="bold">Windows <p>Compatible with Windows.</p></li>
+                        <li class="bold">Linux <p>Compatible with Linux.</p></li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+                <p class="code">
+                    import os <br>
+                    # Access all environment variables <br> <br>
+                    all_env_vars = os.environ <br> <br>
+                    print("All Environment Variables:", all_env_vars) <br> <br> <br> <br>
+                    Output: <br> <br>
+                    All Environment Variables: environ({'ALLUSERSPROFILE': 'C:\\ProgramData', 'APPDATA': 'C:\\Users\\biswa\\AppData\\Roaming',  <br>
+                    'CHROME_CRASHPAD_PIPE_NAME': '\\\\.\\pipe\\crashpad_10956_SPJVOPPRCDONGLCR',  <br>
+                    'COMMONPROGRAMFILES': 'C:\\Program Files\\Common Files',  <br>
+                    'COMMONPROGRAMFILES(X86)': 'C:\\Program Files (x86)\\Common Files',  <br>
+                    'COMMONPROGRAMW6432': 'C:\\Program Files\\Common Files', 'COMPUTERNAME': 'DESKTOP-12Q1DTN', 'COMSPEC': 'C:\\Windows\\system32\\cmd.exe',  <br>
+                    'DRIVERDATA': 'C:\\Windows\\System32\\Drivers\\DriverData', 'ELECTRON_RUN_AS_NODE': '1',  <br>
+                    'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'FPS_BROWSER_USER_PROFILE_STRING': 'Default', 'HOMEDRIVE': 'C:',  <br>
+                    'HOMEPATH': '\\Users\\biswa', 'JPY_INTERRUPT_EVENT': '2540', 'LOCALAPPDATA': 'C:\\Users\\biswa\\AppData\\Local',  <br>
+                    'LOGONSERVER': '\\\\DESKTOP-12Q1DTN', 'NUMBER_OF_PROCESSORS': '4', 'ONEDRIVE': 'C:\\Users\\biswa\\OneDrive',  <br>
+                    'ONEDRIVECONSUMER': 'C:\\Users\\biswa\\OneDrive', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'undefined', 'OS': 'Windows_NT',  <br>
+                    'PATH': 'p:\\Python310;c:\\Users\\biswa\\AppData\\Roaming\\Python\\Python310\\Scripts; <br>
+                    P:\\Python310\\Scripts\\;P:\\Python310\\;C:\\Windows\\system32; <br>
+                    C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\; <br>
+                    C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Gpg4win\\..\\GnuPG\\bin; <br>
+                    C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft VS Code\\bin;P:\\anaconda3; <br>
+                    P:\\anaconda3\\Library\\mingw-w64\\bin;P:\\anaconda3\\Library\\usr\\bin; <br> 
+                    P:\\anaconda3\\Library\\bin;P:\\anaconda3\\Scripts;C:\\Users\\biswa\\AppData\\Local\\Microsoft\\WindowsApps; <br>
+                    P:\\PyCharmComm\\PyCharm Community Edition 2022.2.1\\bin;;C:\\Users\\biswa\\AppData\\Local\\GitHubDesktop\\bin; <br>
+                    P:\\Python310\\Scripts\\;P:\\Python310\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem; <br>
+                    C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\; <br>
+                    C:\\Program Files (x86)\\Gpg4win\\..\\GnuPG\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft VS Code\\bin; <br>
+                    P:\\anaconda3;P:\\anaconda3\\Library\\mingw-w64\\bin;P:\\anaconda3\\Library\\usr\\bin;P:\\anaconda3\\Library\\bin; <br>
+                    P:\\anaconda3\\Scripts;C:\\Users\\biswa\\AppData\\Local\\Microsoft\\WindowsApps; <br>
+                    P:\\PyCharmComm\\PyCharm Community Edition 2022.2.1\\bin;; <br>
+                    C:\\Users\\biswa\\AppData\\Local\\GitHubDesktop\\bin', ' <br>
+                    PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW',  <br>
+                    'PROCESSOR_ARCHITECTURE': 'AMD64', 'PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 78 Stepping 3, GenuineIntel',  <br>
+                    'PROCESSOR_LEVEL': '6', 'PROCESSOR_REVISION': '4e03', 'PROGRAMDATA': 'C:\\ProgramData', 'PROGRAMFILES':  <br>
+                    'C:\\Program Files', 'PROGRAMFILES(X86)': 'C:\\Program Files (x86)', 'PROGRAMW6432': 'C:\\Program Files', 'PSMODULEPATH':  <br>
+                    'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules',  <br>
+                    'PUBLIC': 'C:\\Users\\Public', 'PYCHARM COMMUNITY EDITION': 'P:\\PyCharmComm\\PyCharm Community Edition 2022.2.1\\bin;',  <br>
+                    'PYDEVD_IPYTHON_COMPATIBLE_DEBUGGING': '1', 'PYTHONIOENCODING': 'utf-8', 'PYTHONUNBUFFERED': '1', 'SESSIONNAME': 'Console', 'SYSTEMDRIVE': 'C:',  <br>
+                    'SYSTEMROOT': 'C:\\Windows', 'TEMP': 'C:\\Users\\biswa\\AppData\\Local\\Temp', 'TMP': 'C:\\Users\\biswa\\AppData\\Local\\Temp',  <br>
+                    'USERDOMAIN': 'DESKTOP-12Q1DTN', 'USERDOMAIN_ROAMINGPROFILE': 'DESKTOP-12Q1DTN', 'USERNAME': 'biswa', 'USERPROFILE': 'C:\\Users\\biswa',  <br>
+                    'VSCODE_AMD_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess',  <br>
+                    'VSCODE_CODE_CACHE_PATH': 'C:\\Users\\biswa\\AppData\\Roaming\\Code\\CachedData\\31c37ee8f63491495ac49e43b8544550fbae4533',  <br>
+                    'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'VSCODE_CWD': 'C:\\Program Files\\Microsoft VS Code', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true',  <br>
+                    'VSCODE_IPC_HOOK': '\\\\.\\pipe\\b726c80e-1.86.1-main-sock', 'VSCODE_L10N_BUNDLE_LOCATION': '',  <br>
+                    'VSCODE_NLS_CONFIG': '{"locale":"en-us","osLocale":"en-in","availableLanguages":{},"_languagePackSupport":true}',  <br>
+                    'VSCODE_PID': '10956', 'WINDIR': 'C:\\Windows', 'ZES_ENABLE_SYSMAN': '1', 'TERM': 'xterm-color', 'CLICOLOR': '1', 'PAGER': 'cat', 'GIT_PAGER': 'cat',  <br>
+                    'MPLBACKEND': 'module://matplotlib_inline.backend_inline'}) <br> <br>
+                </p>
+                <img src="../../assets/Python_file_org_ops/OS_mod_win_os.environ_Img.png" alt="OS_mod_win_os.environ_Img.png"> <br>
+            </ul>
+        </li>
+
+        <li>
+            
+
+            <ul>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li>Windows </li>
+                        <li>Linux </li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+            </ul>
+        </li>
+
+        <li>
+            
+
+            <ul>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li>Windows </li>
+                        <li>Linux </li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+            </ul>
+        </li>
+
+        <li>
+            
+
+            <ul>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li>Windows </li>
+                        <li>Linux </li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+            </ul>
+        </li>
+
+        <li>
+            
+
+            <ul>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li>Windows </li>
+                        <li>Linux </li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+            </ul>
+        </li>
+
+        <li>
+            
+
+            <ul>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li>Windows </li>
+                        <li>Linux </li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+            </ul>
+        </li>
+
+        <li>
+            
+
+            <ul>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li>Windows </li>
+                        <li>Linux </li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+            </ul>
+        </li>
+    </ol>
 </body>
 </html>
