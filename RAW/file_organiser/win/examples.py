@@ -1,5 +1,5 @@
-# os.system()
 import os
 
-# Execute a simple command to print the current working directory
-os.system("echo %cd%")
+# Get the process ID of the current process
+process_id = os.getpid()
+print("Process ID:", process_id)
