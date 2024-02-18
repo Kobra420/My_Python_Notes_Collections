@@ -1006,23 +1006,29 @@
             </ul>
         </li>
 
-        <li> 
-            <ul>
+        <li> os.getppid()
+
+            <ul> The os.getppid() function returns the parent process's process ID.
                 <li>
                     Parameters :
                     <ul>
-                        <li><p></p></li>
-                        <li><p></p></li>
+                        <li><p>This function does not take parameters.</p></li>
                     </ul>
                 </li>
                 <li>
                     Compatibility :
                     <ul>
-                        <li>Windows </li>
-                        <li>Linux </li>
+                        <li class="bold">Windows <p>Compatible with Windows.</p></li>
+                        <li class="bold">Linux <p>Compatible with Linux.</p></li>
                     </ul>
                 </li>
                 <li>Example :</li>
+                <p class="code">
+                    import os <br>
+                    # Get the parent process ID of the current process <br>
+                    parent_process_id = os.getppid() <br>
+                    print("Parent Process ID:", parent_process_id) <br>
+                </p><img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.getppid()_IMG.png" alt="OS_mod_win_OS_os.getppid()_IMG">
             </ul>
         </li>
 
