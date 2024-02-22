@@ -1141,7 +1141,151 @@
             </ul>
         </li>
 
-        <li> <b class="bold"> os.path.basename(path) </b>
+    </ol>
+    <ol>Permissions and Ownership:
+        <li> <b class="bold"> os.chmod(path, mode) </b>
+            <ul> The os.chmod() function changes the permissions of a path.
+                <li>
+                    Parameters :
+                    <ul>
+                        <li>path (str): <p>The path to the file or directory whose permissions need to be changed.</p></li>
+                        <li>mode (int): <p>The permission mode to set.</p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li class="bold">Windows <p> Limited functionality; mainly used for read-only attribute.</p></li>
+                        <li class="bold">Linux <p>Fully functional for changing permissions.</p></li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+                    <p>
+                        # linux <br>
+                        #  os.chmod(path, mode) <br>
+                        import os <br>
+                        # Change file permissions to read and write for the owner <br>
+                        os.chmod("file.txt", 0o600) <br>
+                    </p>
+                <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.chmod(path, mode)_IMG.png" alt="OS_mod_win_OS_os.chmod(path, mode)_IMG">
+            </ul>
+        </li>
+        <li><b class="bold"> os.chown(path, uid, gid) </b>
+            <ul> <b class="bold">The os.chown()</b>  function changes the owner and group id of a path.
+                <li>
+                    Parameters :
+                    <ul>
+                        <li>path (str): <p>The path to the file or directory whose ownership needs to be changed.</p></li>
+                        <li>uid (int): <p>The user id of the new owner.</p></li>
+                        <li>gid (int): <p>The group id of the new owner.</p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li class="bold">Windows <p> Not applicable.</p></li>
+                        <li class="bold">Linux <p>Fully functional for changing ownership.</p></li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+                    <p>
+                        # Linux <br>
+                        # os.chown(path, uid, gid) <br>
+                        import os <br>
+                        # Change the owner of a file to a specific user and group <br>
+                        os.chown("file.txt", 1000, 1000) <br>
+                    </p>
+                <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.chown(path, uid, gid)_IMG.png" alt="OS_mod_win_OS_os.chown(path, uid, gid)_IMG">
+            </ul>
+        </li>
+    </ol>
+    <ol>File and Directory Statistics:
+        <li> os.stat(path)
+            <ul> <b class="bold">The os.stat() </b> function gets the status of a path.
+                <li>
+                    Parameters :
+                    <ul>
+                        <li>path (str): <p>The path to the file or directory.</p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li class="bold">Windows <p>Compatible with Windows.</p></li>
+                        <li class="bold">Linux <p>Compatible with Linux.</p></li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+                <p>
+                    import os <br>
+                    path = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations\old BREW.txt" <br>
+                    # Get the status of a file <br>
+                    file_status = os.stat(path) <br>
+                    print("File Status:", file_status) <br>
+                </p>
+                <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.stat(path)_IMG.png" alt="OS_mod_win_OS_os.stat(path)_IMG">
+            </ul>
+        </li>
+        <li> 
+            <ul>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li>Windows </li>
+                        <li>Linux </li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+            </ul>
+        </li>
+
+        <li> 
+            <ul>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li>Windows </li>
+                        <li>Linux </li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+            </ul>
+        </li>
+        <li> 
+            <ul>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li>Windows </li>
+                        <li>Linux </li>
+                    </ul>
+                </li>
+                <li>Example :</li>
+            </ul>
+        </li>
+
+        <li> 
             <ul>
                 <li>
                     Parameters :
