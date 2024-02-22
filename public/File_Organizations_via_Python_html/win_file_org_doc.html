@@ -1143,20 +1143,20 @@
 
     </ol>
     <ol>Permissions and Ownership:
-        <li> <b class="bold"> os.path.basename(path) </b>
-            <ul>
+        <li> <b class="bold"> os.chmod(path, mode) </b>
+            <ul> The os.chmod() function changes the permissions of a path.
                 <li>
                     Parameters :
                     <ul>
-                        <li><p></p></li>
-                        <li><p></p></li>
+                        <li>path (str): <p>The path to the file or directory whose permissions need to be changed.</p></li>
+                        <li>mode (int): <p>The permission mode to set.</p></li>
                     </ul>
                 </li>
                 <li>
                     Compatibility :
                     <ul>
-                        <li>Windows </li>
-                        <li>Linux </li>
+                        <li class="bold">Windows <p> Limited functionality; mainly used for read-only attribute.</p></li>
+                        <li class="bold">Linux <p>Compatible with Linux.</p></li>
                     </ul>
                 </li>
                 <li>Example :</li>
