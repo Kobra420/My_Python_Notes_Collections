@@ -1342,7 +1342,9 @@
                 </li>
             </ul>
         </li>
-        <li> Miscellaneous: <br>
+    </ol>
+    <ol> Miscellaneous: 
+        <li> 
             <b class="bold">os.name </b>
             <ul> The os.name constant represents the name of the operating system dependent module imported.
                 <li>
@@ -1360,25 +1362,30 @@
                 </li>
             </ul>
         </li>
-    </ol>
-    <ol>
-        <li> 
-            
+        <li> <b class="bold">os.walk(top, topdown=True, onerror=None, followlinks=False)</b>
+            <p>
+                The <b class="bold"> os.walk() </b>function generates the file names in a directory tree by walking either top-down or 
+                bottom-up through the directory tree.
+            </p>
             <ul>
                 <li>
                     Parameters :
                     <ul>
-                        <li><p></p></li>
-                        <li><p></p></li>
+                        <li>top (str): <p>The root directory from which to begin the walk.</p></li>
+                        <li>topdown (bool, optional): <p>If True, the directory tree is walked from top-down; if False, from bottom-up.</p></li>
+                        <li>onerror (function, optional): <p>If provided, it is called with an OSError instance if any error occurs.</p></li>
+                        <li>followlinks (bool, optional): <p>If True, it visits directories pointed to by symbolic links.</p></li>
                     </ul>
                 </li>
                 <li>
                     Compatibility :
                     <ul>
-                        <li class="bold">Windows <p></p></li>
-                        <li class="bold">Linux <p></p></li>
+                        <li class="bold">Windows <p>Fully functional.</p></li>
+                        <li class="bold">Linux <p>Fully functional.</p></li>
                     </ul>
                 </li>
+                <li>Example :</li>
+                <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.walk(top, topdown=True, onerror=None, followlinks=False)_IMG.png" alt="OS_mod_win_OS_os.walk(top, topdown=True, onerror=None, followlinks=False)_IMG.png">
             </ul>
         </li>
         <li> 
