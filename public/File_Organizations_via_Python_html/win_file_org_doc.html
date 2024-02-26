@@ -1388,23 +1388,36 @@
                 <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.walk(top, topdown=True, onerror=None, followlinks=False)_IMG.png" alt="OS_mod_win_OS_os.walk(top, topdown=True, onerror=None, followlinks=False)_IMG.png">
             </ul>
         </li>
-        <li> 
-            
+    </ol>
+    <ol> File and Directory Permissions:
+        <li class="unbold"> <b class="bold"> os.access(path, mode)</b>  &nbsp; &nbsp; The <b class="bold"> os.access()</b> 
+            function checks the accessibility of a path.
             <ul>
                 <li>
                     Parameters :
                     <ul>
-                        <li><p></p></li>
-                        <li><p></p></li>
+                        <li>path (str): <p>The path to the file or directory.</p></li>
+                        <li>mode (int): <p>The mode of access (e.g., os.R_OK for read access).</p></li>
                     </ul>
                 </li>
                 <li>
                     Compatibility :
                     <ul>
-                        <li class="bold">Windows <p></p></li>
-                        <li class="bold">Linux <p></p></li>
+                        <li class="bold">Windows <p>Limited; mainly used for read access.</p></li>
+                        <li class="bold">Linux <p>Fully functional.</p></li>
                     </ul>
                 </li>
+                <li>Example :</li>
+                        <p class="code">
+                            # File and Directory Permissions: <br>
+                            # os.access(path, mode) - Checks if a file or directory has the specified permissions. <br>
+                            import os <br>
+                            path = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations\old BREW.txt" <br>
+                            # Check if a file is readable <br>
+                            is_readable = os.access(path, os.R_OK) <br>
+                            print("Is Readable:", is_readable) <br>
+                        </p>
+                <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.access(path, mode)_IMG.png" alt="OS_mod_win_OS_os.access(path, mode)_IMG.png">
             </ul>
         </li>
         <li> 
