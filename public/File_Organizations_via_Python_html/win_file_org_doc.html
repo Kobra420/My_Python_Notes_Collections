@@ -1519,7 +1519,15 @@
                         print("Temporary File Path:", temp_file_path) <br> <br>
                      </p>
                     <li>Since Python 3.10 Version</li>
+                    <p class="code">
+                        # tempfile.mkstemp <br> <br>
+                        import tempfile <br> <br>
+                        # Create a temporary file <br> <br>
+                        temp_file_descriptor, temp_file_path = tempfile.mkstemp(suffix='.txt', prefix='temp_', text=True) <br> <br>
+                        print("Temporary File Path:", temp_file_path) <br> <br>
+                    </p>
                 </li>
+                
             </ul>
         </li>
         <li> 
