@@ -1451,101 +1451,143 @@
         <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.fsencode(filename)_IMG.png" alt="OS_mod_win_OS_os.fsencode(filename)_IMG">
     </ul>
 </li>
-<li> 
-    
+<li class="unbold"> <b class="bold"> os.fsdecode(filename) :--</b> The <b class="bold"> os.fsdecode() </b>function decodes a filename from the file system encoding.
     <ul>
         <li>
             Parameters :
             <ul>
-                <li><p></p></li>
+                <li>filename (bytes): <p>The filename to be decoded.</p></li>
                 <li><p></p></li>
             </ul>
         </li>
         <li>
             Compatibility :
             <ul>
-                <li class="bold">Windows <p></p></li>
-                <li class="bold">Linux <p></p></li>
+                <li class="bold">Windows <p>Fully functional.</p></li>
+                <li class="bold">Linux <p>Fully functional.</p></li>
             </ul>
         </li>
+        <li>Example : - </li>
+                <p class="code">
+                    # os.fsdecode(filename) <br>
+                    import os <br>
+                    path = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations\old BREW.txt" <br>
+                    # Decode a filename from the file system encoding <br>
+                    decoded_filename = os.fsdecode(b'old BREW.txt') <br>
+                    print("Decoded Filename:", decoded_filename) <br>
+                </p>
+                <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.fsdecode(filename)_IMG.png" alt="OS_mod_win_OS_os.fsdecode(filename)_IMG.png"> <br>
     </ul>
 </li>
-<li> 
-    
-    <ul>
-        <li>
-            Parameters :
+</ol>
+    <ol>Creating Temporary Files and Directories:
+        <li class="unbold"> <b class="bold">os.mkstemp(suffix='', prefix='', dir=None, text=False) :--</b> The  <b class="bold">os.mkstemp() </b>function creates a temporary file.
             <ul>
-                <li><p></p></li>
-                <li><p></p></li>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li>suffix (str, optional): <p>The suffix to be appended to the temporary file name.</p></li>
+                        <li>prefix (str, optional): <p>The prefix to be prepended to the temporary file name.</p></li>
+                        <li>dir (str, optional): <p>The directory where the temporary file will be created.</p></li>
+                        <li>text (bool, optional): <p>If True, the file is opened in text mode.</p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li class="bold">Windows <p>Fully functional.</p></li>
+                        <li class="bold">Linux <p>Fully functional.</p></li>
+                    </ul>
+                </li>
+                <li>Depracation Issue :
+                    <p>
+                        The os.mkstemp() function is available in Python 2.x and Python 3.x versions up to Python 3.9. 
+                        However, starting from Python 3.10, os.mkstemp() has been deprecated in favor of tempfile.mkstemp(). <br> <br>
+                        In Python 3.10, the os.mkstemp() function has been deprecated in favor of the tempfile.mkstemp() 
+                        function. To fix the issue and make your code 
+                        compatible with Python 3.10, you need to use tempfile.mkstemp() instead of os.mkstemp().
+                    </p>
+
+                </li>
+                <li>Exaamples :- 
+                    <li>Before Python 3.10</li>
+                     <p class="code">
+                        <b># os.mkstemp(suffix='', prefix='', dir=None, text=False) <br> <br></b>
+                        import os <br> <br>
+                        # Create a temporary file <br> <br>
+                        temp_file_descriptor, temp_file_path = os.mkstemp(suffix='.txt', prefix='temp_', text=True) <br> <br>
+                        print("Temporary File Path:", temp_file_path) <br> <br>
+                     </p>
+                    <li>Since Python 3.10 Version</li>
+                    <p class="code">
+                        <b># tempfile.mkstemp <br> <br></b>
+                        import tempfile <br> <br>
+                        # Create a temporary file <br> <br>
+                        temp_file_descriptor, temp_file_path = tempfile.mkstemp(suffix='.txt', prefix='temp_', text=True) <br> <br>
+                        print("Temporary File Path:", temp_file_path) <br> 
+                    </p>
+                    <img src="../../assets/Python_file_org_ops/tempfile.mkstemp(suffix='.txt', prefix='temp_', text=True)_IMG .png" alt="tempfile.mkstemp(suffix='.txt', prefix='temp_', text=True)_IMG .png">
+                </li>
+
             </ul>
         </li>
-        <li>
-            Compatibility :
+        <li> 
+            
             <ul>
-                <li class="bold">Windows <p></p></li>
-                <li class="bold">Linux <p></p></li>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li class="bold">Windows <p></p></li>
+                        <li class="bold">Linux <p></p></li>
+                    </ul>
+                </li>
             </ul>
         </li>
-    </ul>
-</li>
-<li> 
-    
-    <ul>
-        <li>
-            Parameters :
+        <li> 
+            
             <ul>
-                <li><p></p></li>
-                <li><p></p></li>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li class="bold">Windows <p></p></li>
+                        <li class="bold">Linux <p></p></li>
+                    </ul>
+                </li>
             </ul>
         </li>
-        <li>
-            Compatibility :
+        <li> 
+            
             <ul>
-                <li class="bold">Windows <p></p></li>
-                <li class="bold">Linux <p></p></li>
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p></p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li class="bold">Windows <p></p></li>
+                        <li class="bold">Linux <p></p></li>
+                    </ul>
+                </li>
             </ul>
         </li>
-    </ul>
-</li>
-<li> 
-    
-    <ul>
-        <li>
-            Parameters :
-            <ul>
-                <li><p></p></li>
-                <li><p></p></li>
-            </ul>
-        </li>
-        <li>
-            Compatibility :
-            <ul>
-                <li class="bold">Windows <p></p></li>
-                <li class="bold">Linux <p></p></li>
-            </ul>
-        </li>
-    </ul>
-</li>
-<li> 
-    
-    <ul>
-        <li>
-            Parameters :
-            <ul>
-                <li><p></p></li>
-                <li><p></p></li>
-            </ul>
-        </li>
-        <li>
-            Compatibility :
-            <ul>
-                <li class="bold">Windows <p></p></li>
-                <li class="bold">Linux <p></p></li>
-            </ul>
-        </li>
-    </ul>
-</li>
     </ol>
 </body>
 </html>
