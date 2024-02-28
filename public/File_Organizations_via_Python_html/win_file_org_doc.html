@@ -1495,9 +1495,30 @@
                 <li>
                     Compatibility :
                     <ul>
-                        <li class="bold">Windows <p></p></li>
-                        <li class="bold">Linux <p></p></li>
+                        <li class="bold">Windows <p>Fully functional.</p></li>
+                        <li class="bold">Linux <p>Fully functional.</p></li>
                     </ul>
+                </li>
+                <li>Depracation Issue :
+                    <p>
+                        The os.mkstemp() function is available in Python 2.x and Python 3.x versions up to Python 3.9. 
+                        However, starting from Python 3.10, os.mkstemp() has been deprecated in favor of tempfile.mkstemp(). <br> <br>
+                        In Python 3.10, the os.mkstemp() function has been deprecated in favor of the tempfile.mkstemp() 
+                        function. To fix the issue and make your code 
+                        compatible with Python 3.10, you need to use tempfile.mkstemp() instead of os.mkstemp().
+                    </p>
+
+                </li>
+                <li>Exaamples :- 
+                    <li>Before Python 3.10</li>
+                     <p class="code">
+                        # os.mkstemp(suffix='', prefix='', dir=None, text=False) <br> <br>
+                        import os <br> <br>
+                        # Create a temporary file <br> <br>
+                        temp_file_descriptor, temp_file_path = os.mkstemp(suffix='.txt', prefix='temp_', text=True) <br> <br>
+                        print("Temporary File Path:", temp_file_path) <br> <br>
+                     </p>
+                    <li>Since Python 3.10 Version</li>
                 </li>
             </ul>
         </li>
