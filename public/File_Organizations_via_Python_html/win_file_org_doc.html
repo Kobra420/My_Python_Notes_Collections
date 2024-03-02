@@ -1586,7 +1586,17 @@
                     </ul>
                 </li>
                 <li>Examples :</li>
-
+                    <p class="code">
+                        # os.utime(path, times=None, *, ns=None, follow_symlinks=True) <br>
+                        import os <br>
+                        import time <br>
+                        path = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations\old BREW.txt" <br>
+                        # Set the access and modified times of a file <br>
+                        os.utime(path, times=(time.time(), time.time())) <br>
+                        # Get the modified time of the file <br>
+                        file_mod_times = os.path.getmtime(path) <br>
+                        print(file_mod_times) <br>
+                    </p>
                 <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.utime()_IMG.png" alt="OS_mod_win_OS_os.utime()_IMG.png">
             </ul>
         </li>
