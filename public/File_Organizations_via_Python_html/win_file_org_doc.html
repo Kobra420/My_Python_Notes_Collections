@@ -1615,10 +1615,26 @@
                 <li>
                     Compatibility :
                     <ul>
-                        <li class="bold">Windows <p>Fully functional.</p></li>
+                        <li class="bold">Windows <p>Requires administrative privileges.</p></li>
                         <li class="bold">Linux <p>Fully functional.</p></li>
                     </ul>
                 </li>
+                <li>Examples :</li>
+                    <p class="code">
+                        import os <br>
+                        # from pathlib import Path <br><br>
+                        # Path to the target file <br>
+                        target_path = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations\old BREW.txt" <br><br>
+                        # Path where the symbolic link will be created <br>
+                        symbolic_link_path = r"P:\GIT4BothOS_Lnx_win\GIT\File_organizations\symbolic_link.txt" <br><br>
+                        # # Create a symbolic link to the target file <br>
+                        # target = Path(target_path) <br>
+                        # symbolic_link = Path(symbolic_link_path) <br>
+                        # symbolic_link.symlink_to(target) <br>
+                        # # Create a symbolic link to the shared library file <br>
+                        # os.symlink(target_path, symbolic_link_path) <br><br>
+                        print(f"Symbolic link created: {symbolic_link_path} -> {target_path}") <br>
+                    </p>
             </ul>
         </li>
         <li> 
