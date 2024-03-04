@@ -1740,8 +1740,7 @@
                 <li>
                     Parameters :
                     <ul>
-                        <li><p></p></li>
-                        <li><p></p></li>
+                        <li>path (str, optional): <p>The path to the directory.</p></li>
                     </ul>
                 </li>
                 <li>
@@ -1752,6 +1751,12 @@
                     </ul>
                 </li>
                 <li>Experiments :</li>
+                    <p class="code">
+                        import os <br> <br>
+                        # Iterate over entries in a directory <br>
+                        for entry in os.scandir("/path/to/directory"): <br>
+                    &nbsp;&nbsp;        print(entry.name) <br>
+                    </p>
             </ul>
         </li>
         <li> 
