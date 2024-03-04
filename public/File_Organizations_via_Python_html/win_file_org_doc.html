@@ -1656,6 +1656,22 @@
                         <li class="bold">Linux <p>Fully functional.</p></li>
                     </ul>
                 </li>
+                <li>Example :</li>
+                    <p class="code">
+                        # os.get_terminal_size()
+                        import os
+
+                        try:
+                            # Get the terminal size
+                            terminal_size = os.get_terminal_size()
+                            print("Terminal Size:", terminal_size)
+                        except OSError as e:
+                            if e.winerror == 6:  # Check if the error is due to invalid handle on Windows
+                                terminal_size = (80, 24)  # Default terminal size for Windows
+                                print("Terminal Size (Default for Windows):", terminal_size)
+                            else:
+                                raise  # Re-raise the exception if it's not related to the handle error
+                    </p>
             </ul>
         </li>
         <li> 
