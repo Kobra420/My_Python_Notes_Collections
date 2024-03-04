@@ -1761,44 +1761,33 @@
                     <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.scandir(path='.')_IMG.png" alt="OS_mod_win_OS_os.scandir(path='.')_IMG">
             </ul>
         </li>
-        <li> 
+    </ol>
+    <ol>
+        Miscellaneous Constants:
+        <li> os.devnull
             
-            <ul>
+            <ul> The os.devnull constant represents the file path of the null device.
                 <li>
                     Parameters :
                     <ul>
-                        <li><p></p></li>
+                        <li><p>This is a constant; it does not take parameters.</p></li>
                         <li><p></p></li>
                     </ul>
                 </li>
                 <li>
                     Compatibility :
-                    <ul>
-                        <li class="bold">Windows <p>Fully functional.</p></li>
-                        <li class="bold">Linux <p>Fully functional.</p></li>
+                    <ul>: 
+                        <li class="bold">Windows <p>'nul'</p></li>
+                        <li class="bold">Linux <p>'/dev/null'</p></li>
                     </ul>
                 </li>
                 <li>Experiments :</li>
-            </ul>
-        </li>
-        <li> 
-            
-            <ul>
-                <li>
-                    Parameters :
-                    <ul>
-                        <li><p></p></li>
-                        <li><p></p></li>
-                    </ul>
-                </li>
-                <li>
-                    Compatibility :
-                    <ul>
-                        <li class="bold">Windows <p>Fully functional.</p></li>
-                        <li class="bold">Linux <p>Fully functional.</p></li>
-                    </ul>
-                </li>
-                <li>Experiments :</li>
+                <p class="code">
+                     import os <br> <br>
+                     # Use the null device to discard output <br>
+                     with open(os.devnull, 'w') as null: <br>
+                    &nbsp;&nbsp;     subprocess.run(['command'], stdout=null, stderr=null) <br>
+                </p>
             </ul>
         </li>
     </ol>
