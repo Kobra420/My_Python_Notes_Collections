@@ -1658,19 +1658,19 @@
                 </li>
                 <li>Example :</li>
                     <p class="code">
-                        # os.get_terminal_size()
-                        import os
-
-                        try:
-                            # Get the terminal size
-                            terminal_size = os.get_terminal_size()
-                            print("Terminal Size:", terminal_size)
-                        except OSError as e:
-                            if e.winerror == 6:  # Check if the error is due to invalid handle on Windows
-                                terminal_size = (80, 24)  # Default terminal size for Windows
-                                print("Terminal Size (Default for Windows):", terminal_size)
-                            else:
-                                raise  # Re-raise the exception if it's not related to the handle error
+                        # os.get_terminal_size() <br>
+                        import os <br>
+ <br>
+                        try: <br>
+                    &nbsp;&nbsp;        # Get the terminal size <br>
+                    &nbsp;&nbsp;        terminal_size = os.get_terminal_size() <br>
+                    &nbsp;&nbsp;        print("Terminal Size:", terminal_size) <br>
+                        except OSError as e: <br>
+                    &nbsp;&nbsp;        if e.winerror == 6:  # Check if the error is due to invalid handle on Windows <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;            terminal_size = (80, 24)  # Default terminal size for Windows <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;            print("Terminal Size (Default for Windows):", terminal_size) <br>
+                            else: <br>
+                    &nbsp;&nbsp;            raise  # Re-raise the exception if it's not related to the handle error <br>
                     </p>
             </ul>
         </li>
