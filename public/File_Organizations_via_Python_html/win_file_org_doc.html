@@ -1642,31 +1642,49 @@
     <ol>Terminal Size:
 
         <li> <b class="bold">os.get_terminal_size(fallback=(columns, lines))</b>
-            <ul>
+            <ul> The <b class="bold">os.get_terminal_size() </b>function gets the size of the terminal window.
                 <li>
                     Parameters :
                     <ul>
-                        <li><p></p></li>
-                        <li><p></p></li>
+                        <li>fallback (tuple, optional): <p>A tuple representing the fallback size in columns and lines.</p></li>
                     </ul>
                 </li>
                 <li>
                     Compatibility :
                     <ul>
-                        <li class="bold">Windows <p>Fully functional.</p></li>
+                        <li class="bold">Windows <p> Is not supported on Windows.</p></li>
                         <li class="bold">Linux <p>Fully functional.</p></li>
                     </ul>
                 </li>
+                <li>Example :</li>
+                    <p class="code">
+                        # os.get_terminal_size() <br>
+                        import os <br>
+ <br>
+                        try: <br>
+                    &nbsp;&nbsp;        # Get the terminal size <br>
+                    &nbsp;&nbsp;        terminal_size = os.get_terminal_size() <br>
+                    &nbsp;&nbsp;        print("Terminal Size:", terminal_size) <br>
+                        except OSError as e: <br>
+                    &nbsp;&nbsp;        if e.winerror == 6:  # Check if the error is due to invalid handle on Windows <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;            terminal_size = (80, 24)  # Default terminal size for Windows <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;            print("Terminal Size (Default for Windows):", terminal_size) <br>
+                            else: <br>
+                    &nbsp;&nbsp;            raise  # Re-raise the exception if it's not related to the handle error <br>
+                    </p>
+                    <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_Terminal_os.get_terminal_size(fallback=(columns, lines))_IMG.png" alt="OS_mod_win_OS_Terminal_os.get_terminal_size(fallback=(columns, lines))_IMG.png"> <br>
             </ul>
         </li>
-        <li> 
-            
-            <ul>
+    </ol>
+    <ol>Change Working Directory and Environment in a Subprocess:
+        <li> <b class="bold"> os.putenv(key, value)</b>
+            <ul> The <b class="bold"> os.putenv()</b> function sets the value of the environment variable 
+                identified by key to the specified value.
                 <li>
                     Parameters :
                     <ul>
-                        <li><p></p></li>
-                        <li><p></p></li>
+                        <li>key (str): <p>The name of the environment variable.</p></li>
+                        <li>value (str): <p>The value to set.</p></li>
                     </ul>
                 </li>
                 <li>
@@ -1676,16 +1694,25 @@
                         <li class="bold">Linux <p>Fully functional.</p></li>
                     </ul>
                 </li>
+                <li>Experiments :</li>
+                    <p class="code">
+                        import os <br>
+                        # Set an environment variable <br>
+                        os.putenv("MY_VARIABLE", "my_value") <br>
+                    </p>
+                    <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.putenv()_IMG.png" alt="OS_mod_win_OS_os.putenv()_IMG">
             </ul>
         </li>
-        <li> 
-            
+        <li> Changing the Working Directory in a Subprocess:
+            <p>
+                When changing the working directory in a subprocess, you might use os.chdir() along with subprocess.run() to 
+                execute a command in the desired directory.
+            </p>
             <ul>
                 <li>
                     Parameters :
                     <ul>
-                        <li><p></p></li>
-                        <li><p></p></li>
+                        <li><p>Null</p></li>
                     </ul>
                 </li>
                 <li>
@@ -1695,6 +1722,72 @@
                         <li class="bold">Linux <p>Fully functional.</p></li>
                     </ul>
                 </li>
+                <li>Experiments :</li>
+                <p class="code">
+                    import os <br>
+                    import subprocess <br>
+                    # Set the desired working directory <br>
+                    working_directory = "/path/to/directory" <br>
+                    # Change the working directory and run a command <br>
+                    subprocess.run(['command'], cwd=working_directory) <br>
+                </p>
+            </ul>
+        </li>
+    </ol>
+    <ol>File and Directory Iterator:
+        <li> <b class="bold">os.scandir(path='.') </b>
+            <ul> The <b class="bold">os.scandir() </b>function returns an iterator of DirEntry objects representing entries in the given directory.
+                <li>
+                    Parameters :
+                    <ul>
+                        <li>path (str, optional): <p>The path to the directory.</p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>
+                        <li class="bold">Windows <p>Fully functional.</p></li>
+                        <li class="bold">Linux <p>Fully functional.</p></li>
+                    </ul>
+                </li>
+                <li>Experiments :</li>
+                    <p class="code">
+                        import os <br> <br>
+                        path = r"E:\YT2024\BANGLA" <br>
+                        # Iterate over entries in a directory <br>
+                        for entry in os.scandir(path): <br>
+                    &nbsp;&nbsp;        print(entry.name) <br>
+                    </p>
+                    <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.scandir(path='.')_IMG.png" alt="OS_mod_win_OS_os.scandir(path='.')_IMG">
+            </ul>
+        </li>
+    </ol>
+    <ol>
+        Miscellaneous Constants:
+        <li> os.devnull
+            
+            <ul> The os.devnull constant represents the file path of the null device.
+                <li>
+                    Parameters :
+                    <ul>
+                        <li><p>This is a constant; it does not take parameters.</p></li>
+                        <li><p></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Compatibility :
+                    <ul>: 
+                        <li class="bold">Windows <p>'nul'</p></li>
+                        <li class="bold">Linux <p>'/dev/null'</p></li>
+                    </ul>
+                </li>
+                <li>Experiments :</li>
+                <p class="code">
+                     import os <br> <br>
+                     # Use the null device to discard output <br>
+                     with open(os.devnull, 'w') as null: <br>
+                    &nbsp;&nbsp;     subprocess.run(['command'], stdout=null, stderr=null) <br>
+                </p>
             </ul>
         </li>
     </ol>
