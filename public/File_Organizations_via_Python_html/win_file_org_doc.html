@@ -1703,14 +1703,16 @@
                     <img src="../../assets/Python_file_org_ops/OS_mod_win_OS_os.putenv()_IMG.png" alt="OS_mod_win_OS_os.putenv()_IMG">
             </ul>
         </li>
-        <li> 
-            
+        <li> Changing the Working Directory in a Subprocess:
+            <p>
+                When changing the working directory in a subprocess, you might use os.chdir() along with subprocess.run() to 
+                execute a command in the desired directory.
+            </p>
             <ul>
                 <li>
                     Parameters :
                     <ul>
-                        <li><p></p></li>
-                        <li><p></p></li>
+                        <li><p>Null</p></li>
                     </ul>
                 </li>
                 <li>
@@ -1721,6 +1723,14 @@
                     </ul>
                 </li>
                 <li>Experiments :</li>
+                <p class="code">
+                    import os <br>
+                    import subprocess <br>
+                    # Set the desired working directory <br>
+                    working_directory = "/path/to/directory" <br>
+                    # Change the working directory and run a command <br>
+                    subprocess.run(['command'], cwd=working_directory) <br>
+                </p>
             </ul>
         </li>
         <li> 
