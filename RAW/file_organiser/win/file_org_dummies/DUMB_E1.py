@@ -2,7 +2,7 @@ import sys
 import os
 
 # Change the current working directory to a different path
-new_directory = r"P:\PROJECT_python\GIT\File_organizations"  # Remove "example1.txt" from the path
+new_directory = r"P:\GIT4BothOS_Lnx_win\GIT"  # Remove "example1.txt" from the path
 os.chdir(new_directory)
 
 # Function to print to both console and file
@@ -16,6 +16,8 @@ def print_and_save(text):
 
 # Redirect stdout to a file
 sys.stdout = open('output.txt', 'w')
+
+# Target folder to be scanned
 
 # os.scandir(
 # path = r"E:\YT2024\BANGLA"
