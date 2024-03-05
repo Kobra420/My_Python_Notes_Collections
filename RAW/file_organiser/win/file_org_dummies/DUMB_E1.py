@@ -17,6 +17,13 @@ def print_and_save(text):
 # Redirect stdout to a file
 sys.stdout = open('output.txt', 'w')
 
+# os.scandir(
+# path = r"E:\YT2024\BANGLA"
+path1 = r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\EA Games\Command and ConquerTM Generals Zero Hour"
+# Iterate over entries in a directory
+for entry in os.scandir(path1):
+    print_and_save(entry.name)
+
 # # Example usage
 # print_and_save("Hello, World!")
 # print_and_save("This is a test message.")
@@ -24,11 +31,3 @@ sys.stdout = open('output.txt', 'w')
 # Remember to reset stdout to the original value if needed
 sys.stdout.close()
 sys.stdout = sys.__stdout__
-
-
-# os.scandir(
-# path = r"E:\YT2024\BANGLA"
-path1 = r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\EA Games\Command and ConquerTM Generals Zero Hour"
-# Iterate over entries in a directory
-for entry in os.scandir(path1):
-    print_and_save(entry.name)
