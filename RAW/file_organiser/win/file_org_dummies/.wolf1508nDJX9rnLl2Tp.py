@@ -52,11 +52,11 @@ def print_and_save(text):
         file.write(text + '\n')
 
 # Redirect stdout to a file
-sys.stdout = open('video_scan.txt', 'w')
+sys.stdout = open('output.txt', 'w')
 
 
 sorted_videos = find_and_sort_videos_by_duration(folder_path)
 for video, duration in sorted_videos:
-    # print_and_save(f"{video} - Duration: {duration} seconds")
-    print(f"{video} - Duration: {duration} seconds")
+    print_and_save(f"{video} - Duration: {duration} seconds")
+    # print(f"{video} - Duration: {duration} seconds")
 
