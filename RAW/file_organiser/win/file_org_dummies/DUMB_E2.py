@@ -23,7 +23,7 @@ def find_and_sort_videos_by_duration(folder_path):
     return sorted_videos
 
 # Specify the folder path where the video files are located
-folder_path = "path/to/your/video/folder"
+folder_path = r"E:\YT2024\BHARAT"
 
 sorted_videos = find_and_sort_videos_by_duration(folder_path)
 

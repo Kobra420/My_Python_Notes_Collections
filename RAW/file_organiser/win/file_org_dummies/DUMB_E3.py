@@ -44,11 +44,16 @@ def find_and_sort_videos_by_duration(folder_path):
 
 # Function to print to both console and file
 def print_and_save(text):
-    # Print to console
-    print(text)
+    # # Print to console with proper encoding
+    sys.stdout.buffer.write((text + '\n').encode(sys.stdout.encoding, errors='replace'))
+    sys.stdout.buffer.flush()
+    encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
+    print(encoded_text)
+    # # Print to console
+    # print(text)
     
     # Save to file
-    with open('video_scan.txt', 'a') as file:
+    with open('video_scan.txt', 'a' , encoding='utf-8') as file:
         file.write(text + '\n')
 
 # Redirect stdout to a file
@@ -57,6 +62,6 @@ sys.stdout = open('video_scan.txt', 'w')
 
 sorted_videos = find_and_sort_videos_by_duration(folder_path)
 for video, duration in sorted_videos:
-    # print_and_save(f"{video} - Duration: {duration} seconds")
-    print(f"{video} - Duration: {duration} seconds")
+    print_and_save(f"{video} - Duration: {duration} seconds")
+    # print(f"{video} - Duration: {duration} seconds")
 
