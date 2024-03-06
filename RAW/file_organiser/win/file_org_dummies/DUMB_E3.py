@@ -6,6 +6,11 @@ import sys
 new_directory = r"P:\GIT4BothOS_Lnx_win\GIT"  # Remove "example1.txt" from the path
 os.chdir(new_directory)
 
+# Specify the folder path where the video files are located
+folder_path = r"E:\YT2024\BHARAT"
+# folder_path = r"P:\GIT4BothOS_Lnx_win\GIT\My_Python_Notes_Collections\RAW\file_organiser\win\file_org_dummies\DUMB_E3"
+
+
 def get_video_duration(file_path):
     try:
         clip = VideoFileClip(file_path)
@@ -49,10 +54,9 @@ def print_and_save(text):
 # Redirect stdout to a file
 sys.stdout = open('output.txt', 'w')
 
-# Specify the folder path where the video files are located
-folder_path = "path/to/your/video/folder"
 
 sorted_videos = find_and_sort_videos_by_duration(folder_path)
 for video, duration in sorted_videos:
-    print(f"{video} - Duration: {duration} seconds")
+    print_and_save(f"{video} - Duration: {duration} seconds")
+    # print(f"{video} - Duration: {duration} seconds")
 
