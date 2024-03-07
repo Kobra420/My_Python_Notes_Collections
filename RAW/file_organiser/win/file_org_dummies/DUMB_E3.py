@@ -86,6 +86,8 @@ def move_files_less_than_duration(sorted_videos, target_path):
                 print(f"Failed to move {video}: {e}")
             except OSError as e:
                 print(f"Failed to move {video}: {e}")
+            except Exception as e:
+                print(f"Failed to move {video}: {e}")
 
 
 
