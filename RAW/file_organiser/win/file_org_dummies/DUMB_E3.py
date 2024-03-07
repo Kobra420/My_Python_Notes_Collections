@@ -65,3 +65,23 @@ for video, duration in sorted_videos:
     print_and_save(f"{video} - Duration: {duration} seconds")
     # print(f"{video} - Duration: {duration} seconds")
 
+
+
+# Move files to a new folder based on their duration
+# for video, duration in sorted_videos:
+
+import shutil
+
+def move_files_less_than_duration(sorted_videos, target_path):
+    for video, duration in sorted_videos:
+        if duration < 40.00:
+            source_file = os.path.join(folder_path, video)
+            destination_file = os.path.join(target_path, video)
+            shutil.move(source_file, destination_file)
+            print(f"Moved {video} to {target_path}")
+
+# Specify the target path where files with duration < 40.00 seconds will be moved
+targeted_path = r"C:\TargetedPath"
+
+# Move files with duration < 40.00 seconds to the targeted path
+move_files_less_than_duration(sorted_videos, targeted_path)
