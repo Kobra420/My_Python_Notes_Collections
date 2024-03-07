@@ -82,7 +82,9 @@ def move_files_less_than_duration(sorted_videos, target_path):
                     print(f"Moved {video} to {target_path}")
                 except UnicodeEncodeError:
                     print(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
-            except (PermissionError, OSError) as e:
+            except PermissionError as e:
+                print(f"Failed to move {video}: {e}")
+            except OSError as e:
                 print(f"Failed to move {video}: {e}")
 
 
