@@ -78,7 +78,11 @@ def move_files_less_than_duration(sorted_videos, target_path):
             source_file = os.path.join(folder_path, video)
             destination_file = os.path.join(target_path, video)
             shutil.move(source_file, destination_file)
-            print(f"Moved {video} to {target_path}")
+            try:
+                print(f"Moved {video} to {target_path}")
+            except UnicodeEncodeError:
+                print(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
+
 
 # Specify the target path where files with duration < 40.00 seconds will be moved
 targeted_path = r"B:\Test File\Target folder Test"
