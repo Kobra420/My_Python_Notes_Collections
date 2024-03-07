@@ -71,7 +71,6 @@ for video, duration in sorted_videos:
 # for video, duration in sorted_videos:
 
 import shutil
-
 def move_files_less_than_duration(sorted_videos, target_path):
     for video, duration in sorted_videos:
         if duration < 40.00:
@@ -85,6 +84,7 @@ def move_files_less_than_duration(sorted_videos, target_path):
                     print(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
             except (PermissionError, OSError) as e:
                 print(f"Failed to move {video}: {e}")
+
 
 
 # Specify the target path where files with duration < 40.00 seconds will be moved
