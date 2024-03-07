@@ -3,11 +3,11 @@ import os
 import sys
 
 # Change the current working directory to a different path
-new_directory = r"P:\GIT4BothOS_Lnx_win\GIT\Folder 1"  # Remove "example1.txt" from the path
+new_directory = r"B:\Test File"  # Remove "example1.txt" from the path
 os.chdir(new_directory)
 
 # Specify the folder path where the video files are located
-folder_path = r"E:\YT2024\BHARAT"
+folder_path = r"B:\Test File"
 # folder_path = r"P:\GIT4BothOS_Lnx_win\GIT\My_Python_Notes_Collections\RAW\file_organiser\win\file_org_dummies\DUMB_E3"
 
 
@@ -81,7 +81,7 @@ def move_files_less_than_duration(sorted_videos, target_path):
             print(f"Moved {video} to {target_path}")
 
 # Specify the target path where files with duration < 40.00 seconds will be moved
-targeted_path = r"C:\TargetedPath"
+targeted_path = r"B:\Test File\Target folder Test"
 
 # Move files with duration < 40.00 seconds to the targeted path
 move_files_less_than_duration(sorted_videos, targeted_path)
