@@ -44,17 +44,25 @@ def move_files_less_than_duration(sorted_videos, target_path):
             source_file = os.path.join(folder_path, video)
             destination_file = os.path.join(target_path, video)
             try:
+                with open(source_file, 'rb') as f:
+                    pass  # Check if the file can be opened without issues
+            except PermissionError:
+                print(f"Skipped moving {video}: File is in use by another process")
+                continue
+                
+            try:
                 shutil.move(source_file, destination_file)
                 try:
                     print(f"Moved {video} to {target_path}")
                 except UnicodeEncodeError:
                     print(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
             except PermissionError as e:
-                print(f"Failed to move {video}: {e}")
+                print(f"Skipped moving {video}: {e}")
             except OSError as e:
                 print(f"Failed to move {video}: {e}")
             except Exception as e:
                 print(f"Failed to move {video}: {e}")
+
 
 folder_path = r"B:\Test File"
 new_directory = r"B:\Test File"
