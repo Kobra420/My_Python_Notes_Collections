@@ -40,7 +40,7 @@ def print_and_save(text):
 
 def move_files_less_than_duration(sorted_videos, target_path):
     for video, duration in sorted_videos:
-        if duration < 40.00:
+        if duration < 60.00:
             source_file = os.path.join(folder_path, video)
             destination_file = os.path.join(target_path, video)
             try:
