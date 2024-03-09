@@ -47,12 +47,18 @@ def find_and_sort_videos_by_duration(folder_path):
     sorted_videos = sorted(video_durations.items(), key=lambda x: x[1])
     return sorted_videos
 
+import urllib.parse
+
+# ...
+
 def move_files_less_than_duration(sorted_videos, target_path):
     for video, duration in sorted_videos:
         duration_seconds = float(duration) if isinstance(duration, str) else duration
         if duration_seconds < DURATION_THRESHOLD:
             source_file = os.path.join(folder_path, video)
-            destination_file = os.path.join(target_path, video)
+            encoded_video = urllib.parse.quote(video)
+            encoded_destination = os.path.join(target_path, encoded_video)
+
             max_retries = 3
             retries = 0
             while retries < max_retries:
@@ -65,7 +71,8 @@ def move_files_less_than_duration(sorted_videos, target_path):
                     time.sleep(1)  # Wait for 1 second before retrying
                 else:
                     try:
-                        shutil.move(source_file, destination_file)
+                        shutil.copy(source_file, encoded_destination)
+                        os.remove(source_file)
                         try:
                             logging.info(f"Moved {video} to {target_path}")
                         except UnicodeEncodeError:
@@ -82,6 +89,7 @@ def move_files_less_than_duration(sorted_videos, target_path):
                         break  # Exit the retry loop if an unexpected error occurs
             else:
                 logging.error(f"Failed to move {video}: File is still in use after {max_retries} retries")
+
 
 # Specify the folder path where the video files are located
 folder_path = r"B:\Test File" 
