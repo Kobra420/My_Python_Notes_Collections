@@ -61,7 +61,8 @@ def move_files_less_than_duration(sorted_videos, target_path):
                         try:
                             print(f"Moved {video} to {target_path}")
                         except UnicodeEncodeError:
-                            print(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
+                            # print(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
+                            print(f"Skipped moving {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)}: {e}")
                         break  # Exit the retry loop if the file is successfully moved
                     except PermissionError as e:
                         print(f"Skipped moving {video}: {e}")
@@ -71,6 +72,9 @@ def move_files_less_than_duration(sorted_videos, target_path):
                         break  # Exit the retry loop if the file cannot be moved due to OSError
                     except Exception as e:
                         print(f"Failed to move {video}: {e}")
+                        break  # Exit the retry loop if an unexpected error occurs
+                    except UnicodeEncodeError:
+                        print(f"Skipped moving {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)}: {e}")
                         break  # Exit the retry loop if an unexpected error occurs
             else:
                 print(f"Failed to move {video}: File is still in use after {max_retries} retries")
