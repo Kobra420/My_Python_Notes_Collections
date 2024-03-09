@@ -1,8 +1,6 @@
 from moviepy.editor import VideoFileClip
 import os
 import sys
-import shutil
-import time
 
 def get_video_duration(file_path):
     try:
@@ -11,6 +9,7 @@ def get_video_duration(file_path):
     except Exception as e:
         print(f"Error processing file: {file_path}")
         return None
+
 
 def find_and_sort_videos_by_duration(folder_path):
     video_files = []
@@ -39,6 +38,8 @@ def print_and_save(text):
     with open('video_scan.txt', 'a', encoding='utf-8') as file:
         file.write(text + '\n')
 
+import time
+import shutil
 
 def move_files_less_than_duration(sorted_videos, target_path):
     for video, duration in sorted_videos:
@@ -76,17 +77,19 @@ def move_files_less_than_duration(sorted_videos, target_path):
                 print(f"Failed to move {video}: File is still in use after {max_retries} retries")
 
 
-
-
-folder_path = r"B:\Test File"
-new_directory = r"B:\Test File"
+# Specify the folder path where the video files are located
+folder_path = r"B:\Test File" 
+new_directory = r"B:\Test File" 
 targeted_path = r"B:\Test File\Target folder Test"
 
-os.chdir(new_directory)
+# Change the current working directory to a different path
+os.chdir(new_directory) 
 sys.stdout = open('video_scan.txt', 'w')
 
-sorted_videos = find_and_sort_videos_by_duration(folder_path)
+# Find and sort videos by duration and print them and save them to a text file
+sorted_videos = find_and_sort_videos_by_duration(folder_path) 
 for video, duration in sorted_videos:
-    print_and_save(f"{video} - Duration: {duration} seconds")
+     print_and_save(f"{video} - Duration: {duration} seconds")
 
+# Move files to a new folder based on their duration
 move_files_less_than_duration(sorted_videos, targeted_path)
