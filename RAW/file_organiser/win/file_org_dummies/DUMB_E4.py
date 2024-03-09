@@ -23,7 +23,7 @@ def get_video_duration(file_path):
         raise VideoProcessingError(f"Error processing file: {file_path}") from e
 
 def format_duration(seconds):
-    return str(timedelta(seconds=seconds))
+    return seconds
 
 def print_and_save(text):
     encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
@@ -50,7 +50,8 @@ def find_and_sort_videos_by_duration(folder_path):
 
 def move_files_less_than_duration(sorted_videos, target_path):
     for video, duration in sorted_videos:
-        if duration < DURATION_THRESHOLD:
+        duration_seconds = float(duration) if isinstance(duration, str) else duration
+        if duration_seconds < DURATION_THRESHOLD:
             source_file = os.path.join(folder_path, video)
             destination_file = os.path.join(target_path, video)
             max_retries = 3
@@ -90,12 +91,15 @@ targeted_path = r"B:\Test File\Target folder Test"
 
 # Change the current working directory to a different path
 os.chdir(new_directory) 
-sys.stdout = open('video_scan.txt', 'w')
 
-# Find and sort videos by duration and print them and save them to a text file
-sorted_videos = find_and_sort_videos_by_duration(folder_path) 
-for video, duration in sorted_videos:
-    print_and_save(f"{video} - Duration: {duration} seconds")
+# Redirect sys.stdout to a file
+with open('video_scan.txt', 'w', encoding='utf-8') as sys_stdout_file:
+    sys.stdout = sys_stdout_file
 
-# Move files to a new folder based on their duration
-move_files_less_than_duration(sorted_videos, targeted_path)
+    # Find and sort videos by duration and print them and save them to a text file
+    sorted_videos = find_and_sort_videos_by_duration(folder_path) 
+    for video, duration in sorted_videos:
+        print_and_save(f"{video} - Duration: {format_duration(duration)} seconds")
+
+    # Move files to a new folder based on their duration
+    move_files_less_than_duration(sorted_videos, targeted_path)
