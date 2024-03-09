@@ -2,6 +2,7 @@ from moviepy.editor import VideoFileClip
 import os
 import sys
 import shutil
+import time
 
 def get_video_duration(file_path):
     try:
@@ -38,7 +39,6 @@ def print_and_save(text):
     with open('video_scan.txt', 'a', encoding='utf-8') as file:
         file.write(text + '\n')
 
-import time
 
 def move_files_less_than_duration(sorted_videos, target_path):
     for video, duration in sorted_videos:
