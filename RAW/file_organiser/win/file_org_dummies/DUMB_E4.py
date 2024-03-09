@@ -1,35 +1,28 @@
 from moviepy.editor import VideoFileClip
 import os
 import sys
+import time
 import shutil
+import logging
+
+# Set up logging
+logging.basicConfig(filename='video_scan.log', level=logging.INFO)
+
+# Constants
+DURATION_THRESHOLD = 60.0
+
+class VideoProcessingError(Exception):
+    pass
 
 def get_video_duration(file_path):
     try:
-        clip = VideoFileClip(file_path)
+        clip = VideoFileClip(file_path, audio=False)  # Skip audio processing
         return clip.duration
     except Exception as e:
-        print(f"Error processing file: {file_path}")
-        return None
+        raise VideoProcessingError(f"Error processing file: {file_path}") from e
 
-def find_and_sort_videos_by_duration(folder_path):
-    video_files = []
-    
-    files_and_folders = os.listdir(folder_path)
-    
-    for item in files_and_folders:
-        if os.path.isfile(os.path.join(folder_path, item)):
-            if item.lower().endswith(('.mp4', '.avi', '.mkv', '.mov')):
-                video_files.append(item)
-    
-    video_durations = {}
-    for video_file in video_files:
-        duration = get_video_duration(os.path.join(folder_path, video_file))
-        if duration is not None:
-            video_durations[video_file] = duration
-    
-    sorted_videos = sorted(video_durations.items(), key=lambda x: x[1])
-    
-    return sorted_videos
+def format_duration(seconds):
+    return seconds
 
 def print_and_save(text):
     encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
@@ -38,41 +31,82 @@ def print_and_save(text):
     with open('video_scan.txt', 'a', encoding='utf-8') as file:
         file.write(text + '\n')
 
+def find_and_sort_videos_by_duration(folder_path):
+    video_files = [item for item in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, item)) and
+                   item.lower().endswith(('.mp4', '.avi', '.mkv', '.mov'))]
+
+    video_durations = {}
+    for video_file in video_files:
+        try:
+            duration = get_video_duration(os.path.join(folder_path, video_file))
+            if duration is not None:
+                video_durations[video_file] = format_duration(duration)
+        except VideoProcessingError as e:
+            logging.error(e)  # Log the error as per your needs
+
+    sorted_videos = sorted(video_durations.items(), key=lambda x: x[1])
+    return sorted_videos
+
+import urllib.parse
+
+# ...
+
 def move_files_less_than_duration(sorted_videos, target_path):
     for video, duration in sorted_videos:
-        if duration < 60.00:
+        duration_seconds = float(duration) if isinstance(duration, str) else duration
+        if duration_seconds < DURATION_THRESHOLD:
             source_file = os.path.join(folder_path, video)
-            destination_file = os.path.join(target_path, video)
-            try:
-                with open(source_file, 'rb') as f:
-                    pass  # Check if the file can be opened without issues
-            except PermissionError:
-                print(f"Skipped moving {video}: File is in use by another process")
-                continue
-                
-            try:
-                shutil.move(source_file, destination_file)
+            encoded_video = urllib.parse.quote(video)
+            encoded_destination = os.path.join(target_path, encoded_video)
+
+            max_retries = 3
+            retries = 0
+            while retries < max_retries:
                 try:
-                    print(f"Moved {video} to {target_path}")
-                except UnicodeEncodeError:
-                    print(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
-            except PermissionError as e:
-                print(f"Skipped moving {video}: {e}")
-            except OSError as e:
-                print(f"Failed to move {video}: {e}")
-            except Exception as e:
-                print(f"Failed to move {video}: {e}")
+                    with open(source_file, 'rb'):
+                        pass  # Check if the file can be opened without issues
+                except PermissionError:
+                    logging.info(f"File {video} is in use by another process. Retrying...")
+                    retries += 1
+                    time.sleep(1)  # Wait for 1 second before retrying
+                else:
+                    try:
+                        shutil.copy(source_file, encoded_destination)
+                        os.remove(source_file)
+                        try:
+                            logging.info(f"Moved {video} to {target_path}")
+                        except UnicodeEncodeError:
+                            logging.info(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
+                        break  # Exit the retry loop if the file is successfully moved
+                    except PermissionError as e:
+                        logging.warning(f"Skipped moving {video}: {e}")
+                        break  # Exit the retry loop if the file cannot be moved due to PermissionError
+                    except OSError as e:
+                        logging.error(f"Failed to move {video}: {e}")
+                        break  # Exit the retry loop if the file cannot be moved due to OSError
+                    except Exception as e:
+                        logging.error(f"Failed to move {video}: {e}")
+                        break  # Exit the retry loop if an unexpected error occurs
+            else:
+                logging.error(f"Failed to move {video}: File is still in use after {max_retries} retries")
 
 
-folder_path = r"B:\Test File"
-new_directory = r"B:\Test File"
+# Specify the folder path where the video files are located
+folder_path = r"B:\Test File" 
+new_directory = r"B:\Test File" 
 targeted_path = r"B:\Test File\Target folder Test"
 
-os.chdir(new_directory)
-sys.stdout = open('video_scan.txt', 'w')
+# Change the current working directory to a different path
+os.chdir(new_directory) 
 
-sorted_videos = find_and_sort_videos_by_duration(folder_path)
-for video, duration in sorted_videos:
-    print_and_save(f"{video} - Duration: {duration} seconds")
+# Redirect sys.stdout to a file
+with open('video_scan.txt', 'w', encoding='utf-8') as sys_stdout_file:
+    sys.stdout = sys_stdout_file
 
-move_files_less_than_duration(sorted_videos, targeted_path)
+    # Find and sort videos by duration and print them and save them to a text file
+    sorted_videos = find_and_sort_videos_by_duration(folder_path) 
+    for video, duration in sorted_videos:
+        print_and_save(f"{video} - Duration: {format_duration(duration)} seconds")
+
+    # Move files to a new folder based on their duration
+    move_files_less_than_duration(sorted_videos, targeted_path)
