@@ -1,35 +1,29 @@
 from moviepy.editor import VideoFileClip
 import os
 import sys
+import time
+import shutil
+from datetime import timedelta
+import logging
+
+# Set up logging
+logging.basicConfig(filename='video_scan.log', level=logging.INFO)
+
+# Constants
+DURATION_THRESHOLD = 60.0
+
+class VideoProcessingError(Exception):
+    pass
 
 def get_video_duration(file_path):
     try:
         clip = VideoFileClip(file_path)
         return clip.duration
     except Exception as e:
-        print(f"Error processing file: {file_path}")
-        return None
+        raise VideoProcessingError(f"Error processing file: {file_path}") from e
 
-
-def find_and_sort_videos_by_duration(folder_path):
-    video_files = []
-    
-    files_and_folders = os.listdir(folder_path)
-    
-    for item in files_and_folders:
-        if os.path.isfile(os.path.join(folder_path, item)):
-            if item.lower().endswith(('.mp4', '.avi', '.mkv', '.mov')):
-                video_files.append(item)
-    
-    video_durations = {}
-    for video_file in video_files:
-        duration = get_video_duration(os.path.join(folder_path, video_file))
-        if duration is not None:
-            video_durations[video_file] = duration
-    
-    sorted_videos = sorted(video_durations.items(), key=lambda x: x[1])
-    
-    return sorted_videos
+def format_duration(seconds):
+    return str(timedelta(seconds=seconds))
 
 def print_and_save(text):
     encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
@@ -38,44 +32,56 @@ def print_and_save(text):
     with open('video_scan.txt', 'a', encoding='utf-8') as file:
         file.write(text + '\n')
 
-import time
-import shutil
+def find_and_sort_videos_by_duration(folder_path):
+    video_files = [item for item in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, item)) and
+                   item.lower().endswith(('.mp4', '.avi', '.mkv', '.mov'))]
+
+    video_durations = {}
+    for video_file in video_files:
+        try:
+            duration = get_video_duration(os.path.join(folder_path, video_file))
+            if duration is not None:
+                video_durations[video_file] = format_duration(duration)
+        except VideoProcessingError as e:
+            logging.error(e)  # Log the error as per your needs
+
+    sorted_videos = sorted(video_durations.items(), key=lambda x: x[1])
+    return sorted_videos
 
 def move_files_less_than_duration(sorted_videos, target_path):
     for video, duration in sorted_videos:
-        if duration < 60.00:
+        if duration < DURATION_THRESHOLD:
             source_file = os.path.join(folder_path, video)
             destination_file = os.path.join(target_path, video)
             max_retries = 3
             retries = 0
             while retries < max_retries:
                 try:
-                    with open(source_file, 'rb') as f:
+                    with open(source_file, 'rb'):
                         pass  # Check if the file can be opened without issues
                 except PermissionError:
-                    print(f"File {video} is in use by another process. Retrying...")
+                    logging.info(f"File {video} is in use by another process. Retrying...")
                     retries += 1
                     time.sleep(1)  # Wait for 1 second before retrying
                 else:
                     try:
                         shutil.move(source_file, destination_file)
                         try:
-                            print(f"Moved {video} to {target_path}")
+                            logging.info(f"Moved {video} to {target_path}")
                         except UnicodeEncodeError:
-                            print(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
+                            logging.info(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
                         break  # Exit the retry loop if the file is successfully moved
                     except PermissionError as e:
-                        print(f"Skipped moving {video}: {e}")
+                        logging.warning(f"Skipped moving {video}: {e}")
                         break  # Exit the retry loop if the file cannot be moved due to PermissionError
                     except OSError as e:
-                        print(f"Failed to move {video}: {e}")
+                        logging.error(f"Failed to move {video}: {e}")
                         break  # Exit the retry loop if the file cannot be moved due to OSError
                     except Exception as e:
-                        print(f"Failed to move {video}: {e}")
+                        logging.error(f"Failed to move {video}: {e}")
                         break  # Exit the retry loop if an unexpected error occurs
             else:
-                print(f"Failed to move {video}: File is still in use after {max_retries} retries")
-
+                logging.error(f"Failed to move {video}: File is still in use after {max_retries} retries")
 
 # Specify the folder path where the video files are located
 folder_path = r"B:\Test File" 
@@ -89,7 +95,7 @@ sys.stdout = open('video_scan.txt', 'w')
 # Find and sort videos by duration and print them and save them to a text file
 sorted_videos = find_and_sort_videos_by_duration(folder_path) 
 for video, duration in sorted_videos:
-     print_and_save(f"{video} - Duration: {duration} seconds")
+    print_and_save(f"{video} - Duration: {duration} seconds")
 
 # Move files to a new folder based on their duration
 move_files_less_than_duration(sorted_videos, targeted_path)
