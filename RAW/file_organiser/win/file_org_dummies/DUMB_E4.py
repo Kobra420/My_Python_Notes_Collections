@@ -16,7 +16,7 @@ class VideoProcessingError(Exception):
 
 def get_video_duration(file_path):
     try:
-        clip = VideoFileClip(file_path)
+        clip = VideoFileClip(file_path, audio=False)  # Skip audio processing
         return clip.duration
     except Exception as e:
         raise VideoProcessingError(f"Error processing file: {file_path}") from e
@@ -65,9 +65,6 @@ def move_files_less_than_duration(sorted_videos, target_path):
                     time.sleep(1)  # Wait for 1 second before retrying
                 else:
                     try:
-                        # Workaround to avoid the OSError when terminating audio-related processes
-                        os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
-                        
                         shutil.move(source_file, destination_file)
                         try:
                             logging.info(f"Moved {video} to {target_path}")
