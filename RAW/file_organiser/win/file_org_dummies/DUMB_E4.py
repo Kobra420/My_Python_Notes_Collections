@@ -3,7 +3,6 @@ import os
 import sys
 import time
 import shutil
-from datetime import timedelta
 import logging
 
 # Set up logging
@@ -66,6 +65,9 @@ def move_files_less_than_duration(sorted_videos, target_path):
                     time.sleep(1)  # Wait for 1 second before retrying
                 else:
                     try:
+                        # Workaround to avoid the OSError when terminating audio-related processes
+                        os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+                        
                         shutil.move(source_file, destination_file)
                         try:
                             logging.info(f"Moved {video} to {target_path}")
