@@ -54,12 +54,13 @@ def move_files_less_than_duration(sorted_videos, target_path):
         if duration_seconds < DURATION_THRESHOLD:
             source_file = os.path.join(folder_path, video)
             destination_file = os.path.join(targeted_path, video)
-    
+
             # Debug information
             print(f"Moving {video} from {source_file} to {destination_file}")
-            print(f"File exists in source: {os.path.exists(source_file)}")
+            print(f"\n\nFile exists in source: {os.path.exists(source_file)}")
             print(f"File exists in destination: {os.path.exists(destination_file)}")
-    
+      
+
             max_retries = 3
             retries = 0
             while retries < max_retries:
