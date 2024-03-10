@@ -48,41 +48,49 @@ def find_and_sort_videos_by_duration(folder_path):
     return sorted_videos
 
 def move_files_less_than_duration(sorted_videos, target_path):
-    for video, duration in sorted_videos:
-        duration_seconds = float(duration) if isinstance(duration, str) else duration
-        if duration_seconds < DURATION_THRESHOLD:
-            source_file = os.path.join(folder_path, video)
-            destination_file = os.path.join(target_path, video)
-            max_retries = 3
-            retries = 0
-            while retries < max_retries:
-                try:
-                    with open(source_file, 'rb'):
-                        pass  # Check if the file can be opened without issues
-                except PermissionError:
-                    logging.info(f"File {video} is in use by another process. Retrying...")
-                    retries += 1
-                    time.sleep(1)  # Wait for 1 second before retrying
-                else:
-                    try:
-                        shutil.move(source_file, destination_file)
-                        os.remove(source_file)  # Delete the source file after moving it
-                        try:
-                            logging.info(f"Moved {video} to {target_path}")
-                        except UnicodeEncodeError:
-                            logging.info(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
-                        break  # Exit the retry loop if the file is successfully moved
-                    except PermissionError as e:
-                        logging.warning(f"Skipped moving {video}: {e}")
-                        break  # Exit the retry loop if the file cannot be moved due to PermissionError
-                    except OSError as e:
-                        logging.error(f"Failed to move {video}: {e}")
-                        break  # Exit the retry loop if the file cannot be moved due to OSError
-                    except Exception as e:
-                        logging.error(f"Failed to move {video}: {e}")
-                        break  # Exit the retry loop if an unexpected error occurs
+    # Inside the move_files_less_than_duration function
+for video, duration in sorted_videos:
+    duration_seconds = float(duration) if isinstance(duration, str) else duration
+    if duration_seconds < DURATION_THRESHOLD:
+        source_file = os.path.join(folder_path, video)
+        destination_file = os.path.join(targeted_path, video)
+
+        # Debug information
+        print(f"Moving {video} from {source_file} to {destination_file}")
+        print(f"File exists in source: {os.path.exists(source_file)}")
+        print(f"File exists in destination: {os.path.exists(destination_file)}")
+
+        max_retries = 3
+        retries = 0
+        while retries < max_retries:
+            try:
+                with open(source_file, 'rb'):
+                    pass  # Check if the file can be opened without issues
+            except PermissionError:
+                logging.info(f"File {video} is in use by another process. Retrying...")
+                retries += 1
+                time.sleep(1)  # Wait for 1 second before retrying
             else:
-                logging.error(f"Failed to move {video}: File is still in use after {max_retries} retries")
+                try:
+                    shutil.move(source_file, destination_file)
+                    os.remove(source_file)  # Delete the source file after moving it
+                    try:
+                        logging.info(f"Moved {video} to {targeted_path}")
+                    except UnicodeEncodeError:
+                        logging.info(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {targeted_path}")
+                    break  # Exit the retry loop if the file is successfully moved
+                except PermissionError as e:
+                    logging.warning(f"Skipped moving {video}: {e}")
+                    break  # Exit the retry loop if the file cannot be moved due to PermissionError
+                except OSError as e:
+                    logging.error(f"Failed to move {video}: {e}")
+                    break  # Exit the retry loop if the file cannot be moved due to OSError
+                except Exception as e:
+                    logging.error(f"Failed to move {video}: {e}")
+                    break  # Exit the retry loop if an unexpected error occurs
+        else:
+            logging.error(f"Failed to move {video}: File is still in use after {max_retries} retries")
+
 
 # Specify the folder path where the video files are located
 folder_path = r"B:\Test File" 
