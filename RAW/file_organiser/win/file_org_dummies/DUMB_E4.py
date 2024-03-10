@@ -66,6 +66,7 @@ def move_files_less_than_duration(sorted_videos, target_path):
                 else:
                     try:
                         shutil.move(source_file, destination_file)
+                        os.remove(source_file)  # Delete the source file after moving it
                         try:
                             logging.info(f"Moved {video} to {target_path}")
                         except UnicodeEncodeError:
