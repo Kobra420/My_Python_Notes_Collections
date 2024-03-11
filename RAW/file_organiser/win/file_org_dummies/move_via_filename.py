@@ -1,7 +1,19 @@
 # Comparing to FILE1 and write a code which moves video files containing file names "JSD " to a desired  folder
+from moviepy.editor import VideoFileClip
 import os
+import sys
+import time
 import shutil
+import logging
 
+# Set up logging
+logging.basicConfig(filename='video_scan.log', level=logging.INFO)
+
+# Constants
+DURATION_THRESHOLD = 60.0
+
+class VideoProcessingError(Exception):
+    pass
 # Function to move video files containing "Strings" in their names
 # move video files containing "Strings" in their names
 def move_videos_with_jsd(source_folder, target_folder):
