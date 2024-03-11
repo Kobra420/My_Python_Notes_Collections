@@ -1,5 +1,5 @@
 # Comparing to FILE1 and write a code which moves video files containing file names "JSD " to a desired  folder
-from moviepy.editor import VideoFileClip
+import moviepy.editor # as mp
 import os
 import sys
 import time
@@ -19,7 +19,7 @@ def print_and_save(text):
     encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
     print(encoded_text)
     
-    with open('video_scan.txt', 'a', encoding='utf-8') as file:
+    with open('video_transfer_report.txt', 'a', encoding='utf-8') as file:
         file.write(text + '\n')
 
 
@@ -64,26 +64,26 @@ def move_videos_with_jsd(source_folder, target_folder):
                 with open(source_path, 'rb'):
                     pass  # Check if the file can be opened without issues
             except PermissionError:
-                print_and_save(f"File {video_file} is in use by another process. Retrying...")
+                logging.info(f"File {video_file} is in use by another process. Retrying...")
                 retries += 1
                 time.sleep(1)  # Wait for 1 second before retrying
             else:
                 try:
                     shutil.move(source_path, destination_path)
                     os.remove(source_path)  # Delete the source file after moving it
-                    print_and_save(f"Moved {video_file} to {target_folder}")
+                    logging.info(f"Moved {video_file} to {target_folder}")
                     break  # Exit the retry loop if the file is successfully moved
                 except PermissionError as e:
-                    print_and_save(f"Skipped moving {video_file}: {e}")
+                    logging.warning(f"Skipped moving {video_file}: {e}")
                     break  # Exit the retry loop if the file cannot be moved due to PermissionError
                 except OSError as e:
-                    print_and_save(f"Failed to move {video_file}: {e}")
+                    logging.error(f"Failed to move {video_file}: {e}")
                     break  # Exit the retry loop if the file cannot be moved due to OSError
                 except Exception as e:
-                    print_and_save(f"Failed to move {video_file}: {e}")
+                    logging.error(f"Failed to move {video_file}: {e}")
                     break  # Exit the retry loop if an unexpected error occurs
         else:
-            print_and_save(f"Failed to move {video_file}: File is still in use after {max_retries} retries")
+            logging.error(f"Failed to move {video_file}: File is still in use after {max_retries} retries")
 
 
 
@@ -98,13 +98,15 @@ os.chdir(new_directory)
 # Specify the folder path where the video files are located
 
 # Redirect sys.stdout to a file
-with open('video_scan.txt', 'w', encoding='utf-8') as sys_stdout_file:
+with open('video_transfer_report.txt', 'w', encoding='utf-8') as sys_stdout_file:
     sys.stdout = sys_stdout_file
 
     # Find and sort videos by duration and print them and save them to a text file
-    sorted_videos = find_and_sort_videos_by_filename(target_folder) 
+    sorted_videos = find_and_sort_videos_by_filename(target_folder)
+    i = 0 
     for video, duration in sorted_videos:
-        print_and_save(f"{video} - Duration: {format_duration(duration)} seconds")
+        print_and_save(f"{sorted_videos} - File{i}")
+        i+=i
 
 
 # Move video files containing "JSD" in their names
