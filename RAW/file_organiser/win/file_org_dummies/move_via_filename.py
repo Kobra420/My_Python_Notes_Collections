@@ -88,7 +88,7 @@ def move_videos_with_jsd(source_folder, target_folder):
 
 
 source_folder = r"B:\Test_file_2\source"
-target_folder = r"B:\Test_file_2\target\JSD Videos"
+target_folder = r"B:\Test_file_2\target\India Videos"
 new_directory = r"B:\Test_file_2"
 
 # Change the current working directory to a different path
