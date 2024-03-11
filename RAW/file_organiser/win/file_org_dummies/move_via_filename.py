@@ -23,6 +23,16 @@ def print_and_save(text):
         file.write(text + '\n')
 
 
+# Function to find and sort videos by filename containing "India"
+def find_and_sort_videos_by_filename(folder_path):
+    video_files = [item for item in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, item)) and
+                   item.lower().endswith(('.mp4', '.avi', '.mkv', '.mov')) and "India" in item]
+
+    sorted_videos = sorted(video_files)
+    return sorted_videos
+
+
+
 # Function to move video files containing "Strings" in their names
 # move video files containing "Strings" in their names
 # Function to move video files containing "JSD" in their names
@@ -86,6 +96,15 @@ os.chdir(new_directory)
 
 # Specify the source and target folders
 # Specify the folder path where the video files are located
+
+# Redirect sys.stdout to a file
+with open('video_scan.txt', 'w', encoding='utf-8') as sys_stdout_file:
+    sys.stdout = sys_stdout_file
+
+    # Find and sort videos by duration and print them and save them to a text file
+    sorted_videos = find_and_sort_videos_by_filename(target_folder) 
+    for video, duration in sorted_videos:
+        print_and_save(f"{video} - Duration: {format_duration(duration)} seconds")
 
 
 # Move video files containing "JSD" in their names
