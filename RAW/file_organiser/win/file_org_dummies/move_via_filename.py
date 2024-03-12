@@ -82,7 +82,7 @@ def move_videos_with_jsd(source_folder, target_folder):
                     break  # Exit the retry loop if the file cannot be moved due to OSError
                 except Exception as e:
                     print(f"Failed to move {video_file}: {e}")
-                    break  # Exit the retryloop if an unexpected error occurs
+                break  # Exit the retry loop if an unexpected error occurs
         else:
             print(f"Failed to move {video_file}: File is still in use after {max_retries} retries")
 
@@ -105,7 +105,7 @@ def main():
         sys.stdout = sys_stdout_file
 
         # Find and sort videos by filename and print them and save them to a text file
-        sorted_videos = find_and_sort_videos_by_filename(target_folder)
+        sorted_videos = find_and_sort_videos_by_filename(source_folder)
         i = 0 
         for video, duration in sorted_videos:
             print_and_save(f"{video} - Duration: {duration} - File{i}")
