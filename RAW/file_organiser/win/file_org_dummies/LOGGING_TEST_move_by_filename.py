@@ -6,7 +6,7 @@ import time
 import sys
 
 # Set up logging
-logging.basicConfig(filename='video_scan.log', level=logging.INFO)
+logging.basicConfig(filename='video_scan.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def find_and_sort_videos_by_filename(folder_path):
     video_files = []
@@ -78,25 +78,25 @@ def move_videos_with_india(source_folder, target_folder):
                 with open(source_path, 'rb'):
                     pass # Check if the file can be opened without issues
             except PermissionError:
-                print_and_save(f"File {video_file} is in use by another process. Retrying...")
+                logging.error(f"File {video_file} is in use by another process. Retrying...")
                 retries += 1
                 time.sleep(1) # Wait for 1 second before retrying
             else:
                 try:
                     shutil.move(source_path, destination_path)
-                    print_and_save(f"Moved {video_file} to {target_folder}")
+                    logging.info(f"Moved {video_file} to {target_folder}")
                     break # Exit the retry loop if the file is successfully moved
                 except PermissionError as e:
-                    print_and_save(f"Skipped moving {video_file}: {e}")
+                    logging.error(f"Skipped moving {video_file}: {e}")
                     break # Exit the retry loop if the file cannot be moved due to PermissionError
                 except OSError as e:
-                    print_and_save(f"Failed to move {video_file}: {e}")
+                    logging.error(f"Failed to move {video_file}: {e}")
                     break # Exit the retry loop if the file cannot be moved due to OSError
                 except Exception as e:
-                    print_and_save(f"Failed to move {video_file}: {e}")
+                    logging.error(f"Failed to move {video_file}: {e}")
                     break # Exit the retry loop if an unexpected error occurs
         else:
-            print_and_save(f"Failed to move {video_file}: File is still in use after {max_retries} retries")
+            logging.error(f"Failed to move {video_file}: File is still in use after {max_retries} retries")
 
 #Files that remains in the source folder after moving videos containing "India" in their names
 
@@ -119,7 +119,7 @@ def main():
         # Change the current working directory to a different path
         os.chdir(new_directory)
     except OSError as e:
-        print_and_save(f"Failed to change directory to {new_directory}: {e}")
+        logging.error(f"Failed to change directory to {new_directory}: {e}")
         return
 
     try:
@@ -127,7 +127,7 @@ def main():
         if not os.path.exists(target_folder):
             os.makedirs(target_folder)
     except OSError as e:
-        print_and_save(f"Failed to create target folder {target_folder}: {e}")
+        logging.error(f"Failed to create target folder {target_folder}: {e}")
         return
 
     # Move video files containing "India" in their names
