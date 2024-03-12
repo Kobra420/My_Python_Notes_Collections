@@ -43,10 +43,16 @@ def find_and_sort_videos_by_filename(folder_path):
 
 def print_and_save(text):
     # Print to console with proper encoding
-    sys.stdout.buffer.write((text + '\n').encode(sys.stdout.encoding, errors='replace'))
+    sys.stdout.buffer.write(('\n'+ text + '\n').encode(sys.stdout.encoding, errors='replace'))
     sys.stdout.buffer.flush()
     encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
     print(encoded_text)
+        # Save to file
+    with open('FIle_Transfer_info.txt', 'a' , encoding='utf-8') as file:
+        file.write(text + '\n')
+
+    # Redirect stdout to a file
+    sys.stdout = open('FIle_Transfer_info.txt', 'w')
 
 
 
@@ -103,9 +109,18 @@ def move_videos_with_india(source_folder, target_folder):
 def report_remaining_files(source_folder):
     remaining_files = [item for item in os.listdir(source_folder) if os.path.isfile(os.path.join(source_folder, item))]
     with open('remaining_files_report.txt', 'w', encoding='utf-8') as report_file:
-        report_file.write("Remaining files in the source folder:\n")
+        report_file.write("Remaining files in the source folder:\n\n")
         for file in remaining_files:
-            report_file.write(f"{file}\n")
+            report_file.write(f"\n{file}\n")
+            
+#Files that remains in the source folder after moving videos containing "India" in their names
+
+def report_Transfered_files(target_folder):
+    Moved_files = [item for item in os.listdir(target_folder) if os.path.isfile(os.path.join(target_folder, item))]
+    with open('Moved_files_report.txt', 'w', encoding='utf-8') as report_file:
+        report_file.write("Moved files in the target folder:\n\n")
+        for file in Moved_files:
+            report_file.write(f"\n{file}\n")
 
 
 # Main Function
@@ -136,6 +151,8 @@ def main():
     # Report remaining files in the source folder
     report_remaining_files(source_folder)
 
+    # Report Moved files in the target folder
+    report_Transfered_files(target_folder)
 if __name__ == "__main__":
     main()
 
