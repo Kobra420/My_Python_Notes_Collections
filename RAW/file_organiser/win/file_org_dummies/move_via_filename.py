@@ -3,7 +3,7 @@ import os
 import logging
 import shutil
 import time
-import sys
+# import sys
 
 # Set up logging
 logging.basicConfig(filename='video_scan.log', level=logging.INFO)
@@ -17,16 +17,17 @@ def find_and_sort_videos_by_filename(folder_path):
         has_valid_extension = item.lower().endswith(('.mp4', '.avi', '.mkv', '.mov'))
 
         if is_file and has_valid_extension:
-            video_files.append((item, get_video_duration(file_path)))
+            video_files.append(item)
 
-    sorted_videos = sorted(video_files, key=lambda x: (x[1], x[0]))
+    # Sort the video files by their filenames
+    sorted_videos = sorted(video_files)
     return sorted_videos
 
-# Function to Get Video Duration
+# # Function to Get Video Duration
 
-def get_video_duration(video_path):
-    result = os.popen(f'ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 {video_path}').read()
-    return float(result)
+# def get_video_duration(video_path):
+#     result = os.popen(f'ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 {video_path}').read()
+#     return float(result)
 
 # Function to Print and Save Text
 def print_and_save(text):
@@ -104,22 +105,9 @@ def main():
         print(f"Failed to create target folder {target_folder}: {e}")
         return
 
-    try:
-        # Redirect sys.stdout to a file
-        with open('video_transfer_report.txt', 'w', encoding='utf-8') as sys_stdout_file:
-            sys.stdout = sys_stdout_file
-
-            # Find and sort videos by filename and print them and save them to a text file
-            sorted_videos = find_and_sort_videos_by_filename(source_folder)
-            file_number = 0 
-            for video, duration in sorted_videos:
-                print_and_save(f"{video} - Duration: {duration} - File{file_number}")
-                file_number += 1
-
-            # Move video files containing "India" in their names
-            move_videos_with_india(source_folder, target_folder)
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    # Move video files containing "India" in their names
+    move_videos_with_india(source_folder, target_folder)
 
 if __name__ == "__main__":
     main()
+
