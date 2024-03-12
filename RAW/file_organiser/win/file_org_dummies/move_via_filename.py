@@ -82,7 +82,7 @@ def move_videos_with_jsd(source_folder, target_folder):
                     break  # Exit the retry loop if the file cannot be moved due to OSError
                 except Exception as e:
                     print(f"Failed to move {video_file}: {e}")
-                    break  # Exit the retry loop ifan unexpected error occurs
+                    break  # Exit the retryloop if an unexpected error occurs
         else:
             print(f"Failed to move {video_file}: File is still in use after {max_retries} retries")
 
@@ -95,6 +95,10 @@ def main():
 
     # Change the current working directory to a different path
     os.chdir(new_directory)
+
+    # Create the target folder if it doesn't exist
+    if not os.path.exists(target_folder):
+        os.makedirs(target_folder)
 
     # Redirect sys.stdout to a file
     with open('video_transfer_report.txt', 'w', encoding='utf-8') as sys_stdout_file:
@@ -109,7 +113,3 @@ def main():
 
         # Move video files containing "JSD" in their names
         move_videos_with_jsd(source_folder, target_folder)
-
-
-if __name__ == '__main__':
-    main()
