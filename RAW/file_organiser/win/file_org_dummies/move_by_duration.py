@@ -1,10 +1,10 @@
 # Import necessary libraries
 from moviepy.editor import VideoFileClip
 import os
-import sys
-import time
-import shutil
 import logging
+import sys
+import shutil
+import time
 
 # Set up logging
 logging.basicConfig(
@@ -35,8 +35,8 @@ def change_file_permissions(directory, permissions):
     as certain files might be protected or the user might not have 
     sufficient privileges. In such cases, an error message is logged.
     
-    # Example usage:
-    # \\change_file_permissions(r"B:\\Test File\\source", 0o777)
+    Example usage:
+    change_file_permissions(r"B:\\Test File\\source", 0o777)
     """
     # Loop through all files in the directory
     for filename in os.listdir(directory):
@@ -53,6 +53,7 @@ def change_file_permissions(directory, permissions):
                 logging.error(f"Failed to change permissions of {file_path}. Error: {e}")
 
 
+
 def get_video_duration(file_path):
     """
     Get the duration of a video file.
@@ -67,6 +68,7 @@ def get_video_duration(file_path):
     - VideoProcessingError: If there's an error processing the file.
     """
     try:
+        # Attempt to create a VideoFileClip object
         clip = VideoFileClip(file_path, audio=False)
         return clip.duration
     except Exception as e:
@@ -84,10 +86,11 @@ def format_duration(seconds):
     - str: The formatted duration string.
     """
     try:
+        # Format the duration with two decimal places
         return f"{float(seconds):.2f} seconds"
     except ValueError:
+        # Handle invalid duration values
         return f"{seconds} (Invalid duration)"
-
 
 def print_and_save(text):
     """
@@ -102,8 +105,6 @@ def print_and_save(text):
 
     # Save text to a text file and close the file
     with open(r'B:\Test File\transfer_status.txt', 'a', encoding='utf-8') as file:
-        # Encode text to handle special characters
-        encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
         # Print the encoded text to the console
         print(encoded_text)
         file.write(text + '\n')
@@ -129,7 +130,10 @@ def find_and_sort_videos_by_duration(folder_path):
     # Iterate through video files, get their durations, and handle errors
     for video_file in video_files:
         try:
+            # Attempt to get the duration of the video
             duration = get_video_duration(os.path.join(folder_path, video_file))
+            
+            # Check if the duration is not None before storing it
             if duration is not None:
                 video_durations[video_file] = format_duration(duration)
         except VideoProcessingError as e:
@@ -139,6 +143,7 @@ def find_and_sort_videos_by_duration(folder_path):
     # Sort videos based on their durations
     sorted_videos = sorted(video_durations.items(), key=lambda x: x[1])
     return sorted_videos
+
 
 def move_files_less_than_duration(sorted_videos, target_path, folder_path):
     """
@@ -250,21 +255,27 @@ def remove_files_from_source(folder_path):
 
         if os.path.isfile(file_path):
             try:
+                # Attempt to remove the file
                 os.remove(file_path)
                 print_and_save(f"Deleted file: {file_path}")
             except PermissionError as pe:
+                # Log a message if the file is in use by another process
                 print_and_save(f"Skipped deleting {file_path}: File is in use by another process.")
-                time.sleep(1)  # Wait for 1 second before continuing to the next iteration
+                time.sleep(2)  # Wait for 2 second before continuing to the next iteration
                 continue
             except Exception as e:
+                # Log an error message if file deletion fails
                 print_and_save(f"Failed to delete file: {file_path}. Error: {e}")
         else:
+            # Log a message for skipped directories
             print_and_save(f"Skipped directory: {file_path}")
 
     try:
+        # Attempt to remove the entire folder
         shutil.rmtree(folder_path)
         print_and_save(f"Deleted all files in {folder_path}")
     except Exception as e:
+        # Log an error message if folder deletion fails
         print_and_save(f"Failed to delete files in {folder_path}. Error: {e}")
 
 
@@ -312,4 +323,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
