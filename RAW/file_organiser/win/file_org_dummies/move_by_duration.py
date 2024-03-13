@@ -7,7 +7,7 @@ import logging
 
 # Set up logging
 logging.basicConfig(
-    filename='video_processing_log.txt',
+    filename=r'B:\Test File\video_processing_log.txt',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
@@ -76,9 +76,9 @@ def find_and_sort_videos_by_duration(folder_path):
 def move_files_less_than_duration(sorted_videos, target_path, folder_path):
     for video, duration in sorted_videos:
         try:
-            duration_seconds = float(duration.split()[0])
+            duration_seconds = float(duration.split()[0])  # Extracting the numeric part from the duration string
         except ValueError:
-            logging.error(f"Invalid duration format for {video}: {duration}")
+            print_and_save(f"Skipping {video}: Unable to convert duration '{duration}' to float")
             continue
 
         if duration_seconds < DURATION_THRESHOLD:
@@ -87,21 +87,33 @@ def move_files_less_than_duration(sorted_videos, target_path, folder_path):
 
             print_and_save(f"Moving {video} from {source_file} to {destination_file}")
 
-            try:
-                with open(source_file, 'rb'):
-                    pass
-            except PermissionError:
-                logging.info(f"File {video} is in use by another process. Skipping...")
-                continue
-
-            try:
-                shutil.move(source_file, destination_file)
-                os.remove(source_file)
-                logging.info(f"Moved {video} to {target_path}")
-            except (PermissionError, OSError) as e:
-                logging.warning(f"Skipped moving {video}: {e}")
-            except Exception as e:
-                logging.error(f"Failed to move {video}: {e}")
+            max_retries = 3
+            retries = 0
+            while retries < max_retries:
+                try:
+                    with open(source_file, 'rb'):
+                        pass  # Check if the file can be opened without issues
+                except PermissionError:
+                    logging.info(f"File {video} is in use by another process. Retrying...")
+                    retries += 1
+                    time.sleep(1)  # Wait for 1 second before retrying
+                else:
+                    try:
+                        shutil.move(source_file, destination_file)
+                        os.remove(source_file)  # Delete the source file after moving it
+                        logging.info(f"Moved {video} to {target_path}")
+                        break  # Exit the retry loop if the file is successfully moved
+                    except PermissionError as e:
+                        logging.warning(f"Skipped moving {video}: {e}")
+                        break  # Exit the retry loop if the file cannot be moved due to PermissionError
+                    except OSError as e:
+                        logging.error(f"Failed to move {video}: {e}")
+                        break  # Exit the retry loop if the file cannot be moved due to OSError
+                    except Exception as e:
+                        logging.error(f"Failed to move {video}: {e}")
+                        break  # Exit the retry loop if an unexpected error occurs
+            else:
+                logging.error(f"Failed to move {video}: File is still in use after {max_retries} retries")
 
 
 
@@ -120,19 +132,21 @@ def report_transferred_files(target_path):
             report_file.write(f"\n{file}\n")
 
 def remove_files_from_source(folder_path):
+    # List all files in the specified directory
     files_in_folder = os.listdir(folder_path)
+    # Iterate over the files
     for file_name in files_in_folder:
+        # Construct the full file path
         file_path = os.path.join(folder_path, file_name)
 
+        # Check if the path is a file (not a directory)
         if os.path.isfile(file_path):
+            # Attempt to delete the file
             try:
-                with open(file_path, 'rb'):
-                    pass  # Check if the file can be opened without issues
-
                 os.remove(file_path)
                 print_and_save(f"Deleted file: {file_path}")
             except PermissionError:
-                logging.warning(f"Skipped deleting {file_path}: File is in use by another process.")
+                print_and_save(f"Skipped deleting {file_path}: File is in use by another process.")
             except Exception as e:
                 print_and_save(f"Failed to delete file: {file_path}. Error: {e}")
         else:
