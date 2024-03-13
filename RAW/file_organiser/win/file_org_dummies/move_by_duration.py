@@ -89,7 +89,6 @@ def format_duration(seconds):
         return f"{seconds} (Invalid duration)"
 
 
-
 def print_and_save(text):
     """
     Print the provided text, encode it to handle special characters, 
@@ -98,19 +97,16 @@ def print_and_save(text):
     Parameters:
     - text (str): The text to be printed and saved.
     """
-    # Print the current directory to the console
-    os.system("echo %cd%")
-
     # Encode text to handle special characters
     encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
-    
-    # Print the encoded text to the console
-    print(encoded_text)
-    
-    # Save text to a text file
+
+    # Save text to a text file and close the file
     with open(r'B:\Test File\transfer_status.txt', 'a', encoding='utf-8') as file:
+        # Encode text to handle special characters
+        encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
+        # Print the encoded text to the console
+        print(encoded_text)
         file.write(text + '\n')
-    # File is automatically closed when exiting the 'with' block
 
 
 def find_and_sort_videos_by_duration(folder_path):
@@ -247,34 +243,29 @@ def remove_files_from_source(folder_path):
     Parameters:
     - folder_path (str): The path to the folder to be cleared.
     """
-    # List all files in the specified directory
     files_in_folder = os.listdir(folder_path)
-    
-    # Iterate over the files
+
     for file_name in files_in_folder:
-        # Construct the full file path
         file_path = os.path.join(folder_path, file_name)
 
-        # Check if the path is a file (not a directory)
         if os.path.isfile(file_path):
-            # Attempt to delete the file
             try:
                 os.remove(file_path)
                 print_and_save(f"Deleted file: {file_path}")
-            except PermissionError:
+            except PermissionError as pe:
                 print_and_save(f"Skipped deleting {file_path}: File is in use by another process.")
+                time.sleep(1)  # Wait for 1 second before continuing to the next iteration
+                continue
             except Exception as e:
                 print_and_save(f"Failed to delete file: {file_path}. Error: {e}")
         else:
             print_and_save(f"Skipped directory: {file_path}")
 
-    # Remove the entire directory and its contents
     try:
         shutil.rmtree(folder_path)
         print_and_save(f"Deleted all files in {folder_path}")
     except Exception as e:
         print_and_save(f"Failed to delete files in {folder_path}. Error: {e}")
-
 
 
 def main():
