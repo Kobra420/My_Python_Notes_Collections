@@ -92,22 +92,29 @@ def format_duration(seconds):
         # Handle invalid duration values
         return f"{seconds} (Invalid duration)"
 
-def print_and_save(text):
+def print_and_save(text, log_type='info'):
     """
     Print the provided text, encode it to handle special characters, 
     and save it to a text file.
 
     Parameters:
     - text (str): The text to be printed and saved.
+    - log_type (str): The type of log record ('info', 'warning', 'error').
     """
     # Encode text to handle special characters
     encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
 
     # Save text to a text file and close the file
-    with open(r'B:\Test File\transfer_status.txt', 'a', encoding='utf-8') as file:
-        # Print the encoded text to the console
-        print(encoded_text)
-        file.write(text + '\n')
+    log_file_path = r'B:\Test File\transfer_status.txt'
+    try:
+        with open(log_file_path, 'a', encoding='utf-8') as file:
+            # Print the encoded text to the console
+            print(encoded_text)
+            # Save the log record to the file
+            file.write(f"[{log_type.upper()}] {text}\n")
+    except Exception as e:
+        # Log an error if there's an issue with file handling
+        logging.error(f"Error in file handling: {e}")
 
 
 def find_and_sort_videos_by_duration(folder_path):
@@ -260,12 +267,12 @@ def remove_files_from_source(folder_path):
                 print_and_save(f"Deleted file: {file_path}")
             except PermissionError as pe:
                 # Log a message if the file is in use by another process
-                print_and_save(f"Skipped deleting {file_path}: File is in use by another process.")
-                time.sleep(2)  # Wait for 2 second before continuing to the next iteration
+                print_and_save(f"Skipped deleting {file_path}: File is in use by another process. Error: {pe}", log_type='warning')
+                time.sleep(1)  # Wait for 1 second before continuing to the next iteration
                 continue
             except Exception as e:
                 # Log an error message if file deletion fails
-                print_and_save(f"Failed to delete file: {file_path}. Error: {e}")
+                print_and_save(f"Failed to delete file: {file_path}. Error: {e}", log_type='error')
         else:
             # Log a message for skipped directories
             print_and_save(f"Skipped directory: {file_path}")
@@ -274,10 +281,12 @@ def remove_files_from_source(folder_path):
         # Attempt to remove the entire folder
         shutil.rmtree(folder_path)
         print_and_save(f"Deleted all files in {folder_path}")
+    except PermissionError as pe:
+        # Log a message if folder deletion fails due to permissions
+        print_and_save(f"Failed to delete files in {folder_path}. PermissionError: {pe}", log_type='error')
     except Exception as e:
         # Log an error message if folder deletion fails
-        print_and_save(f"Failed to delete files in {folder_path}. Error: {e}")
-
+        print_and_save(f"Failed to delete files in {folder_path}. Error: {e}", log_type='error')
 
 def main():
     """
