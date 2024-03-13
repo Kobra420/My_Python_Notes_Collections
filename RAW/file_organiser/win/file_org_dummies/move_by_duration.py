@@ -7,7 +7,7 @@ import shutil
 import time
 
 # Import delete_files_less_than_duration function from Script 2
-from moving_issues_delete_files_source import delete_files_less_than_duration
+# from moving_issues_delete_files_source import delete_files_less_than_duration
 
 # Set up logging
 logging.basicConfig(
@@ -157,13 +157,13 @@ def find_and_sort_videos_by_duration(folder_path):
     return sorted_videos
 
 
-def move_files_less_than_duration(sorted_videos, target_path, folder_path):
+def copy_files_less_than_duration(sorted_videos, target_path, folder_path):
     """
-    Move video files with durations less than a threshold to a target path.
+    Copy video files with durations less than a threshold to a target path.
 
     Parameters:
     - sorted_videos (list): A list of tuples containing video file names and their durations, sorted by duration.
-    - target_path (str): The path to move the selected video files to.
+    - target_path (str): The path to copy the selected video files to.
     - folder_path (str): The path to the folder containing video files.
     """
     # Loop through sorted videos
@@ -181,42 +181,95 @@ def move_files_less_than_duration(sorted_videos, target_path, folder_path):
             source_file = os.path.join(folder_path, video)
             destination_file = os.path.join(target_path, video)
 
-            print_and_save(f"Moving {video} from {source_file} to {destination_file}")
+            print_and_save(f"Copying {video} from {source_file} to {destination_file}")
 
             # Set up retry mechanism for file operations
             max_retries = 3
             retries = 0
             while retries < max_retries:
                 try:
-                    with open(source_file, 'rb'):
-                        pass  # Check if the file can be opened without issues
+                    # Copy the file to the destination
+                    shutil.copy2(source_file, destination_file)
+                    logging.info(f"Copied {video} to {target_path}")
+                    
+                    # Close the clip to release resources
+                    clip = VideoFileClip(source_file, audio=False)
+                    clip.close()
+                    
+                    break  # Exit the retry loop if the file is successfully copied
                 except PermissionError:
                     # Retry if the file is in use by another process
                     logging.info(f"File {video} is in use by another process. Retrying...")
                     retries += 1
                     time.sleep(1)  # Wait for 1 second before retrying
-                else:
-                    try:
-                        # Move the file to the destination
-                        shutil.move(source_file, destination_file)
-                        os.remove(source_file)  # Delete the source file after moving it
-                        logging.info(f"Moved {video} to {target_path}")
-                        break  # Exit the retry loop if the file is successfully moved
-                    except PermissionError as e:
-                        # Log a warning if the file cannot be moved due to PermissionError
-                        logging.warning(f"Skipped moving {video}: {e}")
-                        break  # Exit the retry loop if the file cannot be moved due to PermissionError
-                    except OSError as e:
-                        # Log an error if the file cannot be moved due to OSError
-                        logging.error(f"Failed to move {video}: {e}")
-                        break  # Exit the retry loop if the file cannot be moved due to OSError
-                    except Exception as e:
-                        # Log an error if an unexpected error occurs during file movement
-                        logging.error(f"Failed to move {video}: {e}")
-                        break  # Exit the retry loop if an unexpected error occurs
+                except Exception as e:
+                    # Log an error if an unexpected error occurs during file copying
+                    logging.error(f"Failed to copy {video}: {e}")
+                    break  # Exit the retry loop if an unexpected error occurs
             else:
                 # Log an error if the file is still in use after maximum retries
-                logging.error(f"Failed to move {video}: File is still in use after {max_retries} retries")
+                logging.error(f"Failed to copy {video}: File is still in use after {max_retries} retries")
+
+# def move_files_less_than_duration(sorted_videos, target_path, folder_path):
+#     """
+#     Move video files with durations less than a threshold to a target path.
+
+#     Parameters:
+#     - sorted_videos (list): A list of tuples containing video file names and their durations, sorted by duration.
+#     - target_path (str): The path to move the selected video files to.
+#     - folder_path (str): The path to the folder containing video files.
+#     """
+#     # Loop through sorted videos
+#     for video, duration in sorted_videos:
+#         try:
+#             # Extract the numeric part from the duration string
+#             duration_seconds = float(duration.split()[0])
+#         except ValueError:
+#             # Log and skip if duration cannot be converted to float
+#             print_and_save(f"Skipping {video}: Unable to convert duration '{duration}' to float")
+#             continue
+
+#         # Check if the duration is less than the threshold
+#         if duration_seconds < DURATION_THRESHOLD:
+#             source_file = os.path.join(folder_path, video)
+#             destination_file = os.path.join(target_path, video)
+
+#             print_and_save(f"Moving {video} from {source_file} to {destination_file}")
+
+#             # Set up retry mechanism for file operations
+#             max_retries = 3
+#             retries = 0
+#             while retries < max_retries:
+#                 try:
+#                     with open(source_file, 'rb'):
+#                         pass  # Check if the file can be opened without issues
+#                 except PermissionError:
+#                     # Retry if the file is in use by another process
+#                     logging.info(f"File {video} is in use by another process. Retrying...")
+#                     retries += 1
+#                     time.sleep(1)  # Wait for 1 second before retrying
+#                 else:
+#                     try:
+#                         # Move the file to the destination
+#                         shutil.move(source_file, destination_file)
+#                         os.remove(source_file)  # Delete the source file after moving it
+#                         logging.info(f"Moved {video} to {target_path}")
+#                         break  # Exit the retry loop if the file is successfully moved
+#                     except PermissionError as e:
+#                         # Log a warning if the file cannot be moved due to PermissionError
+#                         logging.warning(f"Skipped moving {video}: {e}")
+#                         break  # Exit the retry loop if the file cannot be moved due to PermissionError
+#                     except OSError as e:
+#                         # Log an error if the file cannot be moved due to OSError
+#                         logging.error(f"Failed to move {video}: {e}")
+#                         break  # Exit the retry loop if the file cannot be moved due to OSError
+#                     except Exception as e:
+#                         # Log an error if an unexpected error occurs during file movement
+#                         logging.error(f"Failed to move {video}: {e}")
+#                         break  # Exit the retry loop if an unexpected error occurs
+#             else:
+#                 # Log an error if the file is still in use after maximum retries
+#                 logging.error(f"Failed to move {video}: File is still in use after {max_retries} retries")
 
 
 def report_remaining_files(folder_path):
@@ -253,45 +306,45 @@ def report_transferred_files(target_path):
             report_file.write(f"\n{file}\n")
 
 
-def remove_files_from_source(folder_path):
-    """
-    Remove all files and directories from the specified folder.
+# def remove_files_from_source(folder_path):
+#     """
+#     Remove all files and directories from the specified folder.
 
-    Parameters:
-    - folder_path (str): The path to the folder to be cleared.
-    """
-    files_in_folder = os.listdir(folder_path)
+#     Parameters:
+#     - folder_path (str): The path to the folder to be cleared.
+#     """
+#     files_in_folder = os.listdir(folder_path)
 
-    for file_name in files_in_folder:
-        file_path = os.path.join(folder_path, file_name)
+#     for file_name in files_in_folder:
+#         file_path = os.path.join(folder_path, file_name)
 
-        if os.path.isfile(file_path):
-            try:
-                # Attempt to remove the file
-                os.remove(file_path)
-                print_and_save(f"Deleted file: {file_path}")
-            except PermissionError as pe:
-                # Log a message if the file is in use by another process
-                print_and_save(f"Skipped deleting {file_path}: File is in use by another process. Error: {pe}", log_type='warning')
-                time.sleep(1)  # Wait for 1 second before continuing to the next iteration
-                continue
-            except Exception as e:
-                # Log an error message if file deletion fails
-                print_and_save(f"Failed to delete file: {file_path}. Error: {e}", log_type='error')
-        else:
-            # Log a message for skipped directories
-            print_and_save(f"Skipped directory: {file_path}")
+#         if os.path.isfile(file_path):
+#             try:
+#                 # Attempt to remove the file
+#                 os.remove(file_path)
+#                 print_and_save(f"Deleted file: {file_path}")
+#             except PermissionError as pe:
+#                 # Log a message if the file is in use by another process
+#                 print_and_save(f"Skipped deleting {file_path}: File is in use by another process. Error: {pe}", log_type='warning')
+#                 time.sleep(1)  # Wait for 1 second before continuing to the next iteration
+#                 continue
+#             except Exception as e:
+#                 # Log an error message if file deletion fails
+#                 print_and_save(f"Failed to delete file: {file_path}. Error: {e}", log_type='error')
+#         else:
+#             # Log a message for skipped directories
+#             print_and_save(f"Skipped directory: {file_path}")
 
-    try:
-        # Attempt to remove the entire folder
-        shutil.rmtree(folder_path)
-        print_and_save(f"Deleted all files in {folder_path}")
-    except PermissionError as pe:
-        # Log a message if folder deletion fails due to permissions
-        print_and_save(f"Failed to delete files in {folder_path}. PermissionError: {pe}", log_type='error')
-    except Exception as e:
-        # Log an error message if folder deletion fails
-        print_and_save(f"Failed to delete files in {folder_path}. Error: {e}", log_type='error')
+#     try:
+#         # Attempt to remove the entire folder
+#         shutil.rmtree(folder_path)
+#         print_and_save(f"Deleted all files in {folder_path}")
+#     except PermissionError as pe:
+#         # Log a message if folder deletion fails due to permissions
+#         print_and_save(f"Failed to delete files in {folder_path}. PermissionError: {pe}", log_type='error')
+#     except Exception as e:
+#         # Log an error message if folder deletion fails
+#         print_and_save(f"Failed to delete files in {folder_path}. Error: {e}", log_type='error')
 
 def main():
     """
@@ -299,19 +352,21 @@ def main():
     """
     # Set up initial paths
     folder_path = r"B:\Test File\source"
-    new_directory = r"B:\Test File"
+    operational_directory = r"B:\Test File"
     target_path = r"B:\Test File\Target"
 
-    # Change working directory to the new_directory
-    os.chdir(new_directory)
+    # Change working directory to the operational_directory
+    os.chdir(operational_directory)
 
     # Set directory permissions to allow read, write, and execute for all
     directory_permissions = 0o777
-    change_file_permissions(new_directory, directory_permissions)
+    change_file_permissions(operational_directory, directory_permissions)
 
     # Print and save the current directory
     original_stdout = sys.stdout
-    os.system("echo %cd%")
+    current_directory = os.getcwd()
+    print_and_save(f"Current working directory: {current_directory}")
+
 
     # Redirect stdout to a file for logging
     with open(r'B:\Test File\transfer_status.txt', 'a', encoding='utf-8') as sys_stdout_file:
@@ -322,22 +377,26 @@ def main():
         for video, duration in sorted_videos:
             print_and_save(f"{video} - Duration: {format_duration(duration)}")
 
-        # Move videos with duration less than a threshold to the target path
-        move_files_less_than_duration(sorted_videos, target_path, folder_path)
+        # Copy videos with duration less than a threshold to the target path
+        copy_files_less_than_duration(sorted_videos, target_path, folder_path)
 
         # Generate reports for remaining and transferred files
         report_remaining_files(folder_path)
         report_transferred_files(target_path)
 
     # Remove all files from the source folder
-    remove_files_from_source(folder_path)
+    # remove_files_from_source(folder_path)
     
     # Reset stdout to the original value
     sys.stdout = original_stdout
 
 if __name__ == "__main__":
     main()
+
+
+# if __name__ == "__main__":
+#     main()
     
-    # Call the imported function from Script 2
-    source_directory = r"B:\Test File\source"
-    delete_files_less_than_duration(source_directory)
+#     # Call the imported function from Script 2
+#     source_directory = r"B:\Test File\source"
+#     delete_files_less_than_duration(source_directory)
