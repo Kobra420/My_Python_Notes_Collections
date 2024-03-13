@@ -152,6 +152,14 @@ def remove_files_from_source(folder_path):
         else:
             print_and_save(f"Skipped directory: {file_path}")
 
+    # Remove the entire directory and its contents
+    try:
+        shutil.rmtree(folder_path)
+        print_and_save(f"Deleted all files in {folder_path}")
+    except Exception as e:
+        print_and_save(f"Failed to delete files in {folder_path}. Error: {e}")
+
+
 
 
 def main():
