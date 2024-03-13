@@ -58,6 +58,7 @@ def format_duration(seconds):
     return seconds
 
 def print_and_save(text):
+    os.system("echo %cd%")
     encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
     print(encoded_text)
     
@@ -136,6 +137,7 @@ def report_remaining_files(folder_path):
         report_file.write("Remaining files in the source folder:\n\n")
         for file in remaining_files:
             report_file.write(f"\n{file}\n")
+            os.remove(file)  # Delete the source file after moving it
             
 #Files that moved in the Target folder after moving videos containing "<String>" in their names
 
@@ -158,8 +160,14 @@ def main():
     # Change the current working directory to a different path
     os.chdir(new_directory) 
 
+    # Example usage of change_file_permissions
+    directory = new_directory
+    permissions = 0o777 # Read, write, and execute permissions for all
+    change_file_permissions(directory, permissions)
+    
     # Redirect sys.stdout to a file
     original_stdout = sys.stdout # Store the original sys.stdout
+    os.system("echo %cd%") # current working directory
     with open('video_scan.txt', 'w', encoding='utf-8') as sys_stdout_file:
         sys.stdout = sys_stdout_file
 
@@ -170,13 +178,16 @@ def main():
 
         # Move files to a new folder based on their duration
         move_files_less_than_duration(sorted_videos, targeted_path, folder_path)
+        
+        # Report remaining files in the source folder
+        report_remaining_files(folder_path)
+        
+        # Report Moved files in the target folder
+        report_Transfered_files(targeted_path)  
     # Restore the original sys.stdout
     sys.stdout = original_stdout
 
-    # Example usage of change_file_permissions
-    directory = new_directory
-    permissions = 0o777 # Read, write, and execute permissions for all
-    change_file_permissions(directory, permissions)
+
 
 if __name__ == "__main__":
     main()
