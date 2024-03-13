@@ -6,13 +6,28 @@ import shutil
 import logging
 
 # Set up logging
-logging.basicConfig(filename=r'B:\Test File\video_scan.log', level=logging.INFO)
+# Set up logging for video processing
+logging.basicConfig(
+    filename='video_scan_log.txt',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+# Configure logging for permissions changes
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename=r"B:\Test File\permissions_log.txt", # Path to the log file for permissions changes
+    filemode='a' # Append to the file if it exists
+)
 
 # Constants
 DURATION_THRESHOLD = 60.0
 
 class VideoProcessingError(Exception):
     pass
+
+
 
 def change_file_permissions(directory, permissions):
     """
@@ -28,9 +43,9 @@ def change_file_permissions(directory, permissions):
         if os.path.isfile(file_path):
             try:
                 os.chmod(file_path, permissions)
-                print(f"Permissions of {file_path} have been changed to {permissions}")
+                logging.info(f"Permissions of {file_path} have been changed to {permissions}")
             except Exception as e:
-                print(f"Failed to change permissions of {file_path}. Error: {e}")
+                logging.error(f"Failed to change permissions of {file_path}. Error: {e}")
 
 def get_video_duration(file_path):
     try:
@@ -46,7 +61,7 @@ def print_and_save(text):
     encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
     print(encoded_text)
     
-    with open('video_scan.txt', 'a', encoding='utf-8') as file:
+    with open('transfer_status.txt', 'a', encoding='utf-8') as file:
         file.write(text + '\n')
 
 def find_and_sort_videos_by_duration(folder_path):
@@ -74,9 +89,12 @@ def move_files_less_than_duration(sorted_videos, target_path, folder_path):
             destination_file = os.path.join(target_path, video)
 
             # Debug information
-            print(f"Moving {video} from {source_file} to {destination_file}")
-            print(f"\n\nFile exists in source: {os.path.exists(source_file)}")
-            print(f"File exists in destination: {os.path.exists(destination_file)}")
+            # print(f"Moving {video} from {source_file} to {destination_file}")
+            print_and_save(f"Moving {video} from {source_file} to {destination_file}")
+            # print(f"\n\nFile exists in source: {os.path.exists(source_file)}")
+            print_and_save(f"\n\nFile exists in source: {os.path.exists(source_file)}")
+            # print(f"File exists in destination: {os.path.exists(destination_file)}")
+            print_and_save(f"File exists in destination: {os.path.exists(destination_file)}")
       
 
             max_retries = 3
@@ -97,7 +115,7 @@ def move_files_less_than_duration(sorted_videos, target_path, folder_path):
                             logging.info(f"Moved {video} to {target_path}")
                         except UnicodeEncodeError:
                             logging.info(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
-                        break  # Exit the retry loop if the file is successfully moved
+                        # break  # Exit the retry loop if the file is successfully moved
                     except PermissionError as e:
                         logging.warning(f"Skipped moving {video}: {e}")
                         break  # Exit the retry loop if the file cannot be moved due to PermissionError
@@ -110,6 +128,24 @@ def move_files_less_than_duration(sorted_videos, target_path, folder_path):
             else:
                 logging.error(f"Failed to move {video}: File is still in use after {max_retries} retries")
 
+#Files that remains in the source folder after moving videos containing "<String>" in their names
+
+def report_remaining_files(folder_path):
+    remaining_files = [item for item in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, item))]
+    with open('remaining_files_report.txt', 'w', encoding='utf-8') as report_file:
+        report_file.write("Remaining files in the source folder:\n\n")
+        for file in remaining_files:
+            report_file.write(f"\n{file}\n")
+            
+#Files that moved in the Target folder after moving videos containing "<String>" in their names
+
+def report_Transfered_files(targeted_path):
+    Moved_files = [item for item in os.listdir(targeted_path) if os.path.isfile(os.path.join(targeted_path, item))]
+    with open('Moved_files_report.txt', 'w', encoding='utf-8') as report_file:
+        report_file.write("Moved files in the target folder:\n\n")
+        for file in Moved_files:
+            report_file.write(f"\n{file}\n")
+            
 
 # Main Function
 
@@ -123,6 +159,7 @@ def main():
     os.chdir(new_directory) 
 
     # Redirect sys.stdout to a file
+    original_stdout = sys.stdout # Store the original sys.stdout
     with open('video_scan.txt', 'w', encoding='utf-8') as sys_stdout_file:
         sys.stdout = sys_stdout_file
 
@@ -133,6 +170,13 @@ def main():
 
         # Move files to a new folder based on their duration
         move_files_less_than_duration(sorted_videos, targeted_path, folder_path)
+    # Restore the original sys.stdout
+    sys.stdout = original_stdout
+
+    # Example usage of change_file_permissions
+    directory = new_directory
+    permissions = 0o777 # Read, write, and execute permissions for all
+    change_file_permissions(directory, permissions)
 
 if __name__ == "__main__":
     main()

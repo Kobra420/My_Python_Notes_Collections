@@ -6,7 +6,7 @@ import time
 import sys
 
 # Set up logging
-logging.basicConfig(filename='video_scan.log', level=logging.INFO)
+logging.basicConfig(filename='video_scan_log.txt', level=logging.INFO)
 
 def find_and_sort_videos_by_filename(folder_path):
     video_files = []
