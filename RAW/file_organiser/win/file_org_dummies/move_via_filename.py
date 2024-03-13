@@ -6,7 +6,7 @@ import time
 import sys
 
 # Set up logging
-logging.basicConfig(filename='video_scan.log', level=logging.INFO)
+logging.basicConfig(filename='video_scan_log.txt', level=logging.INFO)
 
 def find_and_sort_videos_by_filename(folder_path):
     video_files = []
@@ -56,7 +56,7 @@ def print_and_save(text):
 
 
 
-# Function to Move Videos Containing "India" in Their Names
+# Function to Move Videos Containing "<String>" in Their Names
 
 def move_videos_with_india(source_folder, target_folder):
     if not os.path.exists(target_folder):
@@ -104,7 +104,7 @@ def move_videos_with_india(source_folder, target_folder):
         else:
             print_and_save(f"Failed to move {video_file}: File is still in use after {max_retries} retries")
 
-#Files that remains in the source folder after moving videos containing "India" in their names
+#Files that remains in the source folder after moving videos containing "<String>" in their names
 
 def report_remaining_files(source_folder):
     remaining_files = [item for item in os.listdir(source_folder) if os.path.isfile(os.path.join(source_folder, item))]
@@ -113,7 +113,7 @@ def report_remaining_files(source_folder):
         for file in remaining_files:
             report_file.write(f"\n{file}\n")
             
-#Files that remains in the source folder after moving videos containing "India" in their names
+#Files that moved in the Target folder after moving videos containing "<String>" in their names
 
 def report_Transfered_files(target_folder):
     Moved_files = [item for item in os.listdir(target_folder) if os.path.isfile(os.path.join(target_folder, item))]
