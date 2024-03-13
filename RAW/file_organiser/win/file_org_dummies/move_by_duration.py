@@ -75,7 +75,12 @@ def find_and_sort_videos_by_duration(folder_path):
 
 def move_files_less_than_duration(sorted_videos, target_path, folder_path):
     for video, duration in sorted_videos:
-        duration_seconds = float(duration) if isinstance(duration, str) else duration
+        try:
+            duration_seconds = float(duration.split()[0])
+        except ValueError:
+            logging.error(f"Invalid duration format for {video}: {duration}")
+            continue
+
         if duration_seconds < DURATION_THRESHOLD:
             source_file = os.path.join(folder_path, video)
             destination_file = os.path.join(target_path, video)
@@ -99,6 +104,7 @@ def move_files_less_than_duration(sorted_videos, target_path, folder_path):
                 logging.error(f"Failed to move {video}: {e}")
 
 
+
 def report_remaining_files(folder_path):
     remaining_files = [item for item in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, item))]
     with open(r'B:\Test File\remaining_files_report.txt', 'w', encoding='utf-8') as report_file:
@@ -120,12 +126,19 @@ def remove_files_from_source(folder_path):
 
         if os.path.isfile(file_path):
             try:
+                with open(file_path, 'rb'):
+                    pass  # Check if the file can be opened without issues
+
                 os.remove(file_path)
                 print_and_save(f"Deleted file: {file_path}")
+            except PermissionError:
+                logging.warning(f"Skipped deleting {file_path}: File is in use by another process.")
             except Exception as e:
                 print_and_save(f"Failed to delete file: {file_path}. Error: {e}")
         else:
             print_and_save(f"Skipped directory: {file_path}")
+
+
 
 def main():
     folder_path = r"B:\Test File\source"
