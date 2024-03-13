@@ -6,19 +6,10 @@ import shutil
 import logging
 
 # Set up logging
-# Set up logging for video processing
 logging.basicConfig(
-    filename='video_scan_log.txt',
+    filename='video_processing_log.txt',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
-)
-
-# Configure logging for permissions changes
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    filename=r"B:\Test File\permissions_log.txt", # Path to the log file for permissions changes
-    filemode='a' # Append to the file if it exists
 )
 
 # Constants
@@ -26,8 +17,6 @@ DURATION_THRESHOLD = 60.0
 
 class VideoProcessingError(Exception):
     pass
-
-
 
 def change_file_permissions(directory, permissions):
     """
@@ -37,7 +26,6 @@ def change_file_permissions(directory, permissions):
     - directory (str): The path to the directory containing the files.
     - permissions (int): The permission code to set for the files.
     """
-    # Loop through the list of files in the directory and change their permissions
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
         if os.path.isfile(file_path):
@@ -49,20 +37,24 @@ def change_file_permissions(directory, permissions):
 
 def get_video_duration(file_path):
     try:
-        clip = VideoFileClip(file_path, audio=False)  # Skip audio processing
+        clip = VideoFileClip(file_path, audio=False)
         return clip.duration
     except Exception as e:
         raise VideoProcessingError(f"Error processing file: {file_path}") from e
 
 def format_duration(seconds):
-    return seconds
+    try:
+        return f"{float(seconds):.2f} seconds"
+    except ValueError:
+        return f"{seconds} (Invalid duration)"
+
 
 def print_and_save(text):
     os.system("echo %cd%")
     encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
     print(encoded_text)
     
-    with open('transfer_status.txt', 'a', encoding='utf-8') as file:
+    with open(r'B:\Test File\transfer_status.txt', 'a', encoding='utf-8') as file:
         file.write(text + '\n')
 
 def find_and_sort_videos_by_duration(folder_path):
@@ -76,118 +68,92 @@ def find_and_sort_videos_by_duration(folder_path):
             if duration is not None:
                 video_durations[video_file] = format_duration(duration)
         except VideoProcessingError as e:
-            logging.error(e)  # Log the error as per your needs
+            logging.error(e)
 
     sorted_videos = sorted(video_durations.items(), key=lambda x: x[1])
     return sorted_videos
 
 def move_files_less_than_duration(sorted_videos, target_path, folder_path):
-    # Inside the move_files_less_than_duration function
     for video, duration in sorted_videos:
         duration_seconds = float(duration) if isinstance(duration, str) else duration
         if duration_seconds < DURATION_THRESHOLD:
             source_file = os.path.join(folder_path, video)
             destination_file = os.path.join(target_path, video)
 
-            # Debug information
-            # print(f"Moving {video} from {source_file} to {destination_file}")
             print_and_save(f"Moving {video} from {source_file} to {destination_file}")
-            # print(f"\n\nFile exists in source: {os.path.exists(source_file)}")
-            print_and_save(f"\n\nFile exists in source: {os.path.exists(source_file)}")
-            # print(f"File exists in destination: {os.path.exists(destination_file)}")
-            print_and_save(f"File exists in destination: {os.path.exists(destination_file)}")
-      
 
-            max_retries = 3
-            retries = 0
-            while retries < max_retries:
-                try:
-                    with open(source_file, 'rb'):
-                        pass  # Check if the file can be opened without issues
-                except PermissionError:
-                    logging.info(f"File {video} is in use by another process. Retrying...")
-                    retries += 1
-                    time.sleep(1)  # Wait for 1 second before retrying
-                else:
-                    try:
-                        shutil.move(source_file, destination_file)
-                        os.remove(source_file)  # Delete the source file after moving it
-                        try:
-                            logging.info(f"Moved {video} to {target_path}")
-                        except UnicodeEncodeError:
-                            logging.info(f"Moved {video.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)} to {target_path}")
-                        # break  # Exit the retry loop if the file is successfully moved
-                    except PermissionError as e:
-                        logging.warning(f"Skipped moving {video}: {e}")
-                        break  # Exit the retry loop if the file cannot be moved due to PermissionError
-                    except OSError as e:
-                        logging.error(f"Failed to move {video}: {e}")
-                        break  # Exit the retry loop if the file cannot be moved due to OSError
-                    except Exception as e:
-                        logging.error(f"Failed to move {video}: {e}")
-                        break  # Exit the retry loop if an unexpected error occurs
-            else:
-                logging.error(f"Failed to move {video}: File is still in use after {max_retries} retries")
+            try:
+                with open(source_file, 'rb'):
+                    pass
+            except PermissionError:
+                logging.info(f"File {video} is in use by another process. Skipping...")
+                continue
 
-#Files that remains in the source folder after moving videos containing "<String>" in their names
+            try:
+                shutil.move(source_file, destination_file)
+                os.remove(source_file)
+                logging.info(f"Moved {video} to {target_path}")
+            except (PermissionError, OSError) as e:
+                logging.warning(f"Skipped moving {video}: {e}")
+            except Exception as e:
+                logging.error(f"Failed to move {video}: {e}")
+
 
 def report_remaining_files(folder_path):
     remaining_files = [item for item in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, item))]
-    with open('remaining_files_report.txt', 'w', encoding='utf-8') as report_file:
+    with open(r'B:\Test File\remaining_files_report.txt', 'w', encoding='utf-8') as report_file:
         report_file.write("Remaining files in the source folder:\n\n")
         for file in remaining_files:
             report_file.write(f"\n{file}\n")
-            os.remove(file)  # Delete the source file after moving it
-            
-#Files that moved in the Target folder after moving videos containing "<String>" in their names
 
-def report_Transfered_files(targeted_path):
-    Moved_files = [item for item in os.listdir(targeted_path) if os.path.isfile(os.path.join(targeted_path, item))]
-    with open('Moved_files_report.txt', 'w', encoding='utf-8') as report_file:
+def report_transferred_files(target_path):
+    moved_files = [item for item in os.listdir(target_path) if os.path.isfile(os.path.join(target_path, item))]
+    with open(r'B:\Test File\moved_files_report.txt', 'w', encoding='utf-8') as report_file:
         report_file.write("Moved files in the target folder:\n\n")
-        for file in Moved_files:
+        for file in moved_files:
             report_file.write(f"\n{file}\n")
-            
 
-# Main Function
+def remove_files_from_source(folder_path):
+    files_in_folder = os.listdir(folder_path)
+    for file_name in files_in_folder:
+        file_path = os.path.join(folder_path, file_name)
+
+        if os.path.isfile(file_path):
+            try:
+                os.remove(file_path)
+                print_and_save(f"Deleted file: {file_path}")
+            except Exception as e:
+                print_and_save(f"Failed to delete file: {file_path}. Error: {e}")
+        else:
+            print_and_save(f"Skipped directory: {file_path}")
 
 def main():
-    # Specify the folder path where the video files are located
     folder_path = r"B:\Test File\source"
-    new_directory = r"B:\Test File" 
-    targeted_path = r"B:\Test File\Target"
+    new_directory = r"B:\Test File"
+    target_path = r"B:\Test File\Target"
 
-    # Change the current working directory to a different path
-    os.chdir(new_directory) 
+    os.chdir(new_directory)
 
-    # Example usage of change_file_permissions
-    directory = new_directory
-    permissions = 0o777 # Read, write, and execute permissions for all
-    change_file_permissions(directory, permissions)
-    
-    # Redirect sys.stdout to a file
-    original_stdout = sys.stdout # Store the original sys.stdout
-    os.system("echo %cd%") # current working directory
-    with open('video_scan.txt', 'w', encoding='utf-8') as sys_stdout_file:
+    directory_permissions = 0o777  # Read, write, and execute permissions for all
+    change_file_permissions(new_directory, directory_permissions)
+
+    original_stdout = sys.stdout
+    os.system("echo %cd%")
+
+    with open(r'B:\Test File\transfer_status.txt', 'a', encoding='utf-8') as sys_stdout_file:
         sys.stdout = sys_stdout_file
 
-        # Find and sort videos by duration and print them and save them to a text file
-        sorted_videos = find_and_sort_videos_by_duration(folder_path) 
+        sorted_videos = find_and_sort_videos_by_duration(folder_path)
         for video, duration in sorted_videos:
-            print_and_save(f"{video} - Duration: {format_duration(duration)} seconds")
+            print_and_save(f"{video} - Duration: {format_duration(duration)}")
 
-        # Move files to a new folder based on their duration
-        move_files_less_than_duration(sorted_videos, targeted_path, folder_path)
-        
-        # Report remaining files in the source folder
+        move_files_less_than_duration(sorted_videos, target_path, folder_path)
+
         report_remaining_files(folder_path)
-        
-        # Report Moved files in the target folder
-        report_Transfered_files(targeted_path)  
-    # Restore the original sys.stdout
+        report_transferred_files(target_path)
+
+    remove_files_from_source(folder_path)
     sys.stdout = original_stdout
-
-
 
 if __name__ == "__main__":
     main()
