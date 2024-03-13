@@ -6,6 +6,9 @@ import sys
 import shutil
 import time
 
+# Import delete_files_less_than_duration function from Script 2
+from moving_issues_delete_files_source import delete_files_less_than_duration
+
 # Set up logging
 logging.basicConfig(
     filename=r'B:\Test File\video_processing_log.txt',
@@ -108,6 +111,8 @@ def print_and_save(text, log_type='info'):
     log_file_path = r'B:\Test File\transfer_status.txt'
     try:
         with open(log_file_path, 'a', encoding='utf-8') as file:
+            # Add a newline character before each log record
+            file.write("\n\n")
             # Print the encoded text to the console
             print(encoded_text)
             # Save the log record to the file
@@ -332,3 +337,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+    # Call the imported function from Script 2
+    source_directory = r"B:\Test File\source"
+    delete_files_less_than_duration(source_directory)
