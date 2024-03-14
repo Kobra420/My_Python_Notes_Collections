@@ -8,6 +8,13 @@ import time
 
 # Import delete_files_less_than_duration function from Script 2
 # from moving_issues_delete_files_source import delete_files_less_than_duration
+import moving_issues_delete_files_source  
+
+# Set up initial paths
+# Declared as Global Variables
+folder_path = r"B:\Test File\source"
+operational_directory = r"B:\Test File"
+target_path = r"B:\Test File\Target"
 
 # Set up logging
 logging.basicConfig(
@@ -250,10 +257,7 @@ def main():
     """
     The main function orchestrating the video processing workflow.
     """
-    # Set up initial paths
-    folder_path = r"B:\Test File\source"
-    operational_directory = r"B:\Test File"
-    target_path = r"B:\Test File\Target"
+
 
     # Change working directory to the operational_directory
     os.chdir(operational_directory)
@@ -291,11 +295,10 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# if __name__ == "__main__":
-#     main()
     
-#     # Call the imported function from Script 2
-#     source_directory = r"B:\Test File\source"
-#     delete_files_less_than_duration(source_directory)
+    # Call the imported function from Script 2
+    
+    source_directory = folder_path      # source_directory = r"B:\Test File\source"
+    
+    # delete_files_less_than_duration(source_directory)
+    moving_issues_delete_files_source.delete_files_less_than_duration(source_directory)

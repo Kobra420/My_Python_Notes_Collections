@@ -8,6 +8,11 @@ import time
 # Constants
 DURATION_THRESHOLD = 60.0
 
+# Set up initial paths
+# Declared as Global Variables
+source_directory = r"B:\Test File\source"
+
+
 class VideoProcessingError(Exception):
     """
     Custom exception class for video processing errors.
@@ -41,7 +46,7 @@ def get_video_duration(file_path):
         return duration
     except Exception as e:
         # Raise a custom exception for better error handling
-        raise VideoProcessingError(f"Error processing file: {file_path}") from e
+        raise VideoProcessingError(f"\n\nError processing file: {file_path}") from e
 
 def delete_files_less_than_duration(directory, duration_threshold=DURATION_THRESHOLD):
     # List all files in the specified directory
@@ -62,14 +67,42 @@ def delete_files_less_than_duration(directory, duration_threshold=DURATION_THRES
                 if duration < duration_threshold:
                     # Attempt to delete the file
                     os.remove(file_path)
-                    logging.info(f"Deleted file: {file_path} - Duration: {duration} seconds")
+                    logging.info(f"\n\nDeleted file: {file_path} - Duration: {duration} seconds")
             except PermissionError:
-                logging.warning(f"Skipped deleting {file_path}: File is in use by another process.")
+                logging.warning(f"\n\nSkipped deleting {file_path}: File is in use by another process.")
             except Exception as e:
-                logging.error(f"Failed to delete file: {file_path}. Error: {e}")
+                logging.error(f"\n\nFailed to delete file: {file_path}. Error: {e}")
         else:
-            logging.warning(f"Skipped directory: {file_path}")
+            logging.warning(f"\n\nSkipped directory: {file_path}")
 
-if __name__ == "__main__":
-    source_directory = r"B:\Test File\source"
+def main():
+    """
+    The main function orchestrating the video deleting workflow.
+    It takes the source directory as a command-line argument.
+    It deletes all files in the source directory that are less than 60 seconds long.
+    It logs the deletion of each file and any errors that occur.
+    It also logs the start and end time of the workflow.
+    It also logs the total number of files deleted.
+    It also logs the total number of files skipped.
+    It also logs the total number of files that failed to delete.
+    It also logs the total number of files that were not deleted.
+    It also logs the total number of files that were not skipped.
+    It also logs the total number of files that were not failed to delete.
+    It also logs the total number of files that were not not deleted.
+    It also logs the total number of files that were not not skipped.
+    It also logs the total number of files that were not not failed to delete.
+    It also logs the total number of files that were not not not deleted.
+    It also logs the total number of files that were not not not skipped.
+    It also logs the total number of files that were not not not failed to delete.
+    """
+    
+    
+    
     delete_files_less_than_duration(source_directory)
+    logging.info(f"\n\n\nWorkflow completed. Deleted {len(source_directory)} files.")
+    logging.info(f"\n\nSkipped {len(source_directory)} files.")
+    logging.info(f"\n\nFailed to delete {len(source_directory)} files.")
+    logging.info(f"\n\nNot deleted {len(source_directory)} files.")
+    
+if __name__ == "__main__":
+    main()

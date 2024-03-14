@@ -5,6 +5,13 @@ import shutil
 import time
 import sys
 
+
+# Set up initial paths
+# Declared as Global Variables
+source_folder = r"B:\Test_file_2\source"
+target_folder = r"B:\Test_file_2\target\India Videos"
+new_directory = r"B:\Test_file_2"
+
 # Set up logging
 logging.basicConfig(filename='video_scan_log.txt', level=logging.INFO)
 
@@ -126,10 +133,6 @@ def report_Transfered_files(target_folder):
 # Main Function
 
 def main():
-    source_folder = r"B:\Test_file_2\source"
-    target_folder = r"B:\Test_file_2\target\India Videos"
-    new_directory = r"B:\Test_file_2"
-
     try:
         # Change the current working directory to a different path
         os.chdir(new_directory)
