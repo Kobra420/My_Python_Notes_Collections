@@ -2,8 +2,8 @@
 from moviepy.editor import VideoFileClip
 import os
 import logging
-import sys
-import time
+# import sys
+# import time
 
 # Constants
 DURATION_THRESHOLD = 60.0
