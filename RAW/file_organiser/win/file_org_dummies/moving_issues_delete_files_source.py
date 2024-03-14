@@ -2,15 +2,15 @@
 from moviepy.editor import VideoFileClip
 import os
 import logging
-# import sys
+import sys
 # import time
 
-# Import reporting functions from movingFile_reporting.py
-import movingFile_reporting
 
 # Set up initial paths
 # Declared as Global Variables
 source_directory = r"B:\Test File\source"
+print_and_save_logFILE_path = r'B:\Test File\SourceFiles_DELETE_log.txt'
+
 
 # Constants
 DURATION_THRESHOLD = 60.0
@@ -21,12 +21,6 @@ class VideoProcessingError(Exception):
     """
     pass
 
-# Set up logging
-logging.basicConfig(
-    filename=r'B:\Test File\SourceFiles_DELETE_log.txt',
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
 
 def get_video_duration(file_path):
     """
@@ -49,6 +43,31 @@ def get_video_duration(file_path):
     except Exception as e:
         # Raise a custom exception for better error handling
         raise VideoProcessingError(f"\n\nError processing file: {file_path}") from e
+
+
+def print_and_save(text):
+    """
+    Print the provided text, encode it to handle special characters, 
+    and save it to a text file.
+
+    Parameters:
+    - text (str): The text to be printed and saved.
+    - log_type (str): The type of log record ('info', 'warning', 'error').
+    """
+    # Encode text to handle special characters
+    encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
+
+    try:
+        with open(print_and_save_logFILE_path, 'a', encoding='utf-8') as file:
+            # Add a newline character before each log record
+            file.write("\n\n")
+            # Print the encoded text to the console
+            print(encoded_text)
+            # Save the log record to the file
+            (f"[{file}]---{text}\n")
+    except Exception as e:
+        # Log an error if there's an issue with file handling
+        (f"Error in file handling: {e}")
 
 def delete_files_less_than_duration(directory, duration_threshold=DURATION_THRESHOLD):
     # List all files in the specified directory
