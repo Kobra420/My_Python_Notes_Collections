@@ -1,24 +1,18 @@
-# Import necessary libraries
-from moviepy.editor import VideoFileClip
-import os
-import logging
-import sys
-import shutil
-import time
+"""
+This script imports necessary libraries and functions for managing video files and performing file operations.
+"""
 
-# Import delete_files_less_than_duration function from moving_issues_delete_files_source.py
-# from moving_issues_delete_files_source import delete_files_less_than_duration
-import moving_issues_delete_files_source  
+from moviepy.editor import VideoFileClip  # Library for working with video files
+import os  # Operating system module for file handling
+import shutil  # Module for high-level file operations
+import time  # Module for time-related functions
 
-# Import reporting functions from movingFile_reporting.py
-import movingFile_reporting
+import moving_issues_delete_files_source  # Custom module for deleting files based on duration
+import movingFile_reporting  # Custom module for reporting functions
 
-# Set up initial paths
-# Declared as Global Variables
-folder_path = r"B:\Test File\source"
-
-target_path = r"B:\Test File\Target"
-
+# Set up initial paths GLOBAL VARIABLE
+folder_path = r"B:\Test File\source"  # Path to the source folder
+target_path = r"B:\Test File\Target"  # Path to the target folder
 
 
 # Constants
@@ -29,8 +23,6 @@ class VideoProcessingError(Exception):
     Custom exception class for video processing errors.
     """
     pass
-
-
 
 
 def get_video_duration(file_path):
@@ -53,6 +45,7 @@ def get_video_duration(file_path):
     except Exception as e:
         # Raise a custom exception for better error handling
         raise VideoProcessingError(f"Error processing file: {file_path}") from e
+
 
 def format_duration(seconds):
     """

@@ -8,13 +8,12 @@ import logging
 # Import reporting functions from movingFile_reporting.py
 import movingFile_reporting
 
-# Constants
-DURATION_THRESHOLD = 60.0
-
 # Set up initial paths
 # Declared as Global Variables
 source_directory = r"B:\Test File\source"
 
+# Constants
+DURATION_THRESHOLD = 60.0
 
 class VideoProcessingError(Exception):
     """
@@ -78,6 +77,7 @@ def delete_files_less_than_duration(directory, duration_threshold=DURATION_THRES
         else:
             logging.warning(f"\n\nSkipped directory: {file_path}")
 
+
 def main():
     """
     The main function orchestrating the video deleting workflow.
@@ -98,14 +98,25 @@ def main():
     It also logs the total number of files that were not not not skipped.
     It also logs the total number of files that were not not not failed to delete.
     """
-    
-    
-    
-    delete_files_less_than_duration(source_directory)
-    logging.info(f"\n\n\nWorkflow completed. Deleted {len(source_directory)} files.")
-    logging.info(f"\n\nSkipped {len(source_directory)} files.")
-    logging.info(f"\n\nFailed to delete {len(source_directory)} files.")
-    logging.info(f"\n\nNot deleted {len(source_directory)} files.")
-    
+    # Track the counts of files processed
+    deleted_count = 0
+    skipped_count = 0
+    failed_count = 0
+
+    # Perform file deletion and logging
+    try:
+        delete_files_less_than_duration(source_directory)
+        deleted_count = len(os.listdir(source_directory))
+        logging.info(f"\n\n\nWorkflow completed. Deleted {deleted_count} files.")
+    except Exception as e:
+        logging.error(f"\n\n\nFailed to complete workflow: {e}")
+        failed_count = deleted_count
+
+    # Log counts of skipped and failed files
+    skipped_count = len(os.listdir(source_directory)) - deleted_count
+    logging.info(f"\n\nSkipped {skipped_count} files.")
+    logging.info(f"\n\nFailed to delete {failed_count} files.")
+    logging.info(f"\n\nNot deleted {skipped_count + failed_count} files.")
+
 if __name__ == "__main__":
     main()

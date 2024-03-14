@@ -12,6 +12,7 @@ operational_directory = source_directory       # operational_directory = r"B:\Te
 print_and_save_logFILE_path = r'B:\Test File\transfer_status.txt'
 
 
+
 # Set up logging
 logging.basicConfig(
     filename=r'B:\Test File\video_processing_log.txt',
@@ -52,6 +53,7 @@ def report_transferred_files(target_path):
         for file in moved_files:
             report_file.write(f"\n{file}\n")
 
+
 # Change permission of the source path
 def change_file_permissions(directory, permissions):
     """
@@ -69,8 +71,14 @@ def change_file_permissions(directory, permissions):
     Example usage:
     change_file_permissions(r"B:\\Test File\\source", 0o777)
     """
+    # Change permissions of the specified directory
+    try:
+        os.chmod(directory, permissions)
+        logging.info(f"Permissions of {directory} have been changed to {permissions}")
+    except Exception as e:
+        # Log an error message if permission change fails
+        logging.error(f"Failed to change permissions of {directory}. Error: {e}")
 
-    change_file_permissions(operational_directory, directory_permissions)
     # Loop through all files in the directory
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
