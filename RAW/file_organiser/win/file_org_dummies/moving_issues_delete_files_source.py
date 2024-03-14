@@ -1,16 +1,14 @@
 # Import necessary libraries
 from moviepy.editor import VideoFileClip
 import os
-import logging
 import sys
-# import time
 
 
 # Set up initial paths
 # Declared as Global Variables
 source_directory = r"B:\Test File\source"
 print_and_save_logFILE_path = r'B:\Test File\SourceFiles_DELETE_log.txt'
-
+delete_count = 0
 
 # Constants
 DURATION_THRESHOLD = 60.0
@@ -52,7 +50,6 @@ def print_and_save(text):
 
     Parameters:
     - text (str): The text to be printed and saved.
-    - log_type (str): The type of log record ('info', 'warning', 'error').
     """
     # Encode text to handle special characters
     encoded_text = text.encode(sys.stdout.encoding, errors='replace').decode(sys.stdout.encoding)
@@ -64,12 +61,15 @@ def print_and_save(text):
             # Print the encoded text to the console
             print(encoded_text)
             # Save the log record to the file
-            (f"[{file}]---{text}\n")
+            file.write(f"[INFO] {text}\n")
     except Exception as e:
         # Log an error if there's an issue with file handling
-        (f"Error in file handling: {e}")
+        with open(print_and_save_logFILE_path, 'a', encoding='utf-8') as file:
+            file.write(f"[ERROR] Error in file handling: {e}\n")
+
 
 def delete_files_less_than_duration(directory, duration_threshold=DURATION_THRESHOLD):
+    global delete_count  # Declare delete_count as global
     # List all files in the specified directory
     files_in_folder = os.listdir(directory)
 
@@ -88,13 +88,15 @@ def delete_files_less_than_duration(directory, duration_threshold=DURATION_THRES
                 if duration < duration_threshold:
                     # Attempt to delete the file
                     os.remove(file_path)
-                    logging.info(f"\n\nDeleted file: {file_path} - Duration: {duration} seconds")
+                    delete_count += 1
+                    print_and_save(f"\n\nDeleted file: {file_path} - Duration: {duration} seconds")
+                    print_and_save(f"\n\nDeleted file No. {delete_count}")
             except PermissionError:
-                logging.warning(f"\n\nSkipped deleting {file_path}: File is in use by another process.")
+                print_and_save(f"\n\nSkipped deleting {file_path}: File is in use by another process.")
             except Exception as e:
-                logging.error(f"\n\nFailed to delete file: {file_path}. Error: {e}")
+                print_and_save(f"\n\nFailed to delete file: {file_path}. Error: {e}")
         else:
-            logging.warning(f"\n\nSkipped directory: {file_path}")
+            print_and_save(f"\n\nSkipped directory: {file_path}")
 
 
 def main():
@@ -117,6 +119,7 @@ def main():
     It also logs the total number of files that were not not not skipped.
     It also logs the total number of files that were not not not failed to delete.
     """
+    global delete_count  # Declare delete_count as global
     # Track the counts of files processed
     deleted_count = 0
     skipped_count = 0
@@ -124,18 +127,29 @@ def main():
 
     # Perform file deletion and logging
     try:
+        # Count the initial number of files in the source directory
+        initial_file_count = len(os.listdir(source_directory))
+
+        # Delete files less than the duration threshold
         delete_files_less_than_duration(source_directory)
-        deleted_count = len(os.listdir(source_directory))
-        logging.info(f"\n\n\nWorkflow completed. Deleted {deleted_count} files.")
+
+        # Count the remaining number of files after deletion
+        remaining_file_count = len(os.listdir(source_directory))
+
+        # Calculate the number of files deleted
+        deleted_count = initial_file_count - remaining_file_count
+
+        print_and_save(f"\n\n\nWorkflow completed. Deleted {deleted_count} files.")
     except Exception as e:
-        logging.error(f"\n\n\nFailed to complete workflow: {e}")
+        print_and_save(f"\n\n\nFailed to complete workflow: {e}")
         failed_count = deleted_count
 
     # Log counts of skipped and failed files
     skipped_count = len(os.listdir(source_directory)) - deleted_count
-    logging.info(f"\n\nSkipped {skipped_count} files.")
-    logging.info(f"\n\nFailed to delete {failed_count} files.")
-    logging.info(f"\n\nNot deleted {skipped_count + failed_count} files.")
+    print_and_save(f"\n\nSkipped {skipped_count} files.")
+    print_and_save(f"\nFailed to delete {failed_count} files.")
+    # print_and_save(f"\n\nNot deleted {skipped_count + failed_count} files.")
+    print_and_save(f"\n\n ****TOTAL DELETED FILE COUNT ****{delete_count}")
 
 if __name__ == "__main__":
     main()
