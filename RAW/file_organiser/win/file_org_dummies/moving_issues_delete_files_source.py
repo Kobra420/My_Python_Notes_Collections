@@ -5,6 +5,9 @@ import logging
 # import sys
 # import time
 
+# Import reporting functions from movingFile_reporting.py
+import movingFile_reporting
+
 # Constants
 DURATION_THRESHOLD = 60.0
 
