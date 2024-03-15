@@ -40,9 +40,9 @@ def find_and_sort_videos_by_filename(folder_path):
         file_path = os.path.join(folder_path, item)
         is_file = os.path.isfile(file_path)
         has_valid_extension = item.lower().endswith(('.mp4', '.avi', '.mkv', '.mov'))
-
+        contains_india = "India" in item
         # Check if the item is a file and has a valid video file extension
-        if is_file and has_valid_extension:
+        if is_file and has_valid_extension and contains_india:
             video_files.append(item)
 
     # Sort the video files by their filenames
