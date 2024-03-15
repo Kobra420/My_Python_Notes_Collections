@@ -5,11 +5,51 @@ import sys
 import time
 # import movingFile_reporting
 
+synthesized_link = str()
+
+def source_link_derivative():
+    links = [
+    r"E:\YT2024",
+    r"E:\YT2024\Anti_Hindu_Bengali",
+    r"E:\YT2024\BANGLA1",
+    r"E:\YT2024\BANGLA\Vaam Kutta",
+    r"E:\YT2024\BANGLA\Vaam Kutta\বামইস্লামিক যাদবপুর",
+    r"E:\YT2024\BANGLA\Vaam Kutta\German_SHepherd",
+    r"E:\YT2024\BANGLA\tmc",
+    r"E:\YT2024\BANGLA\tmc\sondeshkhali",
+    r"E:\YT2024\BANGLA\tmc\caa",
+    r"E:\YT2024\BANGLA\New folder (3)",
+    r"E:\YT2024\BHARAT",
+    r"E:\YT2024\BHARAT\প্রানাম ভারতম",
+    r"E:\YT2024\BHARAT\The Great DwarakaNath Tegore",
+    r"E:\YT2024\BHARAT\Size_102400_inf",
+    r"E:\YT2024\BHARAT\Size_10240_102400",
+    r"E:\YT2024\BHARAT\S jaishankar\PES University - Golden Jubilee Celebration",
+    r"E:\YT2024\BHARAT\modi",
+    r"E:\YT2024\BHARAT\Gaganyaan",
+    r"E:\YT2024\facts_&_Theories_&_science",
+    r"E:\YT2024\facts_&_Theories_&_science\bio",
+    r"E:\YT2024\flat earth",
+    r"E:\YT2024\korean racism",
+    r"E:\YT2024\PD SIR",
+    r"E:\YT2024\Ram Krishna Shiva Kaali Kaal",
+    r"E:\YT2024\tech_help",
+    r"E:\YT2024\west",
+    r"E:\YT2024\zukuchacha",
+    r"E:\YT2024\zukuchacha\x",
+    r"E:\YT2024\zukuchacha\ttiktok",
+    r"E:\YT2024\zukuchacha\trump",
+    r"E:\YT2024\zukuchacha\open ai",
+    r"E:\YT2024\zukuchacha\discord"
+]
+    global synthesized_link
+    for link in links:
+        synthesized_link = link
+    return synthesized_link
 
 
 
-
-source_folder = r"E:\YT2024"
+source_folder = synthesized_link
 target_folder = r"B:\sorted yt 23\TARGET"
 new_directory = r"B:\sorted yt 23\RECORDs_OF_YouTube 2024 downloaded Videos"
 
@@ -97,6 +137,9 @@ def find_and_sort_videos_by_filename(folder_path):
 
     return sorted_videos, sorted_images, sorted_docs
 def main():
+    
+    # get links from the list of links
+    source_link_derivative()
     # Find and sort video files by their filenames
     # sorted_videos = 
     find_and_sort_videos_by_filename(source_folder)
