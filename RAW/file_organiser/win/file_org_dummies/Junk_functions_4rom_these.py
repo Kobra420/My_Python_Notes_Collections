@@ -116,3 +116,22 @@
 #         # Log an error message if folder deletion fails
 #         print_and_save(f"Failed to delete files in {folder_path}. Error: {e}", log_type='error')
 
+
+
+
+# # Function to Get Video Duration
+
+# def get_video_duration(video_path):
+#     result = os.popen(f'ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 {video_path}').read()
+#     return float(result)
+
+# # # Function to Print and Save Text
+# # # This function prints the text to the console and also saves it to a file called "video_transfer_report.txt" in the same folder as the script.
+# # # It uses the "a" mode to append to the file, which means that the text will be added to the end of the file.
+# # # The encoding is set to "utf-8" to ensure that the text is encoded in UTF-8 format.
+# # # The errors='replace' parameter is used to replace any invalid characters with a '?' character.
+
+# def print_and_save(text):
+#     print(text)
+#     with open('video_transfer_report.txt', 'a', encoding='utf-8') as file:
+#         file.write(text + '\n')

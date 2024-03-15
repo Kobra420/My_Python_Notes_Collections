@@ -10,7 +10,8 @@ source_directory = r"B:\Test File\source"
 operational_directory = source_directory       # operational_directory = r"B:\Test File"
 # Save text to a text file and close the file at print_and_save(text_to_save, print_and_save_logFILE_path)
 print_and_save_logFILE_path = r'B:\Test File\transfer_status.txt'
-
+report_remaining_files_logFILE_path = r'B:\Test File\remaining_files_report.txt'
+report_transferred_files_logFILE_path = r'B:\Test File\moved_files_report.txt'
 
 
 # Set up logging
@@ -20,7 +21,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-def report_remaining_files(source_path):
+def report_remaining_files(source_path, report_remaining_files_logFILE_path):
     """
     Generate a report of remaining files in the source folder and save it to a text file.
 
@@ -31,13 +32,13 @@ def report_remaining_files(source_path):
     remaining_files = [item for item in os.listdir(source_path) if os.path.isfile(os.path.join(source_path, item))]
 
     # Write the report to a text file
-    with open(r'B:\Test File\remaining_files_report.txt', 'w', encoding='utf-8') as report_file:
+    with open(report_remaining_files_logFILE_path, 'w', encoding='utf-8') as report_file:
         report_file.write("Remaining files in the source folder:\n\n")
         for file in remaining_files:
             report_file.write(f"\n{file}\n")
 
 
-def report_transferred_files(target_path):
+def report_transferred_files(target_path, report_transferred_files_logFILE_path):
     """
     Generate a report of moved files in the target folder and save it to a text file.
 
@@ -48,7 +49,7 @@ def report_transferred_files(target_path):
     moved_files = [item for item in os.listdir(target_path) if os.path.isfile(os.path.join(target_path, item))]
 
     # Write the report to a text file
-    with open(r'B:\Test File\moved_files_report.txt', 'w', encoding='utf-8') as report_file:
+    with open(report_transferred_files_logFILE_path, 'w', encoding='utf-8') as report_file:
         report_file.write("Moved files in the target folder:\n\n")
         for file in moved_files:
             report_file.write(f"\n{file}\n")
