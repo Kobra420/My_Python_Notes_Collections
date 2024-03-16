@@ -8,13 +8,14 @@ import data
 
 
 # Global Variable declarations
-links_2 = data.links_2024
+links_1 = data.links_2023
 source_folder = str()
 new_directory = str()
 # log_file_list = list()  # Initialize list() for future extentions of this operation , currently unused.
 
 
-def get_links(source_folder, new_directory):
+
+def get_links_2(source_folder, new_directory):
     """
     Generate source folder and log file path for a given identifier.
 
@@ -26,14 +27,12 @@ def get_links(source_folder, new_directory):
     Returns:
     - tuple: A tuple containing the source folder and log file path.
     """
-    new_directory = r"B:\sorted yt 23\RECORDs_OF_YouTube 2024 downloaded Videos"
+    new_directory = r"B:\sorted yt 23\RECORDs_OF_YouTube 2023 downloaded Videos"
 
     head, tail = os.path.split(source_folder)
 
     log_file_path = os.path.join(new_directory, f'{tail}.txt')
     return source_folder, log_file_path
-
-
 
 
 def find_and_sort_videos_by_filename(folder_path, log_file_path):
@@ -59,11 +58,11 @@ def find_and_sort_videos_by_filename(folder_path, log_file_path):
     for item in os.listdir(folder_path):
         file_path = os.path.join(folder_path, item)
         is_file = os.path.isfile(file_path)
-        has_valid_extension = item.lower().endswith(('.webm', '.mkv', '.flv', '.vob', '.ogv', '.ogg', '.rrc', '.gifv',
-                                                     '.mng', '.mov', '.avi', '.qt', '.wmv', '.yuv', '.rm', '.asf',
-                                                     '.amv', '.mp4', '.m4p', '.m4v', '.mpg', '.mp2', '.mpeg', '.mpe',
-                                                     '.mpv', '.svi', '.3gp', '.3g2', '.mxf', '.roq', '.nsv', '.flv',
-                                                     '.f4v', '.f4p', '.f4a', '.f4b', '.mod'))
+        has_valid_extension = item.lower().endswith(('.webm', '.mkv', '.flv', '.vob', '.ogv', '.ogg', '.rrc', 
+                                                     '.gifv', '.mng', '.mov', '.avi', '.qt', '.wmv', '.yuv', 
+                                                     '.rm', '.asf', '.amv', '.mp4', '.m4p', '.m4v', '.mpg', '.mp2', 
+                                                     '.mpeg', '.mpe', '.mpv', '.svi', '.3gp', '.3g2', '.mxf', '.roq', 
+                                                     '.nsv', '.flv', '.f4v', '.f4p', '.f4a', '.f4b', '.mod'))
         # contains_india = "India" in item
         if is_file and has_valid_extension: # and contains_india
 
@@ -72,19 +71,18 @@ def find_and_sort_videos_by_filename(folder_path, log_file_path):
 
         has_valid_extension2 = item.lower().endswith(('.apng', '.avif', '.gif', '.jpg', '.jpeg', '.jfif', '.pjpeg', 
                                                       '.pjp', '.png', '.svg', '.webp', '.tif', '.tiff', '.psd', '.raw', 
-                                                      '.arw', '.cr2', '.nrw', '.k25', '.bmp', '.dib', '.heif', '.heic',
+                                                      '.arw', '.cr2', '.nrw', '.k25', '.bmp', '.dib', '.heif', '.heic', 
                                                       '.ind', '.indd', '.indt', '.ai', '.eps'))
         if is_file and has_valid_extension2:
 
             image_files.append(item)
             image_count = len(image_files)
 
-        has_valid_extension3 = item.lower().endswith(('.doc', '.docx', '.html', '.htm', '.odt', '.pdf', '.xls', '.xlsx',
-                                                      '.ods', '.ppt', '.pptx', '.txt', '.log', '.csv', '.xml', '.json', 
-                                                      '.yaml', '.ini', '.cfg', '.conf', '.config', '.md', '.markdown','.exe',
-                                                      '.com', '.bat', '.cmd', '.msi', '.dll', '.sys', '.scr', '.vbs', '.vbe',
-                                                      '.js', '.ps1', '.psm1', '.psd1', '.psc1', '.msp',
-                                                      '.mst', '.msp', '.msi', '.msp', '.tar'))
+        has_valid_extension3 = item.lower().endswith(('.doc', '.docx', '.html', '.htm', '.odt', '.pdf', '.xls', '.xlsx', '.ods', 
+                                                      '.ppt', '.pptx', '.txt', '.log', '.csv', '.xml', '.json', '.yaml', 
+                                                      '.ini', '.cfg', '.conf', '.config', '.md', '.markdown','.exe', '.com', 
+                                                      '.bat', '.cmd', '.msi', '.dll', '.sys', '.scr', '.vbs', '.vbe', '.js', '.ps1', 
+                                                      '.psm1', '.psd1', '.psc1', '.msp', '.mst', '.msp', '.msi', '.msp', '.tar'))
         if is_file and has_valid_extension3:
 
             doc_files.append(item)
@@ -124,8 +122,8 @@ def find_and_sort_videos_by_filename(folder_path, log_file_path):
 
     return sorted_videos, sorted_images, sorted_docs
 def main():
-    for link in links_2:
-        source_folder, log_file_path = get_links(link, new_directory)
+    for link in links_1:
+        source_folder, log_file_path = get_links_2(link, new_directory)
         find_and_sort_videos_by_filename(source_folder, log_file_path)
 if __name__ == "__main__":
     main()
