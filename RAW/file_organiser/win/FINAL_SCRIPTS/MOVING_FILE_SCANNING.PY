@@ -2,18 +2,31 @@
 import os
 import sys
 import time
+
 # importing custom module
-from data import links_2024
+import data
+
 
 # Global Variable declarations
-links = links_2024
+links_1 = data.links_2023
+links_2 = data.links_2024
 source_folder = str()
 new_directory = str()
-log_file_list = list()
+# log_file_list = list()  # Initialize list() for future extentions of this operation , currently unused.
 
 
 def get_links(source_folder, new_directory):
+    """
+    Generate source folder and log file path for a given identifier.
 
+    Parameters:
+    - source_folder (str): The source folder containing video files.
+    - new_directory (str): The directory for storing log files.
+    - identifier (str): An identifier to distinguish between sets of links.
+
+    Returns:
+    - tuple: A tuple containing the source folder and log file path.
+    """
     new_directory = r"B:\sorted yt 23\RECORDs_OF_YouTube 2024 downloaded Videos"
 
     head, tail = os.path.split(source_folder)
@@ -21,6 +34,15 @@ def get_links(source_folder, new_directory):
     log_file_path = os.path.join(new_directory, f'{tail}.txt')
     return source_folder, log_file_path
 
+
+def get_links_2(source_folder, new_directory):
+
+    new_directory = r"B:\sorted yt 23\RECORDs_OF_YouTube 2023 downloaded Videos"
+
+    head, tail = os.path.split(source_folder)
+
+    log_file_path = os.path.join(new_directory, f'{tail}.txt')
+    return source_folder, log_file_path
 
 
 def find_and_sort_videos_by_filename(folder_path, log_file_path):
@@ -99,13 +121,15 @@ def find_and_sort_videos_by_filename(folder_path, log_file_path):
 
     return sorted_videos, sorted_images, sorted_docs
 def main():
-    for link in links:
+    for link in links_2:
         source_folder, log_file_path = get_links(link, new_directory)
         find_and_sort_videos_by_filename(source_folder, log_file_path)
+    for link in links_2:
+        source_folder, log_file_path = get_links_2(link, new_directory)
+        find_and_sort_videos_by_filename(source_folder, log_file_path)
+if __name__ == "__main__":
+    main()
 
-# if __name__ == "__main__":
-#     main()
-
-for link in links:
-    source_folder, log_file_path = get_links(link, new_directory)
-    find_and_sort_videos_by_filename(source_folder, log_file_path)
+# for link in links:
+#     source_folder, log_file_path = get_links(link, new_directory)
+#     find_and_sort_videos_by_filename(source_folder, log_file_path)
