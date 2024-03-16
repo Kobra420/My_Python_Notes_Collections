@@ -1,29 +1,29 @@
-
+# importing Modules
 import os
-# import logging
 import sys
 import time
-# import movingFile_reporting
+# importing custom module
+from data import links_2024
+
+# Global Variable declarations
+links = links_2024
+source_folder = str()
+new_directory = str()
+log_file_list = list()
+
+
+def get_links(source_folder, new_directory):
+
+    new_directory = r"B:\sorted yt 23\RECORDs_OF_YouTube 2024 downloaded Videos"
+
+    head, tail = os.path.split(source_folder)
+
+    log_file_path = os.path.join(new_directory, f'{tail}.txt')
+    return source_folder, log_file_path
 
 
 
-
-
-source_folder = r"E:\YT2024"
-target_folder = r"B:\sorted yt 23\TARGET"
-new_directory = r"B:\sorted yt 23\RECORDs_OF_YouTube 2024 downloaded Videos"
-
-
-head, tail = os.path.split(source_folder)
-
-# report_transferred_files_logFILE_path = r"B:\Test_file_2\transferred_files_log.txt"
-# report_remaining_files_logFILE_path = r"B:\Test_file_2\remaining_files_log.txt"
-log_file_path = os.path.join(new_directory, f'{tail}.txt')
-# TEST_log_file_path = os.path.join(new_directory, 'TEST_log.txt')
-# print_and_save_logFILE_path = r'B:\Test_file_2\print_sand_save.txt'
-
-
-def find_and_sort_videos_by_filename(folder_path):
+def find_and_sort_videos_by_filename(folder_path, log_file_path):
     """
     Find and sort video files by their filenames.
 
@@ -33,6 +33,8 @@ def find_and_sort_videos_by_filename(folder_path):
     Returns:
     - list: A list of video filenames sorted alphabetically.
     """
+
+    
     # initializations
     video_files = []  # Initialize video_files before the for loop
     image_files = []  # Initialize image_files before the for loop
@@ -85,32 +87,25 @@ def find_and_sort_videos_by_filename(folder_path):
     # Release sys.stdout to print something else to the screen
     sys.stdout = sys.__stdout__
     time.sleep(2)
-    print("***Recording complete. Now printing something else to the screen.***")
+    print("\n***Recording complete. Now printing something else to the screen.***")
 
     # Re-capture stdout for further recording
     with open(log_file_path, 'a', encoding='utf-8') as f:
         sys.stdout = f
-        print("******Recording complete. Now printing something else to the screen.******")
+        print("\n******Recording complete. Now printing something else to the screen.******")
     sys.stdout = sys.__stdout__
     time.sleep(2)
-    print("*********Recapturing complete. Now printing something else to the screen.*********")
+    print("\n*********Recapturing complete. Now printing something else to the screen.*********")
 
     return sorted_videos, sorted_images, sorted_docs
 def main():
-    # Find and sort video files by their filenames
-    # sorted_videos = 
-    find_and_sort_videos_by_filename(source_folder)
+    for link in links:
+        source_folder, log_file_path = get_links(link, new_directory)
+        find_and_sort_videos_by_filename(source_folder, log_file_path)
 
-    # # Move the sorted video files to the target folder
-    # for video in sorted_videos:
-    #     source_path = os.path.join(source_folder, video)
-    #     target_path = os.path.join(target_folder, video)
-    #     try:
-    #         os.rename(source_path, target_path)
-    #         # Report the file transfer
-    #         movingFile_reporting.log_file_transfer(log_file_path, video, source_path, target_path)
-    #     except Exception as e:
-    #         logging.error(f"Error moving file: {video} - {e}")
+# if __name__ == "__main__":
+#     main()
 
-if __name__ == "__main__":
-    main()
+for link in links:
+    source_folder, log_file_path = get_links(link, new_directory)
+    find_and_sort_videos_by_filename(source_folder, log_file_path)
