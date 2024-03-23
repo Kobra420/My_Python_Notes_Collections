@@ -61,6 +61,7 @@ def print_and_save(text, file_obj):
     # Save to file
     file_obj.write(text + '\n')
 
+movingFile_reporting.print_and_save(text, log_type='info',PATH=log_file_path)
 
 # Function to Move Videos Containing "<String>" in Their Names
 def move_videos_with_india(source_folder, target_folder, log_file):
@@ -155,6 +156,22 @@ def main():
         movingFile_reporting.report_transferred_files(target_folder, report_transferred_files_logFILE_path)
     logging.info("\n\n\nThere are no Errors/warings in the \\Output")
 
+    
 
 if __name__ == "__main__":
     main()
+    new_directory = r"B:\Test_file_2"
+    file = "\\new_report\\"
+    file_records = new_directory + file
+    os.mkdir(file_records)
+    for item in os.listdir(new_directory):
+        file_path = os.path.join(new_directory, item)
+        is_file = os.path.isfile(file_path)
+        has_valid_extension3 = item.lower().endswith(('.doc', '.docx', '.html', '.htm', '.odt', '.pdf', '.xls', '.xlsx',
+                                                      '.ods', '.ppt', '.pptx', '.txt', '.log', '.csv', '.xml', '.json', 
+                                                      '.yaml', '.ini', '.cfg', '.conf', '.config', '.md', '.markdown','.exe',
+                                                      '.com', '.bat', '.cmd', '.msi', '.dll', '.sys', '.scr', '.vbs', '.vbe',
+                                                      '.js', '.ps1', '.psm1', '.psd1', '.psc1', '.msp',
+                                                      '.mst', '.msp', '.msi', '.msp', '.tar'))
+        if is_file and has_valid_extension3:
+            shutil.move(new_directory, file_records)
