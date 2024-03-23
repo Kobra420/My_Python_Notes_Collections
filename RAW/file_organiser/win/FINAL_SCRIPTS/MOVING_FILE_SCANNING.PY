@@ -101,7 +101,7 @@ def find_and_sort_videos_by_filename(folder_path, log_file_path):
         print(f"\n+++--<<Total number of images found: {image_count}>>--+++")
         print(f"\n+++--<<Total number of Docs found: {doc_count}>>--+++")
         print(f"\n+++--<<Total number ITEMS found: {total_items}>>--+++")
-        print(f"\n\n****--<<FOLDER_LOCATION>>:--<<{source_folder}>>--****")
+        print(f"\n\n****--<<FOLDER_LOCATION>>:--<<{folder_path}>>--****")
         for selected_video in sorted_videos:
             print(f"\n\nSelected video: {selected_video}")
         for selected_image in image_files:
