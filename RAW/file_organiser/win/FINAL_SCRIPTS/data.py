@@ -2,6 +2,7 @@
 
 links_2024 = [
     r"E:\YT2024",
+    r"E:\YT2024\KHUJLIWAAL",
     r"E:\YT2024\Anti_Hindu_Bengali",
     r"E:\YT2024\BANGLA",
     r"E:\YT2024\BANGLA\Vaam Kutta",
