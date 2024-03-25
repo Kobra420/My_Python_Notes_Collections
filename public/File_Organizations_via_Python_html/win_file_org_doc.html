@@ -1819,7 +1819,18 @@
                 The sys.exit() function can be used to terminate the program, optionally specifying an exit status code.
             </p>
             <p>
-                
+                #exiting program
+                import sys <br>
+                             <br>
+                # Exiting the program <br>
+                try: <br>
+            &nbsp;&nbsp;        print("Before sys.exit()") <br>
+            &nbsp;&nbsp;        # Exiting the program <br>
+            &nbsp;&nbsp;        sys.exit(0) <br>
+            &nbsp;&nbsp;        print("After sys.exit()")  # This line won't be executed <br>
+                             <br>
+                except SystemExit: <br>
+            &nbsp;&nbsp;        print("Exiting the program") <br>
             </p>
         <li>Accessing Python Interpreter Information: </li>
         <li>Modifying Module Search Path: </li>
