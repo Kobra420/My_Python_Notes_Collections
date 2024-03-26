@@ -1,10 +1,13 @@
 import os
 import pandas as pd
-
+import time
 
 current_directory = os.getcwd()
 print(current_directory)
+time.sleep(10)
 os.chdir(current_directory)
+print(os.getcwd())
+time.sleep(10)
 
 info1 = """Earnings Per Share (EPS): Indicates a company's profitability on a per-share basis.
 Price to Earnings Ratio (P/E): Measures the market's expectations for a company's future earnings.
