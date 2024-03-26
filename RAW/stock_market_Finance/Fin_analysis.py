@@ -114,12 +114,14 @@ path2 = r"C:\Users\biswa\OneDrive\Documents\GIT\GIT_main\My_Python_Notes_Collect
 fd2 = os.open(path2, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o644) # '|' (bitwise OR) \n
 content2 = "***RAW data of Financial_Analysis.txt***\n\n\n_____________________________________\n\n\n"
 os.write(fd2, content2.encode('utf-8'))
-fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o644) # '|' (bitwise OR) \n
+
 with open('RAW_Financial_Analysis.txt', 'w+') as f:
     for items in strip_data:
         f.write('%s\n' %items)
 # Close the file
 os.close(fd2)
+
+fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o644) # '|' (bitwise OR) \n
 # Write a string to the file\n"
 # content = input("Enter the content to write to the file: ") # This is a investing analysis by points\n\n\n
 
@@ -137,4 +139,44 @@ with open('Financial_Analysis.txt', 'w+') as f:
         f.write('%s\n' %items)
 # Close the file
 os.close(fd)
-     
+
+
+# Excel File
+
+filter1 = info1.strip('\n')
+strip_data = filter1.split('\n')
+
+# print test of RAW data
+# print(filter1.split('\n'))
+# Data Processing
+points = []
+descriptions = []
+for i in strip_data:
+    if ':' in i:
+        parts = i.split(':')
+        points.append(parts[0])
+        if len(parts) > 1:
+            descriptions.append(parts[1])
+        else:
+            descriptions.append(None)  # or any other value to indicate missing data
+
+
+# Paths
+xL_path = "B:\\Financial_Analysis.xlsx"
+
+
+# Create a DataFrame
+data = {'Points': points, 'Descriptions': descriptions}
+df = pd.DataFrame(data)
+
+# Write the DataFrame to Excel
+df.to_excel(xL_path, index=False)
+
+#    #    #    #    # # Write raw data to a text file
+#    #    #    #    # raw_content = "***RAW data of Financial_Analysis.xlsx***\n\n\n_____________________________________\n\n\n"
+#    #    #    #    # raw_content += df.to_string(index=False)
+#    #    #    #    # with open(raw_path, 'w', encoding='utf-8') as raw_file:
+#    #    #    #    #     raw_file.write(raw_content)
+
+print(f"Excel file written to: {xL_path}")
+#    #     #     #     # print(f"RAW data text file written to: {raw_path}")
