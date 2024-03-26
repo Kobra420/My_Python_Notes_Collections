@@ -1,4 +1,6 @@
 import os
+import pandas as pd
+
 current_directory = os.getcwd()
 print(current_directory)
 
@@ -105,8 +107,9 @@ for i in strip_data:
 
 # Open a file for writing, create if it doesn't exist, and set permissions to 0o644\n",
 # path = input("Enter the file path: ") # B:\Financial_Analysis.txt
-path = "B:\\Financial_Analysis.txt"
-path2 = "B:\\RAW_Financial_Analysis.txt"
+path = r"C:\Users\biswa\OneDrive\Documents\GIT\GIT_main\My_Python_Notes_Collections\RAW\stock_market_Finance\Financial_Analysis.txt"
+path2 = r"C:\Users\biswa\OneDrive\Documents\GIT\GIT_main\My_Python_Notes_Collections\RAW\stock_market_Finance\RAW_Financial_Analysis.txt"
+
 fd2 = os.open(path2, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o644) # '|' (bitwise OR) \n
 content2 = "***RAW data of Financial_Analysis.txt***\n\n\n_____________________________________\n\n\n"
 os.write(fd2, content2.encode('utf-8'))
