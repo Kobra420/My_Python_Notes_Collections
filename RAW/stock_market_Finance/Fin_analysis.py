@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 
+
 current_directory = os.getcwd()
 print(current_directory)
 os.chdir(current_directory)
@@ -162,7 +163,7 @@ for i in strip_data:
 
 
 # Paths
-xL_path = "B:\\Financial_Analysis.xlsx"
+xL_path = r"C:\Users\biswa\OneDrive\Documents\GIT\GIT_main\My_Python_Notes_Collections\RAW\stock_market_Finance\Financial_Analysis.xlsx"
 
 
 # Create a DataFrame
