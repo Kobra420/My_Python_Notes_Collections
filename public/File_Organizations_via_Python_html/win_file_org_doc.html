@@ -1880,8 +1880,17 @@
                 The sys.getrecursionlimit() and sys.setrecursionlimit() functions allow you to get and set the maximum 
                 recursion depth limit.
             </p>
-            <p>
-                
+            <p class="code">
+                # sys.getrecursionlimit()
+                import sys
+
+                # Getting and setting recursion limit
+                initial_limit = sys.getrecursionlimit()
+                print("Initial Recursion Limit:", initial_limit)
+
+                new_limit = 1500
+                sys.setrecursionlimit(new_limit)
+                print("New Recursion Limit:", sys.getrecursionlimit())
             </p>
     </ol>
 </body>
