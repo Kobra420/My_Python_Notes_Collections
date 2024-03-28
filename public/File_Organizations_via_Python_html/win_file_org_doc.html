@@ -1860,8 +1860,38 @@
             </p>
             <img src="../../assets/Python_file_org_ops/SYS_MODULE_a.0.0.4__os_mod_win_sys.exit_IMG.png" alt="SYS_MODULE_a.0.0.4__os_mod_win_sys.exit_IMG">
         <li>Accessing Standard Streams:</li>
-        
+            <p>
+                The sys.stdin, sys.stdout, and sys.stderr attributes provide 
+                access to the standard input, output, and error streams respectively.
+            </p>
+            <p class="code">
+                # sys.stdout() sys.stdin() sys.stderr() <br>
+                    import sys <br>
+                    # Accessing standard streams <br>
+                    sys.stdout.write("Hello, ") <br>
+                    sys.stderr.write("Error: Something went wrong!\n") <br>
+                    user_input = sys.stdin.readline() <br>
+                    print("You entered:", user_input) <br>
+            </p>
+            <img src="../../assets/Python_file_org_ops/SYS_MODULE_a.0.0.5__os_mod_win_sys.stdout_IMG.png" alt="SYS_MODULE_a.0.0.5__os_mod_win_sys.stdout_IMG">
+
         <li>Getting and Setting Recursion Limit:</li>
+            <p>
+                The sys.getrecursionlimit() and sys.setrecursionlimit() functions allow you to get and set the maximum 
+                recursion depth limit.
+            </p>
+            <p class="code">
+                # sys.getrecursionlimit() <br>
+                import sys <br>
+                # Getting and setting recursion limit <br>
+                initial_limit = sys.getrecursionlimit() <br>
+                print("Initial Recursion Limit:", initial_limit) <br>
+ <br>
+                new_limit = 1500 <br>
+                sys.setrecursionlimit(new_limit) <br>
+                print("New Recursion Limit:", sys.getrecursionlimit()) <br>
+            </p>
+            <img src="../../assets/Python_file_org_ops/SYS_MODULE_a.0.0.6__os_mod_win_sys.getrecursionlimit()_IMG.png" alt="SYS_MODULE_a.0.0.6__os_mod_win_sys.getrecursionlimit()_IMG.png">
     </ol>
 </body>
 </html>
