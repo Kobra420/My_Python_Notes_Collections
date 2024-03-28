@@ -1865,7 +1865,13 @@
                 access to the standard input, output, and error streams respectively.
             </p>
             <p class="code">
-                
+                # sys.stdout() sys.stdin() sys.stderr()
+                    import sys
+                    # Accessing standard streams
+                    sys.stdout.write("Hello, ")
+                    sys.stderr.write("Error: Something went wrong!\n")
+                    user_input = sys.stdin.readline()
+                    print("You entered:", user_input)
             </p>
         <li>Getting and Setting Recursion Limit:</li>
     </ol>
